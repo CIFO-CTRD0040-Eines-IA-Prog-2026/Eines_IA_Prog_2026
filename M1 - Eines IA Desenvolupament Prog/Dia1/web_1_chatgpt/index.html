@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<!-- Indica que el documento utiliza HTML5 -->
+
+<html lang="es">
+<!-- Elemento raíz del documento. El atributo lang indica el idioma. -->
+
+<head>
+
+    <!-- Permite utilizar caracteres especiales como á, ñ, ¿, etc. -->
+    <meta charset="UTF-8">
+
+    <!-- Hace que la página sea responsive en dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Programación I y II</title>
+
+    <!--
+        Importa las fuentes desde Google Fonts.
+        Poppins -> Texto general
+        JetBrains Mono -> Código
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- Optimiza la carga de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Importación de tipografías -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Vincula el archivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <!-- Cabecera principal -->
+    <header>
+
+        <!-- Título principal -->
+        <h1>Programación I y Programación II</h1>
+
+        <!-- Descripción -->
+        <p>
+            Guía introductoria sobre Programación Estructurada,
+            Estructuras de Datos y Programación Orientada a Objetos.
+        </p>
+
+    </header>
+
+    <!-- ================= MENU ================= -->
+
+    <!-- Barra de navegación -->
+    <nav>
+
+        <!-- Lista desordenada -->
+        <ul>
+
+            <li><a href="#prog1">Programación I</a></li>
+
+            <li><a href="#prog2">Programación II</a></li>
+
+            <li><a href="#poo">POO</a></li>
+
+        </ul>
+
+    </nav>
+
+    <!-- Contenedor principal -->
+    <main>
+
+        <!-- ======================================================= -->
+        <!-- PROGRAMACION I -->
+        <!-- ======================================================= -->
+
+        <section id="prog1">
+
+            <h2>Programación I (Programación Estructurada)</h2>
+
+            <p>
+
+                La programación estructurada consiste en desarrollar
+                programas utilizando estructuras de control simples,
+                evitando código desordenado y favoreciendo la claridad.
+
+            </p>
+
+            <article>
+
+                <h3>Variables</h3>
+
+                <p>
+
+                    Una variable es un espacio reservado en memoria
+                    donde se almacena información.
+
+                </p>
+
+<pre><code>
+// Declaración de variables en C
+
+int edad = 20;
+float altura = 1.75;
+char letra = 'A';
+
+</code></pre>
+
+            </article>
+
+            <article>
+
+                <h3>Tipos de Datos</h3>
+
+                <p>
+
+                    Los tipos de datos determinan qué clase de información
+                    puede almacenar una variable.
+
+                </p>
+
+                <ul>
+
+                    <li>int</li>
+
+                    <li>float</li>
+
+                    <li>double</li>
+
+                    <li>char</li>
+
+                    <li>bool</li>
+
+                </ul>
+
+            </article>
+
+            <article>
+
+                <h3>Operadores</h3>
+
+                <p>
+
+                    Los operadores permiten realizar operaciones
+                    matemáticas, lógicas y relacionales.
+
+                </p>
+
+<pre><code>
+int suma = 5 + 3;
+int resta = 8 - 2;
+int mult = 4 * 5;
+int div = 20 / 4;
+</code></pre>
+
+            </article>
+
+            <article>
+
+                <h3>Condicionales</h3>
+
+                <p>
+
+                    Permiten ejecutar diferentes bloques de código
+                    dependiendo de una condición.
+
+                </p>
+
+<pre><code>
+if(edad >= 18)
+{
+    printf("Mayor de edad");
+}
+else
+{
+    printf("Menor de edad");
+}
+</code></pre>
+
+            </article>
+
+            <article>
+
+                <h3>Bucles</h3>
+
+                <p>
+
+                    Los bucles permiten repetir instrucciones.
+
+                </p>
+
+<pre><code>
+for(int i=0;i<5;i++)
+{
+    printf("%d",i);
+}
+</code></pre>
+
+            </article>
+
+            <article>
+
+                <h3>Funciones</h3>
+
+                <p>
+
+                    Una función agrupa instrucciones para reutilizarlas.
+
+                </p>
+
+<pre><code>
+int sumar(int a,int b)
+{
+    return a+b;
+}
+</code></pre>
+
+            </article>
+
+            <article>
+
+                <h3>Arreglos</h3>
+
+                <p>
+
+                    Un arreglo almacena varios elementos del mismo tipo.
+
+                </p>
+
+<pre><code>
+int numeros[5]={10,20,30,40,50};
+</code></pre>
+
+            </article>
+
+        </section>
+
+        <!-- ======================================================= -->
+        <!-- PROGRAMACION II -->
+        <!-- ======================================================= -->
+
+        <section id="prog2">
+
+            <h2>Programación II</h2>
+
+            <p>
+
+                En esta materia aparecen estructuras de datos
+                y Programación Orientada a Objetos.
+
+            </p>
+
+            <article>
+
+                <h3>Estructuras de Datos</h3>
+
+                <p>
+
+                    Son formas organizadas de almacenar información
+                    para acceder a ella de forma eficiente.
+
+                </p>
+
+            </article>
+
+            <article>
+
+                <h3>Listas</h3>
+
+                <p>
+
+                    Permiten almacenar elementos conectados mediante nodos.
+
+                </p>
+
+            </article>
+
+            <article>
+
+                <h3>Pilas (Stack)</h3>
+
+                <p>
+
+                    Funcionan con la regla LIFO
+                    (Last In First Out).
+
+                </p>
+
+            </article>
+
+            <article>
+
+                <h3>Colas (Queue)</h3>
+
+                <p>
+
+                    Funcionan con la regla FIFO
+                    (First In First Out).
+
+                </p>
+
+            </article>
+
+            <article>
+
+                <h3>Árboles</h3>
+
+                <p>
+
+                    Organizan información jerárquicamente.
+
+                </p>
+
+            </article>
+
+        </section>
+
+        <!-- ======================================================= -->
+        <!-- POO -->
+        <!-- ======================================================= -->
+
+        <section id="poo">
+
+            <h2>Programación Orientada a Objetos</h2>
+
+            <p>
+
+                La POO organiza el software utilizando objetos
+                que contienen datos y comportamientos.
+
+            </p>
+
+            <article>
+
+                <h3>Clase</h3>
+
+                <p>
+
+                    Es un molde para crear objetos.
+
+                </p>
+
+<pre><code>
+class Persona
+{
+    String nombre;
+}
+</code></pre>
+
+            </article>
+
+            <article>
+
+                <h3>Objeto</h3>
+
+                <p>
+
+                    Es una instancia creada a partir de una clase.
+
+                </p>
+
+<pre><code>
+Persona p = new Persona();
+</code></pre>
+
+            </article>
+
+            <article>
+
+                <h3>Herencia</h3>
+
+                <p>
+
+                    Permite reutilizar atributos y métodos
+                    de otra clase.
+
+                </p>
+
+<pre><code>
+class Alumno extends Persona
+{
+
+}
+</code></pre>
+
+            </article>
+
+            <article>
+
+                <h3>Polimorfismo</h3>
+
+                <p>
+
+                    Un mismo método puede comportarse
+                    de diferentes maneras.
+
+                </p>
+
+            </article>
+
+            <article>
+
+                <h3>Encapsulamiento</h3>
+
+                <p>
+
+                    Consiste en proteger los datos de una clase
+                    mediante modificadores de acceso.
+
+                </p>
+
+<pre><code>
+private String nombre;
+</code></pre>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+
+            Sitio web educativo desarrollado en HTML5 y CSS3.
+
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programación 1 y 2 - Definiciones y Ejemplos</title>
+  <!-- Importa la tipografía JetBrains Mono para ejemplos de código -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Enlaza el archivo CSS principal -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Contenedor principal de la página -->
+  <div class="page-wrapper">
+    <header class="site-header">
+      <div class="header-text">
+        <h1>Programación 1 y Programación 2</h1>
+        <p>Una guía estática con definiciones y ejemplos de programación estructural, estructuras de datos y POO.</p>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Cambiar tema oscuro/claro">
+        <span class="icon-moon" aria-hidden="true">🌙</span>
+        <span class="icon-sun" aria-hidden="true">☀️</span>
+      </button>
+    </header>
+
+    <main class="content">
+      <!-- Sección de Programación 1 -->
+      <section class="topic-section">
+        <h2>Programación 1: Programación Estructural</h2>
+        <p>La programación estructural es un estilo de programación que organiza el código en bloques claramente definidos, usando <strong>secuencias</strong>, <strong>condicionales</strong>, <strong>bucles</strong> y <strong>funciones</strong>.</p>
+        <article class="definition-card">
+          <h3>Definición clave</h3>
+          <p>En Programación 1, el foco está en resolver problemas paso a paso, con funciones o procedimientos que se llaman en un orden lógico y evitan el uso excesivo de saltos incondicionales.</p>
+        </article>
+
+        <article class="definition-card">
+          <h3>Principios importantes</h3>
+          <ul>
+            <li><strong>Secuencia</strong>: cada instrucción se ejecuta en orden.</li>
+            <li><strong>Selección</strong>: se toman decisiones con <code>if</code> y <code>switch</code>.</li>
+            <li><strong>Iteración</strong>: se repite código con <code>for</code>, <code>while</code> o <code>do...while</code>.</li>
+            <li><strong>Modularidad</strong>: se divide el programa en funciones pequeñas y reutilizables.</li>
+          </ul>
+        </article>
+
+        <article class="example-card">
+          <h3>Ejemplo en JavaScript: promedio de números</h3>
+          <pre><code class="code-block">// Función que calcula el promedio de un arreglo de números
+function calcularPromedio(numeros) {
+  let suma = 0;
+  for (let i = 0; i < numeros.length; i += 1) {
+    suma += numeros[i]; // Suma cada elemento del arreglo
+  }
+  return suma / numeros.length; // Devuelve el promedio
+}
+
+const datos = [8, 7, 10, 9];
+const promedio = calcularPromedio(datos);
+console.log('Promedio:', promedio);
+</code></pre>
+          <p>En este ejemplo se usa una función con un <strong>bucle for</strong> para recorrer el arreglo y se devuelve el resultado con <code>return</code>.</p>
+        </article>
+
+        <article class="example-card">
+          <h3>Ejemplo en JavaScript: condicionales y bucles</h3>
+          <pre><code class="code-block">// Función que muestra si una persona es mayor de edad
+function verificarEdad(edad) {
+  if (edad >= 18) {
+    return 'Puede acceder al contenido.';
+  } else {
+    return 'Necesita autorización de un adulto.';
+  }
+}
+
+const mensaje = verificarEdad(16);
+console.log(mensaje);
+
+// Bucle while para sumar números impares menores a 10
+let total = 0;
+let contador = 1;
+while (contador < 10) {
+  total += contador; // Suma el número actual
+  contador += 2; // Avanza al siguiente número impar
+}
+console.log('Suma de impares:', total);
+</code></pre>
+          <p>Este código demuestra una estructura de <strong>control de flujo</strong> con <code>if/else</code> y un bucle <code>while</code> para realizar cálculos repetitivos.</p>
+        </article>
+      </section>
+
+      <!-- Sección de Programación 2 -->
+      <section class="topic-section">
+        <h2>Programación 2: Estructuras de datos y POO</h2>
+        <p>La Programación 2 amplía el enfoque hacia el diseño de estructuras de datos eficientes y la programación orientada a objetos (POO), donde el código se organiza en <strong>clases</strong> y <strong>objetos</strong>.</p>
+        <article class="definition-card">
+          <h3>Estructuras de datos</h3>
+          <p>Las estructuras de datos son formas de almacenar y organizar información para poder acceder y manipularla de manera eficiente.</p>
+          <ul>
+            <li><strong>Array</strong>: colección ordenada de elementos.</li>
+            <li><strong>Lista enlazada</strong>: nodos conectados uno a uno.</li>
+            <li><strong>Pila</strong>: último en entrar, primero en salir.</li>
+            <li><strong>Cola</strong>: primero en entrar, primero en salir.</li>
+          </ul>
+        </article>
+
+        <article class="example-card">
+          <h3>Ejemplo de POO en JavaScript</h3>
+          <pre><code class="code-block">// Clase Persona en JavaScript con constructor y método
+class Persona {
+  constructor(nombre, edad) {
+    this.nombre = nombre;
+    this.edad = edad;
+  }
+
+  saludar() {
+    console.log(`Hola, soy ${this.nombre} y tengo ${this.edad} años.`);
+  }
+}
+
+const persona1 = new Persona('Ana', 23);
+persona1.saludar();
+</code></pre>
+          <p>Este ejemplo muestra una clase con atributos y un método. Se crea un objeto con <code>new</code> y se invoca su comportamiento.</p>
+        </article>
+      </section>
+
+      <!-- Sección comparativa -->
+      <section class="topic-section comparison-section">
+        <h2>Comparación rápida</h2>
+        <div class="comparison-grid">
+          <div class="comparison-item">
+            <h4>Programación 1</h4>
+            <p>Enfocada en algoritmos, flujos de control y funciones o procedimientos.</p>
+          </div>
+          <div class="comparison-item">
+            <h4>Programación 2</h4>
+            <p>Incluye diseño de datos, clases, objetos y principios de programación modular.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Diseñado como una guía estática para estudiar Programación 1 y 2.</p>
+    </footer>
+  </div>
+
+  <script>
+    const themeToggle = document.querySelector('.theme-toggle');
+    const pageBody = document.body;
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    const applyTheme = (theme) => {
+      pageBody.classList.toggle('light-theme', theme === 'light');
+      localStorage.setItem('theme', theme);
+    };
+
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+    applyTheme(initialTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = pageBody.classList.contains('light-theme') ? 'dark' : 'light';
+      applyTheme(nextTheme);
+    });
+  </script>
+</body>
+</html>
