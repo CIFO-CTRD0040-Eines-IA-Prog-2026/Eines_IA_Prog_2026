@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ca" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fonaments de Programació I i II — Apunts</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            fons: '#0F172A',
+            'fons-alt': '#1E293B',
+            text: '#E2E8F0',
+            'text-suau': '#94A3B8',
+            primari: '#22D3EE',
+            accent: '#A78BFA',
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-fons text-text font-sans antialiased">
+
+  <!-- Capçalera -->
+  <header class="bg-fons-alt border-b border-gray-700/50 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#" class="text-primari text-xl font-bold tracking-tight">FP I &amp; II</a>
+        <button id="menu-btn" class="md:hidden text-text-suau hover:text-primari focus:outline-none" aria-label="Menú">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        <nav id="menu" class="hidden md:flex gap-6 text-sm font-medium text-text-suau">
+          <a href="#variables" class="hover:text-primari transition">Variables</a>
+          <a href="#condicionals" class="hover:text-primari transition">Condicionals</a>
+          <a href="#bucles" class="hover:text-primari transition">Bucles</a>
+          <a href="#funcions" class="hover:text-primari transition">Funcions</a>
+        </nav>
+      </div>
+      <!-- Menú mòbil -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4 space-y-2 text-sm font-medium text-text-suau">
+        <a href="#variables" class="block px-2 py-1 rounded hover:bg-fons hover:text-primari transition">Variables</a>
+        <a href="#condicionals" class="block px-2 py-1 rounded hover:bg-fons hover:text-primari transition">Condicionals</a>
+        <a href="#bucles" class="block px-2 py-1 rounded hover:bg-fons hover:text-primari transition">Bucles</a>
+        <a href="#funcions" class="block px-2 py-1 rounded hover:bg-fons hover:text-primari transition">Funcions</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+    <!-- Portada -->
+    <section class="text-center py-16 md:py-24">
+      <h1 class="text-4xl md:text-5xl font-bold text-primari leading-tight">Fonaments de Programació<br />I &amp; II</h1>
+      <p class="mt-4 text-text-suau text-lg max-w-2xl mx-auto leading-relaxed">
+        Apunts complets amb exemples de codi per aprendre les bases de la programació: variables, condicionals, bucles i funcions.
+      </p>
+    </section>
+
+    <!-- Índex de temes -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-primari mb-6">Continguts</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <a href="#variables" class="bg-fons-alt rounded-xl p-5 border border-gray-700/50 hover:border-accent transition shadow-sm">
+          <span class="text-accent text-2xl font-bold block">01</span>
+          <span class="text-text font-semibold mt-1 block">Variables</span>
+          <span class="text-text-suau text-sm">Tipus, declaració i àmbit</span>
+        </a>
+        <a href="#condicionals" class="bg-fons-alt rounded-xl p-5 border border-gray-700/50 hover:border-accent transition shadow-sm">
+          <span class="text-accent text-2xl font-bold block">02</span>
+          <span class="text-text font-semibold mt-1 block">Condicionals</span>
+          <span class="text-text-suau text-sm">if, else, switch i operadors</span>
+        </a>
+        <a href="#bucles" class="bg-fons-alt rounded-xl p-5 border border-gray-700/50 hover:border-accent transition shadow-sm">
+          <span class="text-accent text-2xl font-bold block">03</span>
+          <span class="text-text font-semibold mt-1 block">Bucles</span>
+          <span class="text-text-suau text-sm">for, while i do-while</span>
+        </a>
+        <a href="#funcions" class="bg-fons-alt rounded-xl p-5 border border-gray-700/50 hover:border-accent transition shadow-sm">
+          <span class="text-accent text-2xl font-bold block">04</span>
+          <span class="text-text font-semibold mt-1 block">Funcions</span>
+          <span class="text-text-suau text-sm">Definició, paràmetres i retorn</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Variables -->
+    <section id="variables" class="mb-16 scroll-mt-20">
+      <h2 class="text-3xl font-bold text-primari mb-2">Variables</h2>
+      <p class="text-text-suau mb-6 leading-relaxed">
+        Una variable és un espai a la memòria que guarda un valor. Cada variable té un <strong class="text-text">tipus de dada</strong> que determina què pot contenir.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <article class="bg-fons-alt rounded-xl p-6 border border-gray-700/50 shadow-sm">
+          <h3 class="text-lg font-semibold text-accent mb-3">Tipus de dades</h3>
+          <ul class="space-y-2 text-sm leading-relaxed">
+            <li><code class="text-primari bg-fons px-1.5 py-0.5 rounded text-xs">int</code> — Nombres enters (ex: <code class="text-primari">5</code>, <code class="text-primari">-3</code>)</li>
+            <li><code class="text-primari bg-fons px-1.5 py-0.5 rounded text-xs">float</code> / <code class="text-primari bg-fons px-1.5 py-0.5 rounded text-xs">double</code> — Decimals (ex: <code class="text-primari">3.14</code>)</li>
+            <li><code class="text-primari bg-fons px-1.5 py-0.5 rounded text-xs">char</code> — Un sol caràcter (ex: <code class="text-primari">'A'</code>)</li>
+            <li><code class="text-primari bg-fons px-1.5 py-0.5 rounded text-xs">string</code> — Text (ex: <code class="text-primari">"Hola"</code>)</li>
+            <li><code class="text-primari bg-fons px-1.5 py-0.5 rounded text-xs">boolean</code> — Cert o fals (<code class="text-primari">true</code> / <code class="text-primari">false</code>)</li>
+          </ul>
+        </article>
+
+        <article class="bg-fons-alt rounded-xl p-6 border border-gray-700/50 shadow-sm">
+          <h3 class="text-lg font-semibold text-accent mb-3">Declaració i assignació</h3>
+          <p class="text-sm text-text-suau mb-3 leading-relaxed">Primer es declara el tipus i el nom, després s'hi assigna un valor.</p>
+          <pre class="bg-fons rounded-lg p-4 text-sm overflow-x-auto"><code><span class="text-accent">int</span> edat;
+edat = <span class="text-primari">20</span>;
+
+<span class="text-accent">float</span> preu = <span class="text-primari">19.99</span>;
+<span class="text-accent">string</span> nom = <span class="text-primari">"Anna"</span>;</code></pre>
+        </article>
+
+        <article class="bg-fons-alt rounded-xl p-6 border border-gray-700/50 shadow-sm">
+          <h3 class="text-lg font-semibold text-accent mb-3">Àmbit (scope)</h3>
+          <p class="text-sm text-text-suau mb-3 leading-relaxet">Les variables poden ser <strong class="text-text">globals</strong> (fora de funcions) o <strong class="text-text">locals</strong> (dins d'un bloc).</p>
+          <pre class="bg-fons rounded-lg p-4 text-sm overflow-x-auto"><code><span class="text-text-suau">// Variable global</span>
+<span class="text-accent">int</span> comptador = <span class="text-primari">0</span>;
+
+<span class="text-accent">void</span> exemple() {
+  <span class="text-text-suau">// Variable local</span>
+  <span class="text-accent">int</span> temporal = <span class="text-primari">5</span>;
+}</code></pre>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Condicionals -->
+    <section id="condicionals" class="mb-16 scroll-mt-20">
+      <h2 class="text-3xl font-bold text-primari mb-2">Condicionals</h2>
+      <p class="text-text-suau mb-6 leading-relaxed">
+        Les estructures condicionals permeten executar codi diferent segons si una condició és certa o falsa.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <article class="bg-fons-alt rounded-xl p-6 border border-gray-700/50 shadow-sm">
+          <h3 class="text-lg font-semibold text-accent mb-3">if / else</h3>
+          <pre class="bg-fons rounded-lg p-4 text-sm overflow-x-auto"><code><span class="text-accent">int</span> nota = <span class="text-primari">7</span>;
+
+<span class="text-accent">if</span> (nota &gt;= <span class="text-primari">5</span>) {
+  Console.WriteLine(<span class="text-primari">"Aprovat"</span>);
+} <span class="text-accent">else</span> {
+  Console.WriteLine(<span class="text-primari">"Suspès"</span>);
+}</code></pre>
+          <p class="text-sm text-text-suau mt-3 leading-relaxed">Si la condició és certa s'executa el primer bloc; si no, el segon.</p>
+        </article>
+
+        <article class="bg-fons-alt rounded-xl p-6 border border-gray-700/50 shadow-sm">
+          <h3 class="text-lg font-semibold text-accent mb-3">else if (anidats)</h3>
+          <pre class="bg-fons rounded-lg p-4 text-sm overflow-x-auto"><code><span class="text-accent">int</span> hora = <span class="text-primari">14</span>;
+
+<span class="text-accent">if</span> (hora &lt; <span class="text-primari">12</span>) {
+  Console.WriteLine(<span class="text-primari">"Bon dia"</span>);
+} <span class="text-accent">else if</span> (hora &lt; <span class="text-primari">18</span>) {
+  Console.WriteLine(<span class="text-primari">"Bona tarda"</span>);
+} <span class="text-accent">else</span> {
+  Console.WriteLine(<span class="text-primari">"Bona nit"</span>);
+}</code></pre>
+        </article>
+
+        <article class="bg-fons-alt rounded-xl p-6 border border-gray-700/50 shadow-sm">
+          <h3 class="text-lg font-semibold text-accent mb-3">switch</h3>
+          <pre class="bg-fons rounded-lg p-4 text-sm overflow-x-auto"><code><span class="text-accent">string</span> color = <span class="text-primari">"verd"</span>;
+
+<span class="text-accent">switch</span> (color) {
+  <span class="text-accent">case</span> <span class="text-primari">"vermell"</span>:
+    Console.WriteLine(<span class="text-primari">"Atura't"</span>);
+    <span class="text-accent">break</span>;
+  <span class="text-accent">case</span> <span class="text-primari">"verd"</span>:
+    Console.WriteLine(<span class="text-primari">"Endavant"</span>);
+    <span class="text-accent">break</span>;
+  <span class="text-accent">default</span>:
+    Console.WriteLine(<span class="text-primari">"Color no reconegut"</span>);
+    <span class="text-accent">break</span>;
+}</code></pre>
+        </article>
+
+        <article class="bg-fons-alt rounded-xl p-6 border border-gray-700/50 shadow-sm md:col-span-2 lg:col-span-3">
+          <h3 class="text-lg font-semibold text-accent mb-3">Operadors de comparació i lògics</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+            <div>
+              <h4 class="text-text font-semibold mb-2">Comparació</h4>
+              <ul class="space-y-1 text-text-suau">
+                <li><code class="text-primari">==</code> igual que</li>
+                <li><code class="text-primari">!=</code> diferent de</li>
+                <li><code class="text-primari">&lt;</code> / <code class="text-primari">&gt;</code> menor / major que</li>
+                <li><code class="text-primari">&lt;=</code> / <code class="text-primari">&gt;=</code> menor o igual / major o igual</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-text font-semibold mb-2">Lògics</h4>
+              <ul class="space-y-1 text-text-suau">
+                <li><code class="text-primari">&amp;&amp;</code> AND — les dues condicions han de ser certes</li>
+                <li><code class="text-primari">||</code> OR — almenys una condició ha de ser certa</li>
+                <li><code class="text-primari">!</code> NOT — inverteix el valor lògic</li>
+              </ul>
+            </div>
+          </div>
+          <pre class="bg-fons rounded-lg p-4 text-sm overflow-x-auto mt-4"><code><span class="text-accent">int</span> edat = <span class="text-primari">18</span>;
+<span class="text-accent">bool</span> teCarnet = <span class="text-accent">true</span>;
+
+<span class="text-accent">if</span> (edat &gt;= <span class="text-primari">18</span> &amp;&amp; teCarnet) {
+  Console.WriteLine(<span class="text-primari">"Pots conduir"</span>);
+}</code></pre>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Bucles -->
+    <section id="bucles" class="mb-16 scroll-mt-20">
+      <h2 class="text-3xl font-bold text-primari mb-2">Bucles</h2>
+      <p class="text-text-suau mb-6 leading-relaxed">
+        Els bucles repeteixen un bloc de codi mentre es compleixi una condició. N'hi ha de tres tipus principals.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <article class="bg-fons-alt rounded-xl p-6 border border-gray-700/50 shadow-sm">
+          <h3 class="text-lg font-semibold text-accent mb-3">for</h3>
+          <p class="text-sm text-text-suau mb-3 leading-relaxed">S'usa quan sabem <strong class="text-text">quantes vegades</strong> volem repetir.</p>
+          <pre class="bg-fons rounded-lg p-4 text-sm overflow-x-auto"><code><span class="text-text-suau">// Del 0 al 4</span>
+<span class="text-accent">for</span> (<span class="text-accent">int</span> i = <span class="text-primari">0</span>; i &lt; <span class="text-primari">5</span>; i++) {
+  Console.WriteLine(i);
+}</code></pre>
+        </article>
+
+        <article class="bg-fons-alt rounded-xl p-6 border border-gray-700/50 shadow-sm">
+          <h3 class="text-lg font-semibold text-accent mb-3">while</h3>
+          <p class="text-sm text-text-suau mb-3 leading-relaxed">Repeteix <strong class="text-text">mentre</strong> la condició sigui certa. Pot executar-se zero vegades.</p>
+          <pre class="bg-fons rounded-lg p-4 text-sm overflow-x-auto"><code><span class="text-accent">int</span> i = <span class="text-primari">0</span>;
+<span class="text-accent">while</span> (i &lt; <span class="text-primari">5</span>) {
+  Console.WriteLine(i);
+  i++;
+}</code></pre>
+        </article>
+
+        <article class="bg-fons-alt rounded-xl p-6 border border-gray-700/50 shadow-sm">
+          <h3 class="text-lg font-semibold text-accent mb-3">do-while</h3>
+          <p class="text-sm text-text-suau mb-3 leading-relaxed">Similar a <code class="text-primari">while</code>, però s'executa <strong class="text-text">almenys una vegada</strong>.</p>
+          <pre class="bg-fons rounded-lg p-4 text-sm overflow-x-auto"><code><span class="text-accent">int</span> i = <span class="text-primari">0</span>;
+<span class="text-accent">do</span> {
+  Console.WriteLine(i);
+  i++;
+} <span class="text-accent">while</span> (i &lt; <span class="text-primari">5</span>);</code></pre>
+        </article>
+
+        <article class="bg-fons-alt rounded-xl p-6 border border-gray-700/50 shadow-sm md:col-span-2 lg:col-span-3">
+          <h3 class="text-lg font-semibold text-accent mb-3">Comparativa: for vs while vs do-while</h3>
+          <div class="overflow-x-auto text-sm">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr class="border-b border-gray-600 text-text-suau text-left">
+                  <th class="py-2 pr-4">Bucle</th>
+                  <th class="py-2 pr-4">Quan s'usa</th>
+                  <th class="py-2 pr-4">Execució mínima</th>
+                  <th class="py-2 pr-4">Exemple típic</th>
+                </tr>
+              </thead>
+              <tbody class="text-text">
+                <tr class="border-b border-gray-700/50">
+                  <td class="py-2 pr-4 font-semibold text-primari">for</td>
+                  <td class="py-2 pr-4 text-text-suau">Nombre conegut d'iteracions</td>
+                  <td class="py-2 pr-4 text-text-suau">0</td>
+                  <td class="py-2 pr-4 text-text-suau">Recórrer un array</td>
+                </tr>
+                <tr class="border-b border-gray-700/50">
+                  <td class="py-2 pr-4 font-semibold text-primari">while</td>
+                  <td class="py-2 pr-4 text-text-suau">Condició variable, pot no entrar</td>
+                  <td class="py-2 pr-4 text-text-suau">0</td>
+                  <td class="py-2 pr-4 text-text-suau">Llegir fins a final de fitxer</td>
+                </tr>
+                <tr>
+                  <td class="py-2 pr-4 font-semibold text-primari">do-while</td>
+                  <td class="py-2 pr-4 text-text-suau">Condició variable, cal entrar almenys un cop</td>
+                  <td class="py-2 pr-4 text-text-suau">1</td>
+                  <td class="py-2 pr-4 text-text-suau">Menú d'opcions</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Funcions -->
+    <section id="funcions" class="mb-16 scroll-mt-20">
+      <h2 class="text-3xl font-bold text-primari mb-2">Funcions</h2>
+      <p class="text-text-suau mb-6 leading-relaxed">
+        Una funció és un bloc de codi reutilitzable que fa una tasca concreta. Pot rebre dades (paràmetres) i tornar un resultat.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <article class="bg-fons-alt rounded-xl p-6 border border-gray-700/50 shadow-sm">
+          <h3 class="text-lg font-semibold text-accent mb-3">Definició bàsica</h3>
+          <pre class="bg-fons rounded-lg p-4 text-sm overflow-x-auto"><code><span class="text-text-suau">// Funció que no rep res i no torna res</span>
+<span class="text-accent">void</span> saludar() {
+  Console.WriteLine(<span class="text-primari">"Hola!"</span>);
+}
+
+<span class="text-text-suau">// Crida</span>
+saludar();</code></pre>
+        </article>
+
+        <article class="bg-fons-alt rounded-xl p-6 border border-gray-700/50 shadow-sm">
+          <h3 class="text-lg font-semibold text-accent mb-3">Paràmetres</h3>
+          <pre class="bg-fons rounded-lg p-4 text-sm overflow-x-auto"><code><span class="text-accent">void</span> saludarPerNom(<span class="text-accent">string</span> nom) {
+  Console.WriteLine(<span class="text-primari">"Hola, "</span> + nom);
+}
+
+<span class="text-text-suau">// Crida amb argument</span>
+saludarPerNom(<span class="text-primari">"Maria"</span>);</code></pre>
+        </article>
+
+        <article class="bg-fons-alt rounded-xl p-6 border border-gray-700/50 shadow-sm">
+          <h3 class="text-lg font-semibold text-accent mb-3">Valor de retorn</h3>
+          <pre class="bg-fons rounded-lg p-4 text-sm overflow-x-auto"><code><span class="text-accent">int</span> suma(<span class="text-accent">int</span> a, <span class="text-accent">int</span> b) {
+  <span class="text-accent">return</span> a + b;
+}
+
+<span class="text-accent">int</span> resultat = suma(<span class="text-primari">3</span>, <span class="text-primari">5</span>);
+Console.WriteLine(resultat); <span class="text-text-suau">// 8</span></code></pre>
+        </article>
+
+        <article class="bg-fons-alt rounded-xl p-6 border border-gray-700/50 shadow-sm">
+          <h3 class="text-lg font-semibold text-accent mb-3">Funcions amb més d'un paràmetre</h3>
+          <pre class="bg-fons rounded-lg p-4 text-sm overflow-x-auto"><code><span class="text-accent">float</span> mitjana(<span class="text-accent">float</span> a, <span class="text-accent">float</span> b, <span class="text-accent">float</span> c) {
+  <span class="text-accent">return</span> (a + b + c) / <span class="text-primari">3</span>;
+}
+
+Console.WriteLine(mitjana(<span class="text-primari">7</span>, <span class="text-primari">8</span>, <span class="text-primari">9</span>)); <span class="text-text-suau">// 8</span></code></pre>
+        </article>
+
+        <article class="bg-fons-alt rounded-xl p-6 border border-gray-700/50 shadow-sm">
+          <h3 class="text-lg font-semibold text-accent mb-3">Funcions que en criden d'altres</h3>
+          <pre class="bg-fons rounded-lg p-4 text-sm overflow-x-auto"><code><span class="text-accent">int</span> doblar(<span class="text-accent">int</span> x) {
+  <span class="text-accent">return</span> x * <span class="text-primari">2</span>;
+}
+
+<span class="text-accent">int</span> quadruplicar(<span class="text-accent">int</span> y) {
+  <span class="text-accent">return</span> doblar(doblar(y));
+}
+
+Console.WriteLine(quadruplicar(<span class="text-primari">3</span>)); <span class="text-text-suau">// 12</span></code></pre>
+        </article>
+
+        <article class="bg-fons-alt rounded-xl p-6 border border-gray-700/50 shadow-sm">
+          <h3 class="text-lg font-semibold text-accent mb-3">Variables locals i globals</h3>
+          <pre class="bg-fons rounded-lg p-4 text-sm overflow-x-auto"><code><span class="text-accent">int</span> comptadorGlobal = <span class="text-primari">0</span>;
+
+<span class="text-accent">void</span> incrementa() {
+  comptadorGlobal++;
+}
+
+Console.WriteLine(comptadorGlobal); <span class="text-text-suau">// 0</span>
+incrementa();
+Console.WriteLine(comptadorGlobal); <span class="text-text-suau">// 1</span></code></pre>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-fons-alt border-t border-gray-700/50 py-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-text-suau text-sm">
+      <p class="leading-relaxed">Apunts de Fonaments de Programació I &amp; II — Curs 2025-2026</p>
+      <p class="mt-1">Fets amb Tailwind CSS</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Tancar el menú en fer clic a un enllaç
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>

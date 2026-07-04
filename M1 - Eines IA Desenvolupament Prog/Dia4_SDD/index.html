@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fonaments de Programació I i II</title>
+  <script src="https://cdn.tailwindcss.com/"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'fons': '#0F172A',
+            'fons-alt': '#1E293B',
+            'text': '#E2E8F0',
+            'text-suau': '#94A3B8',
+            'primari': '#22D3EE',
+            'accent': '#A78BFA',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-fons text-text">
+
+  <header class="sticky top-0 z-50 bg-fons-alt">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+      <div>
+        <h1 class="text-2xl font-bold text-primari md:text-3xl">Fonaments de Programació I i II</h1>
+        <p class="text-sm text-text-suau">Conceptes bàsics amb exemples de codi</p>
+      </div>
+      <button id="menu-btn" class="block p-2 text-text md:hidden" aria-label="Obre el menú de navegació">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <nav id="main-nav" class="hidden md:flex md:gap-6">
+        <a href="#programacio" class="block rounded px-2 py-1 text-text-suau transition hover:text-primari focus-visible:outline focus-visible:outline-2 focus-visible:outline-primari">Programació</a>
+        <a href="#variables" class="block rounded px-2 py-1 text-text-suau transition hover:text-primari focus-visible:outline focus-visible:outline-2 focus-visible:outline-primari">Variables</a>
+        <a href="#condicionals" class="block rounded px-2 py-1 text-text-suau transition hover:text-primari focus-visible:outline focus-visible:outline-2 focus-visible:outline-primari">Condicionals</a>
+        <a href="#bucles" class="block rounded px-2 py-1 text-text-suau transition hover:text-primari focus-visible:outline focus-visible:outline-2 focus-visible:outline-primari">Bucles</a>
+        <a href="#funcions" class="block rounded px-2 py-1 text-text-suau transition hover:text-primari focus-visible:outline focus-visible:outline-2 focus-visible:outline-primari">Funcions</a>
+        <a href="#arrays" class="block rounded px-2 py-1 text-text-suau transition hover:text-primari focus-visible:outline focus-visible:outline-2 focus-visible:outline-primari">Arrays</a>
+        <a href="#poo" class="block rounded px-2 py-1 text-text-suau transition hover:text-primari focus-visible:outline focus-visible:outline-2 focus-visible:outline-primari">POO</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-4 py-8 md:grid-cols-2 lg:grid-cols-3">
+
+    <section id="programacio" class="scroll-mt-24 rounded-xl bg-fons-alt p-6 shadow-lg transition-shadow hover:shadow-accent/10">
+      <h2 class="mb-2 text-xl font-semibold text-primari">Programació</h2>
+      <p class="mb-3 leading-relaxed text-text">La programació és el procés d'escriure instruccions que un ordinador pot executar. Un programa és una seqüència d'ordres que resol un problema concret.</p>
+      <div class="mb-3 space-y-1 text-sm text-text-suau">
+        <p><strong class="text-text">Algorisme:</strong> conjunt de passos ordenats per resoldre un problema.</p>
+        <p><strong class="text-text">Codi font:</strong> text escrit en un llenguatge de programació.</p>
+        <p><strong class="text-text">Compilador / Intèrpret:</strong> tradueix el codi a instruccions de màquina.</p>
+      </div>
+      <pre class="overflow-x-auto rounded-lg bg-fons p-4"><code class="text-sm leading-relaxed">// Hola, món!
+console.log("Hola, món!");</code></pre>
+    </section>
+
+    <section id="variables" class="scroll-mt-24 rounded-xl bg-fons-alt p-6 shadow-lg transition-shadow hover:shadow-accent/10">
+      <h2 class="mb-2 text-xl font-semibold text-primari">Variables</h2>
+      <p class="mb-3 leading-relaxed text-text">Una variable és un contenidor amb nom on es guarda un valor. En JavaScript es declaren amb <code class="text-accent">let</code>, <code class="text-accent">const</code> o <code class="text-accent">var</code>.</p>
+      <div class="mb-3 space-y-1 text-sm text-text-suau">
+        <p><strong class="text-text">let:</strong> valor que pot canviar.</p>
+        <p><strong class="text-text">const:</strong> valor constant (no es pot reassignar).</p>
+        <p><strong class="text-text">Tipus:</strong> number, string, boolean, undefined, null, object.</p>
+      </div>
+      <pre class="overflow-x-auto rounded-lg bg-fons p-4"><code class="text-sm leading-relaxed">let nom = "Anna";
+const edat = 20;
+let esEstudiant = true;
+console.log(nom, edat, esEstudiant);</code></pre>
+    </section>
+
+    <section id="condicionals" class="scroll-mt-24 rounded-xl bg-fons-alt p-6 shadow-lg transition-shadow hover:shadow-accent/10">
+      <h2 class="mb-2 text-xl font-semibold text-primari">Condicionals</h2>
+      <p class="mb-3 leading-relaxed text-text">Les estructures condicionals permeten executar diferents blocs de codi segons si una condició és certa o falsa.</p>
+      <div class="mb-3 space-y-1 text-sm text-text-suau">
+        <p><strong class="text-text">if / else:</strong> executa un bloc si la condició és certa, un altre si és falsa.</p>
+        <p><strong class="text-text">else if:</strong> encadenar múltiples condicions.</p>
+        <p><strong class="text-text">switch:</strong> alternativa per a múltiples valors concrets.</p>
+      </div>
+      <pre class="overflow-x-auto rounded-lg bg-fons p-4"><code class="text-sm leading-relaxed">let nota = 7;
+if (nota >= 5) {
+  console.log("Aprovat");
+} else {
+  console.log("Suspès");
+}</code></pre>
+    </section>
+
+    <section id="bucles" class="scroll-mt-24 rounded-xl bg-fons-alt p-6 shadow-lg transition-shadow hover:shadow-accent/10">
+      <h2 class="mb-2 text-xl font-semibold text-primari">Bucles</h2>
+      <p class="mb-3 leading-relaxed text-text">Els bucles repeteixen un bloc de codi mentre es compleixi una condició o per a cada element d'una col·lecció.</p>
+      <div class="mb-3 space-y-1 text-sm text-text-suau">
+        <p><strong class="text-text">for:</strong> repeteix un nombre conegut de vegades.</p>
+        <p><strong class="text-text">while:</strong> repeteix mentre la condició sigui certa.</p>
+        <p><strong class="text-text">for…of:</strong> itera sobre elements d'un array.</p>
+      </div>
+      <pre class="overflow-x-auto rounded-lg bg-fons p-4"><code class="text-sm leading-relaxed">for (let i = 1; i <= 5; i++) {
+  console.log("Compte: " + i);
+}</code></pre>
+    </section>
+
+    <section id="funcions" class="scroll-mt-24 rounded-xl bg-fons-alt p-6 shadow-lg transition-shadow hover:shadow-accent/10">
+      <h2 class="mb-2 text-xl font-semibold text-primari">Funcions</h2>
+      <p class="mb-3 leading-relaxed text-text">Una funció és un bloc de codi reutilitzable que fa una tasca concreta. Pot rebre paràmetres i tornar un valor.</p>
+      <div class="mb-3 space-y-1 text-sm text-text-suau">
+        <p><strong class="text-text">Funció amb nom:</strong> es declara amb <code class="text-accent">function</code>.</p>
+        <p><strong class="text-text">Paràmetres:</strong> valors d'entrada.</p>
+        <p><strong class="text-text">Return:</strong> valor de sortida.</p>
+        <p><strong class="text-text">Arrow function:</strong> sintaxi moderna <code class="text-accent">=&gt;</code>.</p>
+      </div>
+      <pre class="overflow-x-auto rounded-lg bg-fons p-4"><code class="text-sm leading-relaxed">function suma(a, b) {
+  return a + b;
+}
+console.log(suma(3, 4)); // 7</code></pre>
+    </section>
+
+    <section id="arrays" class="scroll-mt-24 rounded-xl bg-fons-alt p-6 shadow-lg transition-shadow hover:shadow-accent/10">
+      <h2 class="mb-2 text-xl font-semibold text-primari">Arrays</h2>
+      <p class="mb-3 leading-relaxed text-text">Un array és una estructura de dades que emmagatzema múltiples valors en una sola variable, accessibles per índex.</p>
+      <div class="mb-3 space-y-1 text-sm text-text-suau">
+        <p><strong class="text-text">Índex:</strong> posició de cada element (comença a 0).</p>
+        <p><strong class="text-text">length:</strong> nombre total d'elements.</p>
+        <p><strong class="text-text">Mètodes:</strong> <code class="text-accent">push()</code>, <code class="text-accent">pop()</code>, <code class="text-accent">map()</code>, <code class="text-accent">filter()</code>.</p>
+      </div>
+      <pre class="overflow-x-auto rounded-lg bg-fons p-4"><code class="text-sm leading-relaxed">let colors = ["vermell", "verd", "blau"];
+console.log(colors[0]); // "vermell"
+colors.push("groc");
+console.log(colors.length); // 4</code></pre>
+    </section>
+
+    <section id="poo" class="scroll-mt-24 rounded-xl bg-fons-alt p-6 shadow-lg transition-shadow hover:shadow-accent/10">
+      <h2 class="mb-2 text-xl font-semibold text-primari">Programació Orientada a Objectes (POO)</h2>
+      <p class="mb-3 leading-relaxed text-text">La POO organitza el codi en objectes que combinen dades (propietats) i comportament (mètodes). Les classes són les plantilles per crear objectes.</p>
+      <div class="mb-3 space-y-1 text-sm text-text-suau">
+        <p><strong class="text-text">Classe:</strong> plantilla d'un objecte.</p>
+        <p><strong class="text-text">Instància:</strong> objecte creat a partir d'una classe.</p>
+        <p><strong class="text-text">Propietats:</strong> atributs de l'objecte.</p>
+        <p><strong class="text-text">Mètodes:</strong> funcions de l'objecte.</p>
+      </div>
+      <pre class="overflow-x-auto rounded-lg bg-fons p-4"><code class="text-sm leading-relaxed">class Gat {
+  constructor(nom) {
+    this.nom = nom;
+  }
+  saluda() {
+    return `Soc ${this.nom}!`;
+  }
+}
+let meuGat = new Gat("Bigotes");
+console.log(meuGat.saluda());</code></pre>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-fons-alt px-4 py-6 text-center text-sm text-text-suau">
+    <p>Fonaments de Programació I i II — Apunts de classe</p>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mainNav = document.getElementById('main-nav');
+
+    if (menuBtn && mainNav) {
+      menuBtn.addEventListener('click', () => {
+        mainNav.classList.toggle('hidden');
+      });
+
+      mainNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mainNav.classList.add('hidden');
+        });
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+- Crea la pàgina d'apunts de "Fonaments de Programació I i II": un index.html amb Tailwind (CDN) i un style.css per als estils extra. Vull una capçalera amb menu responsive, un índex de temes i seccions per a variables, condicionals, bucles i funcions, amb exemples de codi. Bastant complerta per que en serveixi per aprendre programació. 
