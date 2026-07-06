@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apuntes de Programación</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="cabecera">
+  <h1 class="cabecera__titulo">Apuntes de Programación</h1>
+  <p class="cabecera__subtitulo">Fundamentos de Programación I y II</p>
+</header>
+
+<nav class="index">
+  <h2 class="index__titulo">Índice</h2>
+  <ul class="index__lista">
+    <li><a href="#algoritmes">Algoritmos y pseudocódigo</a></li>
+    <li><a href="#variables">Variables y tipos</a></li>
+    <li><a href="#operadors">Operadores</a></li>
+    <li><a href="#entrada-sortida">Entrada / salida</a></li>
+    <li><a href="#condicionals">Condicionales</a></li>
+    <li><a href="#bucles">Bucles</a></li>
+    <li><a href="#funcions">Funciones</a></li>
+    <li><a href="#llistes">Listas y colecciones</a></li>
+    <li><a href="#cadenes">Cadenas (strings)</a></li>
+    <li><a href="#recursivitat">Recursividad</a></li>
+    <li><a href="#poo">Programación orientada a objetos</a></li>
+    <li><a href="#fitxers">Ficheros</a></li>
+    <li><a href="#errors">Manejo de errores</a></li>
+  </ul>
+</nav>
+
+<main class="contenido">
+
+  <section id="fonaments-I" class="bloque">
+    <h2 class="bloque__titulo">Fundamentos de Programación I</h2>
+
+    <article id="algoritmes" class="tema">
+      <h3 class="tema__titulo">Algoritmos y pseudocódigo</h3>
+      <p class="tema__texto">Un algoritmo es una secuencia ordenada de pasos que resuelven un problema. El pseudocódigo es una forma de escribir algoritmos en un lenguaje cercano al natural, sin atarse a la sintaxis de un lenguaje de programación concreto.</p>
+      <pre class="tema__codigo"><code># Pseudocódigo: calcular la media de dos números
+leer a
+leer b
+media = (a + b) / 2
+escribir media</code></pre>
+    </article>
+
+    <article id="variables" class="tema">
+      <h3 class="tema__titulo">Variables y tipos</h3>
+      <p class="tema__texto">Las variables almacenan datos en la memoria. Cada variable tiene un tipo que determina qué clase de valor puede contener: enteros, decimales, texto o booleanos.</p>
+      <pre class="tema__codigo"><code># Variables y tipos en Python
+nombre = "Ana"        # str
+edad = 20             # int
+altura = 1.65         # float
+es_estudiante = True  # bool</code></pre>
+    </article>
+
+    <article id="operadors" class="tema">
+      <h3 class="tema__titulo">Operadores</h3>
+      <p class="tema__texto">Los operadores permiten hacer operaciones sobre los datos: aritméticas (+, -, *, /), de comparación (==, !=, &lt;, &gt;), lógicas (and, or, not) y de asignación (=).</p>
+      <pre class="tema__codigo"><code># Operadores en Python
+suma = 5 + 3            # 8
+es_mayor = 10 > 4       # True
+resultado = (5 > 2) and (3 < 7)  # True</code></pre>
+    </article>
+
+    <article id="entrada-sortida" class="tema">
+      <h3 class="tema__titulo">Entrada / salida</h3>
+      <p class="tema__texto">La entrada permite recibir datos del usuario con <code>input()</code>. La salida muestra información por pantalla con <code>print()</code>. Son la base de la comunicación entre el programa y el usuario.</p>
+      <pre class="tema__codigo"><code># Entrada y salida
+nombre = input("¿Cómo te llamas? ")
+print(f"¡Hola, {nombre}!")</code></pre>
+    </article>
+
+    <article id="condicionals" class="tema">
+      <h3 class="tema__titulo">Condicionales</h3>
+      <p class="tema__texto">Las estructuras condicionales (<code>if</code>, <code>elif</code>, <code>else</code>) permiten ejecutar diferentes bloques de código según si una condición es verdadera o falsa.</p>
+      <pre class="tema__codigo"><code># Condicional
+edad = int(input("¿Cuántos años tienes? "))
+if edad >= 18:
+    print("Eres mayor de edad")
+else:
+    print("Eres menor de edad")</code></pre>
+    </article>
+
+    <article id="bucles" class="tema">
+      <h3 class="tema__titulo">Bucles</h3>
+      <p class="tema__texto">Los bucles (<code>for</code> y <code>while</code>) repiten un bloque de código mientras se cumpla una condición o para cada elemento de una secuencia.</p>
+      <pre class="tema__codigo"><code># Bucle for
+for i in range(5):
+    print(f"Vuelta {i + 1}")
+
+# Bucle while
+contador = 0
+while contador < 3:
+    print("Hola")
+    contador += 1</code></pre>
+    </article>
+
+    <article id="funcions" class="tema">
+      <h3 class="tema__titulo">Funciones</h3>
+      <p class="tema__texto">Las funciones son bloques de código reutilizables que realizan una tarea concreta. Se definen con <code>def</code> y pueden recibir parámetros y devolver valores.</p>
+      <pre class="tema__codigo"><code># Función
+def saludar(nombre):
+    return f"¡Hola, {nombre}!"
+
+mensaje = saludar("Carlos")
+print(mensaje)</code></pre>
+    </article>
+  </section>
+
+  <section id="fonaments-II" class="bloque">
+    <h2 class="bloque__titulo">Fundamentos de Programación II</h2>
+
+    <article id="llistes" class="tema">
+      <h3 class="tema__titulo">Listas y colecciones</h3>
+      <p class="tema__texto">Las listas almacenan múltiples valores en una sola variable. Pueden contener elementos de diferentes tipos y se pueden modificar añadiendo, quitando o cambiando elementos.</p>
+      <pre class="tema__codigo"><code># Listas
+numeros = [1, 2, 3, 4, 5]
+numeros.append(6)
+print(numeros[0])   # 1
+print(len(numeros)) # 6</code></pre>
+    </article>
+
+    <article id="cadenes" class="tema">
+      <h3 class="tema__titulo">Cadenas (strings)</h3>
+      <p class="tema__texto">Las cadenas son secuencias de caracteres. Python ofrece muchas operaciones para trabajar con texto: concatenar, dividir, buscar, reemplazar y mucho más.</p>
+      <pre class="tema__codigo"><code># Cadenas
+texto = "Programación"
+print(texto.upper())       # PROGRAMACIÓN
+print(texto[0:5])          # Progr
+print(len(texto))          # 12</code></pre>
+    </article>
+
+    <article id="recursivitat" class="tema">
+      <h3 class="tema__titulo">Recursividad</h3>
+      <p class="tema__texto">Una función recursiva es aquella que se llama a sí misma para resolver un problema dividiéndolo en subproblemas más pequeños. Se necesita un caso base para evitar repeticiones infinitas.</p>
+      <pre class="tema__codigo"><code># Factorial recursivo
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5))  # 120</code></pre>
+    </article>
+
+    <article id="poo" class="tema">
+      <h3 class="tema__titulo">Programación orientada a objetos</h3>
+      <p class="tema__texto">La POO organiza el código en clases y objetos. Una clase define un modelo con atributos (datos) y métodos (funciones), y los objetos son instancias de esa clase.</p>
+      <pre class="tema__codigo"><code># Clase y objeto
+class Perro:
+    def __init__(self, nombre):
+        self.nombre = nombre
+    def ladrar(self):
+        return f"{self.nombre} dice guau!"
+
+perro1 = Perro("Rex")
+print(perro1.ladrar())</code></pre>
+    </article>
+
+    <article id="fitxers" class="tema">
+      <h3 class="tema__titulo">Ficheros</h3>
+      <p class="tema__texto">Trabajar con ficheros permite guardar datos de manera persistente. Se pueden abrir en modo lectura (r), escritura (w) o añadir (a) usando <code>open()</code>.</p>
+      <pre class="tema__codigo"><code># Leer un fichero
+with open("datos.txt", "r") as f:
+    contenido = f.read()
+    print(contenido)
+
+# Escribir un fichero
+with open("salida.txt", "w") as f:
+    f.write("¡Hola, mundo!")</code></pre>
+    </article>
+
+    <article id="errors" class="tema">
+      <h3 class="tema__titulo">Manejo de errores</h3>
+      <p class="tema__texto">El manejo de errores con <code>try</code> / <code>except</code> permite controlar excepciones en tiempo de ejecución y evitar que el programa se rompa cuando algo sale mal.</p>
+      <pre class="tema__codigo"><code># Manejo de errores
+try:
+    a = int(input("Introduce un número: "))
+    b = int(input("Introduce otro: "))
+    print(f"División: {a / b}")
+except ZeroDivisionError:
+    print("No se puede dividir entre cero")
+except ValueError:
+    print("Debes introducir un número válido")</code></pre>
+    </article>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <p class="pie__texto">Apuntes de Programación &mdash; CIFO Violeta 2026</p>
+</footer>
+
+</body>
+</html>

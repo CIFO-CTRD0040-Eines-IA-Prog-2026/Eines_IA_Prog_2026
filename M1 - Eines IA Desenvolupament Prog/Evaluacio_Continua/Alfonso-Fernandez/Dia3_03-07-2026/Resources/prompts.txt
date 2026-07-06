@@ -1,0 +1,10 @@
+En modo "Plan": Crea la web de apuntes con index.html y styles.css. 
+
+Quiero:
+- Una cabecera con el título y un subtítulo.
+- Un índice de navegación con enlaces internos.
+- Bloque 'Fundamentos de Programación I' con secciones: algoritmos y seudocódigo, variables y tipos, operadores, entrada/salida, condicionales, bucles y funciones.
+- Bloque 'Fundamentos de Programación II' con secciones: listas y colecciones, cadenas (strings), recursividad, programación orientada a objetos, archivos y manejo de errores.
+- Cada sección: una breve explicación y un ejemplo de código en Python.
+
+Sobria y legible, respetando el AGENTS.md. Preséntame el plan antes de tocar nada.

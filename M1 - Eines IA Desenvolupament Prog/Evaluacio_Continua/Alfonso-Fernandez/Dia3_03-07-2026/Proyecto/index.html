@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="site-title">CIFOs de Cataluña</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="progress-bar" id="progress-bar"></div>
+<button id="btn-arriba" class="btn-arriba" title="Volver arriba">&#8593;</button>
+<div class="top-bar">
+  <span class="top-bar__title">CIFO</span>
+  <div class="top-bar__right">
+    <div class="top-bar__langs">
+      <button class="lang-btn lang-btn--active" data-lang="es">
+        <span class="flag flag--es"></span> ES
+      </button>
+      <button class="lang-btn" data-lang="cat">
+        <span class="flag flag--cat"></span> CAT
+      </button>
+      <button class="lang-btn" data-lang="en">
+        <span class="flag flag--en"></span> EN
+      </button>
+    </div>
+    <button id="toggle-modo" class="toggle-modo">&#9728;</button>
+  </div>
+</div>
+
+<header class="header">
+  <h1 data-i18n="site-title">CIFOs de Cataluña</h1>
+  <p class="header__subtitulo" data-i18n="site-subtitle">Centros de Formación Profesional para el empleo</p>
+  <nav class="nav">
+    <a href="#que-son" class="nav__link" data-i18n="nav-que-son">¿Qué son?</a>
+    <a href="#cifos" class="nav__link" data-i18n="nav-listado">Listado de CIFOs</a>
+    <a href="#datos" class="nav__link" data-i18n="nav-datos">Datos clave</a>
+  </nav>
+</header>
+
+<main class="main">
+
+  <section id="que-son" class="seccion">
+    <h2 class="seccion__titulo" data-i18n="sec1-title">¿Qué son los CIFOs?</h2>
+    <p data-i18n="sec1-p1">Los <strong>CIFOs</strong> (Centros de Innovación y Formación para el Empleo) son centros públicos del <em>Servicio Público de Empleo de Cataluña</em> que ofrecen formación profesional orientada al trabajo. Imparten cursos gratuitos para trabajadores en activo y personas en situación de desempleo, con el objetivo de mejorar la cualificación profesional y la empleabilidad.</p>
+    <p data-i18n="sec1-p2">Estos centros disponen de instalaciones modernas y equipamiento actualizado para impartir formación en sectores como la informática, la industria, la hostelería o la sanidad, entre otros.</p>
+  </section>
+
+  <section id="cifos" class="seccion">
+    <h2 class="seccion__titulo" data-i18n="sec2-title">CIFOs en Cataluña</h2>
+    <p data-i18n="sec2-p">Actualmente hay varios CIFOs repartidos por el territorio catalán. A continuación se muestran los principales:</p>
+
+    <div class="filtros">
+      <button class="filtro-btn filtro-btn--active" data-sector="todos" data-i18n="filtro-todos">Todos</button>
+      <button class="filtro-btn" data-sector="tic" data-i18n="filtro-tic">TIC</button>
+      <button class="filtro-btn" data-sector="graficas" data-i18n="filtro-graficas">Gráficas</button>
+      <button class="filtro-btn" data-sector="mecanica" data-i18n="filtro-mecanica">Mecánica</button>
+      <button class="filtro-btn" data-sector="quimica" data-i18n="filtro-quimica">Química</button>
+      <button class="filtro-btn" data-sector="agro" data-i18n="filtro-agro">Agroalimentario</button>
+      <button class="filtro-btn" data-sector="energia" data-i18n="filtro-energia">Energía</button>
+    </div>
+
+    <div class="tarjetas">
+
+      <article class="tarjeta" data-sector="tic">
+        <div class="tarjeta__foto">
+          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=220&fit=crop&auto=format" alt="CIFO Barcelona La Violeta" loading="lazy">
+        </div>
+        <h3 class="tarjeta__titulo" data-i18n="card-1-title">CIFO Barcelona 'La Violeta'</h3>
+        <p class="tarjeta__ubicacion" data-i18n="card-1-location">Barcelona</p>
+        <p class="tarjeta__descripcion" data-i18n="card-1-desc">Referente en informática y comunicaciones. Programación, administración de servidores, seguridad y sistemas microinformáticos.</p>
+        <div class="tarjeta__mapa">
+          <iframe src="https://www.google.com/maps?q=CIFO+Barcelona+La+Violeta,+Barcelona&output=embed" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <a href="https://serveiocupacio.gencat.cat/cifolavioleta" target="_blank" rel="noopener" class="tarjeta__enlace" title="serveiocupacio.gencat.cat/cifolavioleta">&#128279; CIFO Barcelona 'La Violeta'</a>
+      </article>
+
+      <article class="tarjeta" data-sector="graficas">
+        <div class="tarjeta__foto">
+          <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=220&fit=crop&auto=format" alt="CIFO L'Hospitalet" loading="lazy">
+        </div>
+        <h3 class="tarjeta__titulo" data-i18n="card-2-title">CIFO L'Hospitalet</h3>
+        <p class="tarjeta__ubicacion" data-i18n="card-2-location">L'Hospitalet de Llobregat</p>
+        <p class="tarjeta__descripcion" data-i18n="card-2-desc">Especializado en artes gráficas, imagen y sonido. Diseño gráfico, multimedia, audiovisual y programación de apps.</p>
+        <div class="tarjeta__mapa">
+          <iframe src="https://www.google.com/maps?q=CIFO+L'Hospitalet+de+Llobregat&output=embed" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <a href="https://serveiocupacio.gencat.cat/es/soc/com-ens-organitzem/centres-propis-formacio-cifo-cfpa/centres-dinnovacio-i-formacio-ocupacional-cifo/cifo-hospitalet-de-llobregat/" target="_blank" rel="noopener" class="tarjeta__enlace" title="serveiocupacio.gencat.cat /cifo-hospitalet">&#128279; CIFO L'Hospitalet</a>
+      </article>
+
+      <article class="tarjeta" data-sector="mecanica">
+        <div class="tarjeta__foto">
+          <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=220&fit=crop&auto=format" alt="CIFO Sabadell" loading="lazy">
+        </div>
+        <h3 class="tarjeta__titulo" data-i18n="card-3-title">CIFO Sabadell</h3>
+        <p class="tarjeta__ubicacion" data-i18n="card-3-location">Sabadell (Vallès Occidental)</p>
+        <p class="tarjeta__descripcion" data-i18n="card-3-desc">Centro especializado en instalación y mantenimiento, logística, fabricación mecánica y electricidad-electrónica.</p>
+        <div class="tarjeta__mapa">
+          <iframe src="https://www.google.com/maps?q=CIFO+Sabadell,+Vallès+Occidental&output=embed" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <a href="https://serveiocupacio.gencat.cat/cifosabadell" target="_blank" rel="noopener" class="tarjeta__enlace" title="serveiocupacio.gencat.cat/cifosabadell">&#128279; CIFO Sabadell</a>
+      </article>
+
+      <article class="tarjeta" data-sector="quimica">
+        <div class="tarjeta__foto">
+          <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=220&fit=crop&auto=format" alt="CIFO Tarragona" loading="lazy">
+        </div>
+        <h3 class="tarjeta__titulo" data-i18n="card-4-title">CIFO Tarragona</h3>
+        <p class="tarjeta__ubicacion" data-i18n="card-4-location">Tarragona</p>
+        <p class="tarjeta__descripcion" data-i18n="card-4-desc">Referente en química, fabricación mecánica y seguridad y medio ambiente. Formación vinculada al sector químico e industrial.</p>
+        <div class="tarjeta__mapa">
+          <iframe src="https://www.google.com/maps?q=CIFO+Tarragona&output=embed" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <a href="https://serveiocupacio.gencat.cat/cifotarragona" target="_blank" rel="noopener" class="tarjeta__enlace" title="serveiocupacio.gencat.cat/cifotarragona">&#128279; CIFO Tarragona</a>
+      </article>
+
+      <article class="tarjeta" data-sector="agro">
+        <div class="tarjeta__foto">
+          <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400&h=220&fit=crop&auto=format" alt="CIFO Lleida" loading="lazy">
+        </div>
+        <h3 class="tarjeta__titulo" data-i18n="card-5-title">CIFO Lleida</h3>
+        <p class="tarjeta__ubicacion" data-i18n="card-5-location">Lleida (Segrià)</p>
+        <p class="tarjeta__descripcion" data-i18n="card-5-desc">Orientado a instalación y mantenimiento, fabricación mecánica, electricidad-electrónica y energía y agua. Sector agroalimentario.</p>
+        <div class="tarjeta__mapa">
+          <iframe src="https://www.google.com/maps?q=CIFO+Lleida&output=embed" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <a href="https://serveiocupacio.gencat.cat/cifolleida" target="_blank" rel="noopener" class="tarjeta__enlace" title="serveiocupacio.gencat.cat/cifolleida">&#128279; CIFO Lleida</a>
+      </article>
+
+      <article class="tarjeta" data-sector="quimica">
+        <div class="tarjeta__foto">
+          <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=400&h=220&fit=crop&auto=format" alt="CIFO Salt" loading="lazy">
+        </div>
+        <h3 class="tarjeta__titulo" data-i18n="card-6-title">CIFO Salt</h3>
+        <p class="tarjeta__ubicacion" data-i18n="card-6-location">Salt (Gironès)</p>
+        <p class="tarjeta__descripcion" data-i18n="card-6-desc">Especializado en industrias alimentarias, química y fabricación mecánica. Sectores tradicionales y emergentes del territorio.</p>
+        <div class="tarjeta__mapa">
+          <iframe src="https://www.google.com/maps?q=CIFO+Salt,+Girona&output=embed" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <a href="https://serveiocupacio.gencat.cat/cifosalt" target="_blank" rel="noopener" class="tarjeta__enlace" title="serveiocupacio.gencat.cat/cifosalt">&#128279; CIFO Salt</a>
+      </article>
+
+      <article class="tarjeta" data-sector="mecanica">
+        <div class="tarjeta__foto">
+          <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=220&fit=crop&auto=format" alt="CIFO Sant Feliu" loading="lazy">
+        </div>
+        <h3 class="tarjeta__titulo" data-i18n="card-7-title">CIFO Sant Feliu</h3>
+        <p class="tarjeta__ubicacion" data-i18n="card-7-location">Sant Feliu de Llobregat</p>
+        <p class="tarjeta__descripcion" data-i18n="card-7-desc">Centro de Referencia Nacional en fabricación mecánica. Mecanizado CNC, soldadura, automatización y robótica industrial.</p>
+        <div class="tarjeta__mapa">
+          <iframe src="https://www.google.com/maps?q=CIFO+Sant+Feliu+de+Llobregat&output=embed" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <a href="https://serveiocupacio.gencat.cat/cifosantfeliu" target="_blank" rel="noopener" class="tarjeta__enlace" title="serveiocupacio.gencat.cat/cifosantfeliu">&#128279; CIFO Sant Feliu</a>
+      </article>
+
+      <article class="tarjeta" data-sector="energia">
+        <div class="tarjeta__foto">
+          <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=220&fit=crop&auto=format" alt="CIFO Santa Coloma" loading="lazy">
+        </div>
+        <h3 class="tarjeta__titulo" data-i18n="card-8-title">CIFO Santa Coloma</h3>
+        <p class="tarjeta__ubicacion" data-i18n="card-8-location">Santa Coloma de Gramenet</p>
+        <p class="tarjeta__descripcion" data-i18n="card-8-desc">Especializado en economía verde: agraria, seguridad y medio ambiente, energía y agua, instalaciones y electricidad-electrónica.</p>
+        <div class="tarjeta__mapa">
+          <iframe src="https://www.google.com/maps?q=CIFO+Santa+Coloma+de+Gramenet&output=embed" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <a href="https://serveiocupacio.gencat.cat/cifosantacoloma" target="_blank" rel="noopener" class="tarjeta__enlace" title="serveiocupacio.gencat.cat/cifosantacoloma">&#128279; CIFO Santa Coloma</a>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="datos" class="seccion">
+    <h2 class="seccion__titulo" data-i18n="sec3-title">Datos clave</h2>
+    <p data-i18n="sec3-p">Algunos datos de interés sobre la red de CIFOs:</p>
+
+    <ul class="datos-clave">
+      <li data-i18n="dato-1" data-numero="8"><strong>Total CIFOs en Cataluña:</strong> <span class="contar">0</span></li>
+      <li data-i18n="dato-2" data-numero="4"><strong>Provincias cubiertas:</strong> <span class="contar">0</span></li>
+      <li data-i18n="dato-3" data-numero="+400"><strong>Cursos anuales aprox.:</strong> <span class="contar">0</span></li>
+      <li data-i18n="dato-4" data-numero="+8000"><strong>Alumnos formados/año:</strong> <span class="contar">0</span></li>
+      <li data-i18n="dato-5"><strong>Sectores principales:</strong> TIC, industria química, fabricación mecánica, artes gráficas</li>
+    </ul>
+
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p data-i18n="footer-text">Información sobre CIFOs de Cataluña — Propuesta educativa</p>
+  <p class="footer__nota" data-i18n="footer-note">Los datos mostrados son orientativos. Consulta la web oficial del SOC para más información.</p>
+</footer>
+
+<script src="lang.js"></script>
+<script src="toggle.js"></script>
+</body>
+</html>

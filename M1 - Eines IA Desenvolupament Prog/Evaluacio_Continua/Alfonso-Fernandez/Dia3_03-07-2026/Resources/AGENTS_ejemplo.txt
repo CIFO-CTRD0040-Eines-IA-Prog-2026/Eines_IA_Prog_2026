@@ -1,0 +1,8 @@
+# AGENTS.md — web_1_opencode
+
+- **Proyecto: **Web estatica de apuntes de "Fundamentos de Programación I y II"
+- **Stack: **Sólo HTML, CSS. Nada de JS ni Frameworks
+- **Estructura: **index.html y style.css en C:\Users\AdministradorCIFO\Desktop\Herramientas_IA_Prog_2026\M1 - Herramientas IA Desarrollo Prog\Dia2\web_1_opencode
+- **Convenciones: **nombres de las clases CSS con minúscula y guión; idioma del contenido en catalán. Código bien formateado.
+- **Flujo: **antes de un gran cambio, propone un plan y espera mi validación.
+- **Reglas: **Importando si te pregunto algo sobre el código, sólo responde y no hagas ninguna acción. Sólo lee en el ámbito de esta carpeta: C:\Users\AdministradorCIFO\Desktop\Herramientas_IA_Prog_2026\M1 - Herramientas IA Desarrollo Prog\Dia2\web_1_opencode
