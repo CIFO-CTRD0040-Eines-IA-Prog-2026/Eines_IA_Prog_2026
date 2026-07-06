@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriVida | Revista d'Alimentació Saludable i Benestar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Checkbox oculta per al mode fosc manual (CSS pur) -->
+    <input type="checkbox" id="dark-mode-toggle" class="dark-mode-checkbox">
+
+    <div class="page">
+
+    <!-- Header / Capçalera de la Revista -->
+    <header class="header-revista">
+        <div class="header-container">
+            <span class="header-data">Nº 12 — Juliol 2026</span>
+            <h1 class="logo-revista">NutriVida</h1>
+            <p class="tagline-revista">La teva guia diària d'alimentació conscient i saludable</p>
+
+            <!-- Interruptor de mode fosc (CSS pur) -->
+            <div class="dark-mode-switch">
+                <label for="dark-mode-toggle" class="dark-mode-label">
+                    <span class="dm-icon dm-sun">☀️</span>
+                    <span class="dm-icon dm-moon">🌙</span>
+                </label>
+            </div>
+
+            <nav class="nav-revista">
+                <a href="#consells" class="nav-link">Consells</a>
+                <a href="#propietats" class="nav-link">Propietats</a>
+                <a href="#receptes" class="nav-link">Receptes</a>
+                <a href="#rutines" class="nav-link">Rutines de Temporada</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Section / Portada -->
+        <section class="hero-section">
+            <div class="hero-card">
+                <span class="hero-tag">L'Article Destacat</span>
+                <h2 class="hero-title">L'art de menjar conscient: Com transformar la teva salut amb petits canvis diaris</h2>
+                <p class="hero-excerpt">Menjar bé no és sinònim de restricció, sinó de connexió. Descobreix com la teva relació amb els aliments pot millorar la teva energia, el teu estat d'ànim i el teu benestar general a través de la nutrició real.</p>
+                <div class="hero-meta">Per Clara Soler • 5 min de lectura</div>
+            </div>
+        </section>
+
+        <!-- Consells Diaris Section -->
+        <section id="consells" class="consells-section">
+            <h3 class="section-title">Consells del dia a dia</h3>
+            <p class="section-subtitle">Petits hàbits diaris que marquen una gran diferència a llarg termini</p>
+            <div class="consells-grid">
+                <article class="consell-card">
+                    <span class="consell-num">01</span>
+                    <h4 class="consell-title">La regla d'or de la hidratació intel·ligent</h4>
+                    <p class="consell-text">No esperis a tenir set. L'aigua és el vehicle principal dels nutrients al nostre cos. Acompanya els teus matins amb una infusió de farigola o llimona per activar el sistema digestiu de manera suau i natural.</p>
+                </article>
+                <article class="consell-card">
+                    <span class="consell-num">02</span>
+                    <h4 class="consell-title">El mètode del plat d'Harvard</h4>
+                    <p class="consell-text">Distribueix els teus àpats principals pensant en el plat ideal: un 50% de verdures i hortalisses variades, un 25% de proteïna de qualitat (llegums, peix, ous o tofu) i un 25% de cereals integrals o tubercles.</p>
+                </article>
+                <article class="consell-card">
+                    <span class="consell-num">03</span>
+                    <h4 class="consell-title">La veritat sobre els greixos saludables</h4>
+                    <p class="consell-text">Els greixos de bona qualitat són essencials per al cervell i la regulació hormonal. Incorpora diàriament un grapat de fruits secs naturals, alvocat o un bon raig d'oli d'oliva verge extra obtingut en fred.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Propietats dels Aliments Section -->
+        <section id="propietats" class="propietats-section">
+            <div class="propietats-container">
+                <h3 class="section-title text-center">Superaliments de proximitat</h3>
+                <p class="section-subtitle text-center">Analitzem els nutrients que amaguen els ingredients més bàsics del teu rebost</p>
+                
+                <div class="propietats-grid">
+                    <div class="aliment-card">
+                        <div class="aliment-header">
+                            <span class="aliment-icon">🥬</span>
+                            <h4 class="aliment-name">Espinacs frescs</h4>
+                        </div>
+                        <ul class="aliment-beneficis">
+                            <li><strong>Alt contingut en ferro:</strong> Tot i que cal acompanyar-los amb vitamina C (com llimona) per absorbir-lo millor.</li>
+                            <li><strong>Rics en àcid fòlic:</strong> Una vitamina clau per a la regeneració cel·lular i el correcte funcionament del sistema nerviós.</li>
+                            <li><strong>Antioxidants potents:</strong> Contenen luteïna i zeaxantina, que protegeixen activament la salut ocular.</li>
+                        </ul>
+                    </div>
+
+                    <div class="aliment-card">
+                        <div class="aliment-header">
+                            <span class="aliment-icon">🌱</span>
+                            <h4 class="aliment-name">Llavors de xia</h4>
+                        </div>
+                        <ul class="aliment-beneficis">
+                            <li><strong>La reina de l'Omega-3:</strong> Essencial per combatre la inflamació interna de l'organisme de manera natural.</li>
+                            <li><strong>Fibra soluble:</strong> En contacte amb l'aigua formen un mucílag que millora el trànsit intestinal i la sacietat.</li>
+                            <li><strong>Font de calci vegetal:</strong> Una petita cullerada aporta minerals vitals per al manteniment ossi.</li>
+                        </ul>
+                    </div>
+
+                    <div class="aliment-card">
+                        <div class="aliment-header">
+                            <span class="aliment-icon">🧄</span>
+                            <h4 class="aliment-name">All lila de l'hort</h4>
+                        </div>
+                        <ul class="aliment-beneficis">
+                            <li><strong>Al·licina activa:</strong> Un potent compost amb propietats antibiòtiques, antivíriques i antifúngiques naturals.</li>
+                            <li><strong>Protector del cor:</strong> Ajuda a regular la pressió arterial i millora notablement la circulació de la sang.</li>
+                            <li><strong>Desintoxicant:</strong> Estimula els enzims hepàtics ajudant el cos a eliminar substàncies nocives.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Receptes Section -->
+        <section id="receptes" class="receptes-section">
+            <h3 class="section-title">Receptes del mes</h3>
+            <p class="section-subtitle">Plats ràpids, deliciosos i rics en nutrients per omplir el teu cos de vitalitat</p>
+            
+            <div class="receptes-grid">
+                <!-- Recepta 1 -->
+                <article class="recepta-card">
+                    <div class="recepta-img-placeholder recipe-quinoa">
+                        <span class="recepta-tag">Snapejar i Guanyar</span>
+                    </div>
+                    <div class="recepta-body">
+                        <h4 class="recepta-title">Amanida de quinoa, edamame i alvocat</h4>
+                        <p class="recepta-desc">Un plat fresc, alt en proteïna vegetal de qualitat i greixos saludables, perfecte per emportar-se a la feina o menjar després d'entrenar.</p>
+                        <div class="recepta-info">
+                            <span>⏱️ 20 min</span>
+                            <span>🥗 Dificultat fàcil</span>
+                        </div>
+                        <div class="recepta-ingredients">
+                            <h5>Ingredients principals:</h5>
+                            <ul>
+                                <li>1 tassa de quinoa cuita</li>
+                                <li>1/2 tassa d'edamame pelat</li>
+                                <li>1/2 alvocat a daus</li>
+                                <li>Tomàquets cirera i cogombre</li>
+                                <li>Vinagreta de llimona i sèsam</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Recepta 2 -->
+                <article class="recepta-card">
+                    <div class="recepta-img-placeholder recipe-carbassa">
+                        <span class="recepta-tag">Conconfort d'Hivern</span>
+                    </div>
+                    <div class="recepta-body">
+                        <h4 class="recepta-title">Crema de carbassa amb curri i llavors</h4>
+                        <p class="recepta-desc">Una crema suau de temporada, aromatitzada amb un toc de curri i coco per a un sopar reconfortant, lliure de digestions pesades.</p>
+                        <div class="recepta-info">
+                            <span>⏱️ 35 min</span>
+                            <span>🍲 Dificultat molt fàcil</span>
+                        </div>
+                        <div class="recepta-ingredients">
+                            <h5>Ingredients principals:</h5>
+                            <ul>
+                                <li>500g de carbassa dolça</li>
+                                <li>1 ceba de Figueres</li>
+                                <li>200ml de llet de coco light</li>
+                                <li>1 culleradeta de curri en pols</li>
+                                <li>Llavors de carbassa per decorar</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Rutines Section (Interactive Tabs) -->
+        <section id="rutines" class="rutines-section">
+            <div class="rutines-container">
+                <h3 class="section-title text-center">Rutines de Nutrició de Temporada</h3>
+                <p class="section-subtitle text-center">Tria l'opció que millor s'adapti al teu estil de vida i descarrega una pauta setmanal orientativa</p>
+
+                <!-- Tabs Container en CSS pur -->
+                <div class="tabs-wrapper">
+                    <!-- Inputs de ràdio invisibles per a la interactivitat -->
+                    <input type="radio" id="tab-vegana" name="rutines-group" class="routine-tab-input" checked>
+                    <input type="radio" id="tab-vegetariana" name="rutines-group" class="routine-tab-input">
+
+                    <!-- Etiquetes que fan de botons per seleccionar el ràdio -->
+                    <div class="tabs-nav">
+                        <label for="tab-vegana" class="tab-btn label-vegana">Rutina Vegana</label>
+                        <label for="tab-vegetariana" class="tab-btn label-vegetariana">Rutina Vegetariana</label>
+                    </div>
+
+                    <!-- Continguts de les pestanyes -->
+                    <div class="tab-panels">
+                        <!-- Panell Vegana -->
+                        <div class="tab-panel panel-vegana">
+                            <div class="panel-header">
+                                <h4>Pauta diària 100% vegetal</h4>
+                                <p>Energia neta de fonts vegetals lliures de qualsevol derivat animal. Centrada en el ferro, proteïna vegetal combinada i sacietat.</p>
+                            </div>
+                            <div class="meals-grid">
+                                <div class="meal-card">
+                                    <span class="meal-time">☀️ Esmorzar (08:00h)</span>
+                                    <h5>Smoothie verd de civada i plàtan</h5>
+                                    <p>Batut amb beguda de civada sense sucre, plàtan madur, una bona cullerada de mantega d'ametlles i un grapat d'espinacs frescs.</p>
+                                </div>
+                                <div class="meal-card">
+                                    <span class="meal-time">🥗 Dinar (14:00h)</span>
+                                    <h5>Bol energètic de cigrons i tahina</h5>
+                                    <p>Base de cigrons saltats amb comí, brots de bleda, moniato rostit al forn i salsa de sèsam (tahina) diluïda amb llimona.</p>
+                                </div>
+                                <div class="meal-card">
+                                    <span class="meal-time">🍎 Berenar (17:30h)</span>
+                                    <h5>Fruits secs i poma amb canella</h5>
+                                    <p>Una poma tallada a rodanxes mullada en canyella amb un grapat de nous de Califòrnia per aportar greixos cardio-saludables.</p>
+                                </div>
+                                <div class="meal-card">
+                                    <span class="meal-time">🌙 Sopar (21:00h)</span>
+                                    <h5>Tofu saltat amb verdures al wok</h5>
+                                    <p>Tofu a daus daurat a la paella amb bròquil, pastanaga ratllada, pebrot vermell i un toc de gingebre fresc i salsa tamari.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panell Vegetariana -->
+                        <div class="tab-panel panel-vegetariana">
+                            <div class="panel-header">
+                                <h4>Pauta diària ovo-lacto-vegetariana</h4>
+                                <p>Combinació d'aliments d'origen vegetal recolzada amb ous ecològics i làctics de bona qualitat per a un equilibri perfecte.</p>
+                            </div>
+                            <div class="meals-grid">
+                                <div class="meal-card">
+                                    <span class="meal-time">☀️ Esmorzar (08:00h)</span>
+                                    <h5>Torrada d'alvocat amb ou poché</h5>
+                                    <p>Una llesca de pa de sègol integral de massa mare amb un quart d'alvocat aixafat i un ou poché ecològic (codi 0) a sobre.</p>
+                                </div>
+                                <div class="meal-card">
+                                    <span class="meal-time">🥗 Dinar (14:00h)</span>
+                                    <h5>Amanida de llenties amb formatge feta</h5>
+                                    <p>Llenties cuites, tomàquets cirera, cogombre, olives negres d'Aragó, ceba lila de l'hort i daus de formatge feta de cabra o ovella.</p>
+                                </div>
+                                <div class="meal-card">
+                                    <span class="meal-time">🍎 Berenar (17:30h)</span>
+                                    <h5>Iogurt amb llavors i nabius</h5>
+                                    <p>Un iogurt grec natural sense ensucrar amb un grapat de nabius frescs antioxidants i una culleradeta de llavors de lli.</p>
+                                </div>
+                                <div class="meal-card">
+                                    <span class="meal-time">🌙 Sopar (21:00h)</span>
+                                    <h5>Truita d'espinacs amb amanida verda</h5>
+                                    <p>Truita suau feta amb dos ous i fulles d'espinacs frescos, acompanyada d'una amanida simple de canonges, tomàquet i api.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-revista">
+        <div class="footer-container">
+            <h5 class="footer-logo">NutriVida</h5>
+            <p class="footer-text">Projecte desenvolupat per al Curs d'IA. Alimentació i estils de vida compromesos amb el planeta.</p>
+            <p class="footer-copyright">&copy; 2026 NutriVida Revista. Tots els drets reservats. Creat amb HTML5 i CSS3 pur.</p>
+        </div>
+    </footer>
+
+    </div><!-- /page -->
+
+</body>
+</html>

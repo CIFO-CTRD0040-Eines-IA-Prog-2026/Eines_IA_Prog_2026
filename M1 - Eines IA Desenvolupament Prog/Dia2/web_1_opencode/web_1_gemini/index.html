@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fonaments de Programació I i II — Apunts del Curs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Control de Tema (Només CSS amb :has) -->
+  <input type="checkbox" id="theme-checkbox" class="theme-checkbox" aria-hidden="true">
+
+  <!-- Contenidor principal de la pàgina -->
+  <div class="app-layout">
+    
+    <!-- Barra Lateral de Navegació (Table of Contents) -->
+    <aside class="sidebar-navigation">
+      <div class="sidebar-header">
+        <div class="logo-area">
+          <span class="logo-icon">&lt;/&gt;</span>
+          <span class="logo-title">JS Core Docs</span>
+        </div>
+        <p class="sidebar-subtitle">Fonaments de Programació</p>
+      </div>
+      
+      <nav class="sidebar-menu">
+        <a href="#algorismes" class="menu-item">
+          <span class="item-number">01</span>
+          <span class="item-label">Introducció i Algorismes</span>
+        </a>
+        <a href="#variables" class="menu-item">
+          <span class="item-number">02</span>
+          <span class="item-label">Variables i Tipus de Dades</span>
+        </a>
+        <a href="#operadors" class="menu-item">
+          <span class="item-number">03</span>
+          <span class="item-label">Operadors i Expressions</span>
+        </a>
+        <a href="#condicionals" class="menu-item">
+          <span class="item-number">04</span>
+          <span class="item-label">Estructures Condicionals</span>
+        </a>
+        <a href="#bucles" class="menu-item">
+          <span class="item-number">05</span>
+          <span class="item-label">Bucles i Iteració</span>
+        </a>
+        <a href="#funcions" class="menu-item">
+          <span class="item-number">06</span>
+          <span class="item-label">Funcions i Àmbits</span>
+        </a>
+        <a href="#structures" class="menu-item">
+          <span class="item-number">07</span>
+          <span class="item-label">Arrays i Objectes</span>
+        </a>
+        <a href="#poo" class="menu-item">
+          <span class="item-number">08</span>
+          <span class="item-label">Programació Orientada a Objectes</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p>Desenvolupat per a anàlisi d'agents</p>
+      </div>
+    </aside>
+
+    <!-- Contingut principal de la web -->
+    <div class="main-wrapper">
+      <header class="app-header">
+        <div class="header-content">
+          <h1>Fonaments de Programació I i II</h1>
+          <p class="header-desc">Manual complet de referència d'apunts acadèmics en català, estructurat per a l'aprenentatge del desenvolupament de programari mitjançant JavaScript.</p>
+        </div>
+        
+        <div class="header-actions">
+          <!-- Selector de tema -->
+          <label for="theme-checkbox" class="theme-switch-label" aria-label="Canvia entre mode clar i mode fosc">
+            <span class="switch-icon switch-icon-moon">🌙 Fosc</span>
+            <span class="switch-icon switch-icon-sun">☀️ Clar</span>
+          </label>
+        </div>
+      </header>
+
+      <main class="educational-content">
+        
+        <!-- MÒDUL 1: INTRODUCCIÓ I ALGORISMES -->
+        <section id="algorismes" class="concept-section">
+          <div class="section-badge">Mòdul 01</div>
+          <h2>Introducció a la Programació i Algorismes</h2>
+          <p class="section-intro">La programació és la resolució de problemes mitjançant la lògica codificada. Abans d'escriure qualsevol línia de codi en un llenguatge de programació, cal entendre com definir una seqüència estructurada de passos.</p>
+          
+          <div class="concept-grid">
+            <div class="theory-card">
+              <h3>El Concepte d'Algorisme</h3>
+              <p>Un <strong>algorisme</strong> és un conjunt ordenat, definit i finit d'instruccions o regles que permeten realitzar una activitat, resoldre un problema o prendre una decisió.</p>
+              <p>Els algorismes tenen tres característiques fonamentals:</p>
+              <ul>
+                <li><strong>Precisió:</strong> Cada pas ha d'estar clarament definit sense ambigüitats.</li>
+                <li><strong>Determinisme:</strong> Donades les mateixes entrades, el resultat sempre ha de ser el mateix.</li>
+                <li><strong>Finitud:</strong> L'algorisme ha d'acabar en algun moment, després de realitzar un nombre de passos finits.</li>
+              </ul>
+            </div>
+
+            <div class="example-card">
+              <h3>Exemple d'Algorisme en Pseudocodi</h3>
+              <p>Disseny d'un flux per determinar si un alumne aprova o suspèn una assignatura:</p>
+              <pre><code class="code-block">Algorisme DeterminarAprovat
+    Llegir nota_examen
+    Llegir nota_practiques
+    
+    mitjana = (nota_examen + nota_practiques) / 2
+    
+    Si mitjana >= 5 Llavors
+        Escriure "Aprovat amb un " + mitjana
+    Sino
+        Escriure "Suspès amb un " + mitjana
+    FiSi
+FiAlgorisme</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- MÒDUL 2: VARIABLES I TIPUS DE DADES -->
+        <section id="variables" class="concept-section">
+          <div class="section-badge">Mòdul 02</div>
+          <h2>Variables, Constants i Tipus de Dades</h2>
+          <p class="section-intro">Per a poder treballar amb informació, els programes necessiten emmagatzemar valors temporals en la memòria de l'ordinador utilitzant identificadors anomenats variables i constants.</p>
+
+          <div class="concept-grid">
+            <div class="theory-card">
+              <h3>Declaració de Dades</h3>
+              <p>En el desenvolupament modern (JavaScript), disposem de tres maneres clau de declarar dades, tot i que avui dia se'n desaconsella una:</p>
+              <ul>
+                <li><code>let</code>: Declara una variable d'àmbit de bloc que pot canviar el seu valor al llarg del programa (reassignació).</li>
+                <li><code>const</code>: Declara una constant de només lectura, el valor de la qual no es pot reassignar una vegada definit inicialment.</li>
+                <li><code>var</code>: La forma clàssica d'esdevenir variables, que té àmbit de funció i és propensa a errors a causa del fenomen del <em>hoisting</em>. <strong>Evitar-ne l'ús!</strong></li>
+              </ul>
+            </div>
+
+            <div class="theory-card">
+              <h3>Tipus de Dades Primitius</h3>
+              <p>El tipus de dada defineix el format, el comportament i la quantitat d'espai de memòria dedicat a emmagatzemar la informació. Tipus primitius clau:</p>
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Tipus</th>
+                    <th>Descripció</th>
+                    <th>Exemple</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>Number</code></td>
+                    <td>Valors numèrics (enters o decimals)</td>
+                    <td><code>42</code> o <code>19.99</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>String</code></td>
+                    <td>Cadenes de text delimitades per cometes</td>
+                    <td><code>"Hola món"</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>Boolean</code></td>
+                    <td>Estats lògics bivalents</td>
+                    <td><code>true</code> o <code>false</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>Null</code></td>
+                    <td>Absència intencionada de valor</td>
+                    <td><code>null</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>Undefined</code></td>
+                    <td>Variables no definides o sense valor inicial</td>
+                    <td><code>undefined</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>Symbol</code> / <code>BigInt</code></td>
+                    <td>Valors únics o enters de precisió arbitrària</td>
+                    <td><code>123n</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="example-card full-width">
+            <h3>Exemple Pràctic: Declaració i Tipat Dinàmic</h3>
+            <pre><code class="code-block">// Constants i Variables
+const PI = 3.14159;
+let radiCircumferencia = 12.5;
+let area;
+
+// Càlcul matemàtic
+area = PI * (radiCircumferencia ** 2);
+
+// Demostració de reassignació i tipat dinàmic
+let usuariActiu = "Arnau"; // Tipus String
+console.log(typeof usuariActiu); // Imprimeix "string"
+
+usuariActiu = true; // Ara és de tipus Boolean
+console.log(typeof usuariActiu); // Imprimeix "boolean"</code></pre>
+          </div>
+        </section>
+
+        <!-- MÒDUL 3: OPERADORS I EXPRESSIONS -->
+        <section id="operadors" class="concept-section">
+          <div class="section-badge">Mòdul 03</div>
+          <h2>Operadors i Expressions</h2>
+          <p class="section-intro">Els operadors són símbols especials que permeten realitzar operacions de càlcul, comparació o lògica amb un o més operands (valors o variables).</p>
+
+          <div class="concept-grid">
+            <div class="theory-card">
+              <h3>Classificació d'Operadors</h3>
+              <p>Per a dominar la lògica de programació, cal entendre com funcionen i s'avaluen els següents operadors bàsics:</p>
+              <ul class="styled-list">
+                <li><strong>Aritmètics:</strong> Permeten fer càlculs matemàtics (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> mòdul, <code>**</code> exponenciació).</li>
+                <li><strong>D'Assignació:</strong> Assignen un valor a una variable, sovint amb operacions acumulatives (<code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>).</li>
+                <li><strong>De Comparació:</strong> Avaluen la relació entre dos valors i retornen un booleà:
+                  <ul>
+                    <li>Comparació estricta (recomanada): <code>===</code> (igual valor i tipus), <code>!==</code> (diferent valor o tipus).</li>
+                    <li>Comparació feble (a evitar): <code>==</code>, <code>!=</code>.</li>
+                    <li>Relacionals: <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>.</li>
+                  </ul>
+                </li>
+                <li><strong>Lògics:</strong> Permeten construir condicions complexes (<code>&amp;&amp;</code> AND lògic, <code>||</code> OR lògic, <code>!</code> NOT lògic).</li>
+              </ul>
+            </div>
+
+            <div class="example-card">
+              <h3>Exemple de Lògica de Condicions</h3>
+              <p>Avaluació d'accés a una plataforma escolar basat en el pagament de la matrícula o una beca, combinat amb l'edat de l'usuari:</p>
+              <pre><code class="code-block">const edatAlumne = 17;
+const teMatriculaPagada = true;
+const teBecaAprovada = false;
+
+// Lògica combinada
+const potAccedirAlCurs = (teMatriculaPagada || teBecaAprovada) && edatAlumne >= 16;
+
+console.log("Accés concedit:", potAccedirAlCurs); // true
+
+// Operació aritmètica combinada amb mòdul (parell o senar)
+const esEdatParell = (edatAlumne % 2) === 0;
+console.log("Edat parella?", esEdatParell); // false</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- MÒDUL 4: CONDICIONALS -->
+        <section id="condicionals" class="concept-section">
+          <div class="section-badge">Mòdul 04</div>
+          <h2>Estructures Condicionals i Control de Flux</h2>
+          <p class="section-intro">El control de flux permet que l'execució d'un bloc de codi sigui dinàmica, seleccionant camins alternatius basant-se en l'avaluació de condicions booleanes.</p>
+
+          <div class="concept-grid">
+            <div class="theory-card">
+              <h3>La Bifurcació Lògica</h3>
+              <p>Existeixen tres mètodes principals per a redirigir el flux d'execució segons les dades del programa:</p>
+              <dl class="definition-list">
+                <dt>Estructura <code>if / else if / else</code></dt>
+                <dd>Avalua condicions seqüencialment. Si una és vertadera, n'executa el bloc intern i ignora les posteriors.</dd>
+                
+                <dt>Estructura <code>switch</code></dt>
+                <dd>Molt útil per a simplificar múltiples condicions d'igualtat sobre una sola variable d'entrada. Recomanat quan es treballa amb llistes tancades d'estats o menús.</dd>
+                
+                <dt>Operador Ternari (<code>condició ? expr1 : expr2</code>)</dt>
+                <dd>Sintaxi condensada d'una estructura simple d'elecció. Ideal per a realitzar assignacions ràpides i directes.</dd>
+              </dl>
+            </div>
+
+            <div class="example-card">
+              <h3>Exemple d'Estructures en Acció</h3>
+              <pre><code class="code-block">// 1. Exemple de Switch en Català
+const tipusSubscripcio = "premium";
+let preuMensual;
+
+switch (tipusSubscripcio) {
+  case "basic":
+    preuMensual = 9.99;
+    break;
+  case "standard":
+    preuMensual = 14.99;
+    break;
+  case "premium":
+    preuMensual = 19.99;
+    break;
+  default:
+    preuMensual = 0.00;
+}
+
+// 2. Exemple d'Operador Ternari
+const estatPlataforma = preuMensual > 0 ? "De pagament" : "Gratuïta";
+console.log(`El servei és: ${estatPlataforma}`);</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- MÒDUL 5: BUCLES -->
+        <section id="bucles" class="concept-section">
+          <div class="section-badge">Mòdul 05</div>
+          <h2>Bucles i Iteració</h2>
+          <p class="section-intro">La repetició és un dels grans superpoders dels ordinadors. Un bucle o estructura repetitiva executa de forma reiterada un bloc d'instruccions fins que es trenca o deixa de complir-se una condició determinada.</p>
+
+          <div class="concept-grid">
+            <div class="theory-card">
+              <h3>Estructures Iteratives Fonamentals</h3>
+              <p>Per implementar la repetició de tasques utilitzem diferents sintaxis segons si coneixem per endavant la quantitat de repeticions:</p>
+              <ul>
+                <li><strong>Bucle <code>for</code>:</strong> Es fa servir quan el nombre de repeticions o iteracions és conegut abans d'iniciar el bucle. Disposa de tres parts: inicialització, condició de parada i increment.</li>
+                <li><strong>Bucle <code>while</code>:</strong> Executa el codi tantes vegades com la condició continuï sent vertadera. S'avalua la condició <strong>abans</strong> d'entrar al bloc.</li>
+                <li><strong>Bucle <code>do...while</code>:</strong> Similar al <code>while</code>, amb la diferència que la condició s'avalua <strong>després</strong> de cada execució, garantint que el bloc s'executi com a mínim un cop.</li>
+              </ul>
+            </div>
+
+            <div class="example-card">
+              <h3>Codificació dels Diferents Bucles</h3>
+              <pre><code class="code-block">// Exemple de bucle FOR per comptar
+for (let i = 1; i <= 5; i++) {
+  console.log(`Iteració número ${i}`);
+}
+
+// Exemple de bucle WHILE per cercar un llindar
+let energia = 100;
+let intents = 0;
+
+while (energia > 15) {
+  energia -= 25; // reduïm energia gradualment
+  intents++;
+  console.log(`Intent ${intents}: Energia restant: ${energia}`);
+}
+
+// Exemple de DO-WHILE (garanteix una execució)
+let clauValida = false;
+do {
+  // Executa el codi com a mínim un cop
+  console.log("Comprovant seguretat del sistema...");
+  clauValida = true; // Forcem sortida
+} while (!clauValida);</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- MÒDUL 6: FUNCIONS I ÀMBITS -->
+        <section id="funcions" class="concept-section">
+          <div class="section-badge">Mòdul 06</div>
+          <h2>Funcions i Àmbits (Scope)</h2>
+          <p class="section-intro">Les funcions són blocs de codi autònoms dissenyats per fer una tasca específica. Ens permeten encapsular codi per evitar duplicitats, facilitar proves i garantir la reutilització.</p>
+
+          <div class="concept-grid">
+            <div class="theory-card">
+              <h3>Sintaxi i Àmbits de Variable</h3>
+              <p>Podem declarar funcions de diverses maneres, incloent-hi la sintaxi moderna de funcions fletxa, molt utilitzades en JavaScript modern:</p>
+              <ul>
+                <li><strong>Funcions Declaratives:</strong> Tenen nom i se'ls aplica l'hissat (poden cridar-se abans de la seva definició escrita).</li>
+                <li><strong>Funcions d'Expressió o Fletxa (Arrow):</strong> No tenen nom (són anònimes), es desen en variables i tenen una sintaxi compacta ideal per a callbacks.</li>
+                <li><strong>Àmbit (Scope):</strong> Determina l'accessibilitat de les variables:
+                  <ul>
+                    <li><em>Global:</em> Accessible des de tot el programa.</li>
+                    <li><em>Local o de Funció:</em> Declarades dins d'una funció, inaccessibles des de fora.</li>
+                    <li><em>De Bloc:</em> Variables declarades amb <code>let</code> o <code>const</code> dins d'unes claus `{}`.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <div class="example-card">
+              <h3>Exemple de Funcions i Àmbits</h3>
+              <pre><code class="code-block">// Funció Declarativa Tradicional
+function calcularDescompte(preu, percentatge = 10) {
+  const estalvi = (preu * percentatge) / 100;
+  return preu - estalvi;
+}
+
+// Funció Fletxa Moderna (un sol paràmetre, retorn implícit)
+const calcularIva = preu => preu * 1.21;
+
+// Ús pràctic i demostració de Scope
+const preuProducte = 100;
+const preuAmbIva = calcularIva(preuProducte);
+const preuFinal = calcularDescompte(preuAmbIva, 15);
+
+console.log(`Preu Final: ${preuFinal.toFixed(2)}€`);
+// console.log(estalvi); // ERROR: estalvi només existeix a calcularDescompte</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- MÒDUL 7: ARRAYS I OBJECTES -->
+        <section id="structures" class="concept-section">
+          <div class="section-badge">Mòdul 07</div>
+          <h2>Arrays i Objectes Literals</h2>
+          <p class="section-intro">Per a modelar la realitat, els tipus primitius són insuficients. Necessitem estructures capaces d'emmagatzemar múltiples dades agrupades, ordenades o etiquetades.</p>
+
+          <div class="concept-grid">
+            <div class="theory-card">
+              <h3>Arrays (Llistes Ordenades)</h3>
+              <p>Un array és una col·lecció indexada d'elements ordenada. Comença sempre pel seu índex zero (<code>0</code>).</p>
+              <p>A JavaScript, els arrays són altament dinàmics i ofereixen una gran varietat de mètodes natius que simplifiquen enormement la manipulació de la informació:</p>
+              <ul class="styled-list">
+                <li><code>push(elem)</code>: Afegeix un element al final de l'array.</li>
+                <li><code>pop()</code>: Elimina i retorna l'últim element.</li>
+                <li><code>shift()</code> / <code>unshift(elem)</code>: Manipulen els elements pel davant.</li>
+                <li><code>length</code>: Propietat que indica la mida o quantitat d'elements.</li>
+              </ul>
+            </div>
+
+            <div class="theory-card">
+              <h3>Objectes Literals (Estructures de Clau-Valor)</h3>
+              <p>Un objecte és una entitat independent que conté propietats i mètodes. Permet associar claus (etiquetes de text) amb valors de qualsevol tipus de dada.</p>
+              <pre><code class="code-block">const alumne = {
+  nom: "Marta",
+  cognom: "Gómez",
+  edat: 21,
+  curs: "Eines de Desenvolupament IA",
+  saludar: function() {
+    return `Hola, sóc la ${this.nom}!`;
+  }
+};
+
+console.log(alumne.nom); // Accés per punt: "Marta"
+console.log(alumne.saludar()); // Execució de mètode</code></pre>
+            </div>
+          </div>
+
+          <div class="example-card full-width">
+            <h3>Exemple Combinat: Array d'Objectes amb Iteració Complexa</h3>
+            <pre><code class="code-block">// Llista de tasques d'aprenentatge
+const llistaTasques = [
+  { id: 1, descripcio: "Repassar condicional switch", finalitzada: true },
+  { id: 2, descripcio: "Practicar mètodes d'arrays", finalitzada: false },
+  { id: 3, descripcio: "Configurar entorn Git", finalitzada: true }
+];
+
+// Iteració sobre la llista per comptar tasques pendents
+let tasquesPendents = 0;
+
+for (let i = 0; i < llistaTasques.length; i++) {
+  const tasca = llistaTasques[i];
+  if (!tasca.finalitzada) {
+    tasquesPendents++;
+    console.log(`Pendent: ${tasca.descripcio}`);
+  }
+}
+
+console.log(`Total de tasques pendents d'enllestir: ${tasquesPendents}`);</code></pre>
+          </div>
+        </section>
+
+        <!-- MÒDUL 8: POO (PROGRAMACIÓ ORIENTADA A OBJECTES) -->
+        <section id="poo" class="concept-section">
+          <div class="section-badge">Mòdul 08</div>
+          <h2>Programació Orientada a Objectes (POO)</h2>
+          <p class="section-intro">La POO és un paradigma de programació que utilitza objectes per representar estructures de dades del món real, facilitant l'organització i manteniment del codi a gran escala.</p>
+
+          <div class="concept-grid">
+            <div class="theory-card">
+              <h3>Els Quatre Pilars de la POO</h3>
+              <p>El disseny orientat a objectes es fonamenta en conceptes sòlids que permeten estructurar aplicacions robustes:</p>
+              <dl class="definition-list">
+                <dt>Classes i Instàncies</dt>
+                <dd>La <strong>classe</strong> és el motlle (o model genèric), i l'<strong>objecte</strong> o instància és l'element concret creat a partir d'aquest motlle mitjançant la paraula clau <code>new</code>.</dd>
+                
+                <dt>El Constructor</dt>
+                <dd>Mètode especial d'inicialització que s'executa automàticament en instanciar l'objecte, utilitzat per rebre els valors inicials i configurar-los.</dd>
+                
+                <dt>Herència (Inheritance)</dt>
+                <dd>Mecanisme que permet que una nova classe (filla) hereti els atributs i mètodes d'una classe existent (pare), promovent la reutilització estricta del codi.</dd>
+                
+                <dt>Encapsulament i Polimorfisme</dt>
+                <dd>Protecció interna de les dades per evitar modificacions directes no controlades, i capacitat d'executar mètodes amb el mateix nom però comportaments diferents.</dd>
+              </dl>
+            </div>
+
+            <div class="example-card">
+              <h3>Codificació de Classes i Herència</h3>
+              <pre><code class="code-block">// Classe Pare (Superclasse)
+class Usuari {
+  constructor(nom, email) {
+    this.nom = nom;
+    this.email = email;
+    this.rol = "Estudiant";
+  }
+
+  descriurePerfil() {
+    return `${this.nom} (${this.rol}) - Correu: ${this.email}`;
+  }
+}
+
+// Classe Filla (Subclasse)
+class Professor extends Usuari {
+  constructor(nom, email, especialitat) {
+    super(nom, email); // Crida al constructor de la superclasse
+    this.rol = "Professor";
+    this.especialitat = especialitat;
+  }
+
+  // Polimorfisme: Sobreestrivim el mètode original
+  descriurePerfil() {
+    return `${super.descriurePerfil()} | Especialitat: ${this.especialitat}`;
+  }
+}
+
+// Instanciació d'objectes concrets
+const professorCurs = new Professor("Marc Estela", "m.estela@escolatec.cat", "Intel·ligència Artificial");
+console.log(professorCurs.descriurePerfil());</code></pre>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <footer class="app-footer">
+        <div class="footer-grid">
+          <div class="footer-info">
+            <h4>Fonaments de Programació I i II</h4>
+            <p>Guia didàctica d'apunts acadèmics estructurats i optimitzats per a estudiants de desenvolupament.</p>
+          </div>
+          <div class="footer-links">
+            <h5>Mòduls clau</h5>
+            <ul>
+              <li><a href="#algorismes">Algorismes</a></li>
+              <li><a href="#variables">Variables</a></li>
+              <li><a href="#funcions">Funcions</a></li>
+              <li><a href="#poo">Classes i POO</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <p>&copy; 2026 Eines IA Desenvolupament Prog — Dissenyat per a anàlisi d'Agents intel·ligents i desenvolupadors de programari.</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
