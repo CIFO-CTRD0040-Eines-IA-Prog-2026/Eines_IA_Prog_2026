@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evolució Climàtica a Barcelona — Juny 2026</title>
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js-thermo-active');</script>
+</head>
+<body>
+
+  <!-- ========== NAV ========== -->
+  <nav class="nav-bar">
+    <div class="nav-inner">
+      <a href="#temp" class="nav-link">Temp</a>
+      <a href="#precip" class="nav-link">Precip</a>
+      <a href="#humitat" class="nav-link">Humitat</a>
+      <a href="#uv" class="nav-link">UV</a>
+      <a href="#vent" class="nav-link">Vent</a>
+      <a href="#sol" class="nav-link">Sol</a>
+      <a href="#pressio" class="nav-link">Pressió</a>
+      <a href="#sensacio" class="nav-link">Sensació</a>
+      <a href="#aqi" class="nav-link">Aire</a>
+      <a href="#dirvent" class="nav-link">Dir.Vent</a>
+      <a href="#sortida" class="nav-link">Sol/Posta</a>
+      <a href="#mar" class="nav-link">Mar</a>
+      <a href="#nuvols" class="nav-link">Núvols</a>
+      <a href="#comparativa" class="nav-link">Compara</a>
+      <a href="#dashboard" class="nav-link">Dashboard</a>
+      <a href="#explorador" class="nav-link">Dies</a>
+      <a href="#mapa" class="nav-link">Mapa</a>
+      <a href="#joc" class="nav-link">Joc</a>
+      <a href="#resum" class="nav-link">Resum</a>
+    </div>
+  </nav>
+
+  <!-- ========== THERMOMETER ========== -->
+  <div class="thermo-wrap">
+    <div class="thermo-visual">
+      <div class="thermo-rail">
+        <div class="thermo-fill" id="thermo-fill"></div>
+      </div>
+      <div class="thermo-bulb" id="thermo-bulb"></div>
+    </div>
+    <ul class="thermo-scale">
+      <li data-lvl="7">7</li>
+      <li data-lvl="6">6</li>
+      <li data-lvl="5">5</li>
+      <li data-lvl="4">4</li>
+      <li data-lvl="3">3</li>
+      <li data-lvl="2">2</li>
+      <li data-lvl="1">1</li>
+      <li data-lvl="0">0</li>
+      <li class="ts-arr">&#9654;</li>
+    </ul>
+    <div class="thermo-ctx">
+      <span class="thermo-label">Temperatura</span>
+    </div>
+  </div>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="header-bg">
+      <div class="pl pl-slow"></div>
+      <div class="pl pl-med"></div>
+      <div class="pl pl-fast"></div>
+    </div>
+
+    <div class="particle-field">
+      <span class="particle" style="--x:5%;--y:10%;--s:4px;--d:0s;--dr:2s"></span>
+      <span class="particle" style="--x:20%;--y:30%;--s:6px;--d:1s;--dr:3s"></span>
+      <span class="particle" style="--x:40%;--y:15%;--s:3px;--d:0.5s;--dr:1.5s"></span>
+      <span class="particle" style="--x:60%;--y:25%;--s:5px;--d:2s;--dr:2.5s"></span>
+      <span class="particle" style="--x:80%;--y:8%;--s:4px;--d:1.5s;--dr:3.5s"></span>
+      <span class="particle" style="--x:90%;--y:40%;--s:7px;--d:0.2s;--dr:1.8s"></span>
+      <span class="particle" style="--x:15%;--y:60%;--s:3px;--d:3s;--dr:4s"></span>
+      <span class="particle" style="--x:70%;--y:55%;--s:5px;--d:0.8s;--dr:2.2s"></span>
+      <span class="particle" style="--x:45%;--y:70%;--s:4px;--d:2.5s;--dr:3s"></span>
+      <span class="particle" style="--x:85%;--y:75%;--s:6px;--d:1.2s;--dr:2.8s"></span>
+      <span class="particle" style="--x:30%;--y:80%;--s:3px;--d:0.7s;--dr:1.2s"></span>
+      <span class="particle" style="--x:55%;--y:5%;--s:5px;--d:1.8s;--dr:3.2s"></span>
+    </div>
+
+    <div class="floating-shapes">
+      <span class="shape" style="--x:10%;--y:15%;--s:60px;--d:0s;--c:#4a90d9"></span>
+      <span class="shape" style="--x:75%;--y:20%;--s:40px;--d:1.5s;--c:#a29bfe"></span>
+      <span class="shape" style="--x:85%;--y:70%;--s:50px;--d:0.8s;--c:#ff6b6b"></span>
+      <span class="shape" style="--x:20%;--y:75%;--s:35px;--d:2.2s;--c:#2ec4b6"></span>
+      <span class="shape" style="--x:50%;--y:50%;--s:25px;--d:1.2s;--c:#f9ca24"></span>
+      <span class="shape" style="--x:65%;--y:45%;--s:45px;--d:3s;--c:#fd79a8"></span>
+      <span class="shape" style="--x:35%;--y:85%;--s:30px;--d:0.3s;--c:#a29bfe"></span>
+      <span class="shape" style="--x:92%;--y:55%;--s:20px;--d:2.7s;--c:#f9ca24"></span>
+    </div>
+
+    <h1>Evolució Climàtica a Barcelona</h1>
+    <p class="subtitle">Juny 2026 — Anàlisi exhaustiva del darrer mes</p>
+  </header>
+
+  <!-- ========== MAIN ========== -->
+  <main>
+
+    <!-- ====== 1. TEMPERATURA ====== -->
+    <section class="climate-section" id="temp" data-importancia="5">
+      <h2>Temperatura</h2>
+      <p class="section-desc">Temperatures màximes i mínimes per setmana — rang tèrmic (°C)</p>
+
+      <div class="chart-3d-wrap" data-3d-scene>
+        <div class="hover-cursor" id="custom-cursor"></div>
+        <div class="chart-canvas" id="temp-3d-canvas"></div>
+        <div class="tooltip-3d" id="temp-tooltip">
+          <span class="tooltip-week"></span>
+          <span class="tooltip-val"></span>
+        </div>
+      </div>
+
+      <div class="insights">
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x2600;</span><p>Màxima: 30°C</p></div>
+            <div class="flip-back"><p>Tercera setmana la més càlida, amb màxima de 30°C.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F321;</span><p>Mínima: 19°C</p></div>
+            <div class="flip-back"><p>Primera setmana més fresca, mínima de 19°C.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F4CA;</span><p>Mitjana: 24.5°C</p></div>
+            <div class="flip-back"><p>Mitjana mensual de 24.5°C, dins la normalitat estacional.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F300;</span><p>Amplitud: 11°C</p></div>
+            <div class="flip-back"><p>Diferència entre la màxima (30°) i la mínima (19°).</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 2. PRECIPITACIONS ====== -->
+    <section class="climate-section" id="precip" data-importancia="3">
+      <h2>Precipitacions</h2>
+      <p class="section-desc">Precipitació acumulada i probabilitat de pluja per setmana</p>
+
+      <div class="chart-scene">
+        <div class="chart-3d bars-4">
+          <div class="bar-group">
+            <div class="bar-3d" style="--h:20px;--c:#81ecec;--c2:#00cec9">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <span class="bar-val">0mm</span>
+            <span class="bar-label">Setm. 1 · 5%</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-3d" style="--h:80px;--c:#4a90d9;--c2:#2e6cb5">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <span class="bar-val">5mm</span>
+            <span class="bar-label">Setm. 2 · 20%</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-3d" style="--h:180px;--c:#a29bfe;--c2:#6c5ce7">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <span class="bar-val">15mm</span>
+            <span class="bar-label">Setm. 3 · 45%</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-3d" style="--h:120px;--c:#2e6cb5;--c2:#1a4f8a">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <span class="bar-val">10mm</span>
+            <span class="bar-label">Setm. 4 · 30%</span>
+          </div>
+        </div>
+      </div>
+      <p class="chart-footnote">Alçada = mm acumulats · Percentatge = probabilitat de pluja</p>
+
+      <div class="insights">
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F4A7;</span><p>Total: 30mm</p></div>
+            <div class="flip-back"><p>30mm acumulats al mes, concentrats a setmanes 3 i 4.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x2600;</span><p>Dies secs: 24</p></div>
+            <div class="flip-back"><p>Majoria de dies assolellats, pluges molt localitzades.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x26C8;</span><p>Tempesta: 2 dies</p></div>
+            <div class="flip-back"><p>Dues tempestes curtes a la tarda, típiques d'estiu.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 3. HUMITAT ====== -->
+    <section class="climate-section" id="humitat" data-importancia="3">
+      <h2>Humitat Relativa</h2>
+      <p class="section-desc">Humitat mitjana setmanal — matí / tarda / nit</p>
+
+      <div class="donut-grid">
+        <div class="donut-group">
+          <div class="donut" style="--p:62;--c:#2ec4b6"><span>62%</span></div>
+          <p>Setm. 1 · 70/55/62</p>
+        </div>
+        <div class="donut-group">
+          <div class="donut" style="--p:68;--c:#1a9e92"><span>68%</span></div>
+          <p>Setm. 2 · 75/60/68</p>
+        </div>
+        <div class="donut-group">
+          <div class="donut" style="--p:55;--c:#55efc4"><span>55%</span></div>
+          <p>Setm. 3 · 62/48/55</p>
+        </div>
+        <div class="donut-group">
+          <div class="donut" style="--p:72;--c:#6c5ce7"><span>72%</span></div>
+          <p>Setm. 4 · 80/65/72</p>
+        </div>
+      </div>
+      <p class="chart-footnote">Matí/Tarda/Nit</p>
+
+      <div class="insights">
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F4A8;</span><p>Mitjana: 64%</p></div>
+            <div class="flip-back"><p>Humitat moderada, amb pics del 72% a la darrera setmana.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F335;</span><p>Mínima: 55%</p></div>
+            <div class="flip-back"><p>Setmana 3 amb humitat més baixa, dies molt secs.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F31E;</span><p>Màxima: 80%</p></div>
+            <div class="flip-back"><p>Matins de la setmana 4 amb alta humitat i boira baixa.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 4. ÍNDEX UV ====== -->
+    <section class="climate-section" id="uv" data-importancia="4">
+      <h2>Índex UV</h2>
+      <p class="section-desc">Nivell UV màxim i hores de protecció recomanades</p>
+
+      <div class="chart-scene">
+        <div class="chart-3d bars-4">
+          <div class="bar-group">
+            <div class="bar-3d" style="--h:210px;--c:#f9ca24;--c2:#f0932b">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <span class="bar-val">7</span>
+            <span class="bar-label">Setm. 1 · Alt</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-3d" style="--h:260px;--c:#f0932b;--c2:#e17055">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <span class="bar-val">9</span>
+            <span class="bar-label">Setm. 2 · Extrem</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-3d" style="--h:240px;--c:#e17055;--c2:#d63031">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <span class="bar-val">8</span>
+            <span class="bar-label">Setm. 3 · Molt alt</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-3d" style="--h:180px;--c:#f9ca24;--c2:#f0932b">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <span class="bar-val">6</span>
+            <span class="bar-label">Setm. 4 · Alt</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="insights">
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x2600;</span><p>Màxim: 9</p></div>
+            <div class="flip-back"><p>Setmana 2 amb UV extrem. Protecció solar essencial.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F576;</span><p>Mitjana: 7.5</p></div>
+            <div class="flip-back"><p>Nivell alt tot el mes. Ulleres i crema recomanats.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x23F0;</span><p>Evitar: 12–16h</p></div>
+            <div class="flip-back"><p>Hores centrals amb radiació màxima. Protecció SPF 50+.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 5. VENT ====== -->
+    <section class="climate-section" id="vent" data-importancia="3">
+      <h2>Velocitat del Vent</h2>
+      <p class="section-desc">Velocitat mitjana i ratxa màxima per setmana (km/h)</p>
+
+      <div class="chart-scene">
+        <div class="chart-3d bars-4">
+          <div class="bar-group">
+            <div class="bar-3d" style="--h:120px;--c:#2ec4b6;--c2:#1a9e92">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <div class="bar-3d bar-mini" style="--h:180px;--c:#81ecec;--c2:#00cec9">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <span class="bar-val">12 / 25</span>
+            <span class="bar-label">Setm. 1</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-3d" style="--h:180px;--c:#f9ca24;--c2:#f0932b">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <div class="bar-3d bar-mini" style="--h:260px;--c:#ffeaa7;--c2:#fdcb6e">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <span class="bar-val">18 / 35</span>
+            <span class="bar-label">Setm. 2</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-3d" style="--h:80px;--c:#81ecec;--c2:#00cec9">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <div class="bar-3d bar-mini" style="--h:140px;--c:#dfe6e9;--c2:#b2bec3">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <span class="bar-val">8 / 18</span>
+            <span class="bar-label">Setm. 3</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-3d" style="--h:220px;--c:#a29bfe;--c2:#6c5ce7">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <div class="bar-3d bar-mini" style="--h:300px;--c:#dda0dd;--c2:#9932cc">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <span class="bar-val">22 / 42</span>
+            <span class="bar-label">Setm. 4</span>
+          </div>
+        </div>
+      </div>
+      <p class="chart-footnote">Mitjana / Ratxa màxima</p>
+
+      <div class="insights">
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F32C;</span><p>Ratxa màx: 42 km/h</p></div>
+            <div class="flip-back"><p>Setmana 4 amb vent més fort i ràfegues puntuals fortes.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F343;</span><p>Mínima: 8 km/h</p></div>
+            <div class="flip-back"><p>Setmana 3 amb vent molt fluix, ideal per a l'aire lliure.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F300;</span><p>Mitjana: 15 km/h</p></div>
+            <div class="flip-back"><p>Velocitat moderada durant tot el mes, sense alertes.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 6. HORES DE SOL ====== -->
+    <section class="climate-section" id="sol" data-importancia="2">
+      <h2>Hores de Sol</h2>
+      <p class="section-desc">Mitjana d'hores de sol al dia per setmana</p>
+
+      <div class="sun-grid">
+        <div class="sun-group">
+          <span class="bar-label">Setm. 1</span>
+          <div class="sun-bar" style="--c:#ff9ff3">
+            <div class="sun-fill" style="--p:75;--c:#ff9ff3;--c2:#f368e0"></div>
+          </div>
+          <span class="sun-val">9h</span>
+        </div>
+        <div class="sun-group">
+          <span class="bar-label">Setm. 2</span>
+          <div class="sun-bar" style="--c:#fd79a8">
+            <div class="sun-fill" style="--p:92;--c:#fd79a8;--c2:#e84393"></div>
+          </div>
+          <span class="sun-val">11h</span>
+        </div>
+        <div class="sun-group">
+          <span class="bar-label">Setm. 3</span>
+          <div class="sun-bar" style="--c:#e84393">
+            <div class="sun-fill" style="--p:83;--c:#e84393;--c2:#d63384"></div>
+          </div>
+          <span class="sun-val">10h</span>
+        </div>
+        <div class="sun-group">
+          <span class="bar-label">Setm. 4</span>
+          <div class="sun-bar" style="--c:#b2bec3">
+            <div class="sun-fill" style="--p:67;--c:#b2bec3;--c2:#636e72"></div>
+          </div>
+          <span class="sun-val">8h</span>
+        </div>
+      </div>
+
+      <div class="insights">
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x2600;</span><p>Màxim: 11h/dia</p></div>
+            <div class="flip-back"><p>Setmana 2 amb més sol, coincidint amb el solstici d'estiu.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F325;</span><p>Mitjana: 9.5h/dia</p></div>
+            <div class="flip-back"><p>Barcelona va gaudir de moltes hores de sol al juny.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 7. PRESSIÓ ATMOSFÈRICA ====== -->
+    <section class="climate-section" id="pressio" data-importancia="3">
+      <h2>Pressió Atmosfèrica</h2>
+      <p class="section-desc">Pressió mitjana setmanal en hPa — tendència i estabilitat</p>
+
+      <div class="wave-chart">
+        <div class="wave">
+          <svg viewBox="0 0 500 160" class="wave-svg">
+            <path d="M0,120 Q40,40 80,100 T160,70 T240,110 T320,60 T400,90 T500,80 L500,160 L0,160 Z" class="wave-fill"/>
+            <path d="M0,120 Q40,40 80,100 T160,70 T240,110 T320,60 T400,90 T500,80" class="wave-line"/>
+          </svg>
+        </div>
+        <div class="wave-labels">
+          <span>1012</span><span>1018</span><span>1024</span><span>1020</span><span>1015</span>
+        </div>
+        <div class="wave-weeks">
+          <span>Setm. 1</span><span>Setm. 2</span><span>Setm. 3</span><span>Setm. 4</span><span>Setm. 5*</span>
+        </div>
+      </div>
+      <p class="chart-footnote">Tendència general: estable · *Primers dies de juliol</p>
+
+      <div class="insights">
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F4A8;</span><p>Màxima: 1024 hPa</p></div>
+            <div class="flip-back"><p>Pressió alta a la setmana 3, cel clar i estable.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F300;</span><p>Mínima: 1012 hPa</p></div>
+            <div class="flip-back"><p>Setmana 1 amb pressió més baixa, sense temporal.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x26C5;</span><p>Estable tot el mes</p></div>
+            <div class="flip-back"><p>Diferència de només 12 hPa. Temps anticiclònic.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 8. SENSACIÓ TÈRMICA ====== -->
+    <section class="climate-section" id="sensacio" data-importancia="5">
+      <h2>Sensació Tèrmica</h2>
+      <p class="section-desc">Temperatura real vs sensació tèrmica (Heat Index) per setmana</p>
+
+      <div class="chart-scene">
+        <div class="chart-3d bars-4 bars-dual">
+          <div class="bar-group">
+            <div class="bar-3d" style="--h:220px;--c:#ff6b6b;--c2:#ee5a24">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <div class="bar-3d bar-feel" style="--h:270px;--c:#fd79a8;--c2:#e84393">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <span class="bar-val">26° / 30°</span>
+            <span class="bar-label">Setm. 1</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-3d" style="--h:250px;--c:#e17055;--c2:#d63031">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <div class="bar-3d bar-feel" style="--h:310px;--c:#fd79a8;--c2:#e84393">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <span class="bar-val">28° / 34°</span>
+            <span class="bar-label">Setm. 2</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-3d" style="--h:280px;--c:#d63031;--c2:#b71c1c">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <div class="bar-3d bar-feel" style="--h:350px;--c:#fd79a8;--c2:#e84393">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <span class="bar-val">30° / 37°</span>
+            <span class="bar-label">Setm. 3</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-3d" style="--h:240px;--c:#ff6b6b;--c2:#ee5a24">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <div class="bar-3d bar-feel" style="--h:290px;--c:#fd79a8;--c2:#e84393">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <span class="bar-val">27° / 32°</span>
+            <span class="bar-label">Setm. 4</span>
+          </div>
+        </div>
+      </div>
+      <p class="chart-footnote">Vermell = temperatura real · Rosa = sensació tèrmica (Heat Index)</p>
+
+      <div class="insights">
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F525;</span><p>Sensació màx: 37°C</p></div>
+            <div class="flip-back"><p>Setmana 3 amb sensació de 37°C per l'alta humitat.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F4CA;</span><p>Diferència: +5°C</p></div>
+            <div class="flip-back"><p>De mitjana, la sensació va ser 5°C superior a la real.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x26A0;</span><p>Precaució</p></div>
+            <div class="flip-back"><p>Amb sensació >35°C, hidratació i ombra recomanades.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 9. QUALITAT DE L'AIRE ====== -->
+    <section class="climate-section" id="aqi" data-importancia="2">
+      <h2>Qualitat de l'Aire</h2>
+      <p class="section-desc">Índex de qualitat de l'aire (AQI) i concentració de contaminants</p>
+
+      <div class="ring-container">
+        <div class="ring-group">
+          <div class="ring" style="--p:85;--c:#f9ca24;--s:200px">
+            <span>AQI 85</span>
+          </div>
+          <p>Índex global · Moderat</p>
+        </div>
+        <div class="ring-group">
+          <div class="ring ring-sm" style="--p:72;--c:#ff9ff3;--s:150px">
+            <span>PM2.5</span>
+          </div>
+          <p>Partícules fines · 72</p>
+        </div>
+        <div class="ring-group">
+          <div class="ring ring-sm" style="--p:60;--c:#2ec4b6;--s:150px">
+            <span>PM10</span>
+          </div>
+          <p>Partícules grosses · 60</p>
+        </div>
+        <div class="ring-group">
+          <div class="ring ring-sm" style="--p:45;--c:#4a90d9;--s:150px">
+            <span>O₃</span>
+          </div>
+          <p>Ozó troposfèric · 45</p>
+        </div>
+        <div class="ring-group">
+          <div class="ring ring-sm" style="--p:55;--c:#a29bfe;--s:150px">
+            <span>NO₂</span>
+          </div>
+          <p>Diòxid de nitrogen · 55</p>
+        </div>
+      </div>
+
+      <div class="insights">
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F33F;</span><p>Bo</p></div>
+            <div class="flip-back"><p>Qualitat acceptable. Grups sensibles: evitar esforços prolongats.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F4A8;</span><p>PM2.5 elevat</p></div>
+            <div class="flip-back"><p>Partícules fines per sobre del recomanat per l'OMS.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F30D;</span><p>Millor que 2025</p></div>
+            <div class="flip-back"><p>AQI un 12% millor que el juny passat gràcies a la reducció de trànsit.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 10. DIRECCIÓ DEL VENT ====== -->
+    <section class="climate-section" id="dirvent" data-importancia="2">
+      <h2>Direcció del Vent</h2>
+      <p class="section-desc">Rosa dels vents — direcció dominant i intensitat per setmana</p>
+
+      <div class="compass-wrap">
+        <div class="compass">
+          <div class="compass-ring">
+            <span class="compass-dir" style="--i:0">N</span>
+            <span class="compass-dir" style="--i:1">NE</span>
+            <span class="compass-dir" style="--i:2">E</span>
+            <span class="compass-dir" style="--i:3">SE</span>
+            <span class="compass-dir" style="--i:4">S</span>
+            <span class="compass-dir" style="--i:5">SO</span>
+            <span class="compass-dir" style="--i:6">O</span>
+            <span class="compass-dir" style="--i:7">NO</span>
+          </div>
+          <div class="compass-sectors">
+            <span class="sector" style="--rot:45deg;--w:0.15" data-week="1"></span>
+            <span class="sector" style="--rot:90deg;--w:0.25" data-week="2"></span>
+            <span class="sector" style="--rot:135deg;--w:0.20" data-week="3"></span>
+            <span class="sector" style="--rot:315deg;--w:0.35" data-week="4"></span>
+          </div>
+          <div class="compass-needle">
+            <div class="needle"></div>
+          </div>
+          <div class="compass-center">
+            <div class="compass-bulb"></div>
+          </div>
+        </div>
+        <div class="compass-legend">
+          <span><span class="dot" style="--c:#4a90d9"></span> Setm. 1 · NE</span>
+          <span><span class="dot" style="--c:#ff6b6b"></span> Setm. 2 · E</span>
+          <span><span class="dot" style="--c:#2ec4b6"></span> Setm. 3 · SE</span>
+          <span><span class="dot" style="--c:#a29bfe"></span> Setm. 4 · NO</span>
+        </div>
+      </div>
+
+      <div class="insights">
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F300;</span><p>Dominant: E</p></div>
+            <div class="flip-back"><p>Vent de component est durant la major part del mes.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F3D4;</span><p>Vent de mar</p></div>
+            <div class="flip-back"><p>Vent de l'est porta aire humit del Mediterrani.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 11. SORTIDA / POSTA DE SOL ====== -->
+    <section class="climate-section" id="sortida" data-importancia="2">
+      <h2>Sortida i Posta de Sol</h2>
+      <p class="section-desc">Evolució de les hores de llum al llarg del mes</p>
+
+      <div class="solar-wrap">
+        <div class="solar-arc">
+          <svg viewBox="0 0 500 250" class="solar-svg">
+            <defs>
+              <linearGradient id="solGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#f9ca24" stop-opacity="0.6"/>
+                <stop offset="50%" stop-color="#ff6b6b" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="#f9ca24" stop-opacity="0.6"/>
+              </linearGradient>
+            </defs>
+            <path d="M20,230 Q250,30 480,230" fill="none" stroke="url(#solGrad)" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="250" cy="100" r="20" fill="#f9ca24" opacity="0.9" class="solar-orb"/>
+            <path d="M20,230 L480,230" fill="none" stroke="rgba(0,0,0,0.06)" stroke-width="2" stroke-dasharray="6,4"/>
+            <text x="20" y="248" fill="#b2bec3" font-size="10" font-family="sans-serif">6:15</text>
+            <text x="470" y="248" fill="#b2bec3" font-size="10" font-family="sans-serif">21:30</text>
+            <text x="235" y="18" fill="#b2bec3" font-size="10" font-family="sans-serif">Solstici d'estiu · 21/06</text>
+          </svg>
+        </div>
+        <div class="solar-data">
+          <div class="solar-item">
+            <span class="sol-label">Sortida més primerenca</span>
+            <span class="sol-val">6:15 (14–21 juny)</span>
+          </div>
+          <div class="solar-item">
+            <span class="sol-label">Posta més tardana</span>
+            <span class="sol-val">21:30 (21–27 juny)</span>
+          </div>
+          <div class="solar-item">
+            <span class="sol-label">Hores de llum màx.</span>
+            <span class="sol-val">15h 15min (solstici)</span>
+          </div>
+          <div class="solar-item">
+            <span class="sol-label">Hores de llum mín.</span>
+            <span class="sol-val">15h 02min (1 juny)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="insights">
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F31E;</span><p>&#9650; +13 min</p></div>
+            <div class="flip-back"><p>Al juny guanyem 13 minuts de llum fins al solstici.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F303;</span><p>Hora daurada</p></div>
+            <div class="flip-back"><p>Posta de sol espectacular entre 21:00 i 21:30.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 12. TEMPERATURA DEL MAR ====== -->
+    <section class="climate-section" id="mar" data-importancia="2">
+      <h2>Temperatura del Mar</h2>
+      <p class="section-desc">Temperatura de l'aigua del Mediterrani davant de Barcelona (°C)</p>
+
+      <div class="sea-gauge">
+        <div class="sea-bar-wrap">
+          <div class="sea-bar">
+            <div class="sea-fill" style="--p:60;--c:#0984e3;--c2:#74b9ff"></div>
+            <div class="sea-wave"></div>
+          </div>
+          <div class="sea-ticks">
+            <span>26°</span><span>24°</span><span>22°</span><span>20°</span>
+          </div>
+        </div>
+        <div class="sea-dots">
+          <div class="sea-dot" style="--h:35%;--c:#0984e3">
+            <span>22°</span><span>Setm. 1</span>
+          </div>
+          <div class="sea-dot" style="--h:55%;--c:#0652DD">
+            <span>24°</span><span>Setm. 2</span>
+          </div>
+          <div class="sea-dot" style="--h:70%;--c:#1B1464">
+            <span>26°</span><span>Setm. 3</span>
+          </div>
+          <div class="sea-dot" style="--h:60%;--c:#0652DD">
+            <span>25°</span><span>Setm. 4</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="insights">
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F3CA;</span><p>Màxima: 26°C</p></div>
+            <div class="flip-back"><p>Aigua molt càlida a la setmana 3, perfecta per al bany.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F30A;</span><p>Mitjana: 24°C</p></div>
+            <div class="flip-back"><p>Temperatura agradable del Mediterrani al juny.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F30D;</span><p>+2°C vs 2025</p></div>
+            <div class="flip-back"><p>Mar més càlida que el juny passat, tendència d'escalfament.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 13. COBERTURA NUVOLOSA ====== -->
+    <section class="climate-section" id="nuvols" data-importancia="2">
+      <h2>Cobertura Nuvolosa</h2>
+      <p class="section-desc">Percentatge de cel ennuvolat i tipus de núvols predominants</p>
+
+      <div class="cloud-vis">
+        <div class="cloud-layer">
+          <div class="cloud" style="--x:10%;--y:30%;--s:1;--d:0s;--o:0.3"></div>
+          <div class="cloud" style="--x:45%;--y:20%;--s:1.4;--d:2s;--o:0.25"></div>
+          <div class="cloud" style="--x:75%;--y:40%;--s:0.8;--d:4s;--o:0.35"></div>
+          <div class="cloud cloud-alt" style="--x:25%;--y:55%;--s:0.6;--d:1s;--o:0.2"></div>
+          <div class="cloud cloud-alt" style="--x:60%;--y:60%;--s:0.9;--d:3s;--o:0.15"></div>
+        </div>
+        <div class="cloud-data">
+          <div class="cloud-stat">
+            <span class="cloud-pct">28%</span>
+            <span class="cloud-lbl">Nuvolositat mitjana</span>
+          </div>
+          <div class="cloud-types">
+            <div class="ctype">
+              <span class="ctype-bar" style="--w:60;--c:#dfe6e9"></span>
+              <span>Cirrus</span>
+            </div>
+            <div class="ctype">
+              <span class="ctype-bar" style="--w:25;--c:#b2bec3"></span>
+              <span>Cumulus</span>
+            </div>
+            <div class="ctype">
+              <span class="ctype-bar" style="--w:10;--c:#636e72"></span>
+              <span>Stratus</span>
+            </div>
+            <div class="ctype">
+              <span class="ctype-bar" style="--w:5;--c:#2d3436"></span>
+              <span>Nimbus</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="insights">
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x2601;</span><p>Cel clar: 72%</p></div>
+            <div class="flip-back"><p>Majoria del mes amb cel seré o poc ennuvolat.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F32A;</span><p>Núvols alts (Cirrus)</p></div>
+            <div class="flip-back"><p>Predominen els núvols alts i prims, sense pluja.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 14. COMPARATIVA HISTÒRICA ====== -->
+    <section class="climate-section" id="comparativa" data-importancia="4">
+      <h2>Comparativa Històrica</h2>
+      <p class="section-desc">Juny 2026 vs Juny 2025 — desviacions per variable</p>
+
+      <div class="chart-scene">
+        <div class="chart-3d bars-4 bars-compare">
+          <div class="bar-group">
+            <div class="bar-3d" style="--h:220px;--c:#ff6b6b;--c2:#ee5a24">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <div class="bar-3d bar-hist" style="--h:195px;--c:#dfe6e9;--c2:#b2bec3">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <span class="bar-val">+1.2°C</span>
+            <span class="bar-label">Temperatura</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-3d" style="--h:180px;--c:#4a90d9;--c2:#2e6cb5">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <div class="bar-3d bar-hist" style="--h:200px;--c:#dfe6e9;--c2:#b2bec3">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <span class="bar-val">-5mm</span>
+            <span class="bar-label">Precipitació</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-3d" style="--h:160px;--c:#2ec4b6;--c2:#1a9e92">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <div class="bar-3d bar-hist" style="--h:145px;--c:#dfe6e9;--c2:#b2bec3">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <span class="bar-val">+2%</span>
+            <span class="bar-label">Humitat</span>
+          </div>
+          <div class="bar-group">
+            <div class="bar-3d" style="--h:200px;--c:#a29bfe;--c2:#6c5ce7">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <div class="bar-3d bar-hist" style="--h:180px;--c:#dfe6e9;--c2:#b2bec3">
+              <div class="bar-fill"></div><div class="bar-glow"></div>
+            </div>
+            <span class="bar-val">+2 km/h</span>
+            <span class="bar-label">Vent</span>
+          </div>
+        </div>
+      </div>
+      <p class="chart-footnote">Color = 2026 · Gris = 2025 · Diferència sobre cada barra</p>
+
+      <div class="insights">
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F525;</span><p>2026 +1.2°C</p></div>
+            <div class="flip-back"><p>Juny 2026 va ser 1.2°C més càlid que 2025.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F4A7;</span><p>Menys pluja</p></div>
+            <div class="flip-back"><p>5 mm menys que el juny anterior. Tendència més seca.</p></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><span class="icon">&#x1F30D;</span><p>Patró climàtic</p></div>
+            <div class="flip-back"><p>Els junys a Barcelona són cada cop més càlids i secs.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 15. DASHBOARD INTERACTIU ====== -->
+    <section class="climate-section dashboard-section" id="dashboard" data-importancia="2">
+      <h2>Dashboard Interactiu</h2>
+      <p class="section-desc">Canvia entre vistes per explorar les dades a diferents escales</p>
+
+      <input type="radio" name="dash-tab" id="dash-general-rb" checked hidden>
+      <input type="radio" name="dash-tab" id="dash-setmanal-rb" hidden>
+      <input type="radio" name="dash-tab" id="dash-diari-rb" hidden>
+
+      <div class="tab-bar">
+        <label for="dash-general-rb" class="tab-link">General</label>
+        <label for="dash-setmanal-rb" class="tab-link">Setmanal</label>
+        <label for="dash-diari-rb" class="tab-link">Diari</label>
+      </div>
+
+      <div class="dash-content" id="dash-general">
+        <div class="dash-grid">
+          <div class="dash-card"><span class="dash-num">24.5°</span><span class="dash-label">Temp. mitjana</span><span class="dash-dir">&#x25B2; +1.2°</span></div>
+          <div class="dash-card"><span class="dash-num">30mm</span><span class="dash-label">Precip. total</span><span class="dash-dir">&#x25BC; -5mm</span></div>
+          <div class="dash-card"><span class="dash-num">64%</span><span class="dash-label">Humitat mitj.</span><span class="dash-dir">&#x25B2; +2%</span></div>
+          <div class="dash-card"><span class="dash-num">7.5</span><span class="dash-label">UV mitjà</span><span class="dash-dir">&#x25B2; +0.5</span></div>
+          <div class="dash-card"><span class="dash-num">15</span><span class="dash-label">Vent mitjà</span><span class="dash-dir">&#x25B2; +2</span></div>
+          <div class="dash-card"><span class="dash-num">9.5h</span><span class="dash-label">Sol/dia</span><span class="dash-dir">&#x25BC; -0.3h</span></div>
+          <div class="dash-card"><span class="dash-num">1018</span><span class="dash-label">Pressió hPa</span><span class="dash-dir">Estable</span></div>
+          <div class="dash-card"><span class="dash-num">85</span><span class="dash-label">AQI</span><span class="dash-dir">Moderat</span></div>
+        </div>
+      </div>
+
+      <div class="dash-content" id="dash-setmanal">
+        <div class="dash-grid dash-grid-4">
+          <div class="dash-card"><span class="dash-week">Setm. 1</span><span class="dash-num">26°/19°</span><span class="dash-label">0mm · 62% · UV7</span></div>
+          <div class="dash-card"><span class="dash-week">Setm. 2</span><span class="dash-num">28°/22°</span><span class="dash-label">5mm · 68% · UV9</span></div>
+          <div class="dash-card"><span class="dash-week">Setm. 3</span><span class="dash-num">30°/24°</span><span class="dash-label">15mm · 55% · UV8</span></div>
+          <div class="dash-card"><span class="dash-week">Setm. 4</span><span class="dash-num">27°/20°</span><span class="dash-label">10mm · 72% · UV6</span></div>
+        </div>
+      </div>
+
+      <div class="dash-content" id="dash-diari">
+        <p class="dash-hint">&#x1F447; Vés a l'<a href="#explorador">Explorador Diari</a> per veure el detall dia a dia.</p>
+      </div>
+    </section>
+
+    <!-- ====== 16. EXPLORADOR DIARI ====== -->
+    <section class="climate-section" id="explorador" data-importancia="1">
+      <h2>Explorador Diari</h2>
+      <p class="section-desc">Desplega cada dia per veure les dades horàries detallades</p>
+
+      <div class="daily-grid">
+        <details class="daily-card">
+          <summary>
+            <span class="day-num">1</span>
+            <span class="day-summary">25° / 19° · Assolellat · 0mm</span>
+            <span class="day-expand">+</span>
+          </summary>
+          <div class="day-detail">
+            <div class="hourly-row">
+              <span>06h 18°</span><span>08h 21°</span><span>10h 23°</span>
+              <span>12h 25°</span><span>14h 25°</span><span>16h 24°</span>
+              <span>18h 22°</span><span>20h 20°</span><span>22h 19°</span>
+            </div>
+            <div class="day-stats">
+              <span>Humitat: 60%</span><span>Vent: 10 km/h NE</span><span>UV: 6</span><span>Pressió: 1012 hPa</span>
+            </div>
+          </div>
+        </details>
+        <details class="daily-card">
+          <summary>
+            <span class="day-num">5</span>
+            <span class="day-summary">27° / 20° · Assolellat · 0mm</span>
+            <span class="day-expand">+</span>
+          </summary>
+          <div class="day-detail">
+            <div class="hourly-row">
+              <span>06h 19°</span><span>08h 22°</span><span>10h 25°</span>
+              <span>12h 27°</span><span>14h 27°</span><span>16h 26°</span>
+              <span>18h 24°</span><span>20h 22°</span><span>22h 20°</span>
+            </div>
+            <div class="day-stats">
+              <span>Humitat: 55%</span><span>Vent: 12 km/h E</span><span>UV: 8</span><span>Pressió: 1015 hPa</span>
+            </div>
+          </div>
+        </details>
+        <details class="daily-card">
+          <summary>
+            <span class="day-num">10</span>
+            <span class="day-summary">28° / 21° · Assolellat · 0mm</span>
+            <span class="day-expand">+</span>
+          </summary>
+          <div class="day-detail">
+            <div class="hourly-row">
+              <span>06h 20°</span><span>08h 23°</span><span>10h 26°</span>
+              <span>12h 28°</span><span>14h 28°</span><span>16h 27°</span>
+              <span>18h 25°</span><span>20h 23°</span><span>22h 21°</span>
+            </div>
+            <div class="day-stats">
+              <span>Humitat: 52%</span><span>Vent: 15 km/h E</span><span>UV: 9</span><span>Pressió: 1018 hPa</span>
+            </div>
+          </div>
+        </details>
+        <details class="daily-card">
+          <summary>
+            <span class="day-num">15</span>
+            <span class="day-summary">29° / 22° · Assolellat · 0mm</span>
+            <span class="day-expand">+</span>
+          </summary>
+          <div class="day-detail">
+            <div class="hourly-row">
+              <span>06h 21°</span><span>08h 24°</span><span>10h 27°</span>
+              <span>12h 29°</span><span>14h 29°</span><span>16h 28°</span>
+              <span>18h 26°</span><span>20h 24°</span><span>22h 22°</span>
+            </div>
+            <div class="day-stats">
+              <span>Humitat: 48%</span><span>Vent: 8 km/h SE</span><span>UV: 9</span><span>Pressió: 1022 hPa</span>
+            </div>
+          </div>
+        </details>
+        <details class="daily-card">
+          <summary>
+            <span class="day-num">20</span>
+            <span class="day-summary">30° / 24° · Assolellat · 0mm</span>
+            <span class="day-expand">+</span>
+          </summary>
+          <div class="day-detail">
+            <div class="hourly-row">
+              <span>06h 22°</span><span>08h 25°</span><span>10h 28°</span>
+              <span>12h 30°</span><span>14h 30°</span><span>16h 29°</span>
+              <span>18h 27°</span><span>20h 25°</span><span>22h 24°</span>
+            </div>
+            <div class="day-stats">
+              <span>Humitat: 45%</span><span>Vent: 8 km/h S</span><span>UV: 8</span><span>Pressió: 1024 hPa</span>
+            </div>
+          </div>
+        </details>
+        <details class="daily-card">
+          <summary>
+            <span class="day-num">25</span>
+            <span class="day-summary">27° / 21° · Tempesta · 8mm</span>
+            <span class="day-expand">+</span>
+          </summary>
+          <div class="day-detail">
+            <div class="hourly-row">
+              <span>06h 20°</span><span>08h 23°</span><span>10h 26°</span>
+              <span>12h 27°</span><span>14h 27°</span><span>16h 25°</span>
+              <span>18h 23°</span><span>20h 22°</span><span>22h 21°</span>
+            </div>
+            <div class="day-stats">
+              <span>Humitat: 72%</span><span>Vent: 22 km/h NO</span><span>UV: 6</span><span>Pressió: 1015 hPa</span>
+            </div>
+          </div>
+        </details>
+        <details class="daily-card">
+          <summary>
+            <span class="day-num">30</span>
+            <span class="day-summary">26° / 19° · Ennuvolat · 2mm</span>
+            <span class="day-expand">+</span>
+          </summary>
+          <div class="day-detail">
+            <div class="hourly-row">
+              <span>06h 18°</span><span>08h 20°</span><span>10h 23°</span>
+              <span>12h 25°</span><span>14h 26°</span><span>16h 25°</span>
+              <span>18h 23°</span><span>20h 21°</span><span>22h 19°</span>
+            </div>
+            <div class="day-stats">
+              <span>Humitat: 80%</span><span>Vent: 18 km/h NO</span><span>UV: 5</span><span>Pressió: 1013 hPa</span>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ====== 17. MAPA DE MICROCLIMES ====== -->
+    <section class="climate-section" id="mapa" data-importancia="1">
+      <h2>Mapa de Microclimes</h2>
+      <p class="section-desc">Passa el ratolí per sobre dels districtes per veure dades localitzades</p>
+
+      <div class="map-visual">
+        <svg class="map-svg" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <path class="map-line" d="M90,50 Q240,45 390,40" />
+          <path class="map-line" d="M90,50 Q135,87 180,125" />
+          <path class="map-line" d="M390,40 Q285,82 180,125" />
+          <path class="map-line" d="M180,125 Q105,142 30,160" />
+          <path class="map-line" d="M180,125 Q216,162 252,200" />
+          <path class="map-line" d="M30,160 Q69,235 108,310" />
+          <path class="map-line" d="M252,200 Q180,255 108,310" />
+          <path class="map-line" d="M252,200 Q261,245 270,290" />
+          <path class="map-line" d="M252,200 Q342,230 432,260" />
+          <path class="map-line" d="M270,290 Q351,275 432,260" />
+          <path class="map-line" d="M270,290 Q291,340 312,390" />
+          <path class="map-line" d="M30,160 Q141,180 252,200" />
+        </svg>
+
+        <div class="map-pin" style="--x:15%;--y:10%;--c:#6c5ce7" data-districte="Nou Barris">
+          <div class="pin-body">
+            <span class="pin-name">Nou Barris</span>
+            <span class="pin-temp">23.8°C</span>
+          </div>
+          <div class="pin-detail">
+            <span>65% HR</span>
+            <span>12 km/h</span>
+            <span>AQI 72</span>
+          </div>
+        </div>
+
+        <div class="map-pin" style="--x:65%;--y:8%;--c:#a29bfe" data-districte="Horta">
+          <div class="pin-body">
+            <span class="pin-name">Horta</span>
+            <span class="pin-temp">24.5°C</span>
+          </div>
+          <div class="pin-detail">
+            <span>60% HR</span>
+            <span>5 km/h</span>
+            <span>28°C</span>
+          </div>
+        </div>
+
+        <div class="map-pin" style="--x:5%;--y:32%;--c:#e17055" data-districte="Sarria">
+          <div class="pin-body">
+            <span class="pin-name">Sarria</span>
+            <span class="pin-temp">24.0°C</span>
+          </div>
+          <div class="pin-detail">
+            <span>62% HR</span>
+            <span>7 km/h</span>
+            <span>27°C</span>
+          </div>
+        </div>
+
+        <div class="map-pin" style="--x:30%;--y:25%;--c:#4a90d9" data-districte="Gracia">
+          <div class="pin-body">
+            <span class="pin-name">Gracia</span>
+            <span class="pin-temp">25.2°C</span>
+          </div>
+          <div class="pin-detail">
+            <span>58% HR</span>
+            <span>10 km/h</span>
+            <span>29°C</span>
+          </div>
+        </div>
+
+        <div class="map-pin" style="--x:42%;--y:40%;--c:#ff6b6b" data-districte="Eixample">
+          <div class="pin-body">
+            <span class="pin-name">Eixample</span>
+            <span class="pin-temp">26.8°C</span>
+          </div>
+          <div class="pin-detail">
+            <span>52% HR</span>
+            <span>8 km/h</span>
+            <span>31°C</span>
+          </div>
+        </div>
+
+        <div class="map-pin" style="--x:18%;--y:62%;--c:#f9ca24" data-districte="Sants">
+          <div class="pin-body">
+            <span class="pin-name">Sants</span>
+            <span class="pin-temp">25.8°C</span>
+          </div>
+          <div class="pin-detail">
+            <span>55% HR</span>
+            <span>6 km/h</span>
+            <span>30°C</span>
+          </div>
+        </div>
+
+        <div class="map-pin" style="--x:45%;--y:58%;--c:#fd79a8" data-districte="Ciutat Vella">
+          <div class="pin-body">
+            <span class="pin-name">Ciutat Vella</span>
+            <span class="pin-temp">26.2°C</span>
+          </div>
+          <div class="pin-detail">
+            <span>54% HR</span>
+            <span>11 km/h</span>
+            <span>31°C</span>
+          </div>
+        </div>
+
+        <div class="map-pin" style="--x:72%;--y:52%;--c:#00cec9" data-districte="Sant Marti">
+          <div class="pin-body">
+            <span class="pin-name">Sant Marti</span>
+            <span class="pin-temp">25.5°C</span>
+          </div>
+          <div class="pin-detail">
+            <span>57% HR</span>
+            <span>14 km/h</span>
+            <span>29°C</span>
+          </div>
+        </div>
+
+        <div class="map-pin" style="--x:52%;--y:78%;--c:#2ec4b6" data-districte="Barceloneta">
+          <div class="pin-body">
+            <span class="pin-name">Barceloneta</span>
+            <span class="pin-temp">24.1°C</span>
+          </div>
+          <div class="pin-detail">
+            <span>68% HR</span>
+            <span>15 km/h</span>
+            <span>27°C</span>
+          </div>
+        </div>
+      </div>
+      <p class="chart-footnote">Dades de la setmana 3 · Les temperatures varien fins a 3°C entre districtes</p>
+    </section>
+
+    <!-- ====== 18. JOC "ENDEVINA EL VALOR" ====== -->
+    <section class="climate-section" id="joc" data-importancia="1">
+      <h2>Joc Climàtic</h2>
+      <p class="section-desc">Endevina els valors climàtics del mes — clica una resposta per descobrir-la</p>
+
+      <div class="quiz-grid">
+        <div class="quiz-card">
+          <p class="quiz-q">Quina va ser la temperatura màxima absoluta del juny?</p>
+          <input type="radio" name="quiz1" id="q1a1" hidden>
+          <input type="radio" name="quiz1" id="q1a2" hidden>
+          <input type="radio" name="quiz1" id="q1a3" hidden>
+          <div class="quiz-opts">
+            <label for="q1a1" class="quiz-opt">28°C</label>
+            <label for="q1a2" class="quiz-opt">30°C</label>
+            <label for="q1a3" class="quiz-opt">32°C</label>
+          </div>
+          <div class="quiz-answer" id="q1a2-answer">
+            <span class="qa-badge correct">Correcte!</span>
+            <span>30°C a la setmana 3, el dia 20 de juny.</span>
+          </div>
+          <div class="quiz-answer" id="q1a1-answer">
+            <span class="qa-badge wrong">Incorrecte</span>
+            <span>La màxima va ser 30°C, no 28°C.</span>
+          </div>
+          <div class="quiz-answer" id="q1a3-answer">
+            <span class="qa-badge wrong">Incorrecte</span>
+            <span>No vam arribar a 32°C. La màxima va ser 30°C.</span>
+          </div>
+        </div>
+
+        <div class="quiz-card">
+          <p class="quiz-q">Quants dies de pluja va tenir el mes?</p>
+          <input type="radio" name="quiz2" id="q2a1" hidden>
+          <input type="radio" name="quiz2" id="q2a2" hidden>
+          <input type="radio" name="quiz2" id="q2a3" hidden>
+          <div class="quiz-opts">
+            <label for="q2a1" class="quiz-opt">4 dies</label>
+            <label for="q2a2" class="quiz-opt">6 dies</label>
+            <label for="q2a3" class="quiz-opt">9 dies</label>
+          </div>
+          <div class="quiz-answer" id="q2a2-answer">
+            <span class="qa-badge correct">Correcte!</span>
+            <span>6 dies amb precipitació, majoritàriament tempestes curtes.</span>
+          </div>
+          <div class="quiz-answer" id="q2a1-answer">
+            <span class="qa-badge wrong">Incorrecte</span>
+            <span>Van ser 6 dies, no 4. Les pluges van ser localitzades.</span>
+          </div>
+          <div class="quiz-answer" id="q2a3-answer">
+            <span class="qa-badge wrong">Incorrecte</span>
+            <span>No, 9 dies és massa. Van ser 6 dies de pluja.</span>
+          </div>
+        </div>
+
+        <div class="quiz-card">
+          <p class="quiz-q">Quina direcció del vent va dominar al juny?</p>
+          <input type="radio" name="quiz3" id="q3a1" hidden>
+          <input type="radio" name="quiz3" id="q3a2" hidden>
+          <input type="radio" name="quiz3" id="q3a3" hidden>
+          <div class="quiz-opts">
+            <label for="q3a1" class="quiz-opt">Nord (N)</label>
+            <label for="q3a2" class="quiz-opt">Est (E)</label>
+            <label for="q3a3" class="quiz-opt">Oest (O)</label>
+          </div>
+          <div class="quiz-answer" id="q3a2-answer">
+            <span class="qa-badge correct">Correcte!</span>
+            <span>Vent de component est dominant, provinent del Mediterrani.</span>
+          </div>
+          <div class="quiz-answer" id="q3a1-answer">
+            <span class="qa-badge wrong">Incorrecte</span>
+            <span>El vent dominant va ser de l'est, no del nord.</span>
+          </div>
+          <div class="quiz-answer" id="q3a3-answer">
+            <span class="qa-badge wrong">Incorrecte</span>
+            <span>No, l'oest no va ser dominant. Va ser l'est.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 19. RESUM 3D ====== -->
+    <section class="climate-section cube-section" id="resum" data-importancia="5">
+      <h2>Resum 3D del Mes</h2>
+      <p class="section-desc">Posa el ratolí sobre el cub per aturar-lo i explorar cada cara</p>
+
+      <div class="cube-wrapper">
+        <div class="cube-edge-glow"></div>
+        <div class="cube">
+          <div class="cube-face front">
+            <h3>Temperatura</h3>
+            <p class="cube-val">24.5°C</p>
+            <p class="cube-sub">Mitjana</p>
+            <p class="cube-detail">Màx: 30° · Mín: 19°</p>
+          </div>
+          <div class="cube-face back">
+            <h3>Precipitació</h3>
+            <p class="cube-val">30mm</p>
+            <p class="cube-sub">Total</p>
+            <p class="cube-detail">6 dies pluja · 24 secs</p>
+          </div>
+          <div class="cube-face right">
+            <h3>Humitat</h3>
+            <p class="cube-val">64%</p>
+            <p class="cube-sub">Mitjana</p>
+            <p class="cube-detail">Màx: 80% · Mín: 48%</p>
+          </div>
+          <div class="cube-face left">
+            <h3>Vent</h3>
+            <p class="cube-val">15 km/h</p>
+            <p class="cube-sub">Mitjana</p>
+            <p class="cube-detail">Ratxa: 42 · Dir: E</p>
+          </div>
+          <div class="cube-face top">
+            <h3>UV + Aire</h3>
+            <p class="cube-val">UV 7.5</p>
+            <p class="cube-sub">AQI 85</p>
+            <p class="cube-detail">Protecció 12–16h</p>
+          </div>
+          <div class="cube-face bottom">
+            <h3>Mar + Sol</h3>
+            <p class="cube-val">24°C · 9.5h</p>
+            <p class="cube-sub">Mar i Sol</p>
+            <p class="cube-detail">Sortida: 6:15 · Posta: 21:30</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Evolució Climàtica a Barcelona | Dades simulades amb finalitats educatives</p>
+  </footer>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
+    }
+  }
+  </script>
+  <script src="js/thermometer-observer.js"></script>
+  <script type="module" src="js/temperature-3d.js"></script>
+</body>
+</html>
