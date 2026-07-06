@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NALEE's Bakery — Tarjeta de Presentación</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #faf6f0 0%, #e8d5c4 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 40px rgba(92, 61, 53, 0.12);
+      max-width: 400px;
+      width: 100%;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(92, 61, 53, 0.18);
+    }
+
+    .card-header {
+      background: linear-gradient(135deg, var(--color-rosa) 0%, var(--color-rosa-oscuro) 100%);
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+      color: #ffffff;
+      position: relative;
+    }
+
+    .card-header::after {
+      content: '🍪';
+      position: absolute;
+      bottom: -1.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.5rem;
+      background: #ffffff;
+      width: 2.8rem;
+      height: 2.8rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(92, 61, 53, 0.15);
+    }
+
+    .card-logo {
+      font-family: var(--ff-headings);
+      font-size: 2.2rem;
+      font-weight: var(--fw-bold);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-tagline {
+      font-family: var(--ff-body);
+      font-size: 1rem;
+      font-weight: 300;
+      opacity: 0.9;
+    }
+
+    .card-body {
+      padding: 2.5rem 1.5rem 1.5rem;
+    }
+
+    .card-desc {
+      font-size: 0.95rem;
+      color: var(--color-texto-claro);
+      text-align: center;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .card-info-item {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-size: 0.9rem;
+      color: var(--color-texto);
+    }
+
+    .card-info-icon {
+      font-size: 1.3rem;
+      width: 2rem;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .card-info-label {
+      font-weight: 600;
+      color: var(--color-marron-oscuro);
+      font-size: 0.8rem;
+      display: block;
+    }
+
+    .card-info-value {
+      color: var(--color-texto-claro);
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 0 1.5rem 2rem;
+    }
+
+    .card-social {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background: var(--color-crema);
+      color: var(--color-marron-oscuro);
+      font-family: var(--ff-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
+
+    .card-social:hover {
+      background: var(--color-rosa);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <article class="card">
+    <div class="card-header">
+      <div class="card-logo">NALEE's Bakery</div>
+      <p class="card-tagline">Galletas artesanas con amor</p>
+    </div>
+
+    <div class="card-body">
+      <p class="card-desc">
+        Desde 2018 endulzamos la vida con galletas hechas a mano,
+        ingredientes naturales y mucho cariño.
+      </p>
+
+      <div class="card-info">
+        <div class="card-info-item">
+          <span class="card-info-icon">📍</span>
+          <div>
+            <span class="card-info-label">Dirección</span>
+            <span class="card-info-value">Calle del Dulce, 42 · 08001 Barcelona</span>
+          </div>
+        </div>
+        <div class="card-info-item">
+          <span class="card-info-icon">📞</span>
+          <div>
+            <span class="card-info-label">Teléfono</span>
+            <span class="card-info-value">+34 93 123 45 67</span>
+          </div>
+        </div>
+        <div class="card-info-item">
+          <span class="card-info-icon">✉️</span>
+          <div>
+            <span class="card-info-label">Email</span>
+            <span class="card-info-value">hola@naleesbakery.com</span>
+          </div>
+        </div>
+        <div class="card-info-item">
+          <span class="card-info-icon">🕐</span>
+          <div>
+            <span class="card-info-label">Horario</span>
+            <span class="card-info-value">Lun–Vie 8:00–20:00 · Sáb 9:00–21:00 · Dom 10:00–14:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <a href="#" class="card-social" aria-label="Instagram">IG</a>
+      <a href="#" class="card-social" aria-label="Facebook">FB</a>
+      <a href="#" class="card-social" aria-label="Twitter">X</a>
+      <a href="#" class="card-social" aria-label="TikTok">TT</a>
+      <a href="#" class="card-social" aria-label="Pinterest">PT</a>
+    </div>
+  </article>
+</body>
+</html>
