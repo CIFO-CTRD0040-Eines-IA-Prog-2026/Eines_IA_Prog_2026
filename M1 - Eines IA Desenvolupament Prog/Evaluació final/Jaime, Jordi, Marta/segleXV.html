@@ -10,110 +10,121 @@
       theme: {
         extend: {
           colors: {
-            slate: '#0F1923', mediterrani: '#2A6B8A', or: '#C4953C',
-            'pedra-calcaria': '#E8E0D6', 'pedra-clara': '#FBF8F4', terracota: '#8B3A30',
+            primari: '#1D4ED8', 'primari-hover': '#2563EB', 'primari-actiu': '#1E40AF',
+            'accent-lila': '#7C3AED', 'accent-rosa': '#EC4899', 'accent-verd': '#10B981', 'accent-taronja': '#F59E0B',
+            blanc: '#FFFFFF', fons: '#FAFAFB', 'fons-alt': '#F5F7FA',
+            vora: '#E5E7EB', divisor: '#ECECEC',
+            text: '#111827', secundari: '#4B5563', mut: '#6B7280', inactiu: '#9CA3AF',
+            pissarra: '#0F1923', or: '#C4953C', mediterrani: '#2A6B8A',
           },
-          fontFamily: {
-            cinzel: ['Cinzel', 'Georgia', 'serif'],
-            source: ['"Source Serif 4"', 'Georgia', 'Times New Roman', 'serif'],
-            inter: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-          },
+          fontFamily: { inter: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
         }
       }
     }
   </script>
   <link rel="stylesheet" href="estils.css">
 </head>
-<body class="bg-pedra-calcaria font-source text-slate">
+<body class="bg-fons font-inter text-text">
 
-  <nav class="sticky top-0 z-50 h-[72px] bg-slate border-b border-[rgba(196,149,60,0.15)]">
-    <div class="max-w-[1200px] mx-auto px-10 max-md:px-5 h-full flex items-center justify-between">
-      <a href="index.html" class="font-cinzel text-xl font-semibold text-pedra-clara tracking-wider hover:text-or transition-colors duration-200">BARCINO · BARCELONA</a>
-      <div class="nav-links flex gap-8 items-center max-md:fixed max-md:top-[72px] max-md:left-0 max-md:right-0 max-md:bg-slate max-md:flex-col max-md:p-8 max-md:gap-6">
-        <a href="index.html#seccions" class="font-inter text-sm text-pedra-clara/70 tracking-widest uppercase hover:text-or transition-colors duration-200">Segles</a>
-      </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+  <header class="sticky top-0 z-50 h-20 bg-blanc border-b border-vora">
+    <div class="max-w-[1280px] mx-auto px-6 max-md:px-6 h-full flex items-center justify-between">
+      <a href="index.html" class="font-inter text-lg font-bold text-text tracking-tight hover:text-primari transition-colors duration-150">BARCINO · BARCELONA</a>
+      <nav class="nav-links flex gap-8 items-center" aria-label="Navegació principal">
+        <a href="index.html#seccions" class="font-inter text-sm font-medium text-secundari hover:text-primari transition-colors duration-150">Segles</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú de navegació">
         <span></span><span></span><span></span>
       </button>
     </div>
-  </nav>
+  </header>
 
-  <section class="page-hero bg-slate py-24 max-md:py-16 text-center">
-    <div class="max-w-[1200px] mx-auto px-10 max-md:px-5 hero-content">
-      <h1 class="font-cinzel text-[clamp(2rem,5vw,3.5rem)] font-semibold text-pedra-clara mb-2">Segle XV d.C.</h1>
-      <p class="font-inter font-light text-lg text-pedra-clara/75">L'Apogeu Comercial i Cultural de Barcelona</p>
+  <main>
+    <section class="page-hero py-24 max-md:py-16 text-center" style="background-image: url('img/segleXV.jpg');">
+      <div class="absolute inset-0 bg-pissarra/65"></div>
+      <div class="max-w-[1280px] mx-auto px-6 max-md:px-6 hero-content">
+        <h1 class="font-inter text-5xl max-md:text-3xl font-bold text-blanc mb-2">Segle XV d.C.</h1>
+        <p class="font-inter text-lg font-light text-blanc/75">L'Apogeu Comercial i Cultural de Barcelona</p>
+      </div>
+    </section>
+
+    <div class="max-w-[1280px] mx-auto px-6 max-md:px-6">
+      <nav class="flex justify-center flex-wrap gap-2 py-8 mb-8 border-b border-divisor" aria-label="Barra cronològica">
+        <a href="segleII.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">II a.C.</a>
+        <a href="segleV.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">V d.C.</a>
+        <a href="segleVIII.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">VIII d.C.</a>
+        <a href="segleXII.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">XII d.C.</a>
+        <a href="segleXV.html" class="font-inter text-sm font-semibold px-[18px] py-[8px] rounded-[999px] bg-pissarra text-blanc transition-all duration-150">XV d.C.</a>
+        <a href="segleXVIII.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">XVIII d.C.</a>
+        <a href="segleXIX.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">XIX d.C.</a>
+        <a href="segleXX.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">XX d.C.</a>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10">
+        <main>
+          <article class="content-card bg-blanc rounded-[20px] p-8 max-md:p-6 border border-divisor shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
+            <h2 class="font-inter text-3xl font-bold text-text mb-8">L'Esplendor del Segle XV</h2>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">El segle XV va representar l'edat d'or de la Barcelona medieval. La ciutat va assolir el seu màxim esplendor econòmic, polític i cultural dins de la Corona d'Aragó, convertint-se en una de les metròpolis més importants del Mediterrani. El port de Barcelona era un dels més actius d'Europa, connectant la ciutat amb tot el món conegut.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">L'economia barcelonina del segle XV estava impulsada per un comerç marítim extraordinàriament actiu. Les naus carregades de teixits, cuiro, ferramentes i vi salpaven cap a Sicília, Sardenya, Nàpols, Grècia i fins a l'Orient Llatí. A canvi, arribaven espècies, sedes, cotó i or. Els mercaders barcelonins van establir consolats i factories a tot el Mediterrani.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">La Generalitat de Catalunya, institució creada al segle XIII, va consolidar el seu paper com a òrgan de govern representatiu. Les Corts Catalanes, reunides periòdicament, legislen i negocien amb el monarca. La ciutat de Barcelona gaudia d'una àmplia autonomia municipal, amb el Consell de Cent al capdavant del govern urbà.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">Culturalment, el segle XV va ser un període brillant. L'arquitectura gòtica catalana va assolir la seva màxima expressió amb obres com l'església de Santa Maria del Mar, la Llotja de Mar i el Palau de la Generalitat. La pintura i l'escultura gòtiques van florir gràcies al mecenatge de la burgesia i l'església.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">La societat barcelonina era vibrant i complexa. La burgesia mercantil, enriquida pel comerç, va esdevenir una classe social poderosa i influent. Alhora, la ciutat acollia una nombrosa població artesana, organitzada en gremis que regulaven l'activitat econòmica i exercien un important paper social i polític.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">No obstant això, el segle XV també va portar crisis i tensions. La Guerra Civil Catalana (1462-1472) va enfrontar la Generalitat amb el rei Joan II, causant destrucció i inestabilitat. La pesta negra va colpejar repetidament la ciutat, reduint la població i alterant l'economia. A finals de segle, les tensions socials van augmentar.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">El 1492, amb el descobriment d'Amèrica, l'eix comercial va començar a desplaçar-se de la Mediterrània a l'Atlàntic. Barcelona va iniciar un lent declivi relatiu, però el seu llegat medieval perdura en el traçat urbà, els monuments i la identitat d'una ciutat que havia estat, durant segles, el cor d'un imperi marítim mediterrani.</p>
+
+            <figure class="mt-12 text-center">
+              <img src="img/segleXV.jpg" alt="Barcelona al segle XV" class="rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
+              <figcaption class="font-inter text-sm text-mut italic mt-3">La Barcelona gòtica del segle XV: comerç, cultura i poder marítim.</figcaption>
+            </figure>
+          </article>
+
+          <nav class="flex justify-between items-center mt-12 pt-8 border-t border-divisor" aria-label="Navegació entre segles">
+            <a href="segleXII.html" class="font-inter font-medium text-sm text-primari hover:text-primari-hover uppercase tracking-[0.5px] transition-colors duration-150">← Segle XII</a>
+            <a href="index.html" class="font-inter font-medium text-sm text-mut uppercase tracking-[0.5px] hover:text-text transition-colors duration-150">Inici</a>
+            <a href="segleXVIII.html" class="font-inter font-medium text-sm text-primari hover:text-primari-hover uppercase tracking-[0.5px] transition-colors duration-150">Segle XVIII →</a>
+          </nav>
+        </main>
+
+        <aside class="flex flex-col gap-4">
+          <h3 class="font-inter text-base font-semibold text-text uppercase tracking-[0.05em] mb-2">Fets clau</h3>
+          <div class="bg-fons-alt rounded-[12px] p-4 border-l-[3px] border-primari">
+            <div class="font-inter text-xs font-bold text-accent-taronja uppercase tracking-[0.5px]">Economia</div>
+            <div class="font-inter text-sm text-secundari">Comerç marítim amb tot el Mediterrani</div>
+          </div>
+          <div class="bg-fons-alt rounded-[12px] p-4 border-l-[3px] border-primari">
+            <div class="font-inter text-xs font-bold text-accent-taronja uppercase tracking-[0.5px]">Arquitectura</div>
+            <div class="font-inter text-sm text-secundari">Gòtic català: Santa Maria del Mar</div>
+          </div>
+          <div class="bg-fons-alt rounded-[12px] p-4 border-l-[3px] border-primari">
+            <div class="font-inter text-xs font-bold text-accent-taronja uppercase tracking-[0.5px]">Institució</div>
+            <div class="font-inter text-sm text-secundari">Generalitat de Catalunya</div>
+          </div>
+          <div class="bg-fons-alt rounded-[12px] p-4 border-l-[3px] border-primari">
+            <div class="font-inter text-xs font-bold text-accent-taronja uppercase tracking-[0.5px]">Crisi</div>
+            <div class="font-inter text-sm text-secundari">Guerra Civil Catalana (1462-1472)</div>
+          </div>
+        </aside>
+      </div>
     </div>
-  </section>
+  </main>
 
-  <div class="max-w-[1200px] mx-auto px-10 max-md:px-5">
-    <nav class="flex justify-center flex-wrap gap-2 py-8 mb-8 border-b border-slate/10">
-      <a href="segleII.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">II a.C.</a>
-      <a href="segleV.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">V d.C.</a>
-      <a href="segleVIII.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">VIII d.C.</a>
-      <a href="segleXII.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">XII d.C.</a>
-      <a href="segleXV.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-or text-slate font-semibold rounded-[8px] transition-all duration-200">XV d.C.</a>
-      <a href="segleXVIII.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">XVIII d.C.</a>
-      <a href="segleXIX.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">XIX d.C.</a>
-      <a href="segleXX.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">XX d.C.</a>
-    </nav>
-
-    <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10">
-      <main>
-        <article class="content-card bg-pedra-clara rounded-[16px] p-10 max-md:p-6 shadow-[0_2px_12px_rgba(15,25,35,0.06)]">
-          <h2 class="font-cinzel text-[1.6rem] text-slate mb-8">L'Esplendor del Segle XV</h2>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">El segle XV va representar l'edat d'or de la Barcelona medieval. La ciutat va assolir el seu màxim esplendor econòmic, polític i cultural dins de la Corona d'Aragó, convertint-se en una de les metròpolis més importants del Mediterrani. El port de Barcelona era un dels més actius d'Europa, connectant la ciutat amb tot el món conegut.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">L'economia barcelonina del segle XV estava impulsada per un comerç marítim extraordinàriament actiu. Les naus carregades de teixits, cuiro, ferramentes i vi salpaven cap a Sicília, Sardenya, Nàpols, Grècia i fins a l'Orient Llatí. A canvi, arribaven espècies, sedes, cotó i or. Els mercaders barcelonins van establir consolats i factories a tot el Mediterrani.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">La Generalitat de Catalunya, institució creada al segle XIII, va consolidar el seu paper com a òrgan de govern representatiu. Les Corts Catalanes, reunides periòdicament, legislen i negocien amb el monarca. La ciutat de Barcelona gaudia d'una àmplia autonomia municipal, amb el Consell de Cent al capdavant del govern urbà.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">Culturalment, el segle XV va ser un període brillant. L'arquitectura gòtica catalana va assolir la seva màxima expressió amb obres com l'església de Santa Maria del Mar, la Llotja de Mar i el Palau de la Generalitat. La pintura i l'escultura gòtiques van florir gràcies al mecenatge de la burgesia i l'església.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">La societat barcelonina era vibrant i complexa. La burgesia mercantil, enriquida pel comerç, va esdevenir una classe social poderosa i influent. Alhora, la ciutat acollia una nombrosa població artesana, organitzada en gremis que regulaven l'activitat econòmica i exercien un important paper social i polític.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">No obstant això, el segle XV també va portar crisis i tensions. La Guerra Civil Catalana (1462-1472) va enfrontar la Generalitat amb el rei Joan II, causant destrucció i inestabilitat. La pesta negra va colpejar repetidament la ciutat, reduint la població i alterant l'economia. A finals de segle, les tensions socials van augmentar.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">El 1492, amb el descobriment d'Amèrica, l'eix comercial va començar a desplaçar-se de la Mediterrània a l'Atlàntic. Barcelona va iniciar un lent declivi relatiu, però el seu llegat medieval perdura en el traçat urbà, els monuments i la identitat d'una ciutat que havia estat, durant segles, el cor d'un imperi marítim mediterrani.</p>
-
-          <figure class="mt-12 text-center">
-            <img src="img/segleXV.jpg" alt="Barcelona al segle XV" class="rounded-[16px] shadow-[0_4px_20px_rgba(15,25,35,0.1)]">
-            <figcaption class="font-inter text-sm text-slate/50 italic mt-3">La Barcelona gòtica del segle XV: comerç, cultura i poder marítim.</figcaption>
-          </figure>
-        </article>
-
-        <nav class="flex justify-between items-center mt-12 pt-8 border-t border-slate/10">
-          <a href="segleXII.html" class="font-inter font-medium text-sm text-mediterrani uppercase tracking-[0.5px] hover:text-or transition-colors duration-200">← Segle XII</a>
-          <a href="index.html" class="font-inter font-medium text-sm text-slate/40 uppercase tracking-[0.5px] hover:text-slate transition-colors duration-200">Inici</a>
-          <a href="segleXVIII.html" class="font-inter font-medium text-sm text-mediterrani uppercase tracking-[0.5px] hover:text-or transition-colors duration-200">Segle XVIII →</a>
-        </nav>
-      </main>
-
-      <aside class="flex flex-col gap-4">
-        <h3 class="font-cinzel text-base text-or uppercase tracking-[0.05em] mb-2">Fets clau</h3>
-        <div class="bg-pedra-clara rounded-[6px] p-4 border-l-[3px] border-mediterrani">
-          <div class="font-inter text-xs font-bold text-terracota uppercase tracking-[0.5px]">Economia</div>
-          <div class="font-source text-[0.95rem] text-slate">Comerç marítim amb tot el Mediterrani</div>
-        </div>
-        <div class="bg-pedra-clara rounded-[6px] p-4 border-l-[3px] border-mediterrani">
-          <div class="font-inter text-xs font-bold text-terracota uppercase tracking-[0.5px]">Arquitectura</div>
-          <div class="font-source text-[0.95rem] text-slate">Gòtic català: Santa Maria del Mar</div>
-        </div>
-        <div class="bg-pedra-clara rounded-[6px] p-4 border-l-[3px] border-mediterrani">
-          <div class="font-inter text-xs font-bold text-terracota uppercase tracking-[0.5px]">Institució</div>
-          <div class="font-source text-[0.95rem] text-slate">Generalitat de Catalunya</div>
-        </div>
-        <div class="bg-pedra-clara rounded-[6px] p-4 border-l-[3px] border-mediterrani">
-          <div class="font-inter text-xs font-bold text-terracota uppercase tracking-[0.5px]">Crisi</div>
-          <div class="font-source text-[0.95rem] text-slate">Guerra Civil Catalana (1462-1472)</div>
-        </div>
-      </aside>
-    </div>
-  </div>
-
-  <footer class="bg-slate text-center py-12 mt-24">
-    <div class="max-w-[1200px] mx-auto px-10 max-md:px-5">
-      <p class="font-inter text-sm text-pedra-clara/50 m-0">&copy; 2026 Història de Barcelona. Tots els drets reservats.</p>
+  <footer class="bg-[#111827] text-center py-12 mt-24">
+    <div class="max-w-[1280px] mx-auto px-6 max-md:px-6">
+      <p class="font-inter text-sm text-[#D1D5DB] m-0">&copy; 2026 Història de Barcelona. Tots els drets reservats.</p>
     </div>
   </footer>
 
   <script>
-    document.getElementById('navToggle').addEventListener('click', function() {
+    var navToggle = document.getElementById('navToggle');
+    var navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', function() {
       this.classList.toggle('open');
-      document.querySelector('.nav-links').classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
     });
   </script>
 </body>

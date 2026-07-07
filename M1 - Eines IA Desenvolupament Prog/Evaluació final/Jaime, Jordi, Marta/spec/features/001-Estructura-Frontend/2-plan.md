@@ -45,4 +45,4 @@ Registrar els tokens de color de la skill `disseny-web` dins `tailwind.config` p
 
 ## Verificació
 
-Obrir `index.html` al navegador i comprovar, un per un, els criteris d'acceptació de la spec (navegació, menú mòbil, 7 temes, graella responsiva, colors de la paleta).
+Obrir `index.html` al navegador i comprovar, un per un, els criteris d'acceptació de la spec.

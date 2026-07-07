@@ -10,16 +10,27 @@
       theme: {
         extend: {
           colors: {
-            slate: '#0F1923',
-            mediterrani: '#2A6B8A',
+            primari: '#1D4ED8',
+            'primari-hover': '#2563EB',
+            'primari-actiu': '#1E40AF',
+            'accent-lila': '#7C3AED',
+            'accent-rosa': '#EC4899',
+            'accent-verd': '#10B981',
+            'accent-taronja': '#F59E0B',
+            blanc: '#FFFFFF',
+            fons: '#FAFAFB',
+            'fons-alt': '#F5F7FA',
+            vora: '#E5E7EB',
+            divisor: '#ECECEC',
+            text: '#111827',
+            secundari: '#4B5563',
+            mut: '#6B7280',
+            inactiu: '#9CA3AF',
+            pissarra: '#0F1923',
             or: '#C4953C',
-            'pedra-calcaria': '#E8E0D6',
-            'pedra-clara': '#FBF8F4',
-            terracota: '#8B3A30',
+            mediterrani: '#2A6B8A',
           },
           fontFamily: {
-            cinzel: ['Cinzel', 'Georgia', 'serif'],
-            source: ['"Source Serif 4"', 'Georgia', 'Times New Roman', 'serif'],
             inter: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
           },
         }
@@ -28,198 +39,193 @@
   </script>
   <link rel="stylesheet" href="estils.css">
 </head>
-<body class="bg-pedra-calcaria font-source text-slate">
+<body class="bg-fons font-inter text-text">
 
-  <nav class="sticky top-0 z-50 h-[72px] bg-slate border-b border-[rgba(196,149,60,0.15)]">
-    <div class="max-w-[1200px] mx-auto px-10 max-md:px-5 h-full flex items-center justify-between">
-      <a href="index.html" class="font-cinzel text-xl font-semibold text-pedra-clara tracking-wider hover:text-or transition-colors duration-200">BARCINO · BARCELONA</a>
-      <div class="nav-links flex gap-8 items-center max-md:fixed max-md:top-[72px] max-md:left-0 max-md:right-0 max-md:bg-slate max-md:flex-col max-md:p-8 max-md:gap-6 max-md:border-b max-md:border-[rgba(196,149,60,0.15)]">
-        <a href="#seccions" class="font-inter text-sm text-pedra-clara/70 tracking-widest uppercase hover:text-or transition-colors duration-200">Segles</a>
-        <a href="#opinions" class="font-inter text-sm text-pedra-clara/70 tracking-widest uppercase hover:text-or transition-colors duration-200">Opinions</a>
-      </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+  <header class="sticky top-0 z-50 h-20 bg-blanc border-b border-vora">
+    <div class="max-w-[1280px] mx-auto px-6 max-md:px-6 h-full flex items-center justify-between">
+      <a href="index.html" class="font-inter text-lg font-bold text-text tracking-tight hover:text-primari transition-colors duration-150">BARCINO · BARCELONA</a>
+      <nav class="nav-links flex gap-8 items-center" aria-label="Navegació principal">
+        <a href="#seccions" class="font-inter text-sm font-medium text-secundari hover:text-primari transition-colors duration-150">Segles</a>
+        <a href="#opinions" class="font-inter text-sm font-medium text-secundari hover:text-primari transition-colors duration-150">Opinions</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú de navegació">
         <span></span><span></span><span></span>
       </button>
     </div>
-  </nav>
+  </header>
 
-  <section class="hero bg-slate py-32 max-md:py-20 text-center">
-    <div class="max-w-[1200px] mx-auto px-10 max-md:px-5 hero-content">
-      <h1 class="font-cinzel text-[clamp(2rem,5vw,3.5rem)] font-semibold tracking-[0.02em] leading-tight text-pedra-clara mb-4">Història de Barcelona</h1>
-      <p class="font-inter font-light text-lg text-pedra-clara/80 max-w-[560px] mx-auto mb-12">Un viatge a través dels segles des de la fundació romana fins a la ciutat contemporània.</p>
-      <div class="flex gap-4 justify-center flex-wrap">
-        <a href="#seccions" class="inline-flex items-center gap-2 font-inter font-medium text-sm px-7 py-3 rounded-[8px] bg-mediterrani text-white uppercase tracking-[1px] hover:bg-[#1f5573] hover:-translate-y-px hover:shadow-[0_4px_16px_rgba(42,107,138,0.35)] transition-all duration-200">Explorar segles</a>
-        <a href="segleII.html" class="inline-flex items-center gap-2 font-inter font-medium text-sm px-7 py-3 rounded-[8px] bg-transparent text-pedra-clara border border-pedra-clara/30 uppercase tracking-[1px] hover:border-or hover:text-or hover:bg-or/10 transition-all duration-200">Començar pel principi</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="seccions" class="py-24 max-md:py-16">
-    <div class="max-w-[1200px] mx-auto px-10 max-md:px-5">
-      <div class="text-center mb-16">
-        <h2 class="font-cinzel text-[clamp(1.5rem,3.5vw,2.5rem)] tracking-[0.01em] text-slate relative inline-block after:content-[''] after:block after:w-[60px] after:h-[3px] after:bg-or after:mx-auto after:mt-4">Els Segles</h2>
-        <p class="font-inter text-base text-slate/65 max-w-[480px] mx-auto mt-4">Vuit períodes clau que han donat forma a la Barcelona actual</p>
-      </div>
-
-      <div class="grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-6">
-        <div class="card bg-pedra-clara rounded-[20px] overflow-hidden shadow-[0_2px_12px_rgba(15,25,35,0.06)] hover:shadow-[0_12px_32px_rgba(15,25,35,0.1)] flex flex-col">
-          <img src="img/segleII.jpg" alt="Fundació Romana" loading="lazy" class="w-full h-[160px] object-cover">
-          <div class="p-6 flex flex-col flex-1">
-            <span class="font-cinzel text-xs font-bold text-or tracking-[2px] uppercase mb-1">II a.C.</span>
-            <h3 class="font-cinzel text-xl text-slate mb-1">Fundació Romana</h3>
-            <p class="font-source text-[0.95rem] text-slate/70 leading-relaxed flex-1 mb-4">Els orígens de Bàrcino sota l'Imperi Romà i el naixement de la ciutat.</p>
-            <a href="segleII.html" class="card-link font-inter text-xs font-semibold uppercase tracking-[1px] text-mediterrani inline-flex items-center gap-1">Saber més</a>
-          </div>
-        </div>
-
-        <div class="card bg-pedra-clara rounded-[20px] overflow-hidden shadow-[0_2px_12px_rgba(15,25,35,0.06)] hover:shadow-[0_12px_32px_rgba(15,25,35,0.1)] flex flex-col">
-          <img src="img/segleV.jpg" alt="Període Visigòtic" loading="lazy" class="w-full h-[160px] object-cover">
-          <div class="p-6 flex flex-col flex-1">
-            <span class="font-cinzel text-xs font-bold text-or tracking-[2px] uppercase mb-1">V d.C.</span>
-            <h3 class="font-cinzel text-xl text-slate mb-1">Període Visigòtic</h3>
-            <p class="font-source text-[0.95rem] text-slate/70 leading-relaxed flex-1 mb-4">La caiguda de l'Imperi i el domini visigot a Barcinona.</p>
-            <a href="segleV.html" class="card-link font-inter text-xs font-semibold uppercase tracking-[1px] text-mediterrani inline-flex items-center gap-1">Saber més</a>
-          </div>
-        </div>
-
-        <div class="card bg-pedra-clara rounded-[20px] overflow-hidden shadow-[0_2px_12px_rgba(15,25,35,0.06)] hover:shadow-[0_12px_32px_rgba(15,25,35,0.1)] flex flex-col">
-          <img src="img/segleVIII.jpg" alt="Conquesta Musulmana" loading="lazy" class="w-full h-[160px] object-cover">
-          <div class="p-6 flex flex-col flex-1">
-            <span class="font-cinzel text-xs font-bold text-or tracking-[2px] uppercase mb-1">VIII d.C.</span>
-            <h3 class="font-cinzel text-xl text-slate mb-1">Conquesta Musulmana</h3>
-            <p class="font-source text-[0.95rem] text-slate/70 leading-relaxed flex-1 mb-4">Barshiluna sota el domini d'Al-Àndalus i la influència islàmica.</p>
-            <a href="segleVIII.html" class="card-link font-inter text-xs font-semibold uppercase tracking-[1px] text-mediterrani inline-flex items-center gap-1">Saber més</a>
-          </div>
-        </div>
-
-        <div class="card bg-pedra-clara rounded-[20px] overflow-hidden shadow-[0_2px_12px_rgba(15,25,35,0.06)] hover:shadow-[0_12px_32px_rgba(15,25,35,0.1)] flex flex-col">
-          <img src="img/segleXII.jpg" alt="Comtat de Barcelona" loading="lazy" class="w-full h-[160px] object-cover">
-          <div class="p-6 flex flex-col flex-1">
-            <span class="font-cinzel text-xs font-bold text-or tracking-[2px] uppercase mb-1">XII d.C.</span>
-            <h3 class="font-cinzel text-xl text-slate mb-1">Comtat de Barcelona</h3>
-            <p class="font-source text-[0.95rem] text-slate/70 leading-relaxed flex-1 mb-4">La consolidació del Comtat i el naixement de la Corona d'Aragó.</p>
-            <a href="segleXII.html" class="card-link font-inter text-xs font-semibold uppercase tracking-[1px] text-mediterrani inline-flex items-center gap-1">Saber més</a>
-          </div>
-        </div>
-
-        <div class="card bg-pedra-clara rounded-[20px] overflow-hidden shadow-[0_2px_12px_rgba(15,25,35,0.06)] hover:shadow-[0_12px_32px_rgba(15,25,35,0.1)] flex flex-col">
-          <img src="img/segleXV.jpg" alt="Esplendor Medieval" loading="lazy" class="w-full h-[160px] object-cover">
-          <div class="p-6 flex flex-col flex-1">
-            <span class="font-cinzel text-xs font-bold text-or tracking-[2px] uppercase mb-1">XV d.C.</span>
-            <h3 class="font-cinzel text-xl text-slate mb-1">Esplendor Medieval</h3>
-            <p class="font-source text-[0.95rem] text-slate/70 leading-relaxed flex-1 mb-4">L'apogeu comercial i cultural de la Barcelona medieval.</p>
-            <a href="segleXV.html" class="card-link font-inter text-xs font-semibold uppercase tracking-[1px] text-mediterrani inline-flex items-center gap-1">Saber més</a>
-          </div>
-        </div>
-
-        <div class="card bg-pedra-clara rounded-[20px] overflow-hidden shadow-[0_2px_12px_rgba(15,25,35,0.06)] hover:shadow-[0_12px_32px_rgba(15,25,35,0.1)] flex flex-col">
-          <img src="img/segleXVIII.jpg" alt="Guerra de Successió" loading="lazy" class="w-full h-[160px] object-cover">
-          <div class="p-6 flex flex-col flex-1">
-            <span class="font-cinzel text-xs font-bold text-or tracking-[2px] uppercase mb-1">XVIII d.C.</span>
-            <h3 class="font-cinzel text-xl text-slate mb-1">Guerra de Successió</h3>
-            <p class="font-source text-[0.95rem] text-slate/70 leading-relaxed flex-1 mb-4">L'impacte de la Guerra de Successió i els Decrets de Nova Planta.</p>
-            <a href="segleXVIII.html" class="card-link font-inter text-xs font-semibold uppercase tracking-[1px] text-mediterrani inline-flex items-center gap-1">Saber més</a>
-          </div>
-        </div>
-
-        <div class="card bg-pedra-clara rounded-[20px] overflow-hidden shadow-[0_2px_12px_rgba(15,25,35,0.06)] hover:shadow-[0_12px_32px_rgba(15,25,35,0.1)] flex flex-col">
-          <img src="img/segleXIX.jpg" alt="Revolució Industrial" loading="lazy" class="w-full h-[160px] object-cover">
-          <div class="p-6 flex flex-col flex-1">
-            <span class="font-cinzel text-xs font-bold text-or tracking-[2px] uppercase mb-1">XIX d.C.</span>
-            <h3 class="font-cinzel text-xl text-slate mb-1">Revolució Industrial</h3>
-            <p class="font-source text-[0.95rem] text-slate/70 leading-relaxed flex-1 mb-4">La transformació amb la Revolució Industrial i l'Eixample de Cerdà.</p>
-            <a href="segleXIX.html" class="card-link font-inter text-xs font-semibold uppercase tracking-[1px] text-mediterrani inline-flex items-center gap-1">Saber més</a>
-          </div>
-        </div>
-
-        <div class="card bg-pedra-clara rounded-[20px] overflow-hidden shadow-[0_2px_12px_rgba(15,25,35,0.06)] hover:shadow-[0_12px_32px_rgba(15,25,35,0.1)] flex flex-col">
-          <img src="img/segleXX.jpg" alt="Modernisme i Jocs Olímpics" loading="lazy" class="w-full h-[160px] object-cover">
-          <div class="p-6 flex flex-col flex-1">
-            <span class="font-cinzel text-xs font-bold text-or tracking-[2px] uppercase mb-1">XX d.C.</span>
-            <h3 class="font-cinzel text-xl text-slate mb-1">Modernisme i Jocs Olímpics</h3>
-            <p class="font-source text-[0.95rem] text-slate/70 leading-relaxed flex-1 mb-4">Del Modernisme als Jocs Olímpics del 92: una ciutat reinventada.</p>
-            <a href="segleXX.html" class="card-link font-inter text-xs font-semibold uppercase tracking-[1px] text-mediterrani inline-flex items-center gap-1">Saber més</a>
-          </div>
+  <main>
+    <section class="hero py-32 max-md:py-20 text-center" style="background-image: url('img/sagrada-familia-bg.jpg');">
+      <div class="absolute inset-0 bg-pissarra/65"></div>
+      <div class="max-w-[1280px] mx-auto px-6 max-md:px-6 hero-content">
+        <h1 class="font-inter text-6xl max-md:text-4xl font-bold leading-[110%] tracking-[-2px] text-blanc mb-4">Història de Barcelona</h1>
+        <p class="font-inter text-xl font-light text-blanc/80 max-w-[560px] mx-auto mb-12">Un viatge a través dels segles des de la fundació romana fins a la ciutat contemporània.</p>
+        <div class="flex gap-4 justify-center flex-wrap">
+          <a href="#seccions" class="inline-flex items-center gap-2 font-inter font-medium text-sm px-6 py-3.5 rounded-[999px] bg-primari-hover text-blanc hover:bg-primari-actiu hover:-translate-y-0.5 transition-all duration-150">Explorar segles</a>
+          <a href="segleII.html" class="inline-flex items-center gap-2 font-inter font-medium text-sm px-6 py-3.5 rounded-[999px] bg-blanc/10 text-blanc border border-blanc/30 hover:bg-blanc/20 transition-all duration-150">Començar pel principi</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="opinions" class="py-24 max-md:py-16">
-    <div class="max-w-[1200px] mx-auto px-10 max-md:px-5">
-      <div class="text-center mb-12">
-        <h2 class="font-cinzel text-[clamp(1.5rem,3.5vw,2.5rem)] tracking-[0.01em] text-slate relative inline-block after:content-[''] after:block after:w-[60px] after:h-[3px] after:bg-or after:mx-auto after:mt-4">Què en diuen els visitants</h2>
-        <p class="font-inter text-base text-slate/65 max-w-[480px] mx-auto mt-4">Opinions d'usuaris sobre aquest viatge per la història de Barcelona</p>
+    <section id="seccions" class="py-24 max-md:py-16 scroll-mt-20">
+      <div class="max-w-[1280px] mx-auto px-6 max-md:px-6">
+        <div class="text-center mb-16">
+          <h2 class="font-inter text-4xl max-md:text-3xl font-bold text-text">Els Segles</h2>
+          <p class="font-inter text-base text-secundari max-w-[480px] mx-auto mt-4">Vuit períodes clau que han donat forma a la Barcelona actual</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article class="card bg-blanc rounded-[20px] p-6 border border-divisor shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] flex flex-col">
+            <img src="img/segleII.jpg" alt="Fundació Romana" loading="lazy" class="w-full h-[160px] object-cover rounded-[12px] mb-4">
+            <span class="timeline-dot font-inter text-xs font-bold text-or tracking-[2px] uppercase mb-1">II a.C.</span>
+            <h3 class="font-inter text-xl font-semibold text-text mb-1">Fundació Romana</h3>
+            <p class="font-inter text-sm text-secundari leading-[170%] flex-1 mb-4">Els orígens de Bàrcino sota l'Imperi Romà i el naixement de la ciutat.</p>
+            <a href="segleII.html" class="card-link font-inter text-sm font-semibold text-primari inline-flex items-center gap-1">Saber més</a>
+          </article>
+
+          <article class="card bg-blanc rounded-[20px] p-6 border border-divisor shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] flex flex-col">
+            <img src="img/segleV.jpg" alt="Període Visigòtic" loading="lazy" class="w-full h-[160px] object-cover rounded-[12px] mb-4">
+            <span class="timeline-dot font-inter text-xs font-bold text-or tracking-[2px] uppercase mb-1">V d.C.</span>
+            <h3 class="font-inter text-xl font-semibold text-text mb-1">Període Visigòtic</h3>
+            <p class="font-inter text-sm text-secundari leading-[170%] flex-1 mb-4">La caiguda de l'Imperi i el domini visigot a Barcinona.</p>
+            <a href="segleV.html" class="card-link font-inter text-sm font-semibold text-primari inline-flex items-center gap-1">Saber més</a>
+          </article>
+
+          <article class="card bg-blanc rounded-[20px] p-6 border border-divisor shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] flex flex-col">
+            <img src="img/segleVIII.jpg" alt="Conquesta Musulmana" loading="lazy" class="w-full h-[160px] object-cover rounded-[12px] mb-4">
+            <span class="timeline-dot font-inter text-xs font-bold text-or tracking-[2px] uppercase mb-1">VIII d.C.</span>
+            <h3 class="font-inter text-xl font-semibold text-text mb-1">Conquesta Musulmana</h3>
+            <p class="font-inter text-sm text-secundari leading-[170%] flex-1 mb-4">Barshiluna sota el domini d'Al-Àndalus i la influència islàmica.</p>
+            <a href="segleVIII.html" class="card-link font-inter text-sm font-semibold text-primari inline-flex items-center gap-1">Saber més</a>
+          </article>
+
+          <article class="card bg-blanc rounded-[20px] p-6 border border-divisor shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] flex flex-col">
+            <img src="img/segleXII.jpg" alt="Comtat de Barcelona" loading="lazy" class="w-full h-[160px] object-cover rounded-[12px] mb-4">
+            <span class="timeline-dot font-inter text-xs font-bold text-or tracking-[2px] uppercase mb-1">XII d.C.</span>
+            <h3 class="font-inter text-xl font-semibold text-text mb-1">Comtat de Barcelona</h3>
+            <p class="font-inter text-sm text-secundari leading-[170%] flex-1 mb-4">La consolidació del Comtat i el naixement de la Corona d'Aragó.</p>
+            <a href="segleXII.html" class="card-link font-inter text-sm font-semibold text-primari inline-flex items-center gap-1">Saber més</a>
+          </article>
+
+          <article class="card bg-blanc rounded-[20px] p-6 border border-divisor shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] flex flex-col">
+            <img src="img/segleXV.jpg" alt="Esplendor Medieval" loading="lazy" class="w-full h-[160px] object-cover rounded-[12px] mb-4">
+            <span class="timeline-dot font-inter text-xs font-bold text-or tracking-[2px] uppercase mb-1">XV d.C.</span>
+            <h3 class="font-inter text-xl font-semibold text-text mb-1">Esplendor Medieval</h3>
+            <p class="font-inter text-sm text-secundari leading-[170%] flex-1 mb-4">L'apogeu comercial i cultural de la Barcelona medieval.</p>
+            <a href="segleXV.html" class="card-link font-inter text-sm font-semibold text-primari inline-flex items-center gap-1">Saber més</a>
+          </article>
+
+          <article class="card bg-blanc rounded-[20px] p-6 border border-divisor shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] flex flex-col">
+            <img src="img/segleXVIII.jpg" alt="Guerra de Successió" loading="lazy" class="w-full h-[160px] object-cover rounded-[12px] mb-4">
+            <span class="timeline-dot font-inter text-xs font-bold text-or tracking-[2px] uppercase mb-1">XVIII d.C.</span>
+            <h3 class="font-inter text-xl font-semibold text-text mb-1">Guerra de Successió</h3>
+            <p class="font-inter text-sm text-secundari leading-[170%] flex-1 mb-4">L'impacte de la Guerra de Successió i els Decrets de Nova Planta.</p>
+            <a href="segleXVIII.html" class="card-link font-inter text-sm font-semibold text-primari inline-flex items-center gap-1">Saber més</a>
+          </article>
+
+          <article class="card bg-blanc rounded-[20px] p-6 border border-divisor shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] flex flex-col">
+            <img src="img/segleXIX.jpg" alt="Revolució Industrial" loading="lazy" class="w-full h-[160px] object-cover rounded-[12px] mb-4">
+            <span class="timeline-dot font-inter text-xs font-bold text-or tracking-[2px] uppercase mb-1">XIX d.C.</span>
+            <h3 class="font-inter text-xl font-semibold text-text mb-1">Revolució Industrial</h3>
+            <p class="font-inter text-sm text-secundari leading-[170%] flex-1 mb-4">La transformació amb la Revolució Industrial i l'Eixample de Cerdà.</p>
+            <a href="segleXIX.html" class="card-link font-inter text-sm font-semibold text-primari inline-flex items-center gap-1">Saber més</a>
+          </article>
+
+          <article class="card bg-blanc rounded-[20px] p-6 border border-divisor shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] flex flex-col">
+            <img src="img/segleXX.jpg" alt="Modernisme i Jocs Olímpics" loading="lazy" class="w-full h-[160px] object-cover rounded-[12px] mb-4">
+            <span class="timeline-dot font-inter text-xs font-bold text-or tracking-[2px] uppercase mb-1">XX d.C.</span>
+            <h3 class="font-inter text-xl font-semibold text-text mb-1">Modernisme i Jocs Olímpics</h3>
+            <p class="font-inter text-sm text-secundari leading-[170%] flex-1 mb-4">Del Modernisme als Jocs Olímpics del 92: una ciutat reinventada.</p>
+            <a href="segleXX.html" class="card-link font-inter text-sm font-semibold text-primari inline-flex items-center gap-1">Saber més</a>
+          </article>
+        </div>
       </div>
-      <div class="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6 mb-12">
-        <div class="bg-pedra-clara rounded-[16px] p-6 shadow-[0_2px_12px_rgba(15,25,35,0.06)] flex flex-col gap-3">
-          <div class="text-or tracking-[2px]">★★★★★</div>
-          <p class="font-source text-[0.95rem] text-slate/70 leading-relaxed flex-1">Una web fantàstica per aprendre la història de Barcelona de manera visual i ben estructurada.</p>
-          <div class="flex items-center gap-3 border-t border-slate/10 pt-3">
-            <div class="w-10 h-10 rounded-full bg-mediterrani text-white flex items-center justify-center font-inter font-semibold text-sm shrink-0">MC</div>
-            <div>
-              <div class="font-inter font-semibold text-sm text-slate">Maria Casals</div>
-              <div class="font-inter text-xs text-slate/45">15 juny 2026</div>
+    </section>
+
+    <section id="opinions" class="py-24 max-md:py-16 bg-fons-alt scroll-mt-20">
+      <div class="max-w-[1280px] mx-auto px-6 max-md:px-6">
+        <div class="text-center mb-12">
+          <h2 class="font-inter text-4xl max-md:text-3xl font-bold text-text">Què en diuen els visitants</h2>
+          <p class="font-inter text-base text-secundari max-w-[480px] mx-auto mt-4">Opinions d'usuaris sobre aquest viatge per la història de Barcelona</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <article class="bg-blanc rounded-[20px] p-6 border border-divisor shadow-[0_2px_8px_rgba(0,0,0,0.04)] flex flex-col gap-3">
+            <div class="text-accent-taronja tracking-[2px]">★★★★★</div>
+            <p class="font-inter text-sm text-secundari leading-[170%] flex-1">Una web fantàstica per aprendre la història de Barcelona de manera visual i ben estructurada.</p>
+            <footer class="flex items-center gap-3 border-t border-divisor pt-3">
+              <div class="w-10 h-10 rounded-full bg-primari text-blanc flex items-center justify-center font-inter font-semibold text-sm shrink-0">MC</div>
+              <div>
+                <div class="font-inter font-semibold text-sm text-text">Maria Casals</div>
+                <div class="font-inter text-xs text-mut">15 juny 2026</div>
+              </div>
+            </footer>
+          </article>
+          <article class="bg-blanc rounded-[20px] p-6 border border-divisor shadow-[0_2px_8px_rgba(0,0,0,0.04)] flex flex-col gap-3">
+            <div class="text-accent-taronja tracking-[2px]">★★★★★</div>
+            <p class="font-inter text-sm text-secundari leading-[170%] flex-1">Molt útil per a estudiants d'història. M'ha agradat especialment la navegació cronològica.</p>
+            <footer class="flex items-center gap-3 border-t border-divisor pt-3">
+              <div class="w-10 h-10 rounded-full bg-primari text-blanc flex items-center justify-center font-inter font-semibold text-sm shrink-0">PG</div>
+              <div>
+                <div class="font-inter font-semibold text-sm text-text">Pau Garcia</div>
+                <div class="font-inter text-xs text-mut">2 maig 2026</div>
+              </div>
+            </footer>
+          </article>
+          <article class="bg-blanc rounded-[20px] p-6 border border-divisor shadow-[0_2px_8px_rgba(0,0,0,0.04)] flex flex-col gap-3">
+            <div class="text-accent-taronja tracking-[2px]">★★★★☆</div>
+            <p class="font-inter text-sm text-secundari leading-[170%] flex-1">Bona iniciativa! La informació és clara i ben presentada. Ideal per a una primera aproximació.</p>
+            <footer class="flex items-center gap-3 border-t border-divisor pt-3">
+              <div class="w-10 h-10 rounded-full bg-primari text-blanc flex items-center justify-center font-inter font-semibold text-sm shrink-0">AL</div>
+              <div>
+                <div class="font-inter font-semibold text-sm text-text">Anna López</div>
+                <div class="font-inter text-xs text-mut">18 abril 2026</div>
+              </div>
+            </footer>
+          </article>
+        </div>
+
+        <form class="max-w-[560px] mx-auto bg-blanc rounded-[20px] p-8 border border-divisor shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
+          <h3 class="font-inter text-2xl font-bold text-text text-center mb-8">Deixa la teva opinió</h3>
+          <div class="flex gap-4 mb-4 max-sm:flex-col">
+            <div class="flex-1 flex flex-col gap-1">
+              <label for="name" class="font-inter text-xs font-medium text-mut">Nom</label>
+              <input type="text" id="name" placeholder="El teu nom" required class="font-inter text-sm px-3.5 h-12 border border-vora rounded-[12px] bg-blanc outline-none focus:ring-2 focus:ring-primari/30 focus:border-primari transition-colors duration-150 w-full placeholder:text-inactiu">
+            </div>
+            <div class="flex-1 flex flex-col gap-1">
+              <label for="rating" class="font-inter text-xs font-medium text-mut">Valoració</label>
+              <select id="rating" class="font-inter text-sm px-3.5 h-12 border border-vora rounded-[12px] bg-blanc outline-none focus:ring-2 focus:ring-primari/30 focus:border-primari transition-colors duration-150 w-full">
+                <option>★★★★★</option><option>★★★★☆</option><option>★★★☆☆</option><option>★★☆☆☆</option><option>★☆☆☆☆</option>
+              </select>
             </div>
           </div>
-        </div>
-        <div class="bg-pedra-clara rounded-[16px] p-6 shadow-[0_2px_12px_rgba(15,25,35,0.06)] flex flex-col gap-3">
-          <div class="text-or tracking-[2px]">★★★★★</div>
-          <p class="font-source text-[0.95rem] text-slate/70 leading-relaxed flex-1">Molt útil per a estudiants d'història. M'ha agradat especialment la navegació cronològica.</p>
-          <div class="flex items-center gap-3 border-t border-slate/10 pt-3">
-            <div class="w-10 h-10 rounded-full bg-mediterrani text-white flex items-center justify-center font-inter font-semibold text-sm shrink-0">PG</div>
-            <div>
-              <div class="font-inter font-semibold text-sm text-slate">Pau Garcia</div>
-              <div class="font-inter text-xs text-slate/45">2 maig 2026</div>
-            </div>
+          <div class="flex flex-col gap-1 mb-4">
+            <label for="comment" class="font-inter text-xs font-medium text-mut">Comentari</label>
+            <textarea id="comment" placeholder="Comparteix la teva experiència…" required class="font-inter text-sm px-3.5 h-12 border border-vora rounded-[12px] bg-blanc outline-none focus:ring-2 focus:ring-primari/30 focus:border-primari transition-colors duration-150 w-full resize-y min-h-[100px] placeholder:text-inactiu"></textarea>
           </div>
-        </div>
-        <div class="bg-pedra-clara rounded-[16px] p-6 shadow-[0_2px_12px_rgba(15,25,35,0.06)] flex flex-col gap-3">
-          <div class="text-or tracking-[2px]">★★★★☆</div>
-          <p class="font-source text-[0.95rem] text-slate/70 leading-relaxed flex-1">Bona iniciativa! La informació és clara i ben presentada. Ideal per a una primera aproximació.</p>
-          <div class="flex items-center gap-3 border-t border-slate/10 pt-3">
-            <div class="w-10 h-10 rounded-full bg-mediterrani text-white flex items-center justify-center font-inter font-semibold text-sm shrink-0">AL</div>
-            <div>
-              <div class="font-inter font-semibold text-sm text-slate">Anna López</div>
-              <div class="font-inter text-xs text-slate/45">18 abril 2026</div>
-            </div>
-          </div>
-        </div>
+          <button type="submit" class="w-full inline-flex items-center justify-center gap-2 font-inter font-medium text-sm px-6 py-3.5 rounded-[999px] bg-primari-hover text-blanc hover:bg-primari-actiu hover:-translate-y-0.5 transition-all duration-150">Enviar opinió</button>
+        </form>
       </div>
+    </section>
+  </main>
 
-      <form class="max-w-[560px] mx-auto bg-pedra-clara rounded-[16px] p-8 shadow-[0_2px_12px_rgba(15,25,35,0.06)]">
-        <h3 class="font-cinzel text-center text-xl text-slate mb-8">Deixa la teva opinió</h3>
-        <div class="flex gap-4 mb-4 max-sm:flex-col">
-          <div class="flex-1 flex flex-col gap-1">
-            <label for="name" class="font-inter text-xs font-medium text-slate/70">Nom</label>
-            <input type="text" id="name" placeholder="El teu nom" required class="font-inter text-sm px-3.5 py-[10px] border border-slate/15 rounded-[6px] bg-white outline-none focus:border-mediterrani transition-colors duration-200 w-full">
-          </div>
-          <div class="flex-1 flex flex-col gap-1">
-            <label for="rating" class="font-inter text-xs font-medium text-slate/70">Valoració</label>
-            <select id="rating" class="font-inter text-sm px-3.5 py-[10px] border border-slate/15 rounded-[6px] bg-white outline-none focus:border-mediterrani transition-colors duration-200 w-full">
-              <option>★★★★★</option><option>★★★★☆</option><option>★★★☆☆</option><option>★★☆☆☆</option><option>★☆☆☆☆</option>
-            </select>
-          </div>
-        </div>
-        <div class="flex flex-col gap-1 mb-4">
-          <label for="comment" class="font-inter text-xs font-medium text-slate/70">Comentari</label>
-          <textarea id="comment" placeholder="Comparteix la teva experiència…" required class="font-inter text-sm px-3.5 py-[10px] border border-slate/15 rounded-[6px] bg-white outline-none focus:border-mediterrani transition-colors duration-200 w-full resize-y min-h-[100px]"></textarea>
-        </div>
-        <button type="submit" class="w-full inline-flex items-center justify-center gap-2 font-inter font-medium text-sm px-7 py-3 rounded-[8px] bg-mediterrani text-white uppercase tracking-[1px] hover:bg-[#1f5573] hover:-translate-y-px transition-all duration-200">Enviar opinió</button>
-      </form>
-    </div>
-  </section>
-
-  <footer class="bg-slate text-center py-12 mt-24">
-    <div class="max-w-[1200px] mx-auto px-10 max-md:px-5">
-      <p class="font-inter text-sm text-pedra-clara/50 m-0">&copy; 2026 Història de Barcelona. Tots els drets reservats.</p>
+  <footer class="bg-[#111827] text-center py-12">
+    <div class="max-w-[1280px] mx-auto px-6 max-md:px-6">
+      <p class="font-inter text-sm text-[#D1D5DB] m-0">&copy; 2026 Història de Barcelona. Tots els drets reservats.</p>
     </div>
   </footer>
 
   <script>
-    document.getElementById('navToggle').addEventListener('click', function() {
+    var navToggle = document.getElementById('navToggle');
+    var navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', function() {
       this.classList.toggle('open');
-      document.querySelector('.nav-links').classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
     });
   </script>
 </body>

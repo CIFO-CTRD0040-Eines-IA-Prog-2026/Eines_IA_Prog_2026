@@ -10,110 +10,121 @@
       theme: {
         extend: {
           colors: {
-            slate: '#0F1923', mediterrani: '#2A6B8A', or: '#C4953C',
-            'pedra-calcaria': '#E8E0D6', 'pedra-clara': '#FBF8F4', terracota: '#8B3A30',
+            primari: '#1D4ED8', 'primari-hover': '#2563EB', 'primari-actiu': '#1E40AF',
+            'accent-lila': '#7C3AED', 'accent-rosa': '#EC4899', 'accent-verd': '#10B981', 'accent-taronja': '#F59E0B',
+            blanc: '#FFFFFF', fons: '#FAFAFB', 'fons-alt': '#F5F7FA',
+            vora: '#E5E7EB', divisor: '#ECECEC',
+            text: '#111827', secundari: '#4B5563', mut: '#6B7280', inactiu: '#9CA3AF',
+            pissarra: '#0F1923', or: '#C4953C', mediterrani: '#2A6B8A',
           },
-          fontFamily: {
-            cinzel: ['Cinzel', 'Georgia', 'serif'],
-            source: ['"Source Serif 4"', 'Georgia', 'Times New Roman', 'serif'],
-            inter: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-          },
+          fontFamily: { inter: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
         }
       }
     }
   </script>
   <link rel="stylesheet" href="estils.css">
 </head>
-<body class="bg-pedra-calcaria font-source text-slate">
+<body class="bg-fons font-inter text-text">
 
-  <nav class="sticky top-0 z-50 h-[72px] bg-slate border-b border-[rgba(196,149,60,0.15)]">
-    <div class="max-w-[1200px] mx-auto px-10 max-md:px-5 h-full flex items-center justify-between">
-      <a href="index.html" class="font-cinzel text-xl font-semibold text-pedra-clara tracking-wider hover:text-or transition-colors duration-200">BARCINO · BARCELONA</a>
-      <div class="nav-links flex gap-8 items-center max-md:fixed max-md:top-[72px] max-md:left-0 max-md:right-0 max-md:bg-slate max-md:flex-col max-md:p-8 max-md:gap-6">
-        <a href="index.html#seccions" class="font-inter text-sm text-pedra-clara/70 tracking-widest uppercase hover:text-or transition-colors duration-200">Segles</a>
-      </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+  <header class="sticky top-0 z-50 h-20 bg-blanc border-b border-vora">
+    <div class="max-w-[1280px] mx-auto px-6 max-md:px-6 h-full flex items-center justify-between">
+      <a href="index.html" class="font-inter text-lg font-bold text-text tracking-tight hover:text-primari transition-colors duration-150">BARCINO · BARCELONA</a>
+      <nav class="nav-links flex gap-8 items-center" aria-label="Navegació principal">
+        <a href="index.html#seccions" class="font-inter text-sm font-medium text-secundari hover:text-primari transition-colors duration-150">Segles</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú de navegació">
         <span></span><span></span><span></span>
       </button>
     </div>
-  </nav>
+  </header>
 
-  <section class="page-hero bg-slate py-24 max-md:py-16 text-center">
-    <div class="max-w-[1200px] mx-auto px-10 max-md:px-5 hero-content">
-      <h1 class="font-cinzel text-[clamp(2rem,5vw,3.5rem)] font-semibold text-pedra-clara mb-2">Segle XIX d.C.</h1>
-      <p class="font-inter font-light text-lg text-pedra-clara/75">Revolució Industrial i Eixample de Cerdà</p>
+  <main>
+    <section class="page-hero py-24 max-md:py-16 text-center" style="background-image: url('img/segleXIX.jpg');">
+      <div class="absolute inset-0 bg-pissarra/65"></div>
+      <div class="max-w-[1280px] mx-auto px-6 max-md:px-6 hero-content">
+        <h1 class="font-inter text-5xl max-md:text-3xl font-bold text-blanc mb-2">Segle XIX d.C.</h1>
+        <p class="font-inter text-lg font-light text-blanc/75">Revolució Industrial i Eixample de Cerdà</p>
+      </div>
+    </section>
+
+    <div class="max-w-[1280px] mx-auto px-6 max-md:px-6">
+      <nav class="flex justify-center flex-wrap gap-2 py-8 mb-8 border-b border-divisor" aria-label="Barra cronològica">
+        <a href="segleII.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">II a.C.</a>
+        <a href="segleV.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">V d.C.</a>
+        <a href="segleVIII.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">VIII d.C.</a>
+        <a href="segleXII.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">XII d.C.</a>
+        <a href="segleXV.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">XV d.C.</a>
+        <a href="segleXVIII.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">XVIII d.C.</a>
+        <a href="segleXIX.html" class="font-inter text-sm font-semibold px-[18px] py-[8px] rounded-[999px] bg-pissarra text-blanc transition-all duration-150">XIX d.C.</a>
+        <a href="segleXX.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">XX d.C.</a>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10">
+        <main>
+          <article class="content-card bg-blanc rounded-[20px] p-8 max-md:p-6 border border-divisor shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
+            <h2 class="font-inter text-3xl font-bold text-text mb-8">La Transformació Industrial i Urbana</h2>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">El segle XIX va ser un període de transformació radical per a Barcelona. La ciutat, que havia quedat deprimida després dels esdeveniments del segle XVIII, va experimentar una revolució industrial que la va catapultar cap a la modernitat. Barcelona es va convertir en la fàbrica d'Espanya i en un dels pols industrials més importants del sud d'Europa.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">La indústria del cotó va ser el motor d'aquesta transformació. Les primeres màquines de vapor van arribar a principis de segle, i aviat van proliferar les fàbriques tèxtils, especialment al barri de Sant Martí, que va ser el principal districte industrial de la ciutat. La burgesia industrial va acumular una gran fortuna i poder, esdevenint una classe social hegemònica.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">El creixement industrial va atreure una onada massiva d'immigració des de les zones rurals de Catalunya i d'altres parts d'Espanya. La població de Barcelona es va disparar, passant d'uns 100.000 habitants a principis de segle a més de 500.000 a finals. Les condicions de vida de la classe obrera eren molt dures, amb jornades laborals extenses i habitatges insalubres.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">Un dels fets més emblemàtics del segle XIX va ser l'enderrocament de les muralles medievals (1854) i el gran projecte d'eixample dissenyat per Ildefons Cerdà. El Pla Cerdà (1860) va proposar una expansió urbanística en quadrícula, amb carrers amples, xamfrans, zones verdes i serveis, creant l'actual barri de l'Eixample, un model urbanístic pioner a Europa.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">La vida política i social va ser intensa i sovint conflictiva. El segle va estar marcat per l'aparició del moviment obrer, amb vagues, manifestacions i la fundació de sindicats i partits polítics. La Setmana Tràgica (1909) va ser el punt culminant de les tensions socials. Alhora, el catalanisme polític va emergir com a força reivindicativa de la identitat i els drets nacionals de Catalunya.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">Culturalment, el segle XIX va ser l'època de la Renaixença, un moviment de recuperació de la llengua catalana com a llengua literària i culta. Figures com Jacint Verdaguer, Àngel Guimerà i Narcís Monturiol van destacar en literatura, teatre i ciència. L'Exposició Universal de 1888 va projectar Barcelona internacionalment i va deixar obres emblemàtiques com el Parc de la Ciutadella i l'Arc de Triomf.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">En acabar el segle, Barcelona era una ciutat irreconeixible respecte a com havia començat. De ciutat emmurallada i provinciana, havia passat a ser una metròpoli industrial, amb una burgesia emprenedora, un moviment obrer organitzat, una identitat cultural reivindicada i un teixit urbà modern. Les bases per al gran salt del segle XX estaven perfectament assentades.</p>
+
+            <figure class="mt-12 text-center">
+              <img src="img/segleXIX.jpg" alt="Barcelona industrial al segle XIX" class="rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
+              <figcaption class="font-inter text-sm text-mut italic mt-3">Barcelona durant la Revolució Industrial: fum, vapor i transformació urbana.</figcaption>
+            </figure>
+          </article>
+
+          <nav class="flex justify-between items-center mt-12 pt-8 border-t border-divisor" aria-label="Navegació entre segles">
+            <a href="segleXVIII.html" class="font-inter font-medium text-sm text-primari hover:text-primari-hover uppercase tracking-[0.5px] transition-colors duration-150">← Segle XVIII</a>
+            <a href="index.html" class="font-inter font-medium text-sm text-mut uppercase tracking-[0.5px] hover:text-text transition-colors duration-150">Inici</a>
+            <a href="segleXX.html" class="font-inter font-medium text-sm text-primari hover:text-primari-hover uppercase tracking-[0.5px] transition-colors duration-150">Segle XX →</a>
+          </nav>
+        </main>
+
+        <aside class="flex flex-col gap-4">
+          <h3 class="font-inter text-base font-semibold text-text uppercase tracking-[0.05em] mb-2">Fets clau</h3>
+          <div class="bg-fons-alt rounded-[12px] p-4 border-l-[3px] border-primari">
+            <div class="font-inter text-xs font-bold text-accent-taronja uppercase tracking-[0.5px]">Motor econòmic</div>
+            <div class="font-inter text-sm text-secundari">Indústria tèxtil del cotó</div>
+          </div>
+          <div class="bg-fons-alt rounded-[12px] p-4 border-l-[3px] border-primari">
+            <div class="font-inter text-xs font-bold text-accent-taronja uppercase tracking-[0.5px]">Urbanisme</div>
+            <div class="font-inter text-sm text-secundari">Pla Cerdà (1860) — l'Eixample</div>
+          </div>
+          <div class="bg-fons-alt rounded-[12px] p-4 border-l-[3px] border-primari">
+            <div class="font-inter text-xs font-bold text-accent-taronja uppercase tracking-[0.5px]">Exposició</div>
+            <div class="font-inter text-sm text-secundari">Universal de 1888 — projecció internacional</div>
+          </div>
+          <div class="bg-fons-alt rounded-[12px] p-4 border-l-[3px] border-primari">
+            <div class="font-inter text-xs font-bold text-accent-taronja uppercase tracking-[0.5px]">Cultura</div>
+            <div class="font-inter text-sm text-secundari">Renaixença literària i cultural</div>
+          </div>
+        </aside>
+      </div>
     </div>
-  </section>
+  </main>
 
-  <div class="max-w-[1200px] mx-auto px-10 max-md:px-5">
-    <nav class="flex justify-center flex-wrap gap-2 py-8 mb-8 border-b border-slate/10">
-      <a href="segleII.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">II a.C.</a>
-      <a href="segleV.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">V d.C.</a>
-      <a href="segleVIII.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">VIII d.C.</a>
-      <a href="segleXII.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">XII d.C.</a>
-      <a href="segleXV.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">XV d.C.</a>
-      <a href="segleXVIII.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">XVIII d.C.</a>
-      <a href="segleXIX.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-or text-slate font-semibold rounded-[8px] transition-all duration-200">XIX d.C.</a>
-      <a href="segleXX.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">XX d.C.</a>
-    </nav>
-
-    <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10">
-      <main>
-        <article class="content-card bg-pedra-clara rounded-[16px] p-10 max-md:p-6 shadow-[0_2px_12px_rgba(15,25,35,0.06)]">
-          <h2 class="font-cinzel text-[1.6rem] text-slate mb-8">La Transformació Industrial i Urbana</h2>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">El segle XIX va ser un període de transformació radical per a Barcelona. La ciutat, que havia quedat deprimida després dels esdeveniments del segle XVIII, va experimentar una revolució industrial que la va catapultar cap a la modernitat. Barcelona es va convertir en la fàbrica d'Espanya i en un dels pols industrials més importants del sud d'Europa.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">La indústria del cotó va ser el motor d'aquesta transformació. Les primeres màquines de vapor van arribar a principis de segle, i aviat van proliferar les fàbriques tèxtils, especialment al barri de Sant Martí, que va ser el principal districte industrial de la ciutat. La burgesia industrial va acumular una gran fortuna i poder, esdevenint una classe social hegemònica.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">El creixement industrial va atreure una onada massiva d'immigració des de les zones rurals de Catalunya i d'altres parts d'Espanya. La població de Barcelona es va disparar, passant d'uns 100.000 habitants a principis de segle a més de 500.000 a finals. Les condicions de vida de la classe obrera eren molt dures, amb jornades laborals extenses i habitatges insalubres.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">Un dels fets més emblemàtics del segle XIX va ser l'enderrocament de les muralles medievals (1854) i el gran projecte d'eixample dissenyat per Ildefons Cerdà. El Pla Cerdà (1860) va proposar una expansió urbanística en quadrícula, amb carrers amples, xamfrans, zones verdes i serveis, creant l'actual barri de l'Eixample, un model urbanístic pioner a Europa.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">La vida política i social va ser intensa i sovint conflictiva. El segle va estar marcat per l'aparició del moviment obrer, amb vagues, manifestacions i la fundació de sindicats i partits polítics. La Setmana Tràgica (1909) va ser el punt culminant de les tensions socials. Alhora, el catalanisme polític va emergir com a força reivindicativa de la identitat i els drets nacionals de Catalunya.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">Culturalment, el segle XIX va ser l'època de la Renaixença, un moviment de recuperació de la llengua catalana com a llengua literària i culta. Figures com Jacint Verdaguer, Àngel Guimerà i Narcís Monturiol van destacar en literatura, teatre i ciència. L'Exposició Universal de 1888 va projectar Barcelona internacionalment i va deixar obres emblemàtiques com el Parc de la Ciutadella i l'Arc de Triomf.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">En acabar el segle, Barcelona era una ciutat irreconeixible respecte a com havia començat. De ciutat emmurallada i provinciana, havia passat a ser una metròpoli industrial, amb una burgesia emprenedora, un moviment obrer organitzat, una identitat cultural reivindicada i un teixit urbà modern. Les bases per al gran salt del segle XX estaven perfectament assentades.</p>
-
-          <figure class="mt-12 text-center">
-            <img src="img/segleXIX.jpg" alt="Barcelona industrial al segle XIX" class="rounded-[16px] shadow-[0_4px_20px_rgba(15,25,35,0.1)]">
-            <figcaption class="font-inter text-sm text-slate/50 italic mt-3">Barcelona durant la Revolució Industrial: fum, vapor i transformació urbana.</figcaption>
-          </figure>
-        </article>
-
-        <nav class="flex justify-between items-center mt-12 pt-8 border-t border-slate/10">
-          <a href="segleXVIII.html" class="font-inter font-medium text-sm text-mediterrani uppercase tracking-[0.5px] hover:text-or transition-colors duration-200">← Segle XVIII</a>
-          <a href="index.html" class="font-inter font-medium text-sm text-slate/40 uppercase tracking-[0.5px] hover:text-slate transition-colors duration-200">Inici</a>
-          <a href="segleXX.html" class="font-inter font-medium text-sm text-mediterrani uppercase tracking-[0.5px] hover:text-or transition-colors duration-200">Segle XX →</a>
-        </nav>
-      </main>
-
-      <aside class="flex flex-col gap-4">
-        <h3 class="font-cinzel text-base text-or uppercase tracking-[0.05em] mb-2">Fets clau</h3>
-        <div class="bg-pedra-clara rounded-[6px] p-4 border-l-[3px] border-mediterrani">
-          <div class="font-inter text-xs font-bold text-terracota uppercase tracking-[0.5px]">Motor econòmic</div>
-          <div class="font-source text-[0.95rem] text-slate">Indústria tèxtil del cotó</div>
-        </div>
-        <div class="bg-pedra-clara rounded-[6px] p-4 border-l-[3px] border-mediterrani">
-          <div class="font-inter text-xs font-bold text-terracota uppercase tracking-[0.5px]">Urbanisme</div>
-          <div class="font-source text-[0.95rem] text-slate">Pla Cerdà (1860) — l'Eixample</div>
-        </div>
-        <div class="bg-pedra-clara rounded-[6px] p-4 border-l-[3px] border-mediterrani">
-          <div class="font-inter text-xs font-bold text-terracota uppercase tracking-[0.5px]">Exposició</div>
-          <div class="font-source text-[0.95rem] text-slate">Universal de 1888 — projecció internacional</div>
-        </div>
-        <div class="bg-pedra-clara rounded-[6px] p-4 border-l-[3px] border-mediterrani">
-          <div class="font-inter text-xs font-bold text-terracota uppercase tracking-[0.5px]">Cultura</div>
-          <div class="font-source text-[0.95rem] text-slate">Renaixença literària i cultural</div>
-        </div>
-      </aside>
-    </div>
-  </div>
-
-  <footer class="bg-slate text-center py-12 mt-24">
-    <div class="max-w-[1200px] mx-auto px-10 max-md:px-5">
-      <p class="font-inter text-sm text-pedra-clara/50 m-0">&copy; 2026 Història de Barcelona. Tots els drets reservats.</p>
+  <footer class="bg-[#111827] text-center py-12 mt-24">
+    <div class="max-w-[1280px] mx-auto px-6 max-md:px-6">
+      <p class="font-inter text-sm text-[#D1D5DB] m-0">&copy; 2026 Història de Barcelona. Tots els drets reservats.</p>
     </div>
   </footer>
 
   <script>
-    document.getElementById('navToggle').addEventListener('click', function() {
+    var navToggle = document.getElementById('navToggle');
+    var navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', function() {
       this.classList.toggle('open');
-      document.querySelector('.nav-links').classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
     });
   </script>
 </body>

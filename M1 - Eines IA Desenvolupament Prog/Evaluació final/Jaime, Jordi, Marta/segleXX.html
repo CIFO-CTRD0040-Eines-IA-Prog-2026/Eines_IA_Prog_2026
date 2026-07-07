@@ -10,113 +10,124 @@
       theme: {
         extend: {
           colors: {
-            slate: '#0F1923', mediterrani: '#2A6B8A', or: '#C4953C',
-            'pedra-calcaria': '#E8E0D6', 'pedra-clara': '#FBF8F4', terracota: '#8B3A30',
+            primari: '#1D4ED8', 'primari-hover': '#2563EB', 'primari-actiu': '#1E40AF',
+            'accent-lila': '#7C3AED', 'accent-rosa': '#EC4899', 'accent-verd': '#10B981', 'accent-taronja': '#F59E0B',
+            blanc: '#FFFFFF', fons: '#FAFAFB', 'fons-alt': '#F5F7FA',
+            vora: '#E5E7EB', divisor: '#ECECEC',
+            text: '#111827', secundari: '#4B5563', mut: '#6B7280', inactiu: '#9CA3AF',
+            pissarra: '#0F1923', or: '#C4953C', mediterrani: '#2A6B8A',
           },
-          fontFamily: {
-            cinzel: ['Cinzel', 'Georgia', 'serif'],
-            source: ['"Source Serif 4"', 'Georgia', 'Times New Roman', 'serif'],
-            inter: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-          },
+          fontFamily: { inter: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
         }
       }
     }
   </script>
   <link rel="stylesheet" href="estils.css">
 </head>
-<body class="bg-pedra-calcaria font-source text-slate">
+<body class="bg-fons font-inter text-text">
 
-  <nav class="sticky top-0 z-50 h-[72px] bg-slate border-b border-[rgba(196,149,60,0.15)]">
-    <div class="max-w-[1200px] mx-auto px-10 max-md:px-5 h-full flex items-center justify-between">
-      <a href="index.html" class="font-cinzel text-xl font-semibold text-pedra-clara tracking-wider hover:text-or transition-colors duration-200">BARCINO · BARCELONA</a>
-      <div class="nav-links flex gap-8 items-center max-md:fixed max-md:top-[72px] max-md:left-0 max-md:right-0 max-md:bg-slate max-md:flex-col max-md:p-8 max-md:gap-6">
-        <a href="index.html#seccions" class="font-inter text-sm text-pedra-clara/70 tracking-widest uppercase hover:text-or transition-colors duration-200">Segles</a>
-      </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+  <header class="sticky top-0 z-50 h-20 bg-blanc border-b border-vora">
+    <div class="max-w-[1280px] mx-auto px-6 max-md:px-6 h-full flex items-center justify-between">
+      <a href="index.html" class="font-inter text-lg font-bold text-text tracking-tight hover:text-primari transition-colors duration-150">BARCINO · BARCELONA</a>
+      <nav class="nav-links flex gap-8 items-center" aria-label="Navegació principal">
+        <a href="index.html#seccions" class="font-inter text-sm font-medium text-secundari hover:text-primari transition-colors duration-150">Segles</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú de navegació">
         <span></span><span></span><span></span>
       </button>
     </div>
-  </nav>
+  </header>
 
-  <section class="page-hero bg-slate py-24 max-md:py-16 text-center">
-    <div class="max-w-[1200px] mx-auto px-10 max-md:px-5 hero-content">
-      <h1 class="font-cinzel text-[clamp(2rem,5vw,3.5rem)] font-semibold text-pedra-clara mb-2">Segle XX d.C.</h1>
-      <p class="font-inter font-light text-lg text-pedra-clara/75">Modernisme, Transformació i Jocs Olímpics</p>
+  <main>
+    <section class="page-hero py-24 max-md:py-16 text-center" style="background-image: url('img/segleXX.jpg');">
+      <div class="absolute inset-0 bg-pissarra/65"></div>
+      <div class="max-w-[1280px] mx-auto px-6 max-md:px-6 hero-content">
+        <h1 class="font-inter text-5xl max-md:text-3xl font-bold text-blanc mb-2">Segle XX d.C.</h1>
+        <p class="font-inter text-lg font-light text-blanc/75">Modernisme, Transformació i Jocs Olímpics</p>
+      </div>
+    </section>
+
+    <div class="max-w-[1280px] mx-auto px-6 max-md:px-6">
+      <nav class="flex justify-center flex-wrap gap-2 py-8 mb-8 border-b border-divisor" aria-label="Barra cronològica">
+        <a href="segleII.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">II a.C.</a>
+        <a href="segleV.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">V d.C.</a>
+        <a href="segleVIII.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">VIII d.C.</a>
+        <a href="segleXII.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">XII d.C.</a>
+        <a href="segleXV.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">XV d.C.</a>
+        <a href="segleXVIII.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">XVIII d.C.</a>
+        <a href="segleXIX.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">XIX d.C.</a>
+        <a href="segleXX.html" class="font-inter text-sm font-semibold px-[18px] py-[8px] rounded-[999px] bg-pissarra text-blanc transition-all duration-150">XX d.C.</a>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10">
+        <main>
+          <article class="content-card bg-blanc rounded-[20px] p-8 max-md:p-6 border border-divisor shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
+            <h2 class="font-inter text-3xl font-bold text-text mb-8">Del Modernisme als Jocs del 92</h2>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">El segle XX va portar a Barcelona una transformació sense precedents, convertint-la en la metròpoli cosmopolita que coneixem avui. Va començar amb l'esclat artístic del Modernisme, va viure els traumes de la guerra civil i la dictadura, i va culminar amb una reinvenció urbana i social que va projectar la ciutat al món.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">El Modernisme català, amb figures com Antoni Gaudí, Lluís Domènech i Montaner i Josep Puig i Cadafalch, va convertir Barcelona en un museu a l'aire lliure. La Sagrada Família, el Park Güell, el Palau de la Música Catalana i l'Hospital de Sant Pau són obres mestres d'un moviment que buscava un art total, modern i arrelat a la identitat catalana.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">La ciutat va viure anys de creixement econòmic i agitació social. La Setmana Tràgica (1909), la vaga de la Canadenca (1919) i l'arribada de la Segona República (1931) van marcar una societat polaritzada però vibrant. Barcelona va ser capital de la Generalitat republicana i va viure la Guerra Civil (1936-1939) amb intensitat tràgica.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">La dictadura franquista (1939-1975) va reprimir la identitat catalana i va estancar el desenvolupament democràtic, però no va poder aturar el creixement de la ciutat. La immigració massiva d'Espanya va transformar la demografia. Barcelona es va expandir amb nous barris, sovint de manera desordenada.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">Amb l'arribada de la democràcia, Barcelona va emprendre una transformació urbana ambiciosa. La recuperació de la identitat catalana va ser un procés col·lectiu. La ciutat va millorar els seus espais públics, recuperar el front marítim i modernitzar les infraestructures. El disseny urbà es va convertir en una marca pròpia.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">El punt culminant van ser els Jocs Olímpics de 1992, una de les olimpíades més memorables de la història. La construcció de la Vila Olímpica, l'obertura del port i la millora de les xarxes de transport van canviar la fisonomia de la ciutat, projectant una imatge de modernitat al món sencer.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">El 1992 va marcar la consolidació de Barcelona com a ciutat global, referent en urbanisme, turisme i qualitat de vida. El Modernisme de Gaudí, la vitalitat dels barris i la capacitat de reinventar-se la van convertir en una destinació mundial. Barcelona va tancar el segle XX com una ciutat oberta, creativa i orgullosa de la seva llarga història.</p>
+
+            <figure class="mt-12 text-center">
+              <img src="img/segleXX.jpg" alt="Barcelona al segle XX" class="rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
+              <figcaption class="font-inter text-sm text-mut italic mt-3">La Barcelona del 92: la ciutat es va reinventar per als Jocs Olímpics.</figcaption>
+            </figure>
+          </article>
+
+          <nav class="flex justify-between items-center mt-12 pt-8 border-t border-divisor" aria-label="Navegació entre segles">
+            <a href="segleXIX.html" class="font-inter font-medium text-sm text-primari hover:text-primari-hover uppercase tracking-[0.5px] transition-colors duration-150">← Segle XIX</a>
+            <a href="index.html" class="font-inter font-medium text-sm text-mut uppercase tracking-[0.5px] hover:text-text transition-colors duration-150">Inici</a>
+          </nav>
+        </main>
+
+        <aside class="flex flex-col gap-4">
+          <h3 class="font-inter text-base font-semibold text-text uppercase tracking-[0.05em] mb-2">Fets clau</h3>
+          <div class="bg-fons-alt rounded-[12px] p-4 border-l-[3px] border-primari">
+            <div class="font-inter text-xs font-bold text-accent-taronja uppercase tracking-[0.5px]">Modernisme</div>
+            <div class="font-inter text-sm text-secundari">Gaudí, Domènech i Montaner, Puig i Cadafalch</div>
+          </div>
+          <div class="bg-fons-alt rounded-[12px] p-4 border-l-[3px] border-primari">
+            <div class="font-inter text-xs font-bold text-accent-taronja uppercase tracking-[0.5px]">Jocs Olímpics</div>
+            <div class="font-inter text-sm text-secundari">1992 — transformació urbana i projecció global</div>
+          </div>
+          <div class="bg-fons-alt rounded-[12px] p-4 border-l-[3px] border-primari">
+            <div class="font-inter text-xs font-bold text-accent-taronja uppercase tracking-[0.5px]">Sagrada Família</div>
+            <div class="font-inter text-sm text-secundari">Obra mestra d'Antoni Gaudí (des de 1882)</div>
+          </div>
+          <div class="bg-fons-alt rounded-[12px] p-4 border-l-[3px] border-primari">
+            <div class="font-inter text-xs font-bold text-accent-taronja uppercase tracking-[0.5px]">Guerra Civil</div>
+            <div class="font-inter text-sm text-secundari">1936-39 — ciutat republicana i bombardejada</div>
+          </div>
+          <div class="bg-fons-alt rounded-[12px] p-4 border-l-[3px] border-primari">
+            <div class="font-inter text-xs font-bold text-accent-taronja uppercase tracking-[0.5px]">Palau de la Música</div>
+            <div class="font-inter text-sm text-secundari">Patrimoni de la Humanitat (1997)</div>
+          </div>
+        </aside>
+      </div>
     </div>
-  </section>
+  </main>
 
-  <div class="max-w-[1200px] mx-auto px-10 max-md:px-5">
-    <nav class="flex justify-center flex-wrap gap-2 py-8 mb-8 border-b border-slate/10">
-      <a href="segleII.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">II a.C.</a>
-      <a href="segleV.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">V d.C.</a>
-      <a href="segleVIII.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">VIII d.C.</a>
-      <a href="segleXII.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">XII d.C.</a>
-      <a href="segleXV.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">XV d.C.</a>
-      <a href="segleXVIII.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">XVIII d.C.</a>
-      <a href="segleXIX.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">XIX d.C.</a>
-      <a href="segleXX.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-or text-slate font-semibold rounded-[8px] transition-all duration-200">XX d.C.</a>
-    </nav>
-
-    <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10">
-      <main>
-        <article class="content-card bg-pedra-clara rounded-[16px] p-10 max-md:p-6 shadow-[0_2px_12px_rgba(15,25,35,0.06)]">
-          <h2 class="font-cinzel text-[1.6rem] text-slate mb-8">Del Modernisme als Jocs del 92</h2>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">El segle XX va portar a Barcelona una transformació sense precedents, convertint-la en la metròpoli cosmopolita que coneixem avui. Va començar amb l'esclat artístic del Modernisme, va viure els traumes de la guerra civil i la dictadura, i va culminar amb una reinvenció urbana i social que va projectar la ciutat al món.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">El Modernisme català, amb figures com Antoni Gaudí, Lluís Domènech i Montaner i Josep Puig i Cadafalch, va convertir Barcelona en un museu a l'aire lliure. La Sagrada Família, el Park Güell, el Palau de la Música Catalana i l'Hospital de Sant Pau són obres mestres d'un moviment que buscava un art total, modern i arrelat a la identitat catalana.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">La ciutat va viure anys de creixement econòmic i agitació social. La Setmana Tràgica (1909), la vaga de la Canadenca (1919) i l'arribada de la Segona República (1931) van marcar una societat polaritzada però vibrant. Barcelona va ser capital de la Generalitat republicana i va viure la Guerra Civil (1936-1939) amb intensitat tràgica.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">La dictadura franquista (1939-1975) va reprimir la identitat catalana i va estancar el desenvolupament democràtic, però no va poder aturar el creixement de la ciutat. La immigració massiva d'Espanya va transformar la demografia. Barcelona es va expandir amb nous barris, sovint de manera desordenada.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">Amb l'arribada de la democràcia, Barcelona va emprendre una transformació urbana ambiciosa. La recuperació de la identitat catalana va ser un procés col·lectiu. La ciutat va millorar els seus espais públics, recuperar el front marítim i modernitzar les infraestructures. El disseny urbà es va convertir en una marca pròpia.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">El punt culminant van ser els Jocs Olímpics de 1992, una de les olimpíades més memorables de la història. La construcció de la Vila Olímpica, l'obertura del port i la millora de les xarxes de transport van canviar la fisonomia de la ciutat, projectant una imatge de modernitat al món sencer.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">El 1992 va marcar la consolidació de Barcelona com a ciutat global, referent en urbanisme, turisme i qualitat de vida. El Modernisme de Gaudí, la vitalitat dels barris i la capacitat de reinventar-se la van convertir en una destinació mundial. Barcelona va tancar el segle XX com una ciutat oberta, creativa i orgullosa de la seva llarga història.</p>
-
-          <figure class="mt-12 text-center">
-            <img src="img/segleXX.jpg" alt="Barcelona al segle XX" class="rounded-[16px] shadow-[0_4px_20px_rgba(15,25,35,0.1)]">
-            <figcaption class="font-inter text-sm text-slate/50 italic mt-3">La Barcelona del 92: la ciutat es va reinventar per als Jocs Olímpics.</figcaption>
-          </figure>
-        </article>
-
-        <nav class="flex justify-between items-center mt-12 pt-8 border-t border-slate/10">
-          <a href="segleXIX.html" class="font-inter font-medium text-sm text-mediterrani uppercase tracking-[0.5px] hover:text-or transition-colors duration-200">← Segle XIX</a>
-          <a href="index.html" class="font-inter font-medium text-sm text-slate/40 uppercase tracking-[0.5px] hover:text-slate transition-colors duration-200">Inici</a>
-        </nav>
-      </main>
-
-      <aside class="flex flex-col gap-4">
-        <h3 class="font-cinzel text-base text-or uppercase tracking-[0.05em] mb-2">Fets clau</h3>
-        <div class="bg-pedra-clara rounded-[6px] p-4 border-l-[3px] border-mediterrani">
-          <div class="font-inter text-xs font-bold text-terracota uppercase tracking-[0.5px]">Modernisme</div>
-          <div class="font-source text-[0.95rem] text-slate">Gaudí, Domènech i Montaner, Puig i Cadafalch</div>
-        </div>
-        <div class="bg-pedra-clara rounded-[6px] p-4 border-l-[3px] border-mediterrani">
-          <div class="font-inter text-xs font-bold text-terracota uppercase tracking-[0.5px]">Jocs Olímpics</div>
-          <div class="font-source text-[0.95rem] text-slate">1992 — transformació urbana i projecció global</div>
-        </div>
-        <div class="bg-pedra-clara rounded-[6px] p-4 border-l-[3px] border-mediterrani">
-          <div class="font-inter text-xs font-bold text-terracota uppercase tracking-[0.5px]">Sagrada Família</div>
-          <div class="font-source text-[0.95rem] text-slate">Obra mestra d'Antoni Gaudí (des de 1882)</div>
-        </div>
-        <div class="bg-pedra-clara rounded-[6px] p-4 border-l-[3px] border-mediterrani">
-          <div class="font-inter text-xs font-bold text-terracota uppercase tracking-[0.5px]">Guerra Civil</div>
-          <div class="font-source text-[0.95rem] text-slate">1936-39 — ciutat republicana i bombardejada</div>
-        </div>
-        <div class="bg-pedra-clara rounded-[6px] p-4 border-l-[3px] border-mediterrani">
-          <div class="font-inter text-xs font-bold text-terracota uppercase tracking-[0.5px]">Palau de la Música</div>
-          <div class="font-source text-[0.95rem] text-slate">Patrimoni de la Humanitat (1997)</div>
-        </div>
-      </aside>
-    </div>
-  </div>
-
-  <footer class="bg-slate text-center py-12 mt-24">
-    <div class="max-w-[1200px] mx-auto px-10 max-md:px-5">
-      <p class="font-inter text-sm text-pedra-clara/50 m-0">&copy; 2026 Història de Barcelona. Tots els drets reservats.</p>
+  <footer class="bg-[#111827] text-center py-12 mt-24">
+    <div class="max-w-[1280px] mx-auto px-6 max-md:px-6">
+      <p class="font-inter text-sm text-[#D1D5DB] m-0">&copy; 2026 Història de Barcelona. Tots els drets reservats.</p>
     </div>
   </footer>
 
   <script>
-    document.getElementById('navToggle').addEventListener('click', function() {
+    var navToggle = document.getElementById('navToggle');
+    var navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', function() {
       this.classList.toggle('open');
-      document.querySelector('.nav-links').classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
     });
   </script>
 </body>

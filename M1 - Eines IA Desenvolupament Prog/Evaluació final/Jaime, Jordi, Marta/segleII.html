@@ -10,113 +10,124 @@
       theme: {
         extend: {
           colors: {
-            slate: '#0F1923', mediterrani: '#2A6B8A', or: '#C4953C',
-            'pedra-calcaria': '#E8E0D6', 'pedra-clara': '#FBF8F4', terracota: '#8B3A30',
+            primari: '#1D4ED8', 'primari-hover': '#2563EB', 'primari-actiu': '#1E40AF',
+            'accent-lila': '#7C3AED', 'accent-rosa': '#EC4899', 'accent-verd': '#10B981', 'accent-taronja': '#F59E0B',
+            blanc: '#FFFFFF', fons: '#FAFAFB', 'fons-alt': '#F5F7FA',
+            vora: '#E5E7EB', divisor: '#ECECEC',
+            text: '#111827', secundari: '#4B5563', mut: '#6B7280', inactiu: '#9CA3AF',
+            pissarra: '#0F1923', or: '#C4953C', mediterrani: '#2A6B8A',
           },
-          fontFamily: {
-            cinzel: ['Cinzel', 'Georgia', 'serif'],
-            source: ['"Source Serif 4"', 'Georgia', 'Times New Roman', 'serif'],
-            inter: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-          },
+          fontFamily: { inter: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
         }
       }
     }
   </script>
   <link rel="stylesheet" href="estils.css">
 </head>
-<body class="bg-pedra-calcaria font-source text-slate">
+<body class="bg-fons font-inter text-text">
 
-  <nav class="sticky top-0 z-50 h-[72px] bg-slate border-b border-[rgba(196,149,60,0.15)]">
-    <div class="max-w-[1200px] mx-auto px-10 max-md:px-5 h-full flex items-center justify-between">
-      <a href="index.html" class="font-cinzel text-xl font-semibold text-pedra-clara tracking-wider hover:text-or transition-colors duration-200">BARCINO · BARCELONA</a>
-      <div class="nav-links flex gap-8 items-center max-md:fixed max-md:top-[72px] max-md:left-0 max-md:right-0 max-md:bg-slate max-md:flex-col max-md:p-8 max-md:gap-6">
-        <a href="index.html#seccions" class="font-inter text-sm text-pedra-clara/70 tracking-widest uppercase hover:text-or transition-colors duration-200">Segles</a>
-      </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+  <header class="sticky top-0 z-50 h-20 bg-blanc border-b border-vora">
+    <div class="max-w-[1280px] mx-auto px-6 max-md:px-6 h-full flex items-center justify-between">
+      <a href="index.html" class="font-inter text-lg font-bold text-text tracking-tight hover:text-primari transition-colors duration-150">BARCINO · BARCELONA</a>
+      <nav class="nav-links flex gap-8 items-center" aria-label="Navegació principal">
+        <a href="index.html#seccions" class="font-inter text-sm font-medium text-secundari hover:text-primari transition-colors duration-150">Segles</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú de navegació">
         <span></span><span></span><span></span>
       </button>
     </div>
-  </nav>
+  </header>
 
-  <section class="page-hero bg-slate py-24 max-md:py-16 text-center">
-    <div class="max-w-[1200px] mx-auto px-10 max-md:px-5 hero-content">
-      <h1 class="font-cinzel text-[clamp(2rem,5vw,3.5rem)] font-semibold text-pedra-clara mb-2">Segle II a.C.</h1>
-      <p class="font-inter font-light text-lg text-pedra-clara/75">La Fundació Romana de Bàrcino</p>
+  <main>
+    <section class="page-hero py-24 max-md:py-16 text-center" style="background-image: url('img/segleII.jpg');">
+      <div class="absolute inset-0 bg-pissarra/65"></div>
+      <div class="max-w-[1280px] mx-auto px-6 max-md:px-6 hero-content">
+        <h1 class="font-inter text-5xl max-md:text-3xl font-bold text-blanc mb-2">Segle II a.C.</h1>
+        <p class="font-inter text-lg font-light text-blanc/75">La Fundació Romana de Bàrcino</p>
+      </div>
+    </section>
+
+    <div class="max-w-[1280px] mx-auto px-6 max-md:px-6">
+      <nav class="flex justify-center flex-wrap gap-2 py-8 mb-8 border-b border-divisor" aria-label="Barra cronològica">
+        <a href="segleII.html" class="font-inter text-sm font-semibold px-[18px] py-[8px] rounded-[999px] bg-pissarra text-blanc transition-all duration-150">II a.C.</a>
+        <a href="segleV.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">V d.C.</a>
+        <a href="segleVIII.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">VIII d.C.</a>
+        <a href="segleXII.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">XII d.C.</a>
+        <a href="segleXV.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">XV d.C.</a>
+        <a href="segleXVIII.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">XVIII d.C.</a>
+        <a href="segleXIX.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">XIX d.C.</a>
+        <a href="segleXX.html" class="font-inter text-sm font-medium px-[18px] py-[8px] rounded-[999px] bg-[#F3F4F6] text-mut hover:bg-pissarra hover:text-blanc transition-all duration-150">XX d.C.</a>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10">
+        <main>
+          <article class="content-card bg-blanc rounded-[20px] p-8 max-md:p-6 border border-divisor shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
+            <h2 class="font-inter text-3xl font-bold text-text mb-8">Bàrcino: Ciments Romans</h2>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">La història de Barcelona, tal com la coneixem avui, enfonsa les seves arrels profundament al segle II a.C. Tot i que hi ha evidències d'assentaments ibers anteriors a la zona, la fundació formal de la ciutat s'atribueix als romans. Va ser en aquesta època quan es va establir un campament militar estratègic que, amb el temps, es transformaria en una florent colònia romana.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">La data exacta de la fundació és objecte de debat entre historiadors, però la majoria coincideix que la colònia de <i>Faventia Julia Augusta Paterna Barcino</i>, o simplement Bàrcino, va ser establerta durant el regnat de l'emperador August, cap a l'any 15 a.C. La ubicació escollida va ser el turó del Taber, un petit promontori que oferia una excel·lent visibilitat i defensa, ideal per controlar les rutes comercials i militars de la costa mediterrània.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">El disseny urbà de Bàrcino seguia el model romà de <i>castrum</i>, amb dos eixos principals: el cardo (nord-sud) i el decumanus (est-oest), que es creuaven al fòrum. Aquest fòrum era el centre polític, religiós i comercial de la colònia. Les muralles romanes, de les quals encara es conserven importants vestigis, van ser construïdes per protegir la ciutat de possibles atacs i s'alçaven com un símbol del seu poder i organització.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">Bàrcino no era una ciutat de gran grandària en comparació amb d'altres urbs romanes de la península, però la seva importància raïa en la seva ubicació portuària i el seu fèrtil <i>ager</i> (territori circumdant). L'economia es basava principalment en l'agricultura, amb el cultiu de cereals, vinya i oliveres, i en el comerç marítim. Els seus productes eren exportats a diverses parts de l'Imperi, contribuint a la prosperitat de la colònia.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">La vida quotidiana a Bàrcino estava impregnada de la cultura romana. Es van construir temples dedicats a les deïtats romanes, com l'imponent Temple d'August, les columnes del qual encara es poden admirar avui dia. També comptaven amb termes, infraestructures de sanejament i un aqüeducte que garantia el subministrament d'aigua fresca a la població.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">Tot i la seva grandària moderada, Bàrcino va jugar un paper significatiu en la romanització de la regió. Els seus habitants van adoptar el llatí com a llengua, les lleis romanes i els costums imperials. La influència de Roma perduaria per segles, assentant les bases de la futura Barcelona i deixant una petjada indeleble en el seu desenvolupament urbà i cultural.</p>
+            <p class="font-inter text-base text-secundari leading-[170%] mb-5">El llegat romà de Bàrcino és visible fins als nostres dies, no només a les restes arqueològiques, sinó també al traçat d'alguns carrers del Barri Gòtic que segueixen l'antiga quadrícula romana. És en aquest període quan es va forjar la identitat primigènia d'una ciutat que, al llarg dels segles, es convertiria en un referent mediterrani.</p>
+
+            <figure class="mt-12 text-center">
+              <img src="img/segleII.jpg" alt="Recreació de l'antiga ciutat romana de Bàrcino" class="rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
+              <figcaption class="font-inter text-sm text-mut italic mt-3">Recreació artística de la ciutat romana de Bàrcino al segle II a.C.</figcaption>
+            </figure>
+          </article>
+
+          <nav class="flex justify-between items-center mt-12 pt-8 border-t border-divisor" aria-label="Navegació entre segles">
+            <a href="index.html" class="font-inter font-medium text-sm text-mut uppercase tracking-[0.5px] hover:text-text transition-colors duration-150">← Inici</a>
+            <a href="segleV.html" class="font-inter font-medium text-sm text-primari hover:text-primari-hover uppercase tracking-[0.5px] transition-colors duration-150">Segle V →</a>
+          </nav>
+        </main>
+
+        <aside class="flex flex-col gap-4">
+          <h3 class="font-inter text-base font-semibold text-text uppercase tracking-[0.05em] mb-2">Fets clau</h3>
+          <div class="bg-fons-alt rounded-[12px] p-4 border-l-[3px] border-primari">
+            <div class="font-inter text-xs font-bold text-accent-taronja uppercase tracking-[0.5px]">Fundació</div>
+            <div class="font-inter text-sm text-secundari">~15 a.C. sota l'emperador August</div>
+          </div>
+          <div class="bg-fons-alt rounded-[12px] p-4 border-l-[3px] border-primari">
+            <div class="font-inter text-xs font-bold text-accent-taronja uppercase tracking-[0.5px]">Nom original</div>
+            <div class="font-inter text-sm text-secundari">Faventia Julia Augusta Paterna Barcino</div>
+          </div>
+          <div class="bg-fons-alt rounded-[12px] p-4 border-l-[3px] border-primari">
+            <div class="font-inter text-xs font-bold text-accent-taronja uppercase tracking-[0.5px]">Ubicació</div>
+            <div class="font-inter text-sm text-secundari">Turó del Taber (actual Barri Gòtic)</div>
+          </div>
+          <div class="bg-fons-alt rounded-[12px] p-4 border-l-[3px] border-primari">
+            <div class="font-inter text-xs font-bold text-accent-taronja uppercase tracking-[0.5px]">Traçat urbà</div>
+            <div class="font-inter text-sm text-secundari">Cardo (nord-sud) i Decumanus (est-oest)</div>
+          </div>
+          <div class="bg-fons-alt rounded-[12px] p-4 border-l-[3px] border-primari">
+            <div class="font-inter text-xs font-bold text-accent-taronja uppercase tracking-[0.5px]">Llegat visible</div>
+            <div class="font-inter text-sm text-secundari">Muralles romanes i Temple d'August</div>
+          </div>
+        </aside>
+      </div>
     </div>
-  </section>
+  </main>
 
-  <div class="max-w-[1200px] mx-auto px-10 max-md:px-5">
-    <nav class="flex justify-center flex-wrap gap-2 py-8 mb-8 border-b border-slate/10">
-      <a href="segleII.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-or text-slate font-semibold rounded-[8px] transition-all duration-200">II a.C.</a>
-      <a href="segleV.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">V d.C.</a>
-      <a href="segleVIII.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">VIII d.C.</a>
-      <a href="segleXII.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">XII d.C.</a>
-      <a href="segleXV.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">XV d.C.</a>
-      <a href="segleXVIII.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">XVIII d.C.</a>
-      <a href="segleXIX.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">XIX d.C.</a>
-      <a href="segleXX.html" class="font-cinzel text-sm px-[18px] py-[6px] bg-pedra-clara text-slate/55 rounded-[8px] hover:bg-mediterrani hover:text-white transition-all duration-200">XX d.C.</a>
-    </nav>
-
-    <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10">
-      <main>
-        <article class="content-card bg-pedra-clara rounded-[16px] p-10 max-md:p-6 shadow-[0_2px_12px_rgba(15,25,35,0.06)]">
-          <h2 class="font-cinzel text-[1.6rem] text-slate mb-8">Bàrcino: Ciments Romans</h2>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">La història de Barcelona, tal com la coneixem avui, enfonsa les seves arrels profundament al segle II a.C. Tot i que hi ha evidències d'assentaments ibers anteriors a la zona, la fundació formal de la ciutat s'atribueix als romans. Va ser en aquesta època quan es va establir un campament militar estratègic que, amb el temps, es transformaria en una florent colònia romana.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">La data exacta de la fundació és objecte de debat entre historiadors, però la majoria coincideix que la colònia de <i>Faventia Julia Augusta Paterna Barcino</i>, o simplement Bàrcino, va ser establerta durant el regnat de l'emperador August, cap a l'any 15 a.C. La ubicació escollida va ser el turó del Taber, un petit promontori que oferia una excel·lent visibilitat i defensa, ideal per controlar les rutes comercials i militars de la costa mediterrània.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">El disseny urbà de Bàrcino seguia el model romà de <i>castrum</i>, amb dos eixos principals: el cardo (nord-sud) i el decumanus (est-oest), que es creuaven al fòrum. Aquest fòrum era el centre polític, religiós i comercial de la colònia. Les muralles romanes, de les quals encara es conserven importants vestigis, van ser construïdes per protegir la ciutat de possibles atacs i s'alçaven com un símbol del seu poder i organització.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">Bàrcino no era una ciutat de gran grandària en comparació amb d'altres urbs romanes de la península, però la seva importància raïa en la seva ubicació portuària i el seu fèrtil <i>ager</i> (territori circumdant). L'economia es basava principalment en l'agricultura, amb el cultiu de cereals, vinya i oliveres, i en el comerç marítim. Els seus productes eren exportats a diverses parts de l'Imperi, contribuint a la prosperitat de la colònia.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">La vida quotidiana a Bàrcino estava impregnada de la cultura romana. Es van construir temples dedicats a les deïtats romanes, com l'imponent Temple d'August, les columnes del qual encara es poden admirar avui dia. També comptaven amb termes, infraestructures de sanejament i un aqüeducte que garantia el subministrament d'aigua fresca a la població.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">Tot i la seva grandària moderada, Bàrcino va jugar un paper significatiu en la romanització de la regió. Els seus habitants van adoptar el llatí com a llengua, les lleis romanes i els costums imperials. La influència de Roma perduraria per segles, assentant les bases de la futura Barcelona i deixant una petjada indeleble en el seu desenvolupament urbà i cultural.</p>
-          <p class="text-[1.05rem] leading-relaxed text-slate/80 mb-5">El llegat romà de Bàrcino és visible fins als nostres dies, no només a les restes arqueològiques, sinó també al traçat d'alguns carrers del Barri Gòtic que segueixen l'antiga quadrícula romana. És en aquest període quan es va forjar la identitat primigènia d'una ciutat que, al llarg dels segles, es convertiria en un referent mediterrani.</p>
-
-          <figure class="mt-12 text-center">
-            <img src="img/segleII.jpg" alt="Recreació de l'antiga ciutat romana de Bàrcino" class="rounded-[16px] shadow-[0_4px_20px_rgba(15,25,35,0.1)]">
-            <figcaption class="font-inter text-sm text-slate/50 italic mt-3">Recreació artística de la ciutat romana de Bàrcino al segle II a.C.</figcaption>
-          </figure>
-        </article>
-
-        <nav class="flex justify-between items-center mt-12 pt-8 border-t border-slate/10">
-          <a href="index.html" class="font-inter font-medium text-sm text-slate/40 uppercase tracking-[0.5px] hover:text-slate transition-colors duration-200">← Inici</a>
-          <a href="segleV.html" class="font-inter font-medium text-sm text-mediterrani uppercase tracking-[0.5px] hover:text-or transition-colors duration-200">Segle V →</a>
-        </nav>
-      </main>
-
-      <aside class="flex flex-col gap-4">
-        <h3 class="font-cinzel text-base text-or uppercase tracking-[0.05em] mb-2">Fets clau</h3>
-        <div class="bg-pedra-clara rounded-[6px] p-4 border-l-[3px] border-mediterrani">
-          <div class="font-inter text-xs font-bold text-terracota uppercase tracking-[0.5px]">Fundació</div>
-          <div class="font-source text-[0.95rem] text-slate">~15 a.C. sota l'emperador August</div>
-        </div>
-        <div class="bg-pedra-clara rounded-[6px] p-4 border-l-[3px] border-mediterrani">
-          <div class="font-inter text-xs font-bold text-terracota uppercase tracking-[0.5px]">Nom original</div>
-          <div class="font-source text-[0.95rem] text-slate">Faventia Julia Augusta Paterna Barcino</div>
-        </div>
-        <div class="bg-pedra-clara rounded-[6px] p-4 border-l-[3px] border-mediterrani">
-          <div class="font-inter text-xs font-bold text-terracota uppercase tracking-[0.5px]">Ubicació</div>
-          <div class="font-source text-[0.95rem] text-slate">Turó del Taber (actual Barri Gòtic)</div>
-        </div>
-        <div class="bg-pedra-clara rounded-[6px] p-4 border-l-[3px] border-mediterrani">
-          <div class="font-inter text-xs font-bold text-terracota uppercase tracking-[0.5px]">Traçat urbà</div>
-          <div class="font-source text-[0.95rem] text-slate">Cardo (nord-sud) i Decumanus (est-oest)</div>
-        </div>
-        <div class="bg-pedra-clara rounded-[6px] p-4 border-l-[3px] border-mediterrani">
-          <div class="font-inter text-xs font-bold text-terracota uppercase tracking-[0.5px]">Llegat visible</div>
-          <div class="font-source text-[0.95rem] text-slate">Muralles romanes i Temple d'August</div>
-        </div>
-      </aside>
-    </div>
-  </div>
-
-  <footer class="bg-slate text-center py-12 mt-24">
-    <div class="max-w-[1200px] mx-auto px-10 max-md:px-5">
-      <p class="font-inter text-sm text-pedra-clara/50 m-0">&copy; 2026 Història de Barcelona. Tots els drets reservats.</p>
+  <footer class="bg-[#111827] text-center py-12 mt-24">
+    <div class="max-w-[1280px] mx-auto px-6 max-md:px-6">
+      <p class="font-inter text-sm text-[#D1D5DB] m-0">&copy; 2026 Història de Barcelona. Tots els drets reservats.</p>
     </div>
   </footer>
 
   <script>
-    document.getElementById('navToggle').addEventListener('click', function() {
+    var navToggle = document.getElementById('navToggle');
+    var navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', function() {
       this.classList.toggle('open');
-      document.querySelector('.nav-links').classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
     });
   </script>
 </body>
