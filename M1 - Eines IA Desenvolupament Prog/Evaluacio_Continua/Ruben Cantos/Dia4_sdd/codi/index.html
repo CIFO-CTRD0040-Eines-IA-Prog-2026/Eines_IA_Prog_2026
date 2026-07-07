@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="ca" class="scroll-smooth">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Clínica Dental DEMO a Sarrià-Sant Gervasi de Barcelona. Especialistes en implants, ortodòncia invisible i odontopediatria. Cita al 932 541 700."/>
+<title>Clínica Dental DEMO | Dentista a Sarrià-Sant Gervasi Barcelona</title>
+<link rel="canonical" href="https://dentaldemo.com/"/>
+<meta name="robots" content="index, follow"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Clínica Dental DEMO | Dentista Barcelona"/>
+<meta property="og:description" content="Especialistes en implants, ortodòncia invisible i odontopediatria a Barcelona."/>
+<meta property="og:url" content="https://dentaldemo.com/"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        teal: { 50: '#f0fdfa', 100: '#ccfbf1', 200: '#99f6e4', 400: '#2dd4bf', 600: '#0d9488', 700: '#0f766e', 800: '#115e59', 900: '#134e4a' },
+        wa: '#25D366',
+      },
+      fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'] },
+      animation: { 'wa-pulse': 'pulse2 2.2s ease-in-out infinite', 'fade-up': 'fadeUp 0.7s ease forwards' },
+      keyframes: {
+        pulse2: { '0%,100%': { boxShadow: '0 0 0 0 rgba(37,211,102,0.5)' }, '50%': { boxShadow: '0 0 0 14px rgba(37,211,102,0)' } },
+        fadeUp: { '0%': { opacity: '0', transform: 'translateY(24px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+      },
+    },
+  },
+}
+</script>
+<link rel="stylesheet" href="styles.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX',{anonymize_ip:true});</script>
+</head>
+<body class="font-sans text-gray-800 bg-white antialiased">
+
+<!-- ═══ HEADER ═══ -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+    <a href="#clinica" class="flex items-center gap-2.5 shrink-0">
+      <div class="w-8 h-8 rounded-full bg-teal-600 flex items-center justify-center">
+        <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path d="M12 2C8.5 2 6 5 6 8c0 2.5 1 4.5 2.5 6L10 20h4l1.5-6C17 12.5 18 10.5 18 8c0-3-2.5-6-6-6z"/>
+        </svg>
+      </div>
+      <div class="leading-tight">
+        <span class="block text-sm font-semibold text-gray-900 tracking-tight">Clínica Dental</span>
+        <span class="block text-xs text-teal-600 font-medium tracking-wide">DEMO</span>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center gap-6">
+      <a href="#clinica" class="text-sm text-gray-600 hover:text-teal-700 font-medium">La Clínica</a>
+      <a href="#tractaments" class="text-sm text-gray-600 hover:text-teal-700 font-medium">Tractaments</a>
+      <a href="#guia" class="text-sm text-gray-600 hover:text-teal-700 font-medium">Guia Dental</a>
+      <a href="#equip" class="text-sm text-gray-600 hover:text-teal-700 font-medium">Equip</a>
+      <a href="#faq" class="text-sm text-gray-600 hover:text-teal-700 font-medium">FAQ</a>
+      <a href="#contacte" class="text-sm text-gray-600 hover:text-teal-700 font-medium">Contacte</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="tel:+34932541700" class="hidden sm:flex items-center gap-1.5 text-sm font-medium text-teal-700 hover:text-teal-900">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        932 541 700
+      </a>
+      <a href="#contacte" class="hidden sm:inline-flex items-center bg-teal-600 hover:bg-teal-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">Demanar cita</a>
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-500 hover:bg-gray-100">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-nav" class="md:hidden hidden border-t border-gray-100 bg-white px-4 py-3 flex flex-col gap-3">
+    <a href="#clinica" class="text-sm font-medium text-gray-700 py-1">La Clínica</a>
+    <a href="#tractaments" class="text-sm font-medium text-gray-700 py-1">Tractaments</a>
+    <a href="#guia" class="text-sm font-medium text-gray-700 py-1">Guia Dental</a>
+    <a href="#equip" class="text-sm font-medium text-gray-700 py-1">Equip</a>
+    <a href="#faq" class="text-sm font-medium text-gray-700 py-1">FAQ</a>
+    <a href="#contacte" class="text-sm font-medium text-gray-700 py-1">Contacte</a>
+    <a href="tel:+34932541700" class="text-sm font-medium text-teal-600 py-1">932 541 700</a>
+    <a href="#contacte" class="bg-teal-600 text-white text-sm font-medium px-4 py-2.5 rounded-lg text-center">Demanar cita</a>
+  </div>
+</header>
+
+<!-- ═══ 1. LA CLÍNICA ═══ -->
+<section id="clinica" class="relative pt-16 min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-teal-50 via-white to-white">
+  <div class="absolute top-0 right-0 w-1/2 h-full bg-teal-50/60 clip-hero -z-0 pointer-events-none hidden md:block"></div>
+  <div class="absolute bottom-8 left-8 w-48 h-48 rounded-full bg-teal-100/40 blur-3xl pointer-events-none"></div>
+  <div class="absolute top-20 right-1/4 w-32 h-32 rounded-full bg-teal-200/30 blur-2xl pointer-events-none"></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-20 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+    <div class="animate-fade-up">
+      <div class="inline-flex items-center gap-2 bg-teal-100 text-teal-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-5 tracking-wide uppercase">Clínica dental a Barcelona</div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-5">La teva salut dental, <span class="text-teal-600">la nostra prioritat</span></h1>
+      <p class="text-base sm:text-lg text-gray-500 font-light leading-relaxed mb-8 max-w-md">Atenció dental personalitzada, tecnologia d'avantguarda i un equip compromès amb el teu somriure des de Barcelona.</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#contacte" class="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3.5 rounded-xl transition-all hover:shadow-lg hover:shadow-teal-200 text-sm">Demanar cita</a>
+        <a href="tel:+34932541700" class="inline-flex items-center gap-2 border border-gray-200 hover:border-teal-300 text-gray-700 hover:text-teal-700 font-medium px-6 py-3.5 rounded-xl transition-all text-sm">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          932 541 700
+        </a>
+      </div>
+      <div class="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-gray-100">
+        <div><div class="text-2xl font-bold text-teal-700">+15</div><div class="text-xs text-gray-500 mt-0.5">Anys d'experiència</div></div>
+        <div><div class="text-2xl font-bold text-teal-700">2.500+</div><div class="text-xs text-gray-500 mt-0.5">Pacients atesos</div></div>
+        <div><div class="text-2xl font-bold text-teal-700">97%</div><div class="text-xs text-gray-500 mt-0.5">Pacients satisfets</div></div>
+      </div>
+    </div>
+    <div class="relative flex justify-center">
+      <div class="relative w-64 h-80 sm:w-80 sm:h-96 bg-teal-100 rounded-3xl overflow-hidden flex items-center justify-center">
+        <div class="w-full h-full flex items-center justify-center bg-teal-50">
+          <svg class="w-24 h-24 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-40">
+    <svg class="w-5 h-5 text-gray-400 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+  </div>
+</section>
+
+<!-- ═══ 2. TRACTAMENTS ESPECIALITZATS ═══ -->
+<section id="tractaments" class="py-24 bg-white scroll-target">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-16 reveal">
+      <span class="text-xs font-bold text-teal-600 tracking-widest uppercase">El que oferim</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-3 mb-4">Tractaments especialitzats</h2>
+      <p class="text-gray-500 max-w-xl mx-auto leading-relaxed">Tractaments d'alta qualitat per a tota la família, amb tecnologia d'avantguarda al cor de Barcelona.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+      <article class="service-card bg-gradient-to-br from-pink-50 to-white border border-pink-100 rounded-2xl p-6">
+        <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-2">Odontologia Pediàtrica i Familiar</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">Revisions infantils, segelladors, fluor i avaluació ortodòntica primerenca en un entorn càlid i amigable.</p>
+      </article>
+      <article class="service-card bg-gradient-to-br from-teal-50 to-white border border-teal-100 rounded-2xl p-6">
+        <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2C8.5 2 6 5 6 8c0 2.5 1 4.5 2.5 6L10 20h4l1.5-6C17 12.5 18 10.5 18 8c0-3-2.5-6-6-6z"/></svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-2">Implantologia i Rehabilitació Oral</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">Implants de titani, All-on-4 i càrrega immediata. Recupera les dents perdudes amb resultats naturals.</p>
+      </article>
+      <article class="service-card bg-gradient-to-br from-purple-50 to-white border border-purple-100 rounded-2xl p-6">
+        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-2">Ortodòncia Invisible</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">Alineadors transparents o brackets. Corregim apiïaments i problemes de mossegada amb la màxima discreció.</p>
+      </article>
+      <article class="service-card bg-gradient-to-br from-yellow-50 to-white border border-yellow-100 rounded-2xl p-6">
+        <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-2">Odontologia Cosmètica i Estètica</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">Carilles de porcellana, blanquejament professional i disseny de somriure complet per a un resultat natural.</p>
+      </article>
+      <article class="service-card bg-gradient-to-br from-green-50 to-white border border-green-100 rounded-2xl p-6">
+        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-2">Neteja Professional i Prevenció</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">Eliminació de tàrtar, profilaxi i tractament periodontal. Prevenció i manteniment per a una boca sana.</p>
+      </article>
+      <article class="service-card bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-2xl p-6">
+        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-2">Odontologia General i Restauradora</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">Obturacions, incrustacions i endodòncia. Restaurem la funció i l'estètica de les teves dents.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 3. GUIA DE CURA DENTAL ═══ -->
+<section id="guia" class="py-24 bg-teal-50/30 scroll-target">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-16 reveal">
+      <span class="text-xs font-bold text-teal-600 tracking-widest uppercase">Aprèn amb nosaltres</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-3 mb-4">Guia de Cura Dental per a Cada Etapa de la Vida</h2>
+      <p class="text-gray-500 max-w-xl mx-auto leading-relaxed">Consells basats en fonts mèdiques internacionals (OMS, CDC, NHS, ADA, Mayo Clinic, EFP, NIDCR, Canal Salut GenCat) adaptats a cada edat.</p>
+    </div>
+
+    <div class="flex justify-center gap-2 mb-10 reveal">
+      <button class="tab-btn active px-5 py-2.5 rounded-lg text-sm font-medium bg-teal-600 text-white transition-colors" data-tab="tab-nens">Nens i Joves (0-18)</button>
+      <button class="tab-btn px-5 py-2.5 rounded-lg text-sm font-medium bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors" data-tab="tab-adults">Adults (18-65)</button>
+      <button class="tab-btn px-5 py-2.5 rounded-lg text-sm font-medium bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors" data-tab="tab-seniors">Gent Gran (+65)</button>
+    </div>
+
+    <!-- ══ NENS I JOVES (0-18) ══ -->
+    <div id="tab-nens" class="tab-panel active reveal">
+      <div class="max-w-3xl mx-auto mb-8 bg-white rounded-xl p-6 border border-pink-200">
+        <p class="text-sm text-gray-600 leading-relaxed">
+          <strong class="text-pink-700">Per què és important:</strong> L'OMS alerta que les càries dentals no tractades afecten 514 milions de nens i nenes a tot el món. Les dents de llet no són només provisionals: guien l'erupció de les dents permanents, mantenen l'espai necessari i són fonamentals per a la parla i la nutrició. Establir bons hàbits des del principi és la millor inversió en salut.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+
+        <div class="bg-white rounded-xl p-5 border border-pink-100">
+          <div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-1">Primera visita als 12 mesos</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">L'OMS i l'ADA recomanen la primera revisió dental tan bon punt surt el primer dent o als 12 mesos, el que passi abans. Aquesta visita primerenca permet detectar factors de risc, assessorar els pares sobre higiene i dieta, i crear un vincle positiu entre el nen i la clínica dental des del principi.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-pink-100">
+          <div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-1">Calendari d'erupció dental</h4>
+          <p class="text-xs text-gray-500 leading-relaxet">Segons la guia pediàtrica del NHS, els incisius centrals inferiors solen aparèixer als 6-10 mesos, seguits dels superiors. Als 3 anys, la majoria de nens tenen la dentició primària completa (20 dents). Les primeres molars permanents emergeixen als 6 anys —sovint confoses amb dents de llet— i són especialment vulnerables a la càries.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-pink-100">
+          <div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-1">Segelladors de fissures</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">El CDC recomana els segelladors dentals com una de les intervencions preventives més efectives: poden reduir fins al 80% de les càries en molars permanents durant els primers 2 anys després de la col·locació, i continuar protegint fins al 50% durant 4 anys. El Programa de Salut Bucodental Escolar de la Generalitat de Catalunya (Canal Salut) inclou segelladors gratuïts per a nens de 7 a 9 anys.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-pink-100">
+          <div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-1">Fluor: prevenció segura i eficaç</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">El fluor reforça l'esmalt dental i afavoreix la remineralització de les càries incipients. El Canal Salut GenCat recomana pasta fluorada amb 1.000-1.500 ppm de fluor des de l'aparició del primer dent: la mida d'un gra d'arròs fins als 3 anys, i d'un pèsol a partir dels 3 anys. L'aplicació professional de fluor (barnís) cada 6 mesos redueix el risc de càries fins a un 30% en nens amb alt risc.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-pink-100">
+          <div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-1">Hàbits d'higiene i dieta</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">El NHS recomana raspallar-se dos cops al dia amb pasta fluorada durant 2 minuts, supervisat per un adult fins als 7 anys. La dieta juga un paper clau: limitar els sucres lliures a menys del 5% de la ingesta calòrica total (OMS), evitar begudes ensucrades entre àpats, i no posar mai sucre al xumet. La lactància materna exclusiva durant els 6 primers mesos també contribueix a un bon desenvolupament oral.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-pink-100">
+          <div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 13v-1m4 1v-1m4 1v-1m0-6.5A3.5 3.5 0 0012.5 2h-1A3.5 3.5 0 008 5.5V7h8V5.5z"/></svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-1">Hàbits orals i ortodoncia primerenca</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">L'ús prolongat del xumet (més de 3 anys) i la succió del dit poden provocar deformacions en el paladar i mala posició dental. L'ADA recomana avaluar la necessitat d'ortodòncia als 7 anys, edat en què ja han erupcionat els primers molars i incisius permanents. La detecció precoç de problemes de mossegada permet tractaments més curts i menys invasius.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ ADULTS (18-65) ══ -->
+    <div id="tab-adults" class="tab-panel reveal">
+      <div class="max-w-3xl mx-auto mb-8 bg-white rounded-xl p-6 border border-teal-200">
+        <p class="text-sm text-gray-600 leading-relaxed">
+          <strong class="text-teal-700">Per què és important:</strong> Les malalties bucodentals afecten 3.500 milions de persones al món (OMS). En adults, la càries i la malaltia periodontal són les principals causes de pèrdua dental, però ambdues són àmpliament prevenibles. La Mayo Clinic documenta que la salut bucal és un reflex de la salut general: una boca sana redueix el risc de complicacions cardiovasculars, diabetis descontrolada i complicacions en l'embaràs.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+
+        <div class="bg-white rounded-xl p-5 border border-teal-100">
+          <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-1">Salut del cor i genives</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">La malaltia periodontal (genives) afecta entre el 20 i el 50% de la població mundial (EFP). La Mayo Clinic i l'EFP confirmen que les bactèries periodontals poden entrar al torrent sanguini i contribuir a la formació de plaques arterials, augmentant el risc d'infart i ictus. El projecte «Perio & Cardio» de l'EFP demostra que el tractament periodontal redueix els marcadors d'inflamació sistèmica.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-teal-100">
+          <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-1">Diabetis i salut bucal: via doble</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">L'EFP i la Mayo Clinic documenten una relació bidireccional: la diabetis mal controlada augmenta el risc i la gravetat de la malaltia periodontal, i alhora la periodontitis dificulta el control glucèmic. El projecte «Perio & Diabetes» de l'EFP mostra que el tractament periodontal millora els nivells d'hemoglobina glicosilada (HbA1c) en pacients diabètics, amb un efecte comparable al d'un fàrmac hipoglucemiant.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-teal-100">
+          <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-1">Embaràs i salut oral</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">L'EFP i el CDC alerten que la gingivitis de l'embaràs afecta entre el 60 i el 75% de les gestants. La malaltia periodontal no tractada s'associa amb part prematur i baix pes en néixer. Durant l'embaràs, les revisions dentals són segures i recomanables. El Canal Salut GenCat ofereix consells específics per a dones embarassades: mantenir una higiene estricta, evitar sucres i fer una revisió al primer trimestre.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-teal-100">
+          <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-1">Signes d'alerta i autoavaluació</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">L'Oral Health Foundation i l'EFP proporcionen eines d'autoavaluació per detectar signes precoços de malaltia periodontal: sagnat en raspallar-se, genives enrogides o inflades, mal alè persistent, sensibilitat dental o recessió de genives. Si apareix qualsevol d'aquests símptomes, l'EFP recomana consultar un professional. La detecció precoç pot revertir la gingivitis sense deixar seqüeles.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-teal-100">
+          <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/></svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-1">Tècnica de raspallat i rutina diària</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">El NHS recomana: 1) raspallar-se durant 2 minuts, dos cops al dia, amb pasta fluorada; 2) utilitzar un raspall de truges suaus o mitjanes; 3) no esbandir-se amb aigua després de raspallar-se perquè el fluor faci efecte; 4) netejar entre les dents amb fil dental o raspalls interdentals un cop al dia; 5) evitar el tabac i limitar el consum d'alcohol i sucre.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-teal-100">
+          <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-1">Estrès, tabac i bruxisme</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">L'estrès laboral pot manifestar-se en bruxisme (rechinar de dents), que desgasta l'esmalt i causa sensibilitat i dolor mandibular. El tabac és un dels principals factors de risc per a la malaltia periodontal i el càncer oral. L'OMS i el CDC coincideixen que deixar de fumar redueix significativament el risc de patir malaltia periodontal i millora la resposta als tractaments dentals.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ GENT GRAN (+65) ══ -->
+    <div id="tab-seniors" class="tab-panel reveal">
+      <div class="max-w-3xl mx-auto mb-8 bg-white rounded-xl p-6 border border-amber-200">
+        <p class="text-sm text-gray-600 leading-relaxed">
+          <strong class="text-amber-700">Per què és important:</strong> L'envelliment de la població ha transformat l'odontologia geriàtrica. Avui dia, és possible mantenir una dentició funcional durant tota la vida. El NIDCR i la Mayo Clinic subratllen que la salut bucal en la gent gran està estretament lligada a la salut general: una boca sana permet una alimentació adequada, prevé infeccions respiratòries i contribueix a la qualitat de vida.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+
+        <div class="bg-white rounded-xl p-5 border border-amber-100">
+          <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-1">Xerostomia (boca seca)</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">La xerostomia afecta fins al 30% de la gent gran i fins al 60% dels residents en centres geriàtrics (NIDCR). És un efecte secundari freqüent de medicaments per a la hipertensió, antidepressius, antihistamínics i diürètics. La saliva és essencial per protegir les dents: neutralitza àcids, conté enzims antibacterians i facilita la deglució. El NIDCR recomana hidratació freqüent, xiclets sense sucre, substituts de saliva i evitar alcohol i cafeïna.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-amber-100">
+          <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857"/></svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-1">Malaltia periodontal avançada</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">La prevalença de periodontitis augmenta amb l'edat: afecta més del 60% de les persones majors de 65 anys (EFP). La pèrdua d'os de suport dental pot provocar mobilitat i eventual pèrdua de dents. L'EFP alerta sobre la connexió amb la diabetis tipus 2: la periodontitis no tractada pot elevar la HbA1c i dificultar el control metabòlic. Les revisions periòdiques i el tractament periodontal són essencials.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-amber-100">
+          <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-1">Connexió sistèmica: boca i cos</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">La Mayo Clinic documenta que la malaltia periodontal s'associa amb un major risc de malalties cardiovasculars, pneumònia per aspiració i agreujament de la diabetis. La relació amb la cognició també s'investiga: la inflamació crònica podria contribuir al deteriorament cognitiu i a l'Alzheimer. Una boca sana en la gent gran no és un luxe: és un pilar de la salut general i la longevitat.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-amber-100">
+          <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-1">Revisions i prevenció</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">El NHS recomana revisions dentals cada 6 mesos per a la gent gran, i cada 3-4 mesos si hi ha factors de risc: tabac, diabetis, pròtesis dentals, medicació crònica o historial de malaltia periodontal. El Programa de Salut Bucodental de Catalunya (Canal Salut GenCat) ofereix consells específics per a la gent gran, incloent-hi la importància de la higiene de les pròtesis i la detecció precoç de lesions mucoses.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-amber-100">
+          <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-1">Cura de les pròtesis dentals</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Entre el 15 i el 20% de la gent gran porta pròtesis removibles (NIDCR). Una higiene inadequada pot provocar estomatitis protètica, càries en les dents de suport i infeccions per fongs. Es recomana: netejar la pròtesi diàriament amb un raspall suau i aigua no abrasiva, treure-la durant la nit per donar repòs a la mucosa, i revisar-la periòdicament per ajustar-la, ja que l'os maxil·lar es reabsorbeix amb el temps.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-amber-100">
+          <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center mb-3">
+            <svg class="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 text-sm mb-1">Càncer oral: detecció precoç</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">El risc de càncer oral augmenta amb l'edat, especialment a partir dels 60 anys. El NIDCR recomana revisions periòdiques que incloguin una exploració visual i tàctil de tota la cavitat oral: llengua, mucosa jugal, paladar, sòl de la boca i faringe. Els signes d'alerta inclouen: nafres que no curen en 2-3 setmanes, taques blanques o vermelles persistents, i dificultat per empassar. El diagnòstic precoç multiplica les taxes de supervivència.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="mt-10 text-center reveal">
+      <p class="text-xs text-gray-400">Fonts consultades: <a href="https://www.who.int/health-topics/oral-health" class="underline hover:text-teal-600" target="_blank">OMS</a>, <a href="https://www.cdc.gov/oral-health/index.html" class="underline hover:text-teal-600" target="_blank">CDC</a>, <a href="https://www.nidcr.nih.gov/health-info/publications" class="underline hover:text-teal-600" target="_blank">NIDCR</a>, <a href="https://www.nhs.uk/live-well/healthy-teeth-and-gums/" class="underline hover:text-teal-600" target="_blank">NHS</a>, <a href="https://www.mouthhealthy.org/" class="underline hover:text-teal-600" target="_blank">ADA</a>, <a href="https://www.mayoclinic.org/healthy-lifestyle/adult-health/in-depth/dental/art-20047475" class="underline hover:text-teal-600" target="_blank">Mayo Clinic</a>, <a href="https://www.efp.org/for-patients/home/" class="underline hover:text-teal-600" target="_blank">EFP</a>, <a href="https://www.e-s-e.eu/for-patients/patient-resources/" class="underline hover:text-teal-600" target="_blank">ESE</a>, <a href="https://www.oralhealthplatform.eu/our-best-practices/" class="underline hover:text-teal-600" target="_blank">Platform for Better Oral Health</a>, <a href="https://canalsalut.gencat.cat/ca/salut-a-z/s/salut-bucodental/" class="underline hover:text-teal-600" target="_blank">Canal Salut GenCat</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4. TECNOLOGIA DIGITAL ═══ -->
+<section class="py-24 bg-white scroll-target reveal">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-16">
+      <span class="text-xs font-bold text-teal-600 tracking-widest uppercase">Innovació</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-3 mb-4">Tecnologia digital al servei del teu somriure</h2>
+      <p class="text-gray-500 max-w-xl mx-auto leading-relaxed">Equipem la nostra clínica amb les tecnologies més avançades per a diagnòstics precisos i tractaments mínimament invasius.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="text-center p-6">
+        <div class="w-14 h-14 bg-teal-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <svg class="w-7 h-7 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-1">CBCT 3D</h3>
+        <p class="text-xs text-gray-500">Tomografia computeritzada de feix cònic per a imatges tridimensionals d'alta resolució.</p>
+      </div>
+      <div class="text-center p-6">
+        <div class="w-14 h-14 bg-teal-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <svg class="w-7 h-7 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-1">Escàner intraoral</h3>
+        <p class="text-xs text-gray-500">Impressions digitals 3D còmodes i precises, eliminant els motlles de silicona tradicionals.</p>
+      </div>
+      <div class="text-center p-6">
+        <div class="w-14 h-14 bg-teal-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <svg class="w-7 h-7 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-1">Disseny de somriure digital</h3>
+        <p class="text-xs text-gray-500">Simulem el resultat final abans de començar perquè puguis veure i aprovar el teu nou somriure.</p>
+      </div>
+      <div class="text-center p-6">
+        <div class="w-14 h-14 bg-teal-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <svg class="w-7 h-7 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 mb-1">Cirurgia guiada</h3>
+        <p class="text-xs text-gray-500">Planificació digital per a col·locar implants amb precisió mil·limètrica, reduint temps i molèsties.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 5. EL NOSTRE EQUIP ═══ -->
+<section id="equip" class="py-24 bg-teal-50/30 scroll-target reveal">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-16">
+      <span class="text-xs font-bold text-teal-600 tracking-widest uppercase">Coneix-nos</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-3 mb-4">El nostre equip</h2>
+      <p class="text-gray-500 max-w-xl mx-auto leading-relaxed">Professionals altament qualificats, apassionats per la salut dental i compromesos amb el teu benestar.</p>
+    </div>
+    <div class="max-w-lg mx-auto text-center">
+      <div class="w-40 h-40 bg-teal-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+        <svg class="w-20 h-20 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      </div>
+      <h3 class="text-xl font-bold text-gray-900">Dra. DEMO</h3>
+      <p class="text-sm text-teal-600 font-medium">Odontòloga general · Col·legiada COEC</p>
+      <p class="text-sm text-gray-500 mt-3 max-w-md mx-auto">Amb més de 15 anys d'experiència, la Dra. DEMO lidera un equip de professionals especialitzats en cada àrea de l'odontologia, oferint un tracte proper i humà a cada pacient.</p>
+      <div class="flex justify-center gap-8 mt-8">
+        <div class="text-center">
+          <div class="text-lg font-bold text-teal-700">+15</div>
+          <div class="text-xs text-gray-500">Anys d'experiència</div>
+        </div>
+        <div class="text-center">
+          <div class="text-lg font-bold text-teal-700">4</div>
+          <div class="text-xs text-gray-500">Especialitats</div>
+        </div>
+        <div class="text-center">
+          <div class="text-lg font-bold text-teal-700">+500</div>
+          <div class="text-xs text-gray-500">Cases d'èxit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 6. QUÈ DIUEN ELS NOSTRES PACIENTS ═══ -->
+<section class="py-24 bg-white scroll-target reveal">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-16">
+      <span class="text-xs font-bold text-teal-600 tracking-widest uppercase">Testimonis</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-3 mb-4">Què Diuen els Nostres Pacients</h2>
+      <p class="text-gray-500 max-w-xl mx-auto leading-relaxed">L'opinió dels nostres pacients és el nostre millor aval.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+        <div class="flex gap-1 mb-3">
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        <p class="text-sm text-gray-600 leading-relaxed mb-3">"Des de la primera visita em van transmetre una confiança increïble. L'equip és molt professional i humà. Totalment recomanables."</p>
+        <div class="text-xs font-semibold text-gray-800">— Maria R.</div>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+        <div class="flex gap-1 mb-3">
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        <p class="text-sm text-gray-600 leading-relaxed mb-3">"Em van fer un implant i el resultat és espectacular. El procés va ser molt més còmode del que m'imaginava. Gràcies per tot!"</p>
+        <div class="text-xs font-semibold text-gray-800">— Jordi S.</div>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+        <div class="flex gap-1 mb-3">
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        <p class="text-sm text-gray-600 leading-relaxed mb-3">"Porto el meu fill des dels 3 anys i l'experiència és meravellosa. L'equip sap tractar els nens amb una paciència i carinyo extraordinaris."</p>
+        <div class="text-xs font-semibold text-gray-800">— Anna M.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 7. PREGUNTES FREQÜENTS ═══ -->
+<section id="faq" class="py-24 bg-teal-50/30 scroll-target reveal">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-16">
+      <span class="text-xs font-bold text-teal-600 tracking-widest uppercase">Resolem els teus dubtes</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-3 mb-4">Preguntes Freqüents</h2>
+      <p class="text-gray-500 max-w-xl mx-auto leading-relaxed">Hem recollit les preguntes més comunes dels nostres pacients.</p>
+    </div>
+    <div class="space-y-3">
+      <div class="bg-white rounded-xl border border-gray-100 overflow-hidden">
+        <button class="faq-trigger w-full flex items-center justify-between p-5 text-left font-medium text-gray-900 hover:bg-gray-50 transition-colors">
+          <span>Amb quina freqüència he de fer una revisió dental?</span>
+          <svg class="faq-chevron w-4 h-4 text-gray-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-body px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+          Per a la majoria de pacients, l'NHS i l'ADA recomanen una revisió i neteja professional cada 6 mesos. En pacients amb major risc de càries o malaltia periodontal (fumadors, diabètics o portadors d'aparell), podem recomanar visites cada 3-4 mesos.
+        </div>
+      </div>
+      <div class="bg-white rounded-xl border border-gray-100 overflow-hidden">
+        <button class="faq-trigger w-full flex items-center justify-between p-5 text-left font-medium text-gray-900 hover:bg-gray-50 transition-colors">
+          <span>A partir de quina edat hauria de portar el meu fill al dentista?</span>
+          <svg class="faq-chevron w-4 h-4 text-gray-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-body px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+          L'OMS i l'ADA recomanen la primera visita dental als 12 mesos o tan bon punt surt el primer dent. La detecció precoç i la creació de bons hàbits d'higiene des del principi són fonamentals per a una salut dental duradora.
+        </div>
+      </div>
+      <div class="bg-white rounded-xl border border-gray-100 overflow-hidden">
+        <button class="faq-trigger w-full flex items-center justify-between p-5 text-left font-medium text-gray-900 hover:bg-gray-50 transition-colors">
+          <span>Quina diferència hi ha entre els brackets i l'ortodòncia invisible?</span>
+          <svg class="faq-chevron w-4 h-4 text-gray-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-body px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+          Els brackets metàl·lics o de zafir estan fixos a les dents i actuen contínuament; són ideals per a casos complexos. L'ortodòncia invisible utilitza fèrules transparents extraïbles que es canvien cada 1-2 setmanes; és pràcticament invisible i permet menjar i higienitzar-se amb normalitat. En la visita de diagnòstic us assessorem sobre quina opció s'adapta millor al vostre cas.
+        </div>
+      </div>
+      <div class="bg-white rounded-xl border border-gray-100 overflow-hidden">
+        <button class="faq-trigger w-full flex items-center justify-between p-5 text-left font-medium text-gray-900 hover:bg-gray-50 transition-colors">
+          <span>Sóc bon candidat per a implants dentals?</span>
+          <svg class="faq-chevron w-4 h-4 text-gray-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-body px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+          La majoria d'adults sans amb os mandibular suficient poden ser candidats a implants. En la primera visita fem un estudi radiogràfic i una planificació digital per avaluar el vostre cas. El procés complet sol durar entre 3 i 6 mesos, i en alguns casos oferim càrrega immediata.
+        </div>
+      </div>
+      <div class="bg-white rounded-xl border border-gray-100 overflow-hidden">
+        <button class="faq-trigger w-full flex items-center justify-between p-5 text-left font-medium text-gray-900 hover:bg-gray-50 transition-colors">
+          <span>Quin és el cost aproximat dels tractaments?</span>
+          <svg class="faq-chevron w-4 h-4 text-gray-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-body px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+          Oferim pressupostos personalitzats i transparents sense costos ocults, adaptats al cas específic de cada pacient. Alguns tractaments admeten fraccionament del pagament. Contacteu-nos per rebre un pressupost gratuït i sense compromís.
+        </div>
+      </div>
+      <div class="bg-white rounded-xl border border-gray-100 overflow-hidden">
+        <button class="faq-trigger w-full flex items-center justify-between p-5 text-left font-medium text-gray-900 hover:bg-gray-50 transition-colors">
+          <span>On esteu ubicats i com hi puc arribar?</span>
+          <svg class="faq-chevron w-4 h-4 text-gray-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-body px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+          Estem a la Plaça del Comte de Sert, 25, al barri de Sarrià-Sant Gervasi de Barcelona. Disposeu de transport públic a prop (FGC Sarrià, bus V13 i H4) i d'aparcament a la zona.
+        </div>
+      </div>
+      <div class="bg-white rounded-xl border border-gray-100 overflow-hidden">
+        <button class="faq-trigger w-full flex items-center justify-between p-5 text-left font-medium text-gray-900 hover:bg-gray-50 transition-colors">
+          <span>Què he de fer en cas d'urgència dental?</span>
+          <svg class="faq-chevron w-4 h-4 text-gray-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-body px-5 pb-5 text-sm text-gray-500 leading-relaxed">
+          En cas d'urgència, truqueu-nos al 932 541 700. Fora de l'horari d'obertura, el telèfon us indicarà les instruccions a seguir. Per a emergències greus, adreceu-vos al servei d'urgències hospitalàries més proper.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 8. CONTACTA'NS ═══ -->
+<section id="contacte" class="py-24 bg-white scroll-target reveal">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-16">
+      <span class="text-xs font-bold text-teal-600 tracking-widest uppercase">Estem aquí per ajudar-te</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-3 mb-4">Contacta'ns</h2>
+      <p class="text-gray-500 max-w-xl mx-auto leading-relaxed">Demana cita o resol qualsevol dubte. Et respondrem el més aviat possible.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+            <input type="text" name="name" required class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-teal-400 focus:border-transparent outline-none" placeholder="El teu nom"/>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-teal-400 focus:border-transparent outline-none" placeholder="email@exemple.cat"/>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Telèfon</label>
+            <input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-teal-400 focus:border-transparent outline-none" placeholder="932 541 700"/>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Missatge</label>
+            <textarea name="message" rows="4" required class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-teal-400 focus:border-transparent outline-none" placeholder="Explica'ns en què et podem ajudar..."></textarea>
+          </div>
+          <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-medium py-3.5 rounded-xl transition-colors text-sm">Enviar missatge</button>
+          <div id="form-message"></div>
+        </form>
+      </div>
+      <div>
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-teal-100 rounded-xl flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 text-sm">Adreça</h4>
+              <p class="text-sm text-gray-500">Plaça del Comte de Sert, 25<br/>Sarrià-Sant Gervasi, 08035 Barcelona</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-teal-100 rounded-xl flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 text-sm">Telèfon / WhatsApp</h4>
+              <a href="tel:+34932541700" class="text-sm text-teal-600 hover:underline">932 541 700</a>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-teal-100 rounded-xl flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 text-sm">Horari</h4>
+              <p class="text-sm text-gray-500">Dilluns a Divendres: 10:30 – 19:30</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 h-48 bg-teal-50 rounded-xl flex items-center justify-center text-sm text-gray-400 border border-teal-100">
+          <div class="text-center">
+            <svg class="w-8 h-8 mx-auto mb-2 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span>Mapa interactiu (Google Maps)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="bg-gray-900 text-gray-400 py-12">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid sm:grid-cols-3 gap-8">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-8 h-8 rounded-full bg-teal-600 flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 2C8.5 2 6 5 6 8c0 2.5 1 4.5 2.5 6L10 20h4l1.5-6C17 12.5 18 10.5 18 8c0-3-2.5-6-6-6z"/></svg>
+          </div>
+          <span class="text-sm font-semibold text-white">Clínica Dental DEMO</span>
+        </div>
+        <p class="text-xs leading-relaxed">Plaça del Comte de Sert, 25<br/>Sarrià-Sant Gervasi, 08035 Barcelona</p>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold text-white mb-4">Enllaços</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="#clinica" class="hover:text-teal-400 transition-colors">La Clínica</a></li>
+          <li><a href="#tractaments" class="hover:text-teal-400 transition-colors">Tractaments</a></li>
+          <li><a href="#guia" class="hover:text-teal-400 transition-colors">Guia Dental</a></li>
+          <li><a href="#equip" class="hover:text-teal-400 transition-colors">Equip</a></li>
+          <li><a href="#faq" class="hover:text-teal-400 transition-colors">FAQ</a></li>
+          <li><a href="#contacte" class="hover:text-teal-400 transition-colors">Contacte</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold text-white mb-4">Contacte</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="tel:+34932541700" class="hover:text-teal-400 transition-colors">932 541 700</a></li>
+          <li><span>Dll-Dv: 10:30 – 19:30</span></li>
+          <li><a href="politica-privacitat.html" class="hover:text-teal-400 transition-colors">Política de privacitat</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 mt-8 pt-6 text-center text-xs">
+      <p>&copy; 2026 Clínica Dental DEMO. Tots els drets reservats.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ WHATSAPP FLOTANT ═══ -->
+<a id="whatsapp-btn" href="https://wa.me/34932541700" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-wa rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow animate-wa-pulse">
+  <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script src="scripts.js"></script>
+</body>
+</html>

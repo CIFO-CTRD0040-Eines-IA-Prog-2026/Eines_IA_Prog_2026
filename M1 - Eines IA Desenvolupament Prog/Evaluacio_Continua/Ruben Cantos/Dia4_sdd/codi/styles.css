@@ -1,0 +1,27 @@
+/* ── Scroll reveal ── */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── Service card hover ── */
+.service-card { transition: transform .2s, box-shadow .2s; }
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(13,148,136,.12); }
+
+/* ── FAQ accordion ── */
+.faq-body { display: none; }
+.faq-body.open { display: block; }
+.faq-chevron { transition: transform 0.3s ease; }
+.faq-chevron.rotated { transform: rotate(180deg); }
+
+/* ── Anchor offset for fixed header ── */
+.scroll-target { scroll-margin-top: 80px; }
+
+/* ── Tabs ── */
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+.tab-btn.active { background-color: #0d9488; color: white; }
+
+/* ── Hero clip ── */
+.clip-hero { clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%); }
+
+/* ── Map placeholder ── */
+.map-placeholder { background: linear-gradient(135deg, #e8f5f3 0%, #c4e8e3 100%); }
