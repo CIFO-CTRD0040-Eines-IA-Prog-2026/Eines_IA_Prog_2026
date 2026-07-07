@@ -1,0 +1,14 @@
+```skill
+# SKILL
+
+Aquest fitxer documenta habilitats i directrius per treballar amb el projecte sota Specification-Driven Development (SDD).
+
+- Llegeix primer spec/constitution/ i la feature a spec/features/ abans de modificar codi.
+- La carpeta spec/ és l'única font de veritat: no repeteixis ni contradiguis l'especificació aquí.
+- Treballa per tasques segons 3-tasks.md; abans de canvis importants, proposa un pla o comenta la decisió.
+- Si cal modificar especificacions, actualitza el .md corresponent dins spec/ abans de tocar el codi.
+
+Regles ràpides:
+- Sempre documenta l'objectiu de la tasca i l'arxiu modificat.
+- Fes commits petits i amb missatges clars referenciant la task.
+- No executar accions sobre el codi si el teu interlocutor t'ha demanat només consultes.
