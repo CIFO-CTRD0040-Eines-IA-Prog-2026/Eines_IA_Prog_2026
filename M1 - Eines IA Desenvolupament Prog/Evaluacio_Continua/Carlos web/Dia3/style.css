@@ -1,0 +1,395 @@
+/* ========== RESET ========== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========== VARIABLES ========== */
+:root {
+  --blau-fosc: #273cf5;
+  --cian: #27f5ee;
+  --paper: #f4f1ea;
+  --blanc: #ffffff;
+  --roig: #c62828;
+  --negre-text: #1a1a2e;
+  --gris-linia: #d4d0c8;
+  --ombra: rgba(0, 0, 0, 0.08);
+}
+
+/* ========== BASE ========== */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  color: var(--negre-text);
+  background: var(--paper);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.interior {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ========== TIPOGRAFIA ========== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+.titol-seccio {
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--gris-linia);
+  position: relative;
+}
+
+.titol-seccio::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 4rem;
+  height: 2px;
+  background: var(--cian);
+}
+
+/* ========== CAPCALERA ========== */
+.capcalera {
+  background: var(--cian);
+  padding: 3rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.capcalera::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 4rem,
+      rgba(39, 60, 245, 0.04) 4rem,
+      rgba(39, 60, 245, 0.04) 4.0625rem
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2rem,
+      rgba(39, 60, 245, 0.04) 2rem,
+      rgba(39, 60, 245, 0.04) 2.0625rem
+    );
+  pointer-events: none;
+}
+
+.segell-dossier {
+  display: inline-block;
+  font-family: "Courier New", monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--blau-fosc);
+  background: var(--blanc);
+  padding: 0.25rem 0.75rem;
+  border: 2px solid var(--blau-fosc);
+  margin-bottom: 1.5rem;
+}
+
+.capcalera h1 {
+  color: var(--blau-fosc);
+  max-width: 20ch;
+}
+
+.subtitol {
+  font-size: 1.125rem;
+  color: var(--blau-fosc);
+  opacity: 0.8;
+  margin-top: 0.75rem;
+  max-width: 40ch;
+}
+
+/* ========== SECCIÓ DADES CLAU ========== */
+.dades-clau {
+  background: var(--blau-fosc);
+  padding: 3rem 0 4rem;
+}
+
+.dades-clau .titol-seccio {
+  color: var(--blanc);
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+.dades-clau .titol-seccio::after {
+  background: var(--cian);
+}
+
+.graella-dades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1.5rem;
+}
+
+.targeta-dada {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(4px);
+}
+
+.numero {
+  font-family: "Courier New", monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--cian);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.desc-dada {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+}
+
+/* ========== SECCIÓ CONTEXT ========== */
+.context {
+  padding: 3rem 0 4rem;
+}
+
+.context p {
+  font-size: 1.0625rem;
+  margin-bottom: 1rem;
+  max-width: 50rem;
+}
+
+/* ========== SECCIÓ CASOS ========== */
+.casos {
+  background: var(--blanc);
+  padding: 3rem 0 4rem;
+}
+
+.llista-casos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.5rem;
+}
+
+.targeta-cas {
+  background: var(--paper);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  position: relative;
+  box-shadow: 0 1px 3px var(--ombra);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1.75rem,
+      rgba(39, 60, 245, 0.03) 1.75rem,
+      rgba(39, 60, 245, 0.03) 1.8125rem
+    );
+}
+
+.capcalera-cas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px dashed var(--gris-linia);
+}
+
+.ref-cas {
+  font-family: "Courier New", monospace;
+  font-size: 0.75rem;
+  color: var(--blau-fosc);
+  font-weight: 600;
+}
+
+.segell-conf {
+  font-family: "Courier New", monospace;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--roig);
+  border: 1.5px solid var(--roig);
+  padding: 0.125rem 0.5rem;
+  border-radius: 2px;
+}
+
+.titol-cas {
+  font-size: 1.125rem;
+  color: var(--negre-text);
+  margin-bottom: 0.5rem;
+}
+
+.desc-cas {
+  font-size: 0.9375rem;
+  color: #444;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.dada-cas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.375rem 0;
+  border-bottom: 1px dotted var(--gris-linia);
+  font-size: 0.8125rem;
+}
+
+.dada-cas:last-child {
+  border-bottom: none;
+}
+
+.etiqueta-dada {
+  color: #666;
+}
+
+.valor-dada {
+  font-family: "Courier New", monospace;
+  font-weight: 700;
+  color: var(--blau-fosc);
+}
+
+/* ========== SECCIÓ PREVENCIÓ ========== */
+.prevencio {
+  background: var(--negre-text);
+  color: var(--blanc);
+  padding: 3rem 0 4rem;
+}
+
+.prevencio .titol-seccio {
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+.prevencio .titol-seccio::after {
+  background: var(--cian);
+}
+
+.llista-prevencio {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 40rem;
+}
+
+.llista-prevencio li {
+  padding: 0.75rem 1rem;
+  padding-left: 2.5rem;
+  position: relative;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.llista-prevencio li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  color: var(--cian);
+  font-weight: 700;
+}
+
+/* ========== FOOTER ========== */
+.peu {
+  background: var(--blau-fosc);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 3rem 0 2rem;
+  font-size: 0.875rem;
+}
+
+.grid-peu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.col-peu h4 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cian);
+  margin-bottom: 0.75rem;
+}
+
+.col-peu ul {
+  list-style: none;
+}
+
+.col-peu li {
+  padding: 0.25rem 0;
+  opacity: 0.85;
+}
+
+.nota-peu {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 1.5rem;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 48rem) {
+  .capcalera {
+    padding: 2rem 0 3rem;
+  }
+
+  .graella-dades {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .llista-casos {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-peu {
+    grid-template-columns: 1fr;
+  }
+
+  .targeta-dada {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .graella-dades {
+    grid-template-columns: 1fr;
+  }
+
+  .capcalera-cas {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
