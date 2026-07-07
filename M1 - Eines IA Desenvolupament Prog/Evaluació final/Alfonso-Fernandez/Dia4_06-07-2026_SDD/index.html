@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentos de Programación I y II</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            fondo: '#0F172A',
+            'fondo-alto': '#1E293B',
+            texto: '#E2E8F0',
+            'text-suave': '#94A3B8',
+            primario: '#22D3EE',
+            acento: '#A78BFA',
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-fondo font-sans text-texto">
+
+  <header class="sticky top-0 z-50 border-b border-fondo-alto bg-fondo/95 backdrop-blur-sm">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
+      <div>
+        <h1 class="text-xl font-bold text-primario md:text-2xl">Fundamentos de Programación I y II</h1>
+        <p class="mt-0.5 text-sm text-text-suave">Conceptos básicos de programación con definiciones y ejemplos</p>
+      </div>
+      <button id="menu-btn" class="block rounded p-2 text-texto transition hover:text-primario focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento md:hidden" aria-label="Abrir o cerrar el menú de navegación">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <nav id="menu" class="hidden md:block">
+        <ul class="flex flex-col gap-1 md:flex-row md:items-center md:gap-0">
+          <li><a href="#programacion" class="block rounded-lg px-3 py-2 text-sm text-text-suave transition hover:bg-fondo-alto hover:text-primario focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">Programación</a></li>
+          <li><a href="#variables" class="block rounded-lg px-3 py-2 text-sm text-text-suave transition hover:bg-fondo-alto hover:text-primario focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">Variables</a></li>
+          <li><a href="#condicionales" class="block rounded-lg px-3 py-2 text-sm text-text-suave transition hover:bg-fondo-alto hover:text-primario focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">Condicionales</a></li>
+          <li><a href="#bucles" class="block rounded-lg px-3 py-2 text-sm text-text-suave transition hover:bg-fondo-alto hover:text-primario focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">Bucles</a></li>
+          <li><a href="#funciones" class="block rounded-lg px-3 py-2 text-sm text-text-suave transition hover:bg-fondo-alto hover:text-primario focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">Funciones</a></li>
+          <li><a href="#arrays" class="block rounded-lg px-3 py-2 text-sm text-text-suave transition hover:bg-fondo-alto hover:text-primario focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">Arrays</a></li>
+          <li><a href="#poo" class="block rounded-lg px-3 py-2 text-sm text-text-suave transition hover:bg-fondo-alto hover:text-primario focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-acento">POO</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mx-auto grid min-h-screen max-w-6xl grid-cols-1 gap-5 bg-fondo px-4 py-8 md:grid-cols-2 lg:grid-cols-3">
+
+    <section id="programacion" class="scroll-mt-28 rounded-xl border border-fondo-alto bg-fondo-alto p-6 transition hover:border-acento/30 hover:shadow-lg hover:shadow-acento/5">
+      <h2 class="mb-2 text-lg font-semibold text-primario">Programación</h2>
+      <p class="mb-3 text-sm leading-relaxed text-texto">La programación es el proceso de escribir instrucciones que un ordenador puede entender y ejecutar. Un programa es una secuencia de órdenes que resuelven un problema.</p>
+      <div class="mb-3">
+        <p class="mb-1 text-xs font-medium uppercase tracking-wider text-texto">Conceptos clave</p>
+        <ul class="list-inside list-disc text-sm text-text-suave">
+          <li>Algoritmo: conjunto de pasos ordenados para resolver un problema.</li>
+          <li>Código fuente: texto escrito en un lenguaje de programación.</li>
+          <li>Compilador / Intérprete: traduce el código a instrucciones de máquina.</li>
+        </ul>
+      </div>
+      <pre class="code-block"><code><span class="hl-com">// Ejemplo: hola mundo</span>
+<span class="hl-fun">console.log</span>(<span class="hl-str">"Hola, mundo!"</span>);</code></pre>
+    </section>
+
+    <section id="variables" class="scroll-mt-28 rounded-xl border border-fondo-alto bg-fondo-alto p-6 transition hover:border-acento/30 hover:shadow-lg hover:shadow-acento/5">
+      <h2 class="mb-2 text-lg font-semibold text-primario">Variables</h2>
+      <p class="mb-3 text-sm leading-relaxed text-texto">Una variable es un espacio con nombre dentro de la memoria del ordenador donde se guarda un valor. El valor puede cambiar durante la ejecución del programa.</p>
+      <div class="mb-3">
+        <p class="mb-1 text-xs font-medium uppercase tracking-wider text-texto">Tipos básicos en JavaScript</p>
+        <ul class="list-inside list-disc text-sm text-text-suave">
+          <li><code class="text-primario">string</code>: texto (ej: <code class="text-primario">"Hola"</code>)</li>
+          <li><code class="text-primario">number</code>: números enteros o decimales</li>
+          <li><code class="text-primario">boolean</code>: <code class="text-primario">true</code> o <code class="text-primario">false</code></li>
+        </ul>
+      </div>
+      <pre class="code-block"><code><span class="hl-kw">let</span> nombre = <span class="hl-str">"Ana"</span>;
+<span class="hl-kw">let</span> edad = <span class="hl-num">20</span>;
+<span class="hl-kw">let</span> esEstudiante = <span class="hl-bool">true</span>;
+<span class="hl-fun">console.log</span>(nombre, edad, esEstudiante);</code></pre>
+    </section>
+
+    <section id="condicionales" class="scroll-mt-28 rounded-xl border border-fondo-alto bg-fondo-alto p-6 transition hover:border-acento/30 hover:shadow-lg hover:shadow-acento/5">
+      <h2 class="mb-2 text-lg font-semibold text-primario">Condicionales</h2>
+      <p class="mb-3 text-sm leading-relaxed text-texto">Las estructuras condicionales permiten ejecutar un bloque de código u otro según si una condición es cierta (<code class="text-acento">true</code>) o falsa (<code class="text-acento">false</code>).</p>
+      <div class="mb-3">
+        <p class="mb-1 text-xs font-medium uppercase tracking-wider text-texto">Estructuras principales</p>
+        <ul class="list-inside list-disc text-sm text-text-suave">
+          <li><code class="text-primario">if</code> / <code class="text-primario">else if</code> / <code class="text-primario">else</code></li>
+          <li><code class="text-primario">switch</code>: múltiples casos</li>
+          <li>Operador ternario: <code class="text-primario">cond ? a : b</code></li>
+        </ul>
+      </div>
+      <pre class="code-block"><code><span class="hl-kw">let</span> nota = <span class="hl-num">7</span>;
+<span class="hl-kw">if</span> (nota >= <span class="hl-num">5</span>) {
+  <span class="hl-fun">console.log</span>(<span class="hl-str">"Aprobado"</span>);
+} <span class="hl-kw">else</span> {
+  <span class="hl-fun">console.log</span>(<span class="hl-str">"Suspenso"</span>);
+}</code></pre>
+    </section>
+
+    <section id="bucles" class="scroll-mt-28 rounded-xl border border-fondo-alto bg-fondo-alto p-6 transition hover:border-acento/30 hover:shadow-lg hover:shadow-acento/5">
+      <h2 class="mb-2 text-lg font-semibold text-primario">Bucles</h2>
+      <p class="mb-3 text-sm leading-relaxed text-texto">Los bucles repiten un bloque de código mientras una condición sea cierta. Se usan para recorrer listas o repetir operaciones.</p>
+      <div class="mb-3">
+        <p class="mb-1 text-xs font-medium uppercase tracking-wider text-texto">Bucles más comunes</p>
+        <ul class="list-inside list-disc text-sm text-text-suave">
+          <li><code class="text-primario">for</code>: repite un número conocido de veces</li>
+          <li><code class="text-primario">while</code>: repite mientras la condición sea cierta</li>
+          <li><code class="text-primario">do...while</code>: ejecuta al menos una vez</li>
+        </ul>
+      </div>
+      <pre class="code-block"><code><span class="hl-kw">for</span> (<span class="hl-kw">let</span> i = <span class="hl-num">1</span>; i <= <span class="hl-num">5</span>; i++) {
+  <span class="hl-fun">console.log</span>(<span class="hl-str">"Vez "</span> + i);
+}</code></pre>
+    </section>
+
+    <section id="funciones" class="scroll-mt-28 rounded-xl border border-fondo-alto bg-fondo-alto p-6 transition hover:border-acento/30 hover:shadow-lg hover:shadow-acento/5">
+      <h2 class="mb-2 text-lg font-semibold text-primario">Funciones</h2>
+      <p class="mb-3 text-sm leading-relaxed text-texto">Una función es un bloque de código reutilizable que realiza una tarea concreta. Puede recibir datos de entrada (parámetros) y devolver un resultado.</p>
+      <div class="mb-3">
+        <p class="mb-1 text-xs font-medium uppercase tracking-wider text-texto">Formas de definir funciones</p>
+        <ul class="list-inside list-disc text-sm text-text-suave">
+          <li>Función declarada: <code class="text-primario">function sumar(a, b) { ... }</code></li>
+          <li>Función flecha: <code class="text-primario">const sumar = (a, b) => a + b</code></li>
+        </ul>
+      </div>
+      <pre class="code-block"><code><span class="hl-kw">function</span> <span class="hl-fun">saludar</span>(nombre) {
+  <span class="hl-kw">return</span> <span class="hl-str">"Hola, "</span> + nombre + <span class="hl-str">"!"</span>;
+}
+<span class="hl-fun">console.log</span>(<span class="hl-fun">saludar</span>(<span class="hl-str">"María"</span>));</code></pre>
+    </section>
+
+    <section id="arrays" class="scroll-mt-28 rounded-xl border border-fondo-alto bg-fondo-alto p-6 transition hover:border-acento/30 hover:shadow-lg hover:shadow-acento/5">
+      <h2 class="mb-2 text-lg font-semibold text-primario">Arrays</h2>
+      <p class="mb-3 text-sm leading-relaxed text-texto">Un array es una estructura de datos que almacena múltiples valores en una sola variable. Cada elemento tiene una posición (índice) que comienza en 0.</p>
+      <div class="mb-3">
+        <p class="mb-1 text-xs font-medium uppercase tracking-wider text-texto">Operaciones habituales</p>
+        <ul class="list-inside list-disc text-sm text-text-suave">
+          <li>Acceder: <code class="text-primario">array[0]</code></li>
+          <li>Añadir: <code class="text-primario">array.push(valor)</code></li>
+          <li>Recorrer: <code class="text-primario">for</code> o <code class="text-primario">forEach</code></li>
+        </ul>
+      </div>
+      <pre class="code-block"><code><span class="hl-kw">let</span> colores = [<span class="hl-str">"rojo"</span>, <span class="hl-str">"verde"</span>, <span class="hl-str">"azul"</span>];
+colores.<span class="hl-fun">push</span>(<span class="hl-str">"amarillo"</span>);
+<span class="hl-kw">for</span> (<span class="hl-kw">let</span> c <span class="hl-kw">of</span> colores) {
+  <span class="hl-fun">console.log</span>(c);
+}</code></pre>
+    </section>
+
+    <section id="poo" class="scroll-mt-28 rounded-xl border border-fondo-alto bg-fondo-alto p-6 transition hover:border-acento/30 hover:shadow-lg hover:shadow-acento/5">
+      <h2 class="mb-2 text-lg font-semibold text-primario">Programación Orientada a Objetos (POO)</h2>
+      <p class="mb-3 text-sm leading-relaxed text-texto">La POO organiza el código en objetos que contienen datos (propiedades) y comportamiento (métodos). Una clase es la plantilla para crear objetos.</p>
+      <div class="mb-3">
+        <p class="mb-1 text-xs font-medium uppercase tracking-wider text-texto">Conceptos fundamentales</p>
+        <ul class="list-inside list-disc text-sm text-text-suave">
+          <li>Clase: define la estructura (<code class="text-primario">class</code>)</li>
+          <li>Objeto: instancia de una clase (<code class="text-primario">new</code>)</li>
+          <li>Constructor: inicializa las propiedades</li>
+        </ul>
+      </div>
+      <pre class="code-block"><code><span class="hl-kw">class</span> Gato {
+  <span class="hl-fun">constructor</span>(nombre) {
+    <span class="hl-builtin">this</span>.nombre = nombre;
+  }
+  <span class="hl-fun">saludar</span>() {
+    <span class="hl-fun">console.log</span>(<span class="hl-str">"¡Miau! Soy "</span> + <span class="hl-builtin">this</span>.nombre);
+  }
+}
+<span class="hl-kw">let</span> gato = <span class="hl-kw">new</span> <span class="hl-fun">Gato</span>(<span class="hl-str">"Bigotes"</span>);
+gato.<span class="hl-fun">saludar</span>();</code></pre>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-fondo-alto px-4 py-8 text-center text-sm text-text-suave">
+    <p>&copy; 2026 — Apuntes de Fundamentos de Programación I y II</p>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    if (btn && menu) {
+      btn.addEventListener('click', function () {
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('block');
+        menu.classList.toggle('mt-4');
+      });
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (window.innerWidth < 768) {
+            menu.classList.add('hidden');
+            menu.classList.remove('block', 'mt-4');
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

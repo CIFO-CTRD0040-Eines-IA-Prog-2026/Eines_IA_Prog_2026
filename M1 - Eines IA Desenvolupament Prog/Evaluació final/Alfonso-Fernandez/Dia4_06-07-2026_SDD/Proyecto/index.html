@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control de Gastos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            fondo: '#0F172A',
+            'fondo-alto': '#1E293B',
+            texto: '#E2E8F0',
+            'text-suave': '#94A3B8',
+            primario: '#22D3EE',
+            acento: '#A78BFA',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-fondo text-texto font-sans antialiased">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-fondo-alto border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+
+      <!-- Hamburger izquierda -->
+      <button id="menuBtn" class="md:hidden p-2 rounded-lg hover:bg-white/10 transition" aria-label="Abrir menú">
+        <svg class="w-6 h-6 text-texto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <div class="hidden md:block w-10"></div>
+
+      <!-- Centro: Total clicable -->
+      <button id="totalBtn" class="text-center group">
+        <p class="text-xs text-text-suave uppercase tracking-wider">Total</p>
+        <p id="totalAmount" class="text-2xl font-bold group-hover:text-primario transition" data-valor="1250.50">1.250,50 €</p>
+        <p class="text-xs text-text-suave">Ingresos: 3.450,00 € &middot; Gastos: 2.199,50 €</p>
+      </button>
+
+      <!-- Derecha: Transacciones -->
+      <button id="transBtn" class="p-2 rounded-lg hover:bg-white/10 transition" aria-label="Transacciones">
+        <svg class="w-6 h-6 text-texto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Menú hamburguesa desplegable (móvil) -->
+    <nav id="mobileMenu" class="hidden md:hidden bg-fondo-alto border-t border-white/10 px-4 py-4 space-y-3">
+      <a href="#" class="block px-3 py-2 rounded-lg hover:bg-white/10 text-texto transition">Cuentas</a>
+      <a href="#" class="block px-3 py-2 rounded-lg hover:bg-white/10 text-texto transition">Categorías</a>
+      <a href="#" class="block px-3 py-2 rounded-lg hover:bg-white/10 text-texto transition">Ajustes</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-7xl mx-auto px-4 py-6 space-y-6">
+
+    <!-- Modal selección de cuenta (oculto por defecto) -->
+    <div id="cuentaModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+      <div class="bg-fondo-alto rounded-xl p-6 w-full max-w-sm mx-4 shadow-xl">
+        <h2 class="text-lg font-semibold text-primario mb-4">Seleccionar cuenta</h2>
+        <div class="space-y-3">
+          <button class="w-full text-left p-4 rounded-lg bg-fondo hover:bg-white/5 transition border border-white/10">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-primario/20 flex items-center justify-center text-primario font-bold">P</div>
+              <div>
+                <p class="text-texto font-medium">Principal</p>
+                <p class="text-sm" data-valor="1250.50">1.250,50 €</p>
+              </div>
+            </div>
+          </button>
+          <button class="w-full text-left p-4 rounded-lg bg-fondo hover:bg-white/5 transition border border-white/10">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-acento/20 flex items-center justify-center text-acento font-bold">A</div>
+              <div>
+                <p class="text-texto font-medium">Ahorros</p>
+                <p class="text-sm" data-valor="5340.75">5.340,75 €</p>
+              </div>
+            </div>
+          </button>
+        </div>
+        <button id="cerrarModal" class="mt-4 w-full py-2 rounded-lg text-text-suave hover:text-texto transition">Cancelar</button>
+      </div>
+    </div>
+
+    <!-- Tabs Gastos / Ingresos -->
+    <section>
+      <div class="flex bg-fondo-alto rounded-xl p-1 w-fit">
+        <button data-tab="gastos" class="tab-tipo px-6 py-2 rounded-lg font-medium transition text-texto bg-primario/20 text-primario">Gastos</button>
+        <button data-tab="ingresos" class="tab-tipo px-6 py-2 rounded-lg font-medium transition text-text-suave hover:text-texto">Ingresos</button>
+      </div>
+    </section>
+
+    <!-- Tabs período: Día, Semana, Mes, Año, Período -->
+    <section>
+      <div class="flex flex-wrap gap-2">
+        <button data-periodo="dia" class="tab-periodo px-4 py-2 rounded-lg text-sm font-medium transition bg-primario/20 text-primario">Día</button>
+        <button data-periodo="semana" class="tab-periodo px-4 py-2 rounded-lg text-sm font-medium transition text-text-suave hover:text-texto">Semana</button>
+        <button data-periodo="mes" class="tab-periodo px-4 py-2 rounded-lg text-sm font-medium transition text-text-suave hover:text-texto">Mes</button>
+        <button data-periodo="año" class="tab-periodo px-4 py-2 rounded-lg text-sm font-medium transition text-text-suave hover:text-texto">Año</button>
+        <button data-periodo="periodo" class="tab-periodo px-4 py-2 rounded-lg text-sm font-medium transition text-text-suave hover:text-texto">Período</button>
+      </div>
+
+      <!-- Selector de fecha (botón clicable) -->
+      <div class="mt-3">
+        <button id="fechaBtn" class="text-sm text-primario hover:text-acento transition flex items-center gap-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+          <span id="fechaTexto">Hoy, 7 de julio de 2026</span>
+        </button>
+      </div>
+
+      <!-- Calendario simple (oculto) -->
+      <div id="calendario" class="hidden mt-3 bg-fondo-alto rounded-xl p-4 max-w-sm shadow-xl">
+        <div class="flex items-center justify-between mb-3">
+          <button id="calPrev" class="p-1 rounded hover:bg-white/10 text-texto transition">&larr;</button>
+          <span id="calMes" class="text-texto font-medium">Julio 2026</span>
+          <button id="calNext" class="p-1 rounded hover:bg-white/10 text-texto transition">&rarr;</button>
+        </div>
+        <div class="grid grid-cols-7 gap-1 text-center text-xs text-text-suave mb-1">
+          <span>Lu</span><span>Ma</span><span>Mi</span><span>Ju</span><span>Vi</span><span>Sá</span><span>Do</span>
+        </div>
+        <div id="calDias" class="grid grid-cols-7 gap-1 text-center"></div>
+      </div>
+    </section>
+
+    <!-- Gráfico + Botón + -->
+    <section class="relative">
+      <div class="bg-fondo-alto rounded-xl p-6">
+        <div class="flex items-center justify-center">
+          <!-- Gráfico de anillos (placeholder) -->
+          <div id="donutChart" class="relative w-48 h-48">
+            <svg class="w-full h-full -rotate-90" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" fill="none" stroke="#1E293B" stroke-width="12"/>
+              <circle cx="50" cy="50" r="40" fill="none" stroke="#22D3EE" stroke-width="12" stroke-dasharray="125.6 251.2" stroke-dashoffset="0"/>
+              <circle cx="50" cy="50" r="40" fill="none" stroke="#A78BFA" stroke-width="12" stroke-dasharray="75.36 251.2" stroke-dashoffset="-125.6"/>
+              <circle cx="50" cy="50" r="40" fill="none" stroke="#F472B6" stroke-width="12" stroke-dasharray="50.24 251.2" stroke-dashoffset="-200.96"/>
+            </svg>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <p class="text-2xl font-bold text-texto">1.250 €</p>
+            </div>
+          </div>
+          <!-- Gráfico lineal (oculto) -->
+          <div id="lineChart" class="hidden w-full h-48">
+            <svg class="w-full h-full" viewBox="0 0 300 100" preserveAspectRatio="none">
+              <polyline fill="none" stroke="#22D3EE" stroke-width="2" points="0,80 50,60 100,70 150,40 200,50 250,20 300,30"/>
+              <polyline fill="none" stroke="#A78BFA" stroke-width="2" points="0,90 50,75 100,85 150,60 200,65 250,45 300,50"/>
+            </svg>
+          </div>
+        </div>
+        <p class="text-center text-xs text-text-suave mt-2">Haz clic en el gráfico para cambiar a lineal</p>
+      </div>
+
+      <!-- Botón + flotante -->
+      <button id="addBtn" class="absolute bottom-4 right-4 w-14 h-14 rounded-full bg-primario text-fondo shadow-lg hover:bg-acento transition flex items-center justify-center text-3xl font-bold" aria-label="Añadir gasto o ingreso">
+        +
+      </button>
+    </section>
+
+    <!-- Desglose por categorías -->
+    <section>
+      <h2 class="text-sm font-semibold text-text-suave uppercase tracking-wider mb-3">Categorías — Julio 2026</h2>
+      <div class="space-y-2">
+        <button class="w-full flex items-center gap-3 bg-fondo-alto rounded-xl p-4 hover:bg-white/5 transition text-left">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background-color:#22D3EE20">
+            <svg class="w-5 h-5 text-primario" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/>
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between">
+              <span class="text-texto font-medium">Alimentación</span>
+              <span class="text-texto font-medium">450,00 €</span>
+            </div>
+            <div class="flex items-center justify-between mt-1">
+              <span class="text-sm text-text-suave">36 %</span>
+              <div class="w-full max-w-[100px] h-1.5 bg-fondo rounded-full ml-4">
+                <div class="h-full rounded-full bg-primario" style="width:36%"></div>
+              </div>
+            </div>
+          </div>
+        </button>
+
+        <button class="w-full flex items-center gap-3 bg-fondo-alto rounded-xl p-4 hover:bg-white/5 transition text-left">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background-color:#A78BFA20">
+            <svg class="w-5 h-5 text-acento" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between">
+              <span class="text-texto font-medium">Transporte</span>
+              <span class="text-texto font-medium">230,50 €</span>
+            </div>
+            <div class="flex items-center justify-between mt-1">
+              <span class="text-sm text-text-suave">18 %</span>
+              <div class="w-full max-w-[100px] h-1.5 bg-fondo rounded-full ml-4">
+                <div class="h-full rounded-full bg-acento" style="width:18%"></div>
+              </div>
+            </div>
+          </div>
+        </button>
+
+        <button class="w-full flex items-center gap-3 bg-fondo-alto rounded-xl p-4 hover:bg-white/5 transition text-left">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background-color:#F472B620">
+            <svg class="w-5 h-5 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between">
+              <span class="text-texto font-medium">Ocio</span>
+              <span class="text-texto font-medium">180,00 €</span>
+            </div>
+            <div class="flex items-center justify-between mt-1">
+              <span class="text-sm text-text-suave">14 %</span>
+              <div class="w-full max-w-[100px] h-1.5 bg-fondo rounded-full ml-4">
+                <div class="h-full rounded-full bg-pink-400" style="width:14%"></div>
+              </div>
+            </div>
+          </div>
+        </button>
+
+        <button class="w-full flex items-center gap-3 bg-fondo-alto rounded-xl p-4 hover:bg-white/5 transition text-left">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background-color:#34D39920">
+            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between">
+              <span class="text-texto font-medium">Vivienda</span>
+              <span class="text-texto font-medium">400,00 €</span>
+            </div>
+            <div class="flex items-center justify-between mt-1">
+              <span class="text-sm text-text-suave">32 %</span>
+              <div class="w-full max-w-[100px] h-1.5 bg-fondo rounded-full ml-4">
+                <div class="h-full rounded-full bg-green-400" style="width:32%"></div>
+              </div>
+            </div>
+          </div>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 py-4 text-center text-sm text-text-suave">
+    <p>Control de Gastos &mdash; Todos los datos son locales</p>
+  </footer>
+
+  <script>
+    // === Inicializar colores de saldo (rojo negativo, verde positivo) ===
+    document.querySelectorAll('[data-valor]').forEach(el => {
+      const valor = parseFloat(el.dataset.valor);
+      if (valor < 0) {
+        el.classList.add('text-red-400');
+      } else {
+        el.classList.add('text-green-400');
+      }
+    });
+
+    // === Menú hamburguesa ===
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // === Modal Total / Cuentas ===
+    const totalBtn = document.getElementById('totalBtn');
+    const cuentaModal = document.getElementById('cuentaModal');
+    const cerrarModal = document.getElementById('cerrarModal');
+    totalBtn.addEventListener('click', () => cuentaModal.classList.remove('hidden'));
+    cerrarModal.addEventListener('click', () => cuentaModal.classList.add('hidden'));
+    cuentaModal.addEventListener('click', (e) => {
+      if (e.target === cuentaModal) cuentaModal.classList.add('hidden');
+    });
+
+    // === Tabs Gastos / Ingresos ===
+    const tabsTipo = document.querySelectorAll('.tab-tipo');
+    tabsTipo.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabsTipo.forEach(b => {
+          b.classList.remove('bg-primario/20', 'text-primario');
+          b.classList.add('text-text-suave');
+        });
+        btn.classList.add('bg-primario/20', 'text-primario');
+        btn.classList.remove('text-text-suave');
+      });
+    });
+
+    // === Tabs Período ===
+    const tabsPeriodo = document.querySelectorAll('.tab-periodo');
+    tabsPeriodo.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabsPeriodo.forEach(b => {
+          b.classList.remove('bg-primario/20', 'text-primario');
+          b.classList.add('text-text-suave');
+        });
+        btn.classList.add('bg-primario/20', 'text-primario');
+        btn.classList.remove('text-text-suave');
+        actualizarFechaTexto(btn.dataset.periodo);
+      });
+    });
+
+    function actualizarFechaTexto(periodo) {
+      const ahora = new Date();
+      const diasSem = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+      const meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+      const fechaTexto = document.getElementById('fechaTexto');
+      switch (periodo) {
+        case 'dia':
+          fechaTexto.textContent = `Hoy, ${ahora.getDate()} de ${meses[ahora.getMonth()]} de ${ahora.getFullYear()}`;
+          break;
+        case 'semana': {
+          const inicio = new Date(ahora);
+          inicio.setDate(ahora.getDate() - ahora.getDay() + 1);
+          const fin = new Date(inicio);
+          fin.setDate(inicio.getDate() + 6);
+          fechaTexto.textContent = `${inicio.getDate()} ${meses[inicio.getMonth()]} - ${fin.getDate()} ${meses[fin.getMonth()]} de ${fin.getFullYear()}`;
+          break;
+        }
+        case 'mes':
+          fechaTexto.textContent = `${meses[ahora.getMonth()]} de ${ahora.getFullYear()}`;
+          break;
+        case 'año':
+          fechaTexto.textContent = `${ahora.getFullYear()}`;
+          break;
+        case 'periodo':
+          fechaTexto.textContent = `Del 1 ${meses[ahora.getMonth()]} al ${ahora.getDate()} ${meses[ahora.getMonth()]} de ${ahora.getFullYear()}`;
+          break;
+      }
+    }
+
+    // === Calendario ===
+    const fechaBtn = document.getElementById('fechaBtn');
+    const calendario = document.getElementById('calendario');
+    const calMes = document.getElementById('calMes');
+    const calDias = document.getElementById('calDias');
+    const calPrev = document.getElementById('calPrev');
+    const calNext = document.getElementById('calNext');
+    let calFecha = new Date();
+
+    const hoy = new Date();
+    hoy.setHours(0, 0, 0, 0);
+
+    function renderCalendario() {
+      const meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+      calMes.textContent = `${meses[calFecha.getMonth()]} ${calFecha.getFullYear()}`;
+      const primerDia = new Date(calFecha.getFullYear(), calFecha.getMonth(), 1);
+      const ultimoDia = new Date(calFecha.getFullYear(), calFecha.getMonth() + 1, 0);
+      calDias.innerHTML = '';
+      let inicioSemana = primerDia.getDay() - 1;
+      if (inicioSemana < 0) inicioSemana = 6;
+      for (let i = 0; i < inicioSemana; i++) {
+        calDias.innerHTML += '<div></div>';
+      }
+      for (let d = 1; d <= ultimoDia.getDate(); d++) {
+        const btn = document.createElement('button');
+        btn.textContent = d;
+        const fechaCelda = new Date(calFecha.getFullYear(), calFecha.getMonth(), d);
+        const esFuturo = fechaCelda > hoy;
+        btn.className = 'p-1 rounded text-sm transition ' + (esFuturo ? 'text-text-suave/30 cursor-not-allowed' : 'hover:bg-white/10 text-texto cursor-pointer');
+        btn.disabled = esFuturo;
+        if (!esFuturo) {
+          btn.addEventListener('click', () => {
+            const mesesN = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+            document.getElementById('fechaTexto').textContent = `${d} ${mesesN[calFecha.getMonth()]} de ${calFecha.getFullYear()}`;
+            calendario.classList.add('hidden');
+          });
+        }
+        calDias.appendChild(btn);
+      }
+      const mesActual = new Date(hoy.getFullYear(), hoy.getMonth(), 1);
+      const mesSiguiente = new Date(calFecha.getFullYear(), calFecha.getMonth() + 1, 1);
+      calNext.disabled = mesSiguiente > mesActual;
+      calNext.classList.toggle('opacity-30', calNext.disabled);
+    }
+
+    fechaBtn.addEventListener('click', () => {
+      calendario.classList.toggle('hidden');
+      renderCalendario();
+    });
+    calPrev.addEventListener('click', () => { calFecha.setMonth(calFecha.getMonth() - 1); renderCalendario(); });
+    calNext.addEventListener('click', () => { calFecha.setMonth(calFecha.getMonth() + 1); renderCalendario(); });
+
+    // === Toggle gráfico anillos / lineal ===
+    const donutChart = document.getElementById('donutChart');
+    const lineChart = document.getElementById('lineChart');
+    [donutChart, lineChart].forEach(el => {
+      el.addEventListener('click', () => {
+        donutChart.classList.toggle('hidden');
+        lineChart.classList.toggle('hidden');
+      });
+    });
+
+    // === Botón + (placeholder) ===
+    document.getElementById('addBtn').addEventListener('click', () => {
+      alert('Añadir gasto/ingreso — se implementará en futura página');
+    });
+
+    // === Botón Transacciones (placeholder) ===
+    document.getElementById('transBtn').addEventListener('click', () => {
+      alert('Transacciones — se implementará en futura página');
+    });
+  </script>
+
+</body>
+</html>

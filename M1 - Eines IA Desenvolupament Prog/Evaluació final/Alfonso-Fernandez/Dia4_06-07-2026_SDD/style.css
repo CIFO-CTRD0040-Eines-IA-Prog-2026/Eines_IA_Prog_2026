@@ -1,0 +1,29 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0F172A;
+  color: #E2E8F0;
+}
+
+.code-block {
+  background-color: #0F172A;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  white-space: pre;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, 'Cascadia Code', 'Consolas', monospace;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: #E2E8F0;
+  border: 1px solid #1E293B;
+}
+
+.hl-com { color: #64748B; font-style: italic; }
+.hl-kw  { color: #A78BFA; }
+.hl-str { color: #4ADE80; }
+.hl-num { color: #22D3EE; }
+.hl-bool { color: #22D3EE; }
+.hl-fun { color: #22D3EE; }
+.hl-builtin { color: #34D399; }
