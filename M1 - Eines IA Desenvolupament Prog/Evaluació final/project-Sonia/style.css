@@ -1,0 +1,14 @@
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+pre code {
+  white-space: pre;
+  overflow-x: auto;
+  display: block;
+  font-family: 'Courier New', Courier, monospace;
+}
