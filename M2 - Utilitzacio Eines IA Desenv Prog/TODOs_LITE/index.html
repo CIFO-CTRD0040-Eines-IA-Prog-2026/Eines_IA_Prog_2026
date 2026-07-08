@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TODOs Lite</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>TODOs Lite</h1>
+    <div class="weather-widget">
+      <div class="weather-input-group">
+        <input type="text" id="city-input" placeholder="Ciutat...">
+        <button id="weather-btn">Temps</button>
+      </div>
+      <div id="weather-info" class="weather-info"></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="task-form-section">
+      <div class="input-group">
+        <input type="text" id="task-input" placeholder="Nova tasca...">
+        <button id="add-btn">Afegir</button>
+      </div>
+      <p id="validation-msg" class="validation-msg"></p>
+    </section>
+
+    <section class="task-list-section">
+      <ul id="task-list" class="task-list"></ul>
+      <div id="empty-state" class="empty-state">
+        <p>No hi ha tasques. Afegeix-ne una!</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

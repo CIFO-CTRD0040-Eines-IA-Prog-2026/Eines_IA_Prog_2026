@@ -1,0 +1,1 @@
+- Inicia el treball de l'app web segons la configuració de la carpeta
