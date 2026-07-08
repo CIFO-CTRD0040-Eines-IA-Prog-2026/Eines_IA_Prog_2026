@@ -1,0 +1,4 @@
+Una sola pàgina (single-page) amb menú de navegació per àncores. Tot l'abast entra en una única feature.
+001-pagina-inicial Estat: pendent.
+Pàgina amb informacio i dades sobre l'estat a barcelona, en els diferents ambits climatics. Separa en dos: Grafiques visuals sobre:(Temperatura,Humitat, pressio, direccio del vent, velocitat del vent, sol, rajos UV,qualitat de l'aire,  hores de sol,fase lunar, temperatura de l'aigua del mar, estat de l'aigua,increment quantitat de residus en el mar) i resum sobre la situacio de l'ecosistema de Barcelona. A la capçalera hi haurá un index de continguts.
+Especificació: spec/features/001-pagina-inicial/.

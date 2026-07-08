@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evolució climàtica · Barcelona 2025–2026</title>
+  <meta name="description" content="Informe visual de les condicions climàtiques a Barcelona durant els darrers dotze mesos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Outfit', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            deep: '#0B0E1A',
+            elevated: '#111827',
+            card: '#1A2235',
+            subtle: '#2A3448',
+            primary: '#F1F5F9',
+            secondary: '#94A3B8',
+            muted: '#64748B',
+            'accent-sky': '#38BDF8',
+            'accent-amber': '#FBBF24',
+            'accent-rose': '#FB7185',
+            'accent-emerald': '#34D399',
+            'accent-violet': '#A78BFA',
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body { background-color: #0B0E1A; color: #F1F5F9; font-family: 'Inter', sans-serif; }
+    h1, h2, h3, h4, .font-display { font-family: 'Outfit', sans-serif; }
+  </style>
+</head>
+<body>
+
+<a href="#intro" class="skip-link">Saltar al contingut principal</a>
+
+<div id="scroll-progress" style="width:0%"></div>
+
+<div id="sun-bg" aria-hidden="true">
+  <div id="sky-overlay"></div>
+  <div id="sun-horizon-glow"></div>
+  <div id="sun-horizon-glow-strong"></div>
+  <div id="particles-container" aria-hidden="true"></div>
+  <div id="sun-group">
+    <div id="sun-outer-glow"></div>
+    <div id="sun-corona"></div>
+    <div id="sun-flare"></div>
+    <div id="sun-aura"></div>
+    <div id="sun-rays"></div>
+    <div id="sun-core"></div>
+  </div>
+</div>
+<div id="phase-label" aria-hidden="true">
+  <span class="phase-title">ALBA</span>
+  <span class="phase-line"></span>
+  <span class="phase-sub"></span>
+</div>
+
+<div id="thermobar" class="fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden lg:flex items-center gap-3 pointer-events-none" aria-hidden="true">
+  <span id="thermobar-label" class="text-xs font-medium tracking-wide transition-all duration-500 text-secondary">Inici</span>
+  <div id="thermobar-track" class="relative w-[3px] h-40 rounded-full bg-subtle overflow-hidden">
+    <div id="thermobar-fill" class="absolute bottom-0 w-full rounded-full transition-all duration-500" style="height:0%"></div>
+  </div>
+</div>
+
+<header id="header" class="sticky top-0 z-50 bg-deep/80 backdrop-blur-md border-b border-subtle parallax-layer" data-parallax-speed="-0.05">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-3 min-w-0">
+      <svg class="w-10 h-10 md:w-12 md:h-12 shrink-0" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="seaGrad" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#0EA5E9"/><stop offset="100%" stop-color="#38BDF8" stop-opacity="0.6"/></linearGradient>
+          <linearGradient id="skyGrad" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#0B0E1A"/><stop offset="100%" stop-color="#1E3A5F"/></linearGradient>
+        </defs>
+        <rect x="0" y="0" width="48" height="48" fill="url(#skyGrad)" rx="8"/>
+        <path d="M0,32 Q12,28 24,32 Q36,36 48,32 L48,48 L0,48 Z" fill="url(#seaGrad)"/>
+        <path d="M20,32 Q22,24 26,26 Q30,22 34,28 Q36,24 40,26 L44,32" fill="#1A3A2A" opacity="0.5"/>
+        <path d="M14,26 Q16,18 20,20 Q22,16 26,18 Q28,14 30,18 L34,26" fill="#1A3A2A" opacity="0.4"/>
+        <circle cx="36" cy="14" r="5" fill="#FBBF24" opacity="0.9"/>
+        <circle cx="36" cy="14" r="7" fill="#FBBF24" opacity="0.15"/>
+        <path d="M8,30 L10,28 L12,30 L14,28 L16,30 L18,28 L20,30" stroke="#FBBF24" stroke-width="0.5" opacity="0.3" fill="none"/>
+        <rect x="4" y="34" width="1.5" height="4" rx="0.5" fill="#F1F5F9" opacity="0.15"/>
+        <rect x="7" y="35" width="1" height="3" rx="0.5" fill="#F1F5F9" opacity="0.1"/>
+        <rect x="42" y="34" width="1.5" height="4" rx="0.5" fill="#F1F5F9" opacity="0.15"/>
+        <rect x="39" y="35" width="1" height="3" rx="0.5" fill="#F1F5F9" opacity="0.1"/>
+      </svg>
+      <div class="min-w-0">
+        <h1 class="font-display font-bold text-lg md:text-xl truncate">Evolució climàtica · Barcelona</h1>
+        <p class="text-secondary text-xs hidden sm:block">Dels darrers 12 mesos</p>
+      </div>
+    </div>
+
+    <nav id="nav-desktop" class="hidden md:flex items-center gap-1 overflow-x-auto" aria-label="Navegació principal">
+      <a href="#temperatura" class="nav-link">Temp.</a>
+      <a href="#humitat" class="nav-link">Hum.</a>
+      <a href="#pressio" class="nav-link">Pres.</a>
+      <a href="#vent-dir" class="nav-link">Vent</a>
+      <a href="#sol" class="nav-link">Sol</a>
+      <a href="#aire" class="nav-link">Aire</a>
+      <a href="#lluna" class="nav-link">Lluna</a>
+      <a href="#aigua-temp" class="nav-link">Aigua</a>
+      <a href="#residus" class="nav-link">Residus</a>
+      <a href="#resum" class="nav-link">Resum</a>
+    </nav>
+
+    <button id="menu-btn" class="md:hidden p-2 rounded-lg hover:bg-elevated transition-colors" aria-label="Obre o tanca el menú de navegació" aria-expanded="false" aria-controls="nav-mobile">
+      <span class="hamburger-line top"></span>
+      <span class="hamburger-line mid"></span>
+      <span class="hamburger-line bot"></span>
+    </button>
+  </div>
+
+  <nav id="nav-mobile" class="md:hidden hidden border-t border-subtle bg-deep/95 backdrop-blur-md" aria-label="Navegació mòbil">
+    <div class="px-4 py-3 space-y-1 max-h-[60vh] overflow-y-auto">
+      <a href="#temperatura" class="mobile-nav-link">Temperatura</a>
+      <a href="#humitat" class="mobile-nav-link">Humitat</a>
+      <a href="#pressio" class="mobile-nav-link">Pressió atmosfèrica</a>
+      <a href="#vent-dir" class="mobile-nav-link">Direcció del vent</a>
+      <a href="#vent-vel" class="mobile-nav-link">Velocitat del vent</a>
+      <a href="#sol" class="mobile-nav-link">Sol</a>
+      <a href="#uv" class="mobile-nav-link">Rajos UV</a>
+      <a href="#aire" class="mobile-nav-link">Qualitat de l'aire</a>
+      <a href="#hores-sol" class="mobile-nav-link">Hores de sol</a>
+      <a href="#lluna" class="mobile-nav-link">Fase lunar</a>
+      <a href="#aigua-temp" class="mobile-nav-link">Temperatura de l'aigua</a>
+      <a href="#aigua-estat" class="mobile-nav-link">Estat de l'aigua</a>
+      <a href="#residus" class="mobile-nav-link">Residus al mar</a>
+      <a href="#resum" class="mobile-nav-link">Resum</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main-content">
+  <section id="intro" class="section-reveal relative min-h-[85vh] flex items-center justify-center z-10">
+    <div class="max-w-4xl mx-auto px-4 text-center py-20">
+      <p class="text-accent-amber font-semibold text-sm uppercase tracking-[0.2em] mb-4">Informe climàtic 2025–2026</p>
+      <h2 class="font-display font-bold text-[clamp(2rem,6vw,3.5rem)] leading-tight mb-6">Com ha canviat el clima<br>de Barcelona?</h2>
+      <p class="text-secondary text-lg max-w-2xl mx-auto leading-relaxed">
+        Durant els darrers dotze mesos, Barcelona ha experimentat patrons climàtics que mereixen ser analitzats. Temperatures, vents, qualitat de l'aire i estat del mar expliquen una història que impacta directament la salut i el benestar de les persones que viuen a la ciutat. Aquest informe visual recull les dades més rellevants per oferir una imatge clara i honesta de l'evolució climàtica recent.
+      </p>
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href="#temperatura" class="inline-flex items-center gap-2 px-6 py-3 bg-accent-sky/10 text-accent-sky rounded-full border border-accent-sky/20 hover:bg-accent-sky/20 transition-all font-medium text-sm">
+          Explorar dades
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 pb-8">
+    <div class="w-full h-px bg-gradient-to-r from-transparent via-subtle to-transparent"></div>
+  </div>
+
+  <section id="temperatura" class="section-reveal py-12 md:py-16 relative z-10 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 bg-card rounded-2xl border border-subtle p-6 md:p-8 data-card">
+          <div class="flex items-center gap-3 mb-4">
+            <svg class="w-6 h-6 text-accent-amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M12 2l-3 3M12 2l3 3"/><path d="M8 12h8M6 16h12M4 20h16"/></svg>
+            <h3 class="font-display font-semibold text-lg">Temperatura</h3>
+          </div>
+          <div class="flex items-baseline gap-2 mb-6">
+            <span class="font-display font-bold text-5xl text-accent-amber counter-value" data-target="24.3" data-suffix=" °C">0</span>
+            <span class="text-secondary text-sm ml-2">mitjana anual</span>
+          </div>
+          <div class="bar-chart" data-bars="35,42,48,55,62,70,85,82,73,58,45,38">
+            <div class="bar bg-accent-amber/40" style="height:0%"></div>
+            <div class="bar bg-accent-amber/40" style="height:0%"></div>
+            <div class="bar bg-accent-amber/40" style="height:0%"></div>
+            <div class="bar bg-accent-amber/50" style="height:0%"></div>
+            <div class="bar bg-accent-amber/50" style="height:0%"></div>
+            <div class="bar bg-accent-amber/60" style="height:0%"></div>
+            <div class="bar bg-accent-amber/70" style="height:0%"></div>
+            <div class="bar bg-accent-amber/70" style="height:0%"></div>
+            <div class="bar bg-accent-amber/60" style="height:0%"></div>
+            <div class="bar bg-accent-amber/50" style="height:0%"></div>
+            <div class="bar bg-accent-amber/40" style="height:0%"></div>
+            <div class="bar bg-accent-amber/30" style="height:0%"></div>
+          </div>
+          <div class="flex justify-between text-xs text-muted mt-2 mb-4"><span>Gen</span><span>Feb</span><span>Mar</span><span>Abr</span><span>Mai</span><span>Jun</span><span>Jul</span><span>Ago</span><span>Set</span><span>Oct</span><span>Nov</span><span>Des</span></div>
+          <div class="grid grid-cols-3 gap-4 mt-4 pt-4 border-t border-subtle">
+            <div><span class="text-muted text-xs">Mínima</span><p class="font-semibold text-lg">8.2°C</p></div>
+            <div><span class="text-muted text-xs">Màxima</span><p class="font-semibold text-lg">31.7°C</p></div>
+            <div><span class="text-muted text-xs">Tendència</span><p class="font-semibold text-lg text-accent-rose">+0.8°C</p></div>
+          </div>
+        </div>
+        <div class="bg-card rounded-2xl border border-subtle p-6 data-card stagger-item">
+          <div class="flex items-center gap-3 mb-4">
+            <svg class="w-5 h-5 text-accent-sky" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6v12M18 12H6"/><path d="M12 2l-3 3M12 2l3 3"/></svg>
+            <h4 class="font-display font-medium text-sm uppercase tracking-wider text-secondary">Nits tropicales</h4>
+          </div>
+          <p class="font-display font-bold text-3xl text-accent-rose">47</p>
+          <p class="text-muted text-sm mt-1">nits amb mínima &gt; 20°C</p>
+          <div class="mt-4 pt-4 border-t border-subtle">
+            <p class="text-xs text-muted">vs any anterior</p>
+            <p class="font-semibold text-accent-rose">+12 nits</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="humitat" class="section-reveal py-12 md:py-16 relative z-10 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 bg-card rounded-2xl border border-subtle p-6 md:p-8 data-card">
+          <div class="flex items-center gap-3 mb-4">
+            <svg class="w-6 h-6 text-accent-sky" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20a8 8 0 0 0 8-8c0-4-8-10-8-10S4 8 4 12a8 8 0 0 0 8 8z"/></svg>
+            <h3 class="font-display font-semibold text-lg">Humitat relativa</h3>
+          </div>
+          <div class="flex items-baseline gap-2 mb-6">
+            <span class="font-display font-bold text-5xl text-accent-sky counter-value" data-target="72" data-suffix="%">0</span>
+            <span class="text-secondary text-sm ml-2">mitjana anual</span>
+          </div>
+          <div class="bar-chart" data-bars="78,75,72,70,66,62,60,63,68,73,76,80">
+            <div class="bar bg-accent-sky/40" style="height:0%"></div>
+            <div class="bar bg-accent-sky/40" style="height:0%"></div>
+            <div class="bar bg-accent-sky/40" style="height:0%"></div>
+            <div class="bar bg-accent-sky/50" style="height:0%"></div>
+            <div class="bar bg-accent-sky/50" style="height:0%"></div>
+            <div class="bar bg-accent-sky/60" style="height:0%"></div>
+            <div class="bar bg-accent-sky/70" style="height:0%"></div>
+            <div class="bar bg-accent-sky/70" style="height:0%"></div>
+            <div class="bar bg-accent-sky/60" style="height:0%"></div>
+            <div class="bar bg-accent-sky/50" style="height:0%"></div>
+            <div class="bar bg-accent-sky/40" style="height:0%"></div>
+            <div class="bar bg-accent-sky/40" style="height:0%"></div>
+          </div>
+          <div class="flex justify-between text-xs text-muted mt-2"><span>Gen</span><span>Feb</span><span>Mar</span><span>Abr</span><span>Mai</span><span>Jun</span><span>Jul</span><span>Ago</span><span>Set</span><span>Oct</span><span>Nov</span><span>Des</span></div>
+        </div>
+        <div class="bg-card rounded-2xl border border-subtle p-6 data-card stagger-item">
+          <h4 class="font-display font-medium text-sm uppercase tracking-wider text-secondary mb-3">Rang</h4>
+          <div class="space-y-3">
+            <div><span class="text-muted text-xs">Mínima</span><p class="font-semibold text-lg text-accent-sky">58%</p></div>
+            <div class="pt-3 border-t border-subtle"><span class="text-muted text-xs">Màxima</span><p class="font-semibold text-lg text-accent-sky">85%</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pressio" class="section-reveal py-12 md:py-16 relative z-10 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 bg-card rounded-2xl border border-subtle p-6 md:p-8 data-card">
+          <div class="flex items-center gap-3 mb-4">
+            <svg class="w-6 h-6 text-accent-violet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l2-3 2 6 2-3 2 3 2-3 2 3 2-1.5"/><path d="M12 2v2M12 20v2"/></svg>
+            <h3 class="font-display font-semibold text-lg">Pressió atmosfèrica</h3>
+          </div>
+          <div class="flex items-baseline gap-2 mb-6">
+            <span class="font-display font-bold text-5xl text-accent-violet counter-value" data-target="1016" data-suffix=" hPa">0</span>
+            <span class="text-secondary text-sm ml-2">mitjana anual</span>
+          </div>
+          <svg class="line-chart-svg" viewBox="0 0 300 100" preserveAspectRatio="none">
+            <path d="M10,70 L30,55 L50,60 L70,45 L90,50 L110,35 L130,40 L150,30 L170,38 L190,50 L210,55 L230,60 L250,48 L270,52 L290,45" stroke="#A78BFA" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10,70 L30,55 L50,60 L70,45 L90,50 L110,35 L130,40 L150,30 L170,38 L190,50 L210,55 L230,60 L250,48 L270,52 L290,45" stroke="url(#pressGrad)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+            <defs><linearGradient id="pressGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#A78BFA"/><stop offset="100%" stop-color="#A78BFA" stop-opacity="0"/></linearGradient></defs>
+            <path d="M10,70 L30,55 L50,60 L70,45 L90,50 L110,35 L130,40 L150,30 L170,38 L190,50 L210,55 L230,60 L250,48 L270,52 L290,45" fill="url(#pressFill)" opacity="0.15"/>
+            <defs><linearGradient id="pressFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#A78BFA"/><stop offset="100%" stop-color="#A78BFA" stop-opacity="0"/></linearGradient></defs>
+          </svg>
+        </div>
+        <div class="bg-card rounded-2xl border border-subtle p-6 data-card stagger-item">
+          <h4 class="font-display font-medium text-sm uppercase tracking-wider text-secondary mb-3">Detalls</h4>
+          <div class="space-y-3">
+            <div><span class="text-muted text-xs">Màxima registrada</span><p class="font-semibold text-lg text-accent-violet">1024 hPa</p></div>
+            <div class="pt-3 border-t border-subtle"><span class="text-muted text-xs">Mínima registrada</span><p class="font-semibold text-lg text-accent-violet">1008 hPa</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="vent-dir" class="section-reveal py-12 md:py-16 relative z-10 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="bg-card rounded-2xl border border-subtle p-6 md:p-8 data-card overflow-hidden relative">
+          <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true">
+            <path class="wind-line" d="M-50,80 Q100,80 150,60 Q200,40 250,70 Q300,100 450,70" stroke="#38BDF8" stroke-width="1.5" fill="none" opacity="0.3"/>
+            <path class="wind-line" d="M-50,120 Q100,120 160,100 Q220,80 280,110 Q340,140 450,110" stroke="#34D399" stroke-width="1" fill="none" opacity="0.2"/>
+            <path class="wind-line" d="M-50,160 Q120,160 180,140 Q240,120 300,150 Q360,180 450,150" stroke="#38BDF8" stroke-width="0.8" fill="none" opacity="0.15"/>
+          </svg>
+          <div class="flex items-center gap-3 mb-4">
+            <svg class="w-6 h-6 text-accent-sky" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 22l10-6 10 6L12 2z"/></svg>
+            <h3 class="font-display font-semibold text-lg">Direcció del vent</h3>
+          </div>
+          <div class="flex justify-center relative z-10">
+            <svg viewBox="0 0 160 160" class="w-48 h-48">
+              <circle cx="80" cy="80" r="70" fill="none" stroke="#2A3448" stroke-width="1"/>
+              <circle cx="80" cy="80" r="50" fill="none" stroke="#2A3448" stroke-width="0.5"/>
+              <circle cx="80" cy="80" r="30" fill="none" stroke="#2A3448" stroke-width="0.5"/>
+              <line x1="10" y1="80" x2="150" y2="80" stroke="#2A3448" stroke-width="0.5"/>
+              <line x1="80" y1="10" x2="80" y2="150" stroke="#2A3448" stroke-width="0.5"/>
+              <text x="80" y="8" text-anchor="middle" fill="#94A3B8" font-size="10" font-family="Inter">N</text>
+              <text x="80" y="155" text-anchor="middle" fill="#94A3B8" font-size="10" font-family="Inter">S</text>
+              <text x="157" y="84" text-anchor="end" fill="#94A3B8" font-size="10" font-family="Inter">E</text>
+              <text x="3" y="84" text-anchor="start" fill="#94A3B8" font-size="10" font-family="Inter">O</text>
+              <path d="M80,80 L80,20 M80,80 L95,40 M80,80 L105,60 M80,80 L110,80 M80,80 L120,50" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
+              <path d="M80,80 L55,55 M80,80 L40,70 M80,80 L35,85 M80,80 L55,100 M80,80 L70,120" stroke="#38BDF8" stroke-width="3" stroke-linecap="round" opacity="0.15"/>
+              <path d="M80,80 L110,95 M80,80 L115,110 M80,80 L95,130" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" opacity="0.08"/>
+              <polygon points="80,14 77,24 83,24" fill="#38BDF8"/>
+              <text x="80" y="145" text-anchor="middle" fill="#38BDF8" font-size="11" font-weight="600" font-family="Outfit">SW</text>
+              <text x="80" y="138" text-anchor="middle" fill="#94A3B8" font-size="9" font-family="Inter">35%</text>
+            </svg>
+          </div>
+        </div>
+        <div class="bg-card rounded-2xl border border-subtle p-6 md:p-8 data-card stagger-item">
+          <div class="flex items-center gap-3 mb-4">
+            <svg class="w-6 h-6 text-accent-sky" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+            <h3 class="font-display font-semibold text-lg" id="vent-vel">Velocitat del vent</h3>
+          </div>
+          <div class="flex items-baseline gap-2 mb-6">
+            <span class="font-display font-bold text-5xl text-accent-sky counter-value" data-target="14.2" data-suffix=" km/h">0</span>
+            <span class="text-secondary text-sm ml-2">mitjana</span>
+          </div>
+          <svg viewBox="0 0 200 100" class="w-full">
+            <path d="M20,85 A80,80 0 0,1 180,85" fill="none" stroke="#2A3448" stroke-width="6" stroke-linecap="round"/>
+            <path d="M20,85 A80,80 0 0,1 180,85" fill="none" stroke="#38BDF8" stroke-width="6" stroke-linecap="round" stroke-dasharray="251" stroke-dashoffset="188" id="vel-gauge"/>
+            <circle cx="100" cy="85" r="4" fill="#38BDF8"/>
+            <line x1="100" y1="85" x2="75" y2="42" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" id="vel-needle"/>
+            <text x="100" y="35" text-anchor="middle" fill="#94A3B8" font-size="9" font-family="Inter">0</text>
+            <text x="185" y="60" text-anchor="middle" fill="#94A3B8" font-size="9" font-family="Inter" transform="rotate(-30,185,60)">38</text>
+            <text x="15" y="60" text-anchor="middle" fill="#94A3B8" font-size="9" font-family="Inter" transform="rotate(30,15,60)">3</text>
+            <text x="100" y="98" text-anchor="middle" fill="#F1F5F9" font-size="12" font-weight="600" font-family="Outfit">14.2 km/h</text>
+          </svg>
+          <div class="grid grid-cols-2 gap-4 mt-4 pt-4 border-t border-subtle">
+            <div><span class="text-muted text-xs">Ràfega màxima</span><p class="font-semibold text-lg">38 km/h</p></div>
+            <div><span class="text-muted text-xs">Tendència</span><p class="font-semibold text-accent-sky">Estable</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sol" class="section-reveal py-12 md:py-16 relative z-10 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="bg-card rounded-2xl border border-subtle p-6 md:p-8 data-card">
+          <div class="flex items-center gap-3 mb-4">
+            <svg class="w-6 h-6 text-accent-amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            <h3 class="font-display font-semibold text-lg">Hores de sol anuals</h3>
+          </div>
+          <div class="flex items-baseline gap-2 mb-6">
+            <span class="font-display font-bold text-5xl text-accent-amber counter-value" data-target="2592" data-suffix=" h">0</span>
+            <span class="text-secondary text-sm ml-2">anuals</span>
+          </div>
+          <div class="relative h-4 bg-deep rounded-full overflow-hidden">
+            <div class="h-full bg-gradient-to-r from-accent-amber/40 via-accent-amber to-accent-amber/60 rounded-full" style="width: 72%"></div>
+          </div>
+          <p class="text-xs text-muted mt-2">72% del màxim teòric (3.600 h)</p>
+        </div>
+        <div id="uv" class="bg-card rounded-2xl border border-subtle p-6 md:p-8 data-card scroll-mt-20 stagger-item">
+          <div class="flex items-center gap-3 mb-4">
+            <svg class="w-6 h-6 text-accent-rose" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z" fill="#FB7185" fill-opacity="0.2"/></svg>
+            <h3 class="font-display font-semibold text-lg">Índex UV</h3>
+          </div>
+          <div class="flex items-baseline gap-2 mb-4">
+            <span class="font-display font-bold text-5xl text-accent-rose">6.8</span>
+            <span class="text-secondary text-lg">mitjà</span>
+          </div>
+          <div class="relative h-4 bg-deep rounded-full overflow-hidden">
+            <div class="h-full rounded-full" style="width: 62%; background: linear-gradient(90deg, #34D399, #FBBF24 30%, #FB7185 60%, #EF4444)"></div>
+          </div>
+          <div class="flex justify-between text-xs mt-1">
+            <span class="text-accent-emerald">1 Baix</span>
+            <span class="text-accent-rose">11+ Extrem</span>
+          </div>
+          <div class="grid grid-cols-2 gap-4 mt-4 pt-4 border-t border-subtle">
+            <div><span class="text-muted text-xs">Pic màxim (juliol)</span><p class="font-semibold text-lg text-accent-rose">9.2</p></div>
+            <div><span class="text-muted text-xs">Mes baix (desembre)</span><p class="font-semibold text-lg">2.1</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="aire" class="section-reveal py-12 md:py-16 relative z-10 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="bg-card rounded-2xl border border-subtle p-6 md:p-8 data-card">
+          <div class="flex items-center gap-3 mb-4">
+            <svg class="w-6 h-6 text-accent-emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v16M4 8h16M6 12h12M8 16h8"/></svg>
+            <h3 class="font-display font-semibold text-lg">Qualitat de l'aire (AQI)</h3>
+          </div>
+          <div class="flex items-center gap-4 mb-4">
+            <span class="font-display font-bold text-5xl text-accent-emerald">54</span>
+            <div>
+              <p class="font-semibold text-accent-emerald">Moderat</p>
+              <p class="text-muted text-sm">IQAir mitjana anual</p>
+            </div>
+          </div>
+          <svg viewBox="0 0 180 90" class="w-full max-w-xs mx-auto">
+            <path d="M10,80 A70,70 0 0,1 170,80" fill="none" stroke="#2A3448" stroke-width="8" stroke-linecap="round"/>
+            <path d="M10,80 A70,70 0 0,1 170,80" fill="none" stroke="#34D399" stroke-width="8" stroke-linecap="round" stroke-dasharray="219" stroke-dashoffset="88" id="air-gauge"/>
+            <text x="90" y="85" text-anchor="middle" fill="#F1F5F9" font-size="14" font-weight="600" font-family="Outfit">54</text>
+            <text x="90" y="40" text-anchor="middle" fill="#94A3B8" font-size="8" font-family="Inter">Bo</text>
+            <text x="160" y="55" text-anchor="middle" fill="#94A3B8" font-size="8" font-family="Inter" transform="rotate(-30,160,55)">Dolent</text>
+          </svg>
+        </div>
+        <div id="hores-sol" class="bg-card rounded-2xl border border-subtle p-6 md:p-8 data-card scroll-mt-20 stagger-item">
+          <div class="flex items-center gap-3 mb-4">
+            <svg class="w-6 h-6 text-accent-amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2"/></svg>
+            <h3 class="font-display font-semibold text-lg">Hores de sol / dia</h3>
+          </div>
+          <div class="flex items-baseline gap-2 mb-6">
+            <span class="font-display font-bold text-5xl text-accent-amber">7.1</span>
+            <span class="text-secondary text-lg">h/dia</span>
+            <span class="text-secondary text-sm ml-2">mitjana</span>
+          </div>
+          <svg class="line-chart-svg" viewBox="0 0 300 120" preserveAspectRatio="none">
+            <path d="M15,90 Q35,85 55,75 Q75,60 95,50 Q115,30 135,25 Q155,20 175,22 Q195,30 215,40 Q235,55 255,65 Q275,75 285,85" fill="none" stroke="#FBBF24" stroke-width="3" stroke-linecap="round"/>
+            <path d="M15,90 Q35,85 55,75 Q75,60 95,50 Q115,30 135,25 Q155,20 175,22 Q195,30 215,40 Q235,55 255,65 Q275,75 285,85 L285,120 L15,120 Z" fill="url(#solGrad)" opacity="0.15"/>
+            <defs><linearGradient id="solGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FBBF24"/><stop offset="100%" stop-color="#FBBF24" stop-opacity="0"/></linearGradient></defs>
+          </svg>
+          <div class="flex justify-between text-xs text-muted mt-1"><span>Gen</span><span>Jun</span><span>Des</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lluna" class="section-reveal py-12 md:py-16 relative z-10 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="bg-card rounded-2xl border border-subtle p-6 md:p-8 data-card text-center">
+        <div class="flex items-center gap-3 mb-6 justify-center">
+          <svg class="w-6 h-6 text-accent-violet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <h3 class="font-display font-semibold text-lg">Fase lunar</h3>
+        </div>
+        <p class="text-secondary text-sm mb-6">Fes clic o toca per avançar a la següent fase</p>
+        <div class="flex flex-col items-center">
+          <svg viewBox="0 0 120 120" class="w-32 h-32 md:w-40 md:h-40 cursor-pointer" id="moon-svg">
+            <defs>
+              <clipPath id="moon-clip-phase">
+                <ellipse id="moon-ellipse" cx="60" cy="60" rx="50" ry="50"/>
+              </clipPath>
+            </defs>
+            <circle cx="60" cy="60" r="50" fill="#1A2235" stroke="#2A3448" stroke-width="1"/>
+            <circle cx="60" cy="60" r="50" fill="#F1F5F9" id="moon-fill" clip-path="url(#moon-clip-phase)"/>
+            <text x="60" y="60" text-anchor="middle" dominant-baseline="central" fill="#1A2235" font-size="20" font-family="Outfit" font-weight="700" id="moon-emoji" clip-path="url(#moon-clip-phase)">🌙</text>
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#2A3448" stroke-width="1" opacity="0.5"/>
+          </svg>
+          <p id="moon-phase-name" class="font-display font-semibold text-lg mt-4 text-accent-violet">Lluna nova</p>
+          <p id="moon-illumination" class="text-muted text-sm">0% il·luminació</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="aigua-temp" class="section-reveal py-12 md:py-16 relative z-10 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="bg-card rounded-2xl border border-subtle p-6 md:p-8 data-card overflow-hidden relative">
+          <svg class="absolute bottom-0 left-0 w-full h-20 pointer-events-none" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true">
+            <path class="wave-line" fill="#38BDF8" opacity="0.06" d="M0,40 Q20,20 40,40 Q60,60 80,40 Q100,20 120,40 Q140,60 160,40 Q180,20 200,40 L200,60 L0,60 Z"/>
+            <path class="wave-line" fill="#0EA5E9" opacity="0.08" d="M0,40 Q20,30 40,40 Q60,50 80,40 Q100,30 120,40 Q140,50 160,40 Q180,30 200,40 L200,60 L0,60 Z"/>
+            <path class="wave-line" fill="#38BDF8" opacity="0.04" d="M0,40 Q20,25 40,40 Q60,55 80,40 Q100,25 120,40 Q140,55 160,40 Q180,25 200,40 L200,60 L0,60 Z"/>
+          </svg>
+          <div class="flex items-center gap-3 mb-4 relative z-10">
+            <svg class="w-6 h-6 text-accent-sky" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20a8 8 0 0 0 8-8c0-4-8-10-8-10S4 8 4 12a8 8 0 0 0 8 8z"/><path d="M8 16l4-4 4 4"/></svg>
+            <h3 class="font-display font-semibold text-lg">Temperatura de l'aigua del mar</h3>
+          </div>
+          <div class="flex items-baseline gap-2 mb-6">
+            <span class="font-display font-bold text-5xl text-accent-sky counter-value" data-target="18.5" data-suffix=" °C">0</span>
+            <span class="text-secondary text-sm ml-2">mitjana anual</span>
+          </div>
+          <svg viewBox="0 0 60 200" class="w-16 mx-auto">
+            <rect x="20" y="20" width="20" height="160" rx="10" fill="none" stroke="#2A3448" stroke-width="2"/>
+            <rect x="22" y="22" width="16" height="156" rx="8" fill="none"/>
+            <rect x="22" y="22" width="16" height="156" rx="8" fill="#38BDF8" opacity="0.3" id="sea-temp-fill" style="clip-path: inset(30% 0 0 0)"/>
+            <circle cx="30" cy="180" r="14" fill="none" stroke="#2A3448" stroke-width="2"/>
+            <circle cx="30" cy="180" r="10" fill="#38BDF8" opacity="0.3" id="sea-bulb"/>
+            <text x="30" y="175" text-anchor="middle" fill="#F1F5F9" font-size="10" font-weight="600" font-family="Outfit">18.5</text>
+          </svg>
+        </div>
+        <div id="aigua-estat" class="bg-card rounded-2xl border border-subtle p-6 md:p-8 data-card scroll-mt-20">
+          <div class="flex items-center gap-3 mb-4">
+            <svg class="w-6 h-6 text-accent-emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20a8 8 0 0 0 8-8c0-4-8-10-8-10S4 8 4 12a8 8 0 0 0 8 8z"/></svg>
+            <h3 class="font-display font-semibold text-lg">Estat de l'aigua</h3>
+          </div>
+          <div class="flex items-center gap-3 mb-6">
+            <span class="font-display font-bold text-3xl text-accent-emerald">Bo</span>
+            <span class="text-muted text-sm">7/10</span>
+          </div>
+          <div class="space-y-3">
+            <div><span class="text-xs text-muted">Qualitat sanitària</span><div class="h-2 bg-deep rounded-full mt-1"><div class="h-full bg-accent-emerald rounded-full" style="width: 75%"></div></div></div>
+            <div><span class="text-xs text-muted">Transparència</span><div class="h-2 bg-deep rounded-full mt-1"><div class="h-full bg-accent-sky rounded-full" style="width: 65%"></div></div></div>
+            <div><span class="text-xs text-muted">Temperatura òptima</span><div class="h-2 bg-deep rounded-full mt-1"><div class="h-full bg-accent-amber rounded-full" style="width: 70%"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="residus" class="section-reveal py-12 md:py-16 relative z-10 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="bg-card rounded-2xl border border-subtle p-6 md:p-8 data-card overflow-hidden relative" id="residus-card">
+        <div id="rain-container" class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true"></div>
+        <div class="flex items-center gap-3 mb-4 relative z-10">
+          <svg class="w-6 h-6 text-accent-rose" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4l2-4z"/><path d="M12 14v8M8 22h8"/></svg>
+          <h3 class="font-display font-semibold text-lg">Residus al mar</h3>
+        </div>
+        <div class="flex items-baseline gap-2 mb-6">
+          <span class="font-display font-bold text-5xl text-accent-rose">+12%</span>
+          <span class="text-secondary text-sm ml-2">increment respecte 2024</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="bg-deep rounded-xl p-4">
+            <p class="font-display font-bold text-2xl text-accent-rose">+18%</p>
+            <p class="text-muted text-sm">Plàstics</p>
+            <div class="h-1.5 bg-deep rounded-full mt-2"><div class="h-full bg-accent-rose rounded-full" style="width: 75%"></div></div>
+          </div>
+          <div class="bg-deep rounded-xl p-4">
+            <p class="font-display font-bold text-2xl text-accent-amber">+5%</p>
+            <p class="text-muted text-sm">Orgànic</p>
+            <div class="h-1.5 bg-deep rounded-full mt-2"><div class="h-full bg-accent-amber rounded-full" style="width: 30%"></div></div>
+          </div>
+          <div class="bg-deep rounded-xl p-4">
+            <p class="font-display font-bold text-2xl text-accent-sky">+8%</p>
+            <p class="text-muted text-sm">Vidre i metalls</p>
+            <div class="h-1.5 bg-deep rounded-full mt-2"><div class="h-full bg-accent-sky rounded-full" style="width: 45%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 py-8">
+    <div class="w-full h-px bg-gradient-to-r from-transparent via-subtle to-transparent"></div>
+  </div>
+
+
+
+  <section id="cub3d" class="section-reveal py-12 md:py-16 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h2 class="font-display font-bold text-2xl mb-2">Resum 3D interactiu</h2>
+      <p class="text-secondary text-sm mb-8">Arrossega el cub per explorar les dades clau de Barcelona</p>
+      <div id="three-container" class="w-full max-w-lg mx-auto h-[400px] md:h-[500px] rounded-2xl border border-subtle bg-elevated" role="img" aria-label="Cub 3D interactiu amb dades climàtiques de Barcelona">
+        <div class="three-loading">Carregant visualització 3D</div>
+      </div>
+      <p class="text-muted text-xs mt-3">Gira automàticament · Pots arrossegar-lo amb el ratolí o el dit</p>
+    </div>
+  </section>
+
+  <section id="resum" class="section-reveal py-12 md:py-16 relative z-10 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-4xl mx-auto bg-card rounded-2xl border border-subtle p-6 md:p-10 data-card">
+        <h2 class="font-display font-bold text-2xl mb-8 flex items-center gap-3">
+          <svg class="w-6 h-6 text-accent-amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Resum de la situació climàtica
+        </h2>
+        <div class="space-y-5 text-secondary leading-relaxed">
+          <p>La temperatura mitjana a Barcelona s'ha situat als <strong class="text-primary">24,3 °C</strong>, amb un increment de <strong class="text-accent-rose">0,8 °C</strong> respecte a l'any anterior. Les nits tropicals (mínimes per sobre dels 20 °C) han estat més freqüents, especialment durant els mesos de juliol i agost, amb un total de 47 nits en tot l'any.</p>
+          <p>La qualitat de l'aire es manté en valors <strong class="text-accent-emerald">moderats</strong> (IQAir 54 de mitjana), amb pics de contaminació durant els episodis d'estabilitat atmosfèrica. L'índex UV mitjà de <strong class="text-accent-rose">6,8</strong> recorda la importància de la protecció solar durant gran part de l'any, especialment entre maig i setembre.</p>
+          <p>La temperatura de l'aigua del mar ha assolit una mitjana de <strong class="text-accent-sky">18,5 °C</strong>, afavorint una temporada de bany més llarga. L'estat general de l'aigua es considera <strong class="text-accent-emerald">bo</strong> (7/10), tot i que la transparència ha disminuït lleugerament respecte a l'any anterior.</p>
+          <p>L'increment del <strong class="text-accent-rose">12%</strong> en residus marins, especialment plàstics (+18%), és una dada alarmant que exigirà polítiques més ambicioses de gestió de residus i conscienciació ciutadana. Barcelona es troba en un punt d'inflexió climàtica on les dades confirmen tendències globals, però també concreten reptes locals.</p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-8 border-t border-subtle">
+          <div class="text-center">
+            <p class="font-display font-bold text-2xl text-accent-amber">+0.8°C</p>
+            <p class="text-muted text-xs">Increment temp.</p>
+          </div>
+          <div class="text-center">
+            <p class="font-display font-bold text-2xl text-accent-rose">47</p>
+            <p class="text-muted text-xs">Nits tropicals</p>
+          </div>
+          <div class="text-center">
+            <p class="font-display font-bold text-2xl text-accent-emerald">54</p>
+            <p class="text-muted text-xs">AQI mitjà</p>
+          </div>
+          <div class="text-center">
+            <p class="font-display font-bold text-2xl text-accent-rose">+12%</p>
+            <p class="text-muted text-xs">Residus mar</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="relative z-10 border-t border-subtle py-8 text-center text-muted text-sm">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex items-center justify-center gap-2 mb-2">
+      <svg class="w-4 h-4 text-accent-amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2"/></svg>
+      <span class="font-display font-medium">Evolució climàtica · Barcelona</span>
+    </div>
+    <p>Dades simulades amb criteris versemblants per a un projecte educatiu</p>
+    <p class="mt-1">Eines de Programació amb IA · 2025–2026</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+(function() {
+  'use strict';
+
+  var menuBtn = document.getElementById('menu-btn');
+  var navMobile = document.getElementById('nav-mobile');
+
+  if (menuBtn && navMobile) {
+    menuBtn.addEventListener('click', function() {
+      var expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+      navMobile.classList.toggle('hidden');
+    });
+
+    navMobile.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        navMobile.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  var bars = document.querySelectorAll('.bar-chart');
+  var barObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var chart = entry.target;
+        var barsEl = chart.querySelectorAll('.bar');
+        var heights = (chart.getAttribute('data-bars') || '').split(',').map(Number);
+        barsEl.forEach(function(bar, i) {
+          if (heights[i] !== undefined) {
+            bar.style.height = heights[i] + '%';
+          }
+        });
+      }
+    });
+  }, { threshold: 0.2 });
+
+  bars.forEach(function(chart) { barObserver.observe(chart); });
+
+  var dataCards = document.querySelectorAll('.data-card');
+  var cardObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  dataCards.forEach(function(card) { cardObserver.observe(card); });
+
+  // ── Sun & Celestial System ──
+  var sunGroup = document.getElementById('sun-group');
+  var sunCore = document.getElementById('sun-core');
+  var sunCorona = document.getElementById('sun-corona');
+  var sunOuter = document.getElementById('sun-outer-glow');
+  var sunHorizon = document.getElementById('sun-horizon-glow');
+  var sunHorizonStrong = document.getElementById('sun-horizon-glow-strong');
+  var sunRays = document.getElementById('sun-rays');
+  var sunAura = document.getElementById('sun-aura');
+  var sunFlare = document.getElementById('sun-flare');
+  var skyOverlay = document.getElementById('sky-overlay');
+  var particlesContainer = document.getElementById('particles-container');
+  var phaseLabel = document.getElementById('phase-label');
+  var phaseTitle = phaseLabel ? phaseLabel.querySelector('.phase-title') : null;
+  var phaseSub = phaseLabel ? phaseLabel.querySelector('.phase-sub') : null;
+
+  var sunColors = [
+    { p: 0.00, r: 200, g: 50,  b: 20 },    // Pre-dawn
+    { p: 0.05, r: 255, g: 69,  b: 0 },      // Dawn
+    { p: 0.12, r: 255, g: 120, b: 40 },     // Sunrise
+    { p: 0.20, r: 255, g: 170, b: 60 },     // Morning
+    { p: 0.30, r: 255, g: 210, b: 40 },     // Late morning
+    { p: 0.42, r: 255, g: 245, b: 200 },    // Midday approaching
+    { p: 0.50, r: 255, g: 250, b: 235 },    // Midday peak
+    { p: 0.58, r: 255, g: 240, b: 190 },    // Early afternoon
+    { p: 0.68, r: 255, g: 200, b: 60 },     // Afternoon
+    { p: 0.78, r: 255, g: 150, b: 30 },     // Late afternoon
+    { p: 0.88, r: 255, g: 80,  b: 10 },     // Sunset
+    { p: 0.94, r: 220, g: 30,  b: 50 },     // Sunset peak
+    { p: 0.98, r: 140, g: 10,  b: 20 },     // Dusk
+    { p: 1.00, r: 60,  g: 5,   b: 10 },     // Night
+  ];
+
+  var skyStops = [
+    { p: 0.00, t: '#0B0E1A', m: '#0B0E1A', b: '#0A0D18' },
+    { p: 0.05, t: '#1A0A2E', m: '#2D1520', b: '#4A2020' },
+    { p: 0.12, t: '#2D1B3E', m: '#E8652D', b: '#FFB347' },
+    { p: 0.20, t: '#4A7C9B', m: '#87AEC8', b: '#FFD699' },
+    { p: 0.30, t: '#5D8CA8', m: '#9BC0D6', b: '#C4D4DC' },
+    { p: 0.42, t: '#4A90D9', m: '#87CEEB', b: '#B8D8E8' },
+    { p: 0.58, t: '#4A90D9', m: '#7EB8D8', b: '#C4DCE8' },
+    { p: 0.68, t: '#4A7C9B', m: '#C49455', b: '#E8A84C' },
+    { p: 0.78, t: '#3D2040', m: '#E8652D', b: '#FF8C42' },
+    { p: 0.88, t: '#6B2040', m: '#E83030', b: '#FF6B35' },
+    { p: 0.94, t: '#1A0A2E', m: '#2A1020', b: '#6B2040' },
+    { p: 1.00, t: '#0B0E1A', m: '#0B0E1A', b: '#0A0D18' },
+  ];
+
+  var phases = [
+    { p: 0.00, title: 'ALBA', sub: 'Preamanecer' },
+    { p: 0.05, title: 'SORTIDA DE SOL', sub: 'Horitzó daurat' },
+    { p: 0.18, title: 'MATÍ', sub: 'Llum creixent' },
+    { p: 0.42, title: 'MIGDIA', sub: 'Zenit solar' },
+    { p: 0.60, title: 'TARDA', sub: 'Hores daurades' },
+    { p: 0.78, title: 'POSTA DE SOL', sub: 'Oest encès' },
+    { p: 0.94, title: 'CREPUSCLE', sub: 'Ombra llarga' },
+    { p: 0.99, title: 'NIT', sub: 'Cel estrellat' },
+  ];
+
+  function interpolateColor(p) {
+    for (var i = 0; i < sunColors.length - 1; i++) {
+      if (p >= sunColors[i].p && p <= sunColors[i+1].p) {
+        var t = (p - sunColors[i].p) / (sunColors[i+1].p - sunColors[i].p);
+        return {
+          r: sunColors[i].r + (sunColors[i+1].r - sunColors[i].r) * t,
+          g: sunColors[i].g + (sunColors[i+1].g - sunColors[i].g) * t,
+          b: sunColors[i].b + (sunColors[i+1].b - sunColors[i].b) * t
+        };
+      }
+    }
+    return { r: sunColors[sunColors.length-1].r, g: sunColors[sunColors.length-1].g, b: sunColors[sunColors.length-1].b };
+  }
+
+  function hexToRgb(hex) {
+    var r = parseInt(hex.slice(1,3), 16);
+    var g = parseInt(hex.slice(3,5), 16);
+    var b = parseInt(hex.slice(5,7), 16);
+    return {r: r, g: g, b: b};
+  }
+
+  function rgbToHex(r, g, b) {
+    return '#' + [Math.round(r), Math.round(g), Math.round(b)].map(function(c) {
+      return Math.max(0, Math.min(255, c)).toString(16).padStart(2, '0');
+    }).join('');
+  }
+
+  function interpolateSky(p) {
+    for (var i = 0; i < skyStops.length - 1; i++) {
+      if (p >= skyStops[i].p && p <= skyStops[i+1].p) {
+        var t = (p - skyStops[i].p) / (skyStops[i+1].p - skyStops[i].p);
+        var result = {};
+        for (var key in skyStops[i]) {
+          if (key !== 'p') {
+            var a = hexToRgb(skyStops[i][key]);
+            var b = hexToRgb(skyStops[i+1][key]);
+            result[key] = rgbToHex(a.r + (b.r - a.r) * t, a.g + (b.g - a.g) * t, a.b + (b.b - a.b) * t);
+          }
+        }
+        return result;
+      }
+    }
+    var last = skyStops[skyStops.length - 1];
+    return { t: last.t, m: last.m, b: last.b };
+  }
+
+  function interpolatePhase(currentP) {
+    var current = phases[phases.length - 1];
+    for (var i = 0; i < phases.length - 1; i++) {
+      if (currentP >= phases[i].p && currentP < phases[i+1].p) {
+        current = phases[i];
+        break;
+      }
+    }
+    return current;
+  }
+
+  function smoothstep(t) { return t * t * (3 - 2 * t); }
+
+  var sunTicking = false;
+
+  function updateSun() {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var docHeight = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight,
+      document.body.clientHeight, document.documentElement.clientHeight
+    );
+    var winHeight = window.innerHeight;
+    var winWidth = window.innerWidth;
+    var maxScroll = Math.max(docHeight - winHeight, 1);
+    var p = Math.min(Math.max(scrollTop / maxScroll, 0), 1);
+
+    // Arc path
+    var x = 5 + p * 90;
+    var y = 80 * Math.pow(2 * p - 1, 2) + 5;
+    if (y > 85) y = 85;
+
+    // Size curve (smoothed, ~1.8x bigger)
+    var size;
+    if (p < 0.25) size = 70 + p * 640;
+    else if (p < 0.5) size = 230 + (p - 0.25) * 120;
+    else if (p < 0.75) size = 260 - (p - 0.5) * 120;
+    else size = 230 - (p - 0.75) * 180;
+    if (size < 50) size = 50;
+
+    var color = interpolateColor(p);
+    var r = color.r, g = color.g, b = color.b;
+    var colorStr = Math.round(r) + ',' + Math.round(g) + ',' + Math.round(b);
+
+    // ── Sun Group: single layout operation ──
+    if (sunGroup) {
+      var gx = (x - 50) / 100 * winWidth;
+      var gy = (y - 50) / 100 * winHeight;
+      sunGroup.style.transform = 'translate(' + gx + 'px, ' + gy + 'px)';
+    }
+
+    // ── Core ──
+    var coreSize = size * (0.15 + p * 0.10);
+    if (coreSize < 10) coreSize = 10;
+    var coreColor = 'radial-gradient(circle at 40% 35%, #FFFFFF, rgb(' + colorStr + '), rgb(' + Math.round(r*0.4) + ',' + Math.round(g*0.4) + ',' + Math.round(b*0.4) + '))';
+    var coreShadow = '0 0 ' + (coreSize * 3) + 'px ' + (coreSize * 1) + 'px rgba(' + colorStr + ', 0.5), 0 0 ' + (coreSize * 8) + 'px ' + (coreSize * 3) + 'px rgba(' + colorStr + ', 0.2)';
+    if (sunCore) {
+      var cs = Math.max(coreSize / 55, 0.01);
+      sunCore.style.transform = 'translate(-50%, -50%) scale(' + cs + ')';
+      sunCore.style.width = '55px';
+      sunCore.style.height = '55px';
+      sunCore.style.background = coreColor;
+      sunCore.style.boxShadow = coreShadow;
+      var coreOpacity = 0.2 + p * 0.8;
+      if (p > 0.9) coreOpacity = 1 - (p - 0.9) * 6;
+      sunCore.style.opacity = Math.max(Math.min(coreOpacity, 1), 0);
+    }
+
+    // ── Corona ──
+    var coronaSize = size * (0.6 + p * 0.5);
+    var coronaColor = 'radial-gradient(circle, rgba(' + colorStr + ', 0.30) 0%, rgba(' + colorStr + ', 0.12) 25%, rgba(' + colorStr + ', 0.04) 55%, transparent 75%)';
+    if (sunCorona) {
+      var cScale = Math.max(coronaSize / 500, 0.01);
+      sunCorona.style.transform = 'translate(-50%, -50%) scale(' + cScale + ')';
+      sunCorona.style.width = '500px';
+      sunCorona.style.height = '500px';
+      sunCorona.style.background = coronaColor;
+      var coronaOpacity = 0.15 + p * 0.65;
+      if (p > 0.92) coronaOpacity = (1 - p) * 10;
+      sunCorona.style.opacity = Math.max(Math.min(coronaOpacity, 1), 0);
+    }
+
+    // ── Outer glow ──
+    var outerSize = size * (2.5 + p * 2);
+    var outerColor = 'radial-gradient(circle, rgba(' + colorStr + ', 0.08) 0%, rgba(' + colorStr + ', 0.03) 25%, transparent 60%)';
+    if (sunOuter) {
+      var oScale = Math.max(outerSize / 1300, 0.01);
+      sunOuter.style.transform = 'translate(-50%, -50%) scale(' + oScale + ')';
+      sunOuter.style.width = '1300px';
+      sunOuter.style.height = '1300px';
+      sunOuter.style.background = outerColor;
+      var outerOpacity = 0.2 + p * 0.6;
+      if (p > 0.95) outerOpacity = (1 - p) * 15;
+      sunOuter.style.opacity = Math.max(Math.min(outerOpacity, 1), 0);
+    }
+
+    // ── Rays ──
+    if (sunRays) {
+      var raySize = size * (2 + p * 1.5);
+      var rScale = Math.max(raySize / 900, 0.01);
+      sunRays.style.transform = 'translate(-50%, -50%) scale(' + rScale + ') rotate(' + (p * 360) + 'deg)';
+      sunRays.style.width = '900px';
+      sunRays.style.height = '900px';
+      var rayOpacity = 0.1 + p * 0.4;
+      if (p > 0.9) rayOpacity = 0.5 - (p - 0.9) * 5;
+      sunRays.style.opacity = Math.max(Math.min(rayOpacity, 0.5), 0);
+
+      var rayCount = 24;
+      var rayGrad = 'conic-gradient(from ' + (p * 360) + 'deg, ';
+      for (var ri = 0; ri < rayCount; ri++) {
+        var angle = ri * (360 / rayCount);
+        var spread = 4;
+        rayGrad += 'transparent ' + angle + 'deg, ';
+        rayGrad += 'rgba(' + colorStr + ', ' + (0.02 + p * 0.035) + ') ' + (angle + spread) + 'deg, ';
+        rayGrad += 'transparent ' + (angle + spread * 2) + 'deg';
+        if (ri < rayCount - 1) rayGrad += ', ';
+      }
+      rayGrad += ')';
+      sunRays.style.background = rayGrad;
+    }
+
+    // ── Aura ──
+    if (sunAura) {
+      var auraSize = size * (0.9 + p * 0.5);
+      var aScale = Math.max(auraSize / 550, 0.01);
+      sunAura.style.transform = 'translate(-50%, -50%) scale(' + aScale + ')';
+      sunAura.style.width = '550px';
+      sunAura.style.height = '550px';
+      sunAura.style.boxShadow = 'inset 0 0 ' + (auraSize * 0.4) + 'px ' + (auraSize * 0.15) + 'px rgba(' + colorStr + ', 0.15)';
+      var auraOpacity = 0.15 + p * 0.35;
+      if (p > 0.9) auraOpacity = 0.5 - (p - 0.9) * 3;
+      sunAura.style.opacity = Math.max(Math.min(auraOpacity, 0.5), 0);
+    }
+
+    // ── Horizon glow ──
+    if (sunHorizon) {
+      var horizonIntensity = Math.max(0, 1 - Math.abs(y - 85) * 0.04);
+      var horizonColor = 'rgba(' + colorStr + ', ' + (horizonIntensity * 0.18) + ')';
+      sunHorizon.style.background = 'linear-gradient(to top, ' + horizonColor + ' 0%, transparent 100%)';
+      var hHeight = 30;
+      if (p < 0.2) hHeight = 28 + (1 - p / 0.2) * 22;
+      else if (p > 0.75) hHeight = 28 + ((p - 0.75) / 0.25) * 22;
+      sunHorizon.style.height = hHeight + 'vh';
+    }
+
+    // ── Strong horizon glow (sunrise / sunset only) ──
+    if (sunHorizonStrong) {
+      var nearHorizon = (p < 0.15) || (p > 0.82);
+      if (nearHorizon) {
+        var hsOpacity = p < 0.15
+          ? Math.sin(p / 0.15 * Math.PI) * 0.35
+          : Math.sin((p - 0.82) / 0.18 * Math.PI) * 0.35;
+        sunHorizonStrong.style.opacity = Math.max(0, hsOpacity).toString();
+        sunHorizonStrong.style.height = '45vh';
+        sunHorizonStrong.style.background = 'linear-gradient(to top, rgba(' + colorStr + ', 0.35) 0%, rgba(' + colorStr + ', 0.08) 40%, transparent 80%)';
+      } else {
+        sunHorizonStrong.style.opacity = '0';
+      }
+    }
+
+    // ── Lens flare ──
+    if (sunFlare) {
+      var nearHorizonFlare = p < 0.2 || p > 0.8;
+      if (nearHorizonFlare) {
+        var flareIntensity = p < 0.2
+          ? Math.sin(p / 0.2 * Math.PI) * 0.3
+          : Math.sin((p - 0.8) / 0.2 * Math.PI) * 0.3;
+        sunFlare.style.width = (300 + (1 - Math.abs(p - 0.5) * 2) * 200) + 'px';
+        sunFlare.style.height = '2px';
+        sunFlare.style.background = 'linear-gradient(to right, transparent 0%, rgba(' + colorStr + ', ' + flareIntensity + ') 30%, rgba(' + colorStr + ', ' + flareIntensity + ') 70%, transparent 100%)';
+        sunFlare.style.opacity = Math.min(flareIntensity * 2, 0.5).toString();
+        sunFlare.style.transform = 'translate(-50%, -50%) rotate(' + (p < 0.5 ? -15 : 15) + 'deg)';
+      } else {
+        sunFlare.style.opacity = '0';
+      }
+    }
+
+    // ── Sky ──
+    if (skyOverlay) {
+      var sky = interpolateSky(p);
+      if (sky) {
+        skyOverlay.style.background = 'linear-gradient(180deg, ' + sky.t + ' 0%, ' + sky.m + ' 50%, ' + sky.b + ' 100%)';
+      }
+    }
+
+    // ── Phase label ──
+    if (phaseLabel && phaseTitle && phaseSub) {
+      var currentPhase = interpolatePhase(p);
+      phaseTitle.textContent = currentPhase.title;
+      phaseSub.textContent = currentPhase.sub;
+      var showLabel = p > 0.02 && p < 0.98;
+      phaseLabel.classList.toggle('visible', showLabel);
+    }
+
+    // ── Particles ──
+    if (particlesContainer) {
+      var particles = particlesContainer.querySelectorAll('.atmos-particle');
+      var isDawnDusk = p < 0.2 || (p > 0.65 && p < 0.95);
+      var isNight = p >= 0.95;
+
+      particles.forEach(function(part, i) {
+        var pType = part.getAttribute('data-phase');
+        if (isNight && pType === 'star') {
+          var twinkle = 0.3 + Math.sin(i * 2.7 + performance.now() * 0.0005) * 0.2;
+          part.style.background = '#FFFFFF';
+          part.style.opacity = Math.max(0, twinkle).toString();
+          part.style.boxShadow = '0 0 3px rgba(255,255,255,0.3)';
+          part.style.transform = '';
+        } else if (isDawnDusk && pType === 'dust') {
+          var col = p < 0.2 ? '255,200,100' : '255,150,50';
+          part.style.background = 'rgba(' + col + ', 0.5)';
+          part.style.opacity = (0.2 + Math.sin(i * 1.3 + p * 15) * 0.15).toString();
+          part.style.boxShadow = '0 0 4px rgba(' + col + ', 0.2)';
+          part.style.transform = 'translateY(' + (Math.sin(i * 2.1 + performance.now() * 0.0003) * 12) + 'px)';
+        } else {
+          part.style.opacity = '0';
+          part.style.boxShadow = 'none';
+        }
+      });
+    }
+
+    sunTicking = false;
+  }
+
+  // ── Init particles ──
+  (function initParticles() {
+    if (!particlesContainer) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var count = 20;
+    for (var i = 0; i < count; i++) {
+      var part = document.createElement('div');
+      part.className = 'atmos-particle';
+      part.style.left = Math.random() * 100 + '%';
+      part.style.top = Math.random() * 100 + '%';
+      var sz = Math.random() * 2.5 + 0.5;
+      part.style.width = sz + 'px';
+      part.style.height = sz + 'px';
+      part.style.opacity = '0';
+      part.setAttribute('data-phase', i < 12 ? 'dust' : 'star');
+      particlesContainer.appendChild(part);
+    }
+  })();
+
+  // ── Scroll listener ──
+  window.addEventListener('scroll', function() {
+    if (!sunTicking) {
+      requestAnimationFrame(updateSun);
+      sunTicking = true;
+    }
+  });
+
+  updateSun();
+
+  window.addEventListener('resize', function() {
+    if (!sunTicking) {
+      requestAnimationFrame(updateSun);
+      sunTicking = true;
+    }
+  });
+
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('.nav-link');
+
+  function updateActiveNav() {
+    var scrollPos = window.pageYOffset + 120;
+    var current = '';
+    sections.forEach(function(section) {
+      var top = section.offsetTop;
+      var height = section.offsetHeight;
+      if (scrollPos >= top && scrollPos < top + height) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(function(link) {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', function() {
+    requestAnimationFrame(updateActiveNav);
+  });
+  updateActiveNav();
+
+  var thermobarLabel = document.getElementById('thermobar-label');
+  var thermobarFill = document.getElementById('thermobar-fill');
+
+  var thermSections = {
+    '#intro':      { label: 'Inici',          color: '#94A3B8' },
+    '#temperatura': { label: 'Temperatura',    color: '#FBBF24' },
+    '#humitat':    { label: 'Humitat',        color: '#38BDF8' },
+    '#pressio':    { label: 'Pressió',        color: '#A78BFA' },
+    '#vent-dir':   { label: 'Direcció vent',  color: '#34D399' },
+    '#vent-vel':   { label: 'Velocitat vent', color: '#34D399' },
+    '#sol':        { label: 'Hores de sol',   color: '#F97316' },
+    '#uv':         { label: 'Índex UV',       color: '#EF4444' },
+    '#aire':       { label: 'Qualitat aire',  color: '#34D399' },
+    '#hores-sol':  { label: 'Hores/dia',      color: '#FBBF24' },
+    '#lluna':      { label: 'Fase lunar',     color: '#818CF8' },
+    '#aigua-temp': { label: 'Temp. aigua',    color: '#0EA5E9' },
+    '#aigua-estat':{ label: 'Estat aigua',    color: '#34D399' },
+    '#residus':    { label: 'Residus mar',    color: '#FB7185' },
+    '#resum':      { label: 'Resum',          color: '#F1F5F9' }
+  };
+
+  var sectionOrder = Object.keys(thermSections);
+  var currentSectionIdx = 0;
+
+  function updateThermobar(currentId) {
+    if (!thermobarLabel || !thermobarFill) return;
+    var data = thermSections[currentId];
+    if (!data) return;
+    var idx = sectionOrder.indexOf(currentId);
+    if (idx >= 0) currentSectionIdx = idx;
+    var progress = (currentSectionIdx / Math.max(sectionOrder.length - 1, 1)) * 100;
+    thermobarLabel.textContent = data.label;
+    thermobarLabel.style.color = data.color;
+    thermobarFill.style.height = progress + '%';
+    thermobarFill.style.background = data.color;
+  }
+
+  updateActiveNav = (function(original) {
+    return function() {
+      if (original) original();
+      var scrollPos = window.pageYOffset + 150;
+      var current = 'intro';
+      sections.forEach(function(section) {
+        var top = section.offsetTop;
+        var height = section.offsetHeight;
+        if (scrollPos >= top && scrollPos < top + height) {
+          current = section.getAttribute('id');
+        }
+      });
+      updateThermobar('#' + current);
+    };
+  })(updateActiveNav);
+
+  var moonPhases = [
+    { name: 'Lluna nova', illum: 0, cx: 60, rx: 0 },
+    { name: 'Lluna creixent', illum: 12, cx: 72, rx: 12 },
+    { name: 'Quart creixent', illum: 25, cx: 78, rx: 24 },
+    { name: 'Gibosa creixent', illum: 38, cx: 72, rx: 36 },
+    { name: 'Lluna plena', illum: 50, cx: 60, rx: 50 },
+    { name: 'Gibosa minvant', illum: 62, cx: 48, rx: 36 },
+    { name: 'Quart minvant', illum: 75, cx: 42, rx: 24 },
+    { name: 'Lluna minvant', illum: 88, cx: 48, rx: 12 }
+  ];
+
+  var moonIdx = 0;
+  var moonEllipse = document.getElementById('moon-ellipse');
+  var moonName = document.getElementById('moon-phase-name');
+  var moonIllum = document.getElementById('moon-illumination');
+  var moonSvg = document.getElementById('moon-svg');
+
+  function updateMoon() {
+    if (!moonEllipse || !moonName || !moonIllum) return;
+    var phase = moonPhases[moonIdx];
+    moonEllipse.setAttribute('cx', phase.cx);
+    moonEllipse.setAttribute('rx', phase.rx);
+    moonName.textContent = phase.name;
+    moonIllum.textContent = phase.illum + '% il·luminació';
+  }
+
+  if (moonSvg) {
+    moonSvg.addEventListener('click', function() {
+      moonIdx = (moonIdx + 1) % moonPhases.length;
+      updateMoon();
+    });
+  }
+  updateMoon();
+
+  // ── Scroll Progress Bar ──
+  var progressBar = document.getElementById('scroll-progress');
+  function updateProgress() {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var docHeight = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight,
+      document.body.clientHeight, document.documentElement.clientHeight
+    );
+    var winHeight = window.innerHeight;
+    var maxScroll = Math.max(docHeight - winHeight, 1);
+    var pct = Math.min(scrollTop / maxScroll, 1) * 100;
+    if (progressBar) progressBar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', requestAnimationFrame.bind(null, updateProgress));
+  updateProgress();
+
+  // ── Parallax ──
+  var parallaxLayers = document.querySelectorAll('.parallax-layer');
+  function updateParallax() {
+    var scrollY = window.pageYOffset || window.scrollY;
+    parallaxLayers.forEach(function(layer) {
+      var speed = parseFloat(layer.getAttribute('data-parallax-speed')) || 0;
+      layer.style.transform = 'translateY(' + (scrollY * speed) + 'px)';
+    });
+  }
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    window.addEventListener('scroll', function() {
+      requestAnimationFrame(updateParallax);
+    });
+    updateParallax();
+  }
+
+  // ── Section Reveal + Stagger ──
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        var staggables = entry.target.querySelectorAll('.stagger-item');
+        staggables.forEach(function(el, i) {
+          setTimeout(function() {
+            el.classList.add('stagger-visible');
+          }, i * 100);
+        });
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.section-reveal').forEach(function(s) {
+    revealObserver.observe(s);
+  });
+
+  // ── Animated Counters ──
+  var counterElements = document.querySelectorAll('.counter-value');
+  var counterObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var el = entry.target;
+        var target = parseFloat(el.getAttribute('data-target')) || 0;
+        var suffix = el.getAttribute('data-suffix') || '';
+        var prefix = el.getAttribute('data-prefix') || '';
+        var duration = parseInt(el.getAttribute('data-duration')) || 1500;
+        var start = performance.now();
+
+        function countUp(now) {
+          var elapsed = now - start;
+          var progress = Math.min(elapsed / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          var current = eased * target;
+          if (target % 1 === 0) {
+            el.textContent = prefix + Math.round(current) + suffix;
+          } else {
+            el.textContent = prefix + current.toFixed(1) + suffix;
+          }
+          if (progress < 1) requestAnimationFrame(countUp);
+        }
+        requestAnimationFrame(countUp);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  counterElements.forEach(function(el) { counterObserver.observe(el); });
+
+  // ── Card Tilt Effect ──
+  var tiltCards = document.querySelectorAll('.data-card');
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && !('ontouchstart' in window)) {
+    tiltCards.forEach(function(card) {
+      card.classList.add('tilt');
+      card.addEventListener('mousemove', function(e) {
+        var rect = card.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        var centerX = rect.width / 2;
+        var centerY = rect.height / 2;
+        var rotateX = ((y - centerY) / centerY) * -6;
+        var rotateY = ((x - centerX) / centerX) * 6;
+        card.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-4px)';
+      });
+      card.addEventListener('mouseleave', function() {
+        card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0)';
+      });
+    });
+  }
+
+  // ── Rain Effect on Residus ──
+  var rainContainer = document.getElementById('rain-container');
+  if (rainContainer && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var rainObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          if (rainContainer.children.length === 0) {
+            for (var i = 0; i < 40; i++) {
+              var drop = document.createElement('div');
+              drop.className = 'rain-drop';
+              drop.style.left = Math.random() * 100 + '%';
+              drop.style.animationDuration = (Math.random() * 0.6 + 0.4) + 's';
+              drop.style.animationDelay = Math.random() * 2 + 's';
+              drop.style.height = (Math.random() * 10 + 8) + 'px';
+              rainContainer.appendChild(drop);
+            }
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+    rainObserver.observe(document.getElementById('residus-card'));
+  }
+
+  // ── Three.js Background Particles ──
+  (function initBgParticles() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (typeof THREE === 'undefined') return;
+    try {
+      var bgCanvas = document.createElement('div');
+      bgCanvas.style.cssText = 'position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.4';
+      bgCanvas.id = 'bg-particles';
+      document.body.insertBefore(bgCanvas, document.body.firstChild);
+
+      var scene = new THREE.Scene();
+      var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.z = 50;
+
+      var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+      bgCanvas.appendChild(renderer.domElement);
+
+      var particleCount = 80;
+      var geometry = new THREE.BufferGeometry();
+      var positions = new Float32Array(particleCount * 3);
+      var colors = new Float32Array(particleCount * 3);
+      var sizes = new Float32Array(particleCount);
+      var colorPalette = [
+        [0.22, 0.74, 0.97],
+        [0.98, 0.75, 0.14],
+        [0.65, 0.54, 0.98],
+        [0.20, 0.80, 0.60]
+      ];
+
+      for (var i = 0; i < particleCount; i++) {
+        positions[i*3] = (Math.random() - 0.5) * 100;
+        positions[i*3+1] = (Math.random() - 0.5) * 100;
+        positions[i*3+2] = (Math.random() - 0.5) * 40;
+
+        var c = colorPalette[Math.floor(Math.random() * colorPalette.length)];
+        colors[i*3] = c[0];
+        colors[i*3+1] = c[1];
+        colors[i*3+2] = c[2];
+        sizes[i] = Math.random() * 3 + 1;
+      }
+
+      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+      geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+
+      var material = new THREE.PointsMaterial({
+        size: 0.25,
+        vertexColors: true,
+        transparent: true,
+        opacity: 0.6,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+        sizeAttenuation: true
+      });
+
+      var particles = new THREE.Points(geometry, material);
+      scene.add(particles);
+
+      var mouseX = 0, mouseY = 0;
+      document.addEventListener('mousemove', function(e) {
+        mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+        mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+      });
+
+      function animateParticles() {
+        requestAnimationFrame(animateParticles);
+        particles.rotation.y += 0.0005;
+        particles.rotation.x += 0.0003;
+        particles.rotation.x += (mouseY * 0.02 - particles.rotation.x) * 0.01;
+        particles.rotation.y += (mouseX * 0.02 - particles.rotation.y) * 0.01;
+        renderer.render(scene, camera);
+      }
+      animateParticles();
+
+      function onResizeParticles() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      }
+      window.addEventListener('resize', onResizeParticles);
+
+    } catch(e) { /* silently fail */ }
+  })();
+
+  var container = document.getElementById('three-container');
+  if (container && typeof THREE !== 'undefined') {
+    var loadingEl = container.querySelector('.three-loading');
+    var loaderTimeout = setTimeout(function() {
+      if (loadingEl) loadingEl.textContent = 'Carregant...';
+    }, 300);
+
+    try {
+      var scene = new THREE.Scene();
+      scene.background = new THREE.Color('#111827');
+
+      var camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 100);
+      camera.position.set(4, 3, 6);
+      camera.lookAt(0, 0, 0);
+
+      var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      container.appendChild(renderer.domElement);
+
+      var ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+      scene.add(ambientLight);
+      var dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+      dirLight.position.set(5, 10, 7);
+      scene.add(dirLight);
+      var backLight = new THREE.DirectionalLight(0x8888ff, 0.3);
+      backLight.position.set(-5, 0, -5);
+      scene.add(backLight);
+
+      var geometry = new THREE.BoxGeometry(2.5, 2.5, 2.5);
+      var edges = new THREE.EdgesGeometry(geometry);
+      var lineMat = new THREE.LineBasicMaterial({ color: 0xffffff, linewidth: 1 });
+      var wireframe = new THREE.LineSegments(edges, lineMat);
+      scene.add(wireframe);
+
+      var colors = [0xFBBF24, 0x38BDF8, 0xFB7185, 0x34D399, 0xA78BFA, 0x0EA5E9];
+      var labels = ['24.3°C\nTemperatura', '72%\nHumitat', '6.8\nÍndex UV', '14.2 km/h\nVent', '54\nQualitat aire', '18.5°C\nAigua mar'];
+
+      var faceMat = colors.map(function(c) {
+        return new THREE.MeshBasicMaterial({
+          color: c,
+          transparent: true,
+          opacity: 0.25,
+          side: THREE.DoubleSide,
+          depthWrite: false
+        });
+      });
+
+      var box = new THREE.Mesh(geometry, faceMat);
+      scene.add(box);
+
+      function createTextTexture(text, bgColor) {
+        var canvas = document.createElement('canvas');
+        canvas.width = 512;
+        canvas.height = 512;
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = bgColor;
+        ctx.fillRect(0, 0, 512, 512);
+
+        ctx.fillStyle = 'rgba(255,255,255,0.1)';
+        ctx.fillRect(30, 30, 452, 452);
+
+        var lines = text.split('\n');
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = 'bold 80px "Outfit", sans-serif';
+        ctx.fillText(lines[0], 256, 220);
+
+        ctx.fillStyle = 'rgba(255,255,255,0.75)';
+        ctx.font = '40px "Inter", sans-serif';
+        if (lines[1]) ctx.fillText(lines[1], 256, 340);
+
+        var texture = new THREE.CanvasTexture(canvas);
+        texture.needsUpdate = true;
+        return texture;
+      }
+
+      var texturePromises = colors.map(function(c, i) {
+        var hex = '#' + c.toString(16).padStart(6, '0');
+        return createTextTexture(labels[i], hex);
+      });
+
+      var materials = texturePromises.map(function(tex) {
+        return new THREE.MeshBasicMaterial({
+          map: tex,
+          side: THREE.DoubleSide,
+          transparent: true,
+          opacity: 0.92
+        });
+      });
+
+      var textBox = new THREE.Mesh(geometry, materials);
+      scene.add(textBox);
+
+      var controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 1.5;
+      controls.enableZoom = true;
+      controls.rotateSpeed = 0.8;
+      controls.target.set(0, 0, 0);
+      controls.update();
+
+      function animate() {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+      }
+
+      animate();
+
+      function onResize() {
+        var w = container.clientWidth;
+        var h = container.clientHeight;
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+        renderer.setSize(w, h);
+      }
+
+      window.addEventListener('resize', onResize);
+
+      clearTimeout(loaderTimeout);
+      if (loadingEl) loadingEl.style.display = 'none';
+
+      container._cleanup = function() {
+        window.removeEventListener('resize', onResize);
+        controls.dispose();
+        renderer.dispose();
+        scene.traverse(function(obj) {
+          if (obj.geometry) obj.geometry.dispose();
+          if (obj.material) {
+            if (obj.material.map) obj.material.map.dispose();
+            obj.material.dispose();
+          }
+        });
+      };
+
+    } catch (e) {
+      clearTimeout(loaderTimeout);
+      if (loadingEl) {
+        loadingEl.textContent = 'Visualització 3D no disponible';
+        loadingEl.className = '';
+      }
+      console.warn('Three.js error:', e);
+    }
+  }
+})();
+</script>
+</body>
+</html>
