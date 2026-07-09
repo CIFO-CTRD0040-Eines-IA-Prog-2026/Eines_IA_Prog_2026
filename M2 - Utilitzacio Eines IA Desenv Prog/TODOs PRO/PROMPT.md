@@ -1,0 +1,1 @@
+- IMPORTANTE LEE AGENTS.md y cuardate de las reglas. Llegeix spec/ i continua el projecte: NOMÉS FRONTEND PER ARA
