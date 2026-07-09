@@ -13,6 +13,22 @@
       "type": "local",
       "command": ["npx", "@playwright/mcp@latest"],
       "enabled": true
+    },
+    "mysql": {
+      "type": "local",
+      "command": ["npx", "-y", "@benborla29/mcp-server-mysql"],
+      "enabled": true,
+      "environment": {
+        "MYSQL_HOST": "127.0.0.1",
+        "MYSQL_PORT": "3306",
+        "MYSQL_USER": "root",
+        "MYSQL_PASS": "",
+        "MYSQL_DB": "todos_pro",
+        "ALLOW_DDL_OPERATION": "true",
+        "ALLOW_INSERT_OPERATION": "true",
+        "ALLOW_UPDATE_OPERATION": "true",
+        "ALLOW_DELETE_OPERATION": "true"
+      }
     }
   }
 }

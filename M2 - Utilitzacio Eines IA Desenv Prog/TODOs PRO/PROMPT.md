@@ -1,1 +1,1 @@
-- IMPORTANTE LEE AGENTS.md y acuerdate de las reglas. Llegeix spec/ i continua el projecte: NOMÉS FRONTEND PER ARA
+- IMPORTANTE LEE AGENTS.md y acuerdate de las reglas. Llegeix spec/ i continua el projecte
