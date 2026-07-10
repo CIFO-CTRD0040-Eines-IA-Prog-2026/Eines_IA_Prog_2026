@@ -18,7 +18,8 @@ Obrir public/index.html al nevagador (Live Server)
 No s'improvisa: colors i to, a la skill estil-todos; layout, tipografia u jerarquia, a la skill estil-todos
 
 
-- BACK
+- BACKEND
 MySQL per a la base de dades. El disseny de l'esquema segueix la skill mysql (.agents/skills/mysql).
+Tot el codi backend a la carpeta backend/.
 
 -----------------------------

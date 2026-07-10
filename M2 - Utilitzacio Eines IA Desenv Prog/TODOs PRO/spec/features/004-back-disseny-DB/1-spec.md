@@ -1,6 +1,6 @@
 # 004 — Disseny i creació de la base de dades (MySQL)
 
-Primer pas del BACK: dissenyar l'esquema que guardarà usuaris i tasques. Encara no hi ha servidor; només la base de dades i les seves taules.
+Primer pas del BACKEND: dissenyar l'esquema que guardarà usuaris i tasques. Encara no hi ha servidor; només la base de dades i les seves taules.
 
 - Contingut
 Base de dades `todos_pro`.
