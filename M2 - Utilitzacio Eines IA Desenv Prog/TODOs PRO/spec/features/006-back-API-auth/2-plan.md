@@ -1,10 +1,10 @@
 # Pla — 006 API d'autenticació
 
 - Fitxers (a backend/):
-  - `package.json` — afegir dependències: `bcrypt`, `express-session`.
-  - `server.js` — muntar `express.json()` per llegir el body, `express-session` amb el secret de `.env`, i les rutes d'auth (o via un router).
+  - `package.json` — afegir `bcrypt` i `express-session`.
+  - `server.js` — muntar `express.json()` i `express-session` (secret de `.env`) i el router d'auth.
   - `routes/auth.js` — router amb `POST /api/registre`, `POST /api/login`, `POST /api/logout`, `GET /api/jo`. Usa el pool de `db.js` (005).
-  - `middleware/sessio.js` — `requereixSessio`: si `req.session.userId` existeix, `next()`; si no, 401. L'exporta per a la 007.
+  - `middleware/sessio.js` — dues guàrdies: `requereixSessio` (API → 401 JSON; exportat per a la 007) i `requereixSessioPagina` (pàgina → 302 a `/login`).
   - `.env` / `.env.example` — afegir `SESSION_SECRET`.
 
 - Decisions:

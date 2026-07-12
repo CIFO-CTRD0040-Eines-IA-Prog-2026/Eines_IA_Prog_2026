@@ -1,26 +1,23 @@
 # Pla — 008 Connexió del FRONT al backend real
 
-- Fitxers (a public/):
-  - `app.js` — únic fitxer que canvia. Es reescriuen les 4 funcions de dades i el bloc auth; el DOM (pintaLlista, mostraEstat, comptador) i la validació de la 002 es mantenen.
-  - `index.html` — assegurar que el botó "Surt" té un id estable (p. ex. `boto-surt`) per enganxar-hi el logout. (Si ja hi és, no es toca.)
+- Fitxers:
+  - `public/app.js` — reescriure les 4 funcions de dades i el bloc auth; el DOM i la validació (002) es mantenen.
+  - `public/*.html` — `href` i botó "Surt" cap a `/todos`, `/login`, `/registre` (sense `.html`); "Surt" amb id estable per al logout.
+  - `backend/server.js` — aplicar `requereixSessioPagina` (006) a `GET /todos`.
 
 - Decisions:
-  - **fetch real (skill fetch-api)**: `async/await` amb `try/catch`; comprovar `response.ok` abans de `.json()`; totes les crides amb `credentials: 'same-origin'` perquè viatgi la cookie. Missatges d'error en català, mai el text tècnic de l'excepció.
-  - **Treure el mock**: fora `SIMULA_ERROR`, `tasquesInicials`, `MOCK_LATENCIA`, `nextId`, `copiarTasques`, `retard`. El contracte de dades ja el va fixar la 003; el mock ja no cal.
-  - **Auth**: després de validar (002), `form-login` fa `POST /api/login` i `form-registre` `POST /api/registre`. Segons l'status: OK → `window.location.href`; KO → missatge a la zona d'error del formulari. 401→"Email o contrasenya incorrectes"; 409→"Aquest email ja està registrat".
-  - **Sessió a la llista**: `getTodos` distingeix el 401 de la resta d'errors. Si és 401 → `window.location.href = 'login.html'`. Qualsevol altre error → `estat-error` (com fins ara).
-  - **Logout**: "Surt" → `POST /api/logout` → `login.html`.
-  - **done booleà**: l'API ja retorna `done` com a booleà (007); el DOM ja el tracta així. Cap canvi al pintat.
-  - **Fora d'abast**: editar el text d'una tasca, "recorda'm", refresc de token. Només connectar el que ja existeix.
+  - **fetch real (skill fetch-api)**: `async/await` amb `try/catch`, `response.ok` abans de `.json()`, `credentials: 'same-origin'` a cada crida. Errors en català, mai el text de l'excepció.
+  - **Treure el mock**: fora `SIMULA_ERROR`, `tasquesInicials`, `MOCK_LATENCIA`, `nextId`, `copiarTasques`, `retard`. El contracte ja el fixa la 003.
+  - **Auth**: després de validar (002), login i registre criden l'API i naveguen a `/todos` si va bé; si no, missatge a la zona d'error (401→credencials, 409→email existent).
+  - **Sessió**: un 401 d'`/api/tasques` (sessió caducada en ple ús) redirigeix a `/login`; la resta d'errors → `estat-error`. L'accés inicial ja el barra el servidor (006).
 
 - Precondicions:
-  - 006 (auth + sessió) i 007 (API tasques) fetes i el servidor Express (005) servint public/. La verificació es fa sempre contra el servidor viu (http://localhost:3000), no obrint el fitxer .html directament (si no, no hi ha cookies ni API).
+  - 006 i 007 fetes; el servidor (005) servint public/. La verificació és sempre contra el servidor viu, no obrint el .html.
 
-- Eines de referència (tech-stack):
-  - **Skill fetch-api**: patró de les crides, estats i missatges en català.
-  - **Skill loop-verificacio-front**: bucle de verificació amb el navegador (Playwright MCP) contra els criteris de la spec.
-  - **Context7 (MCP)**: sintaxi al dia de `fetch` (opcions, `credentials`).
+- Eines (tech-stack):
+  - **Skill fetch-api** — patró de crides, estats i missatges.
+  - **Skill loop-verificacio-front** — verificació amb el navegador (Playwright MCP).
+  - **Context7 (MCP)** — sintaxi de `fetch`.
 
-- Verificació (Playwright MCP contra el servidor viu + cec creuat amb MySQL MCP):
-  - El navegador condueix el flux real; el MCP MySQL confirma l'efecte a la DB a cada pas.
-  - Registre/login/logout, alta/toggle/esborrat de tasques, redirecció per 401, i aïllament entre dos usuaris.
+- Verificació (Playwright MCP contra el servidor viu, creuant amb MySQL MCP):
+  El navegador condueix el flux real (registre, login, logout, CRUD, redirecció per 401, aïllament entre dos usuaris) i el MCP MySQL confirma l'efecte a la DB a cada pas.

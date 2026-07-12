@@ -21,6 +21,7 @@ Middleware `requereixSessio`: reutilitzable, protegirà l'API de tasques de la 0
 `POST /api/logout` → 200 `{ estat: "ok" }` i destrueix la sessió.
 `GET /api/jo` → 200 `{ id, nom, email }` si hi ha sessió; 401 `{ error: "No autenticat" }` si no.
 La contrasenya (ni el seu hash) no surt mai en cap resposta.
+Aquesta feature crea i exporta `requereixSessioPagina` (redirigeix 302 a `/login` sense sessió, per protegir la pàgina `/todos` sense "flash"), però l'aplica la 008; aquí no toca cap ruta de pàgina.
 
 - Criteris d'acceptació
 [ ] `npm install` afegeix `bcrypt` i `express-session` sense errors.
