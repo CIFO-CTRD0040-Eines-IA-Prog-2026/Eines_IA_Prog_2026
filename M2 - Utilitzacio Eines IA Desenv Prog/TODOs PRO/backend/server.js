@@ -1,4 +1,5 @@
-require('dotenv').config({ path: __dirname + '/.env' });
+const envFitxer = process.env.DB_TARGET === 'railway' ? '.env.railway' : '.env.local';
+require('dotenv').config({ path: __dirname + '/' + envFitxer });
 
 const express       = require('express');
 const session       = require('express-session');

@@ -31,5 +31,5 @@ API REST de tasques (/api/tasques) protegida per la sessió: cada usuari només 
 El front deixa el mock i parla amb el backend real (auth + tasques). Registre, login, logout i CRUD de tasques persistit a MySQL, verificat des de la UI.
 
 ## bloc DESKTOP
-009-desktop-electron - ESTAT PENDENT
+009-desktop-electron - ESTAT EN CURS
 App d'escriptori amb Electron: la finestra arrenca el backend i carrega la web; selector de DB local/Railway amb DB_TARGET; `npm run dist` genera l'instal·lador del S.O. actual (dmg/exe/AppImage).

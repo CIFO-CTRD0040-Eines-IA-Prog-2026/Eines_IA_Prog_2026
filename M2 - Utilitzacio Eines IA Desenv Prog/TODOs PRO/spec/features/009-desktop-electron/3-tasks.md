@@ -2,7 +2,7 @@
 
 ## T1 — package.json arrel
 [x] Crear `package.json` a l'arrel amb `electron` i `electron-builder` (devDependencies), scripts `desktop` (electron .) i `dist` (electron-builder), `main: desktop/main.js`.
-[x] **IMPORTANT**: `npm install` baixa el binari d'Electron (~100 MB) automàticament. Si es fa amb `--ignore-scripts`, executar `node node_modules/electron/install.js` després (2-5 min). Sense el binari, `npm run desktop` falla amb "Electron failed to install correctly".
+[] **IMPORTANT**: `npm install` baixa el binari d'Electron (~100 MB) automàticament. Si es fa amb `--ignore-scripts`, executar `node node_modules/electron/install.js` després (2-5 min). Sense el binari, `npm run desktop` falla amb "Electron failed to install correctly".
 
 ## T2 — desktop/main.js (finestra)
 [x] BrowserWindow amb `contextIsolation: true`, `nodeIntegration: false`, `sandbox: true`.
@@ -15,7 +15,7 @@
 [x] Polling a `/health` (30 intents × 1s). Timeout → `dialog.showErrorBox` i `app.quit()`.
 [x] Kill del procés fill en tancar la finestra.
 [x] **Capturar stderr del backend**: afegir `backendProc.stderr.on('data', ...)` per mostrar errors concrets (ex: "MySQL no disponible", port en ús) al diàleg, no només "Backend sortit amb codi 1".
-[x] **Verificar MySQL abans**: idealment comprovar connectivity abans de fork. Si MySQL no està en marxa, el backend llança una excepció al requerir `db.js` i surt amb codi 1.
+[] **Verificar MySQL abans**: idealment comprovar connectivity abans de fork. Si MySQL no està en marxa, el backend llança una excepció al requerir `db.js` i surt amb codi 1.
 
 ## T4 — Selector de DB
 [x] Renombrar `backend/.env` → `backend/.env.local`.

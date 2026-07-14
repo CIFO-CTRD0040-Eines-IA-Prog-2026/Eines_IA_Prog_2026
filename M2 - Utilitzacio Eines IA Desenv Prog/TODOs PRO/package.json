@@ -1,0 +1,30 @@
+{
+  "name": "todos-pro",
+  "version": "1.0.0",
+  "description": "App d'escriptori TODOs Pro amb Electron",
+  "main": "desktop/main.js",
+  "scripts": {
+    "desktop": "electron .",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^33.4.11",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.todospro.desktop",
+    "productName": "TODOs Pro",
+    "asarUnpack": [
+      "backend/**/*"
+    ],
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}
